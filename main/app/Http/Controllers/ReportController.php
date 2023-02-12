@@ -151,6 +151,18 @@ class ReportController extends Controller
         return $str;
     }
 
+    public function getSalary($salary_from, $salary_to)
+    {
+
+        $pattern = "/[^0-9]/";
+        $patternOnlyZeros = "/^0+$/";
+
+        if (preg_match($patternOnlyZeros, preg_replace($pattern, "", $salary_to)) || preg_match($patternOnlyZeros,  $salary_to)) {
+            return preg_replace($pattern, "", $salary_from);
+        } else {
+            return preg_replace($pattern, "", $salary_from) . '-' . preg_replace($pattern, "", $salary_to);
+        }
+    }
     public function replaceyears($years)
     {
 
@@ -181,15 +193,19 @@ class ReportController extends Controller
 
             case 1:
                 $data = $this->getStudents();
+
                 return Excel::download(new InvoicesExport($data), 'Estudiantes' . '.xlsx');
             case 2:
                 $data = $this->getCompanys();
+
                 return Excel::download(new CompanysExport($data), 'Compañias' . '.xlsx');
             case 3:
                 $data = $this->getJobs();
+
                 return Excel::download(new JobsExport($data), 'Empleos' . '.xlsx');
             case 4:
                 $data = $this->getEgresados();
+
                 return Excel::download(new InvoicesExport($data), 'Egresados' . '.xlsx');
             case 5:
                 return Excel::download(new VacancyContractExport(), 'contratados.xlsx');
@@ -205,6 +221,8 @@ class ReportController extends Controller
                 return $this->OferentesMensualTxt();
             case 11:
                 return $this->OferentesSemestralTxt();
+            case 12:
+                return $this->PracticasLaboralesTxt();
         }
     }
 

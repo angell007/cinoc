@@ -76,30 +76,18 @@ trait ReportsTxt
                 'jobs.slug',
 
                 'jobs.id',
-
             ])
-
             ->where('job_experiences.is_default', 1)
-
             ->where('job_types.is_default', 1)
-
-            ->where('job_types.lang', 'es')
-
             ->when(request()->get('inicio') && request()->get('fin'), function ($q) {
                 $q->whereBetween('jobs.created_at', [request()->get('inicio'), request()->get('fin')]);
             })
 
             ->get();
 
-
-
-
-
-        $file = "test.txt";
+        $file = "reporteVacantes.txt";
 
         $txt = fopen($file, "w") or die("Unable to open file!");
-
-        $pattern = "/[^0-9]/";
 
         foreach ($data as $datum) {
 
@@ -117,7 +105,158 @@ trait ReportsTxt
 
             fwrite($txt,        $this->htmlToPlainText($datum->functional_area) . '|$$|');
 
-            fwrite($txt,        preg_replace($pattern, "", $datum->salary_from) . '-' . preg_replace($pattern, "", $datum->salary_to) . '|$$|');
+            fwrite($txt,        $this->getSalary($datum->salary_from, $datum->salary_to) . '|$$|');
+
+            fwrite($txt,        $datum->num_of_positions . '|$$|');
+
+            fwrite($txt,        $this->htmlToPlainText($datum->position) . '|$$|');
+
+            fwrite($txt,        1 . '|$$|');
+
+            fwrite($txt,        $datum->identificacion . '|$$|');
+
+            fwrite($txt,        $this->htmlToPlainText($datum->name) . '|$$|');
+
+            fwrite($txt,        'N' . '|$$|');
+
+            fwrite($txt,        Carbon::parse($datum->created_at)->format('d/m/Y') . '|$$|');
+
+            fwrite($txt,        Carbon::parse($datum->expiry_date)->format('d/m/Y') . '|$$|');
+
+            fwrite($txt,        strlen($datum->code) == 5 ? $datum->code : 0 . $datum->code  . '|$$|');
+
+            fwrite($txt,        '|$$|' . $this->htmlToPlainText($datum->industry) . '|$$|');
+
+            fwrite($txt,        $this->htmlToPlainText($datum->type_for_report) . '|$$|');
+
+            fwrite($txt, ($datum->is_freelance) ? '1' : '0') . '|$$|';
+
+            fwrite($txt,        '|$$|' . '0' . '|$$|');
+
+            fwrite($txt,       'https://bolsaempleo.iescinoc.edu.co/job/' . $datum->slug);
+
+            fwrite($txt,  PHP_EOL);
+
+            fwrite($txt,  "\r\n");
+        }
+
+        fclose($txt);
+
+        header('Content-Description: File Transfer');
+
+        header('Content-Disposition: attachment; filename=' . basename($file));
+
+        header('Expires: 0');
+
+        header('Cache-Control: must-revalidate');
+
+        header('Pragma: public');
+
+        header('Content-Length: ' . filesize($file));
+
+        header("Content-Type: text/plain");
+
+        return readfile($file);
+    }
+
+    public function PracticasLaboralesTxt()
+    {
+        $data = Job::join('companies', 'companies.id', 'jobs.company_id')
+
+            ->join('job_experiences', 'job_experiences.job_experience_id', 'jobs.job_experience_id')
+
+            ->join('functional_areas', 'functional_areas.functional_area_id', 'jobs.functional_area_id')
+
+            ->join('degree_levels', 'degree_levels.degree_level_id', 'jobs.degree_level_id')
+
+            ->join('industries', 'industries.industry_id', 'companies.industry_id')
+
+            ->join('job_types', 'job_types.job_type_id', 'jobs.job_type_id')
+
+            ->join('cities', 'cities.city_id', 'jobs.city_id')
+
+            ->select([
+
+                'jobs.company_id',
+
+                'jobs.id',
+
+                'jobs.title',
+
+                'jobs.description',
+
+                'job_experiences.job_experience',
+
+                'functional_areas.functional_area',
+
+                'degree_levels.qualification',
+
+                'jobs.salary_currency',
+
+                'jobs.num_of_positions',
+
+                'jobs.position',
+
+                'companies.tipo_identificacion',
+
+                'companies.identificacion',
+
+                'companies.name',
+
+                'jobs.show_info',
+
+                'jobs.created_at',
+
+                'jobs.expiry_date',
+
+                'jobs.salary_from',
+
+                'jobs.salary_to',
+
+                'cities.code',
+
+                'industries.industry',
+
+                'job_types.type_for_report',
+
+                'jobs.is_freelance',
+
+                'jobs.is_freelance',
+
+                'jobs.slug',
+
+                'jobs.id',
+            ])
+            ->where('job_experiences.is_default', 1)
+            ->where('job_types.is_default', 1)
+            ->where('jobs.is_pl', 1)
+            ->when(request()->get('inicio') && request()->get('fin'), function ($q) {
+                $q->whereBetween('jobs.created_at', [request()->get('inicio'), request()->get('fin')]);
+            })
+
+            ->get();
+
+        $file = "reporteVacantes.txt";
+
+        $txt = fopen($file, "w") or die("Unable to open file!");
+
+        foreach ($data as $datum) {
+
+            fwrite($txt,        22235 . '|$$|');
+
+            fwrite($txt,        $datum->id . '|$$|');
+
+            fwrite($txt,       'PL-' . $this->htmlToPlainText($datum->title) . '|$$|');
+
+            fwrite($txt,        $this->htmlToPlainText($datum->description) . '|$$|');
+
+            fwrite($txt,        $this->replaceyears($datum->job_experience) . '|$$|');
+
+            fwrite($txt,        $this->htmlToPlainText($datum->qualification) . '|$$|');
+
+            fwrite($txt,        $this->htmlToPlainText($datum->functional_area) . '|$$|');
+
+            fwrite($txt,        $this->getSalary($datum->salary_from, $datum->salary_to) . '|$$|');
 
             fwrite($txt,        $datum->num_of_positions . '|$$|');
 
@@ -197,32 +336,58 @@ trait ReportsTxt
 
             ->get();
 
-        $file = "test.txt";
+        $file = "OferentesMensual.txt";
 
         $txt = fopen($file, "w") or die("Unable to open file!");
 
+        fwrite($txt,        01 . '|$|');
+
+        fwrite($txt,        22235 . '|$|');
+
+        fwrite($txt,        count($data) + 2 . '|$|');
+
+        fwrite($txt,        Carbon::now()->format('dmY'));
+
+        fwrite($txt,  PHP_EOL);
+
+        fwrite($txt,  "\r\n");
+
         foreach ($data as $datum) {
 
-            fwrite($txt,        $datum->codigo . '|');
+            fwrite($txt,        $datum->codigo . '|$|');
 
-            fwrite($txt,        00000 . '|');
+            fwrite($txt,        22235 . '|$|');
 
-            fwrite($txt,        1 . '|');
+            fwrite($txt,        1 . '|$|');
 
-            fwrite($txt,        $datum->national_id_card_number . '|');
+            fwrite($txt,        $datum->national_id_card_number . '|$|');
 
-            fwrite($txt,        169 . '|');
+            fwrite($txt,        'CO' . '|$|');
 
-            fwrite($txt,           substr($datum->code, 0, 2) . '|');
+            fwrite($txt,           substr($datum->code, 0, 2) . '|$|');
 
-            fwrite($txt,           substr($datum->code, 2, 5) . '|');
+            fwrite($txt,           substr($datum->code, 2, 5) . '|$|');
 
-            fwrite($txt,        $datum->date . '|');
+            fwrite($txt,        $datum->date);
 
             fwrite($txt,  PHP_EOL);
 
             fwrite($txt,  "\r\n");
         }
+
+        fwrite($txt,        99 . '|$|');
+
+        fwrite($txt,        22235 . '|$|');
+
+        fwrite($txt,        count($data) . '|$|');
+
+        fwrite($txt,        count($data) . '|$|');
+
+        fwrite($txt,        Carbon::now()->format('dmY'));
+
+        fwrite($txt,  PHP_EOL);
+
+        fwrite($txt,  "\r\n");
 
         fclose($txt);
 

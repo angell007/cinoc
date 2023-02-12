@@ -1,0 +1,6 @@
+22235|$$|144|$$|PL-ingeniero|$$|ing en html|$$|0|$$|11|$$|Técnica profesional en informática y sistemas|$$|0|$$|5|$$|Dev|$$|1|$$||$$|empresa prueba|$$|N|$$|07/02/2023|$$|28/02/2023|$$|05045|$$||$$|Educación|$$|1|$$|0|$$|0|$$|https://bolsaempleo.iescinoc.edu.co/job/ingeniero-144
+
+22235|$$|138|$$|PL-Auxiliar administrativo/a|$$|Importante empresa del sector requiere para su equipo de trabajo Técnica o tecnólogo con 6 meses en procesos administrativos con conocimiento o manejo básico en programa SAP y operativo en temas de dotación, gestión documental y facturación. SALARIO:  1.915.240 + Auxilio de alimentación + Prestaciones legales HORARIO: Lunes a viernes de 7am - 5pm . • Requerimientos • Requerimientos Educación mínima: Universidad / Carrera técnica Menos de 1 año de experiencia|$$|12|$$|5|$$|Tecnología en gestión de empresas|$$|2000000|$$|1|$$|Asistente comunitario|$$|1|$$||$$|empresa prueba|$$|N|$$|07/02/2023|$$|28/02/2023|$$|05001|$$||$$|Educación|$$|1|$$|0|$$|0|$$|https://bolsaempleo.iescinoc.edu.co/job/auxiliar-administrativoa-138
+
+22235|$$|145|$$|PL-dev|$$|OK|$$|12|$$|2|$$|Técnica profesional en Cosecha y transformación de bienes maderables|$$|100000-15020000|$$|2|$$|OFICIALES DE LAS FUERZAS MILITARES|$$|1|$$||$$|Danilo|$$|N|$$|09/02/2023|$$|23/02/2023|$$|08001|$$||$$|Educación|$$|6|$$|0|$$|0|$$|https://bolsaempleo.iescinoc.edu.co/job/dev-145
+

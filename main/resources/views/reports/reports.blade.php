@@ -97,6 +97,8 @@
 
                                             <option value="11">Reporte Oferentes TXT Semestral </option>
 
+                                            <option value="12">Reporte Practicas Laborales TXT</option>
+
                                         </select>
 
                                     </div>

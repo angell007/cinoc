@@ -1,1 +1,0 @@
-<?php /**PATH C:\laragon\www\cinoc\main\resources\views/includes/subscribe.blade.php ENDPATH**/ ?>

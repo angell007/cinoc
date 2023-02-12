@@ -1,51 +1,5 @@
 <?php
 
-
-
-
-
-
-
-/*
-
-
-
-  |--------------------------------------------------------------------------
-
-
-
-  | Web Routes
-
-
-
-  |--------------------------------------------------------------------------
-
-
-
-  |
-
-
-
-  | Here is where you can register web routes for your application. These
-
-
-
-  | routes are loaded by the RouteServiceProvider within a group which
-
-
-
-  | contains the "web" middleware group. Now create something great!
-
-
-
-  |
-
-
-
- */
-
-
-
 use App\Company;
 
 use App\Job;
@@ -112,24 +66,12 @@ Route::get('/clear-cache', function () {
 
 Route::post('upload-participant', 'UserController@uploadParticipant')->name('upload-participant');
 
-
-
 Route::get('info', array_merge(['uses' => 'Admin\VideoController@indexVideosCap']))->name('info');
-
-
-
-
 
 Route::get('/getconst/{file}', function ($file) {
 
-
-
   $name = $file;
-
   $user = Auth::user();
-
-
-
   $pdf = PDF::loadView('pdf.constancies', compact('name', 'user'));
 
   //   return $pdf->stream('pruebapdf.pdf');
@@ -439,16 +381,9 @@ Route::get('letter-delete', array_merge(['uses' => 'UserController@deleteletter'
 Route::get('/send-mail', function (Request $request) {
 
 
-
-
-
   $formato = template_contrato::find(request()->get('plantilla'));
 
-
-
   $empresa = Company::find(request()->get('company'));
-
-
 
   $estudiante = User::with('profileEducation')->find(request()->get('user'));
   $formato->html =  preg_replace("/@nombre_empresa@/",  $empresa->name, $formato->html);
@@ -534,11 +469,7 @@ include_once($real_path . 'order.php');
 
 include_once($real_path . 'cms.php');
 
-
-
 /* * ******** JobController ************ */
-
-
 
 include_once($real_path . 'job.php');
 /* * ******** ContactController ************ */
@@ -566,16 +497,7 @@ include_once($real_path . 'admin_auth.php');
 
 /* * ******** routes to upload file of idCards ************ */
 
-
-
 include_once($real_path . 'custom/files.php');
-
-// Route::get('/pruebas',  function () {
-
-//   return Hash::make('secret');
-
-// });
-
 
 Route::get('blog', 'BlogController@index')->name('blogs');
 
@@ -634,9 +556,6 @@ Route::get('/download-cv-on-candidate/{file?}/{user}/{jobs}',  function ($a, $c,
 });
 
 
-
-
-
 Route::get('donwload-letter/{c?}',  function ($a) {
 
   $user = User::findOrFail($a);
@@ -648,8 +567,6 @@ Route::get('donwload-letter/{c?}',  function ($a) {
 
   return back();
 });
-
-
 
 
 

@@ -1,0 +1,1 @@
+<h1>Carta de vinculación</h1>

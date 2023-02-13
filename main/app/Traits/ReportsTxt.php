@@ -246,7 +246,7 @@ trait ReportsTxt
 
             ->get();
 
-        $file = "reporteVacantes.txt";
+        $file =  'PL' . 22235 . Carbon::now()->format('Ymd') .  ".txt";
 
         $txt = fopen($file, "w") or die("Unable to open file!");
 
@@ -256,7 +256,7 @@ trait ReportsTxt
 
             fwrite($txt,        $datum->id . '|$$|');
 
-            fwrite($txt,       'PL-' . $this->htmlToPlainText($datum->title) . '|$$|');
+            fwrite($txt,        'PL-' . $this->htmlToPlainText($datum->title) . '|$$|');
 
             fwrite($txt,        $this->htmlToPlainText($datum->description) . '|$$|');
 
@@ -284,13 +284,23 @@ trait ReportsTxt
 
             fwrite($txt,        Carbon::parse($datum->expiry_date)->format('d/m/Y') . '|$$|');
 
-            fwrite($txt,        strlen($datum->code) == 5 ? $datum->code : 0 . $datum->code  . '|$$|');
+            if (strlen($datum->code) == 5) {
+                fwrite($txt, $this->htmlToPlainText($datum->code) . '|$$|');
+            } else {
+                fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . '|$$|');
+            }
 
-            fwrite($txt,        '|$$|' . $this->htmlToPlainText($datum->industry) . '|$$|');
+            fwrite($txt,        $this->htmlToPlainText($datum->industry) . '|$$|');
 
             fwrite($txt,        $this->htmlToPlainText($datum->type_for_report) . '|$$|');
 
-            fwrite($txt, ($datum->is_freelance) ? '1' : '0') . '|$$|';
+            if ($datum->is_freelance) {
+
+                fwrite($txt, $this->htmlToPlainText(1 . '|$$|'));
+            } else {
+
+                fwrite($txt,  $this->htmlToPlainText(0 . '|$$|'));
+            }
 
             fwrite($txt,        '|$$|' . '0' . '|$$|');
 
@@ -346,11 +356,11 @@ trait ReportsTxt
 
             ->get();
 
-        $file = "OferentesMensual.txt";
+        $file = 'DBO' . 22235 . Carbon::now()->format('mY') .  ".txt";
 
         $txt = fopen($file, "w") or die("Unable to open file!");
 
-        fwrite($txt,        01 . '|$|');
+        fwrite($txt,        '01' . '|$|');
 
         fwrite($txt,        22235 . '|$|');
 
@@ -442,7 +452,8 @@ trait ReportsTxt
             ->get();
 
 
-        $file = "test.txt";
+        $file = 'IBHV' . 22235 . Carbon::now()->format('mY') .  ".txt";
+
 
         $txt = fopen($file, "w") or die("Unable to open file!");
 
@@ -450,7 +461,7 @@ trait ReportsTxt
 
             fwrite($txt,        '02' . '|');
 
-            fwrite($txt,        '00000' . '|');
+            fwrite($txt,         22235 . '|');
 
             fwrite($txt,         Carbon::parse($datum->date_of_birth)->format('dmY') . '|');
 

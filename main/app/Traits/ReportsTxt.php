@@ -128,8 +128,6 @@ trait ReportsTxt
             } else {
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code . '|$$|'));
             }
-            
-            fwrite($txt,        $this->htmlToPlainText(strlen($datum->code) == 5 ? $datum->code : 0 . $datum->code));
 
             fwrite($txt,        $this->htmlToPlainText($datum->industry) . '|$$|');
 

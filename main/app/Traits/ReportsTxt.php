@@ -125,7 +125,7 @@ trait ReportsTxt
 
             fwrite($txt,        strlen($datum->code) == 5 ? $datum->code : 0 . $datum->code  . '|$$|');
 
-            fwrite($txt,        '|$$|' . $this->htmlToPlainText($datum->industry) . '|$$|');
+            fwrite($txt,        $this->htmlToPlainText($datum->industry) . '|$$|');
 
             fwrite($txt,        $this->htmlToPlainText($datum->type_for_report) . '|$$|');
 

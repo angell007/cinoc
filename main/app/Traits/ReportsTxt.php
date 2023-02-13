@@ -123,13 +123,25 @@ trait ReportsTxt
 
             fwrite($txt,        Carbon::parse($datum->expiry_date)->format('d/m/Y') . '|$$|');
 
-            fwrite($txt,        strlen($datum->code) == 5 ? $datum->code : 0 . $datum->code  . '|$$|');
+            if (strlen($datum->code) == 5) {
+                fwrite($txt, $this->htmlToPlainText($datum->code . '|$$|'));
+            } else {
+                fwrite($txt,  $this->htmlToPlainText(0 . $datum->code . '|$$|'));
+            }
+            
+            fwrite($txt,        $this->htmlToPlainText(strlen($datum->code) == 5 ? $datum->code : 0 . $datum->code));
 
             fwrite($txt,        $this->htmlToPlainText($datum->industry) . '|$$|');
 
             fwrite($txt,        $this->htmlToPlainText($datum->type_for_report) . '|$$|');
 
-            fwrite($txt, ($datum->is_freelance) ? '1' : '0') . '|$$|';
+            if ($datum->is_freelance) {
+
+                fwrite($txt, $this->htmlToPlainText(1 . '|$$|'));
+            } else {
+
+                fwrite($txt,  $this->htmlToPlainText(0 . '|$$|'));
+            }
 
             fwrite($txt,        '|$$|' . '0' . '|$$|');
 

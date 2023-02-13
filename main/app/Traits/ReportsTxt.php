@@ -124,9 +124,9 @@ trait ReportsTxt
             fwrite($txt,        Carbon::parse($datum->expiry_date)->format('d/m/Y') . '|$$|');
 
             if (strlen($datum->code) == 5) {
-                fwrite($txt, $this->htmlToPlainText($datum->code . '|$$|'));
+                fwrite($txt, $this->htmlToPlainText($datum->code) . '|$$|');
             } else {
-                fwrite($txt,  $this->htmlToPlainText(0 . $datum->code . '|$$|'));
+                fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . '|$$|');
             }
 
             fwrite($txt,        $this->htmlToPlainText($datum->industry) . '|$$|');

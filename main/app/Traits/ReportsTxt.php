@@ -167,7 +167,7 @@ trait ReportsTxt
             }
             fwrite($txt,        Carbon::parse($datum->created_at)->format('d/m/Y') . '|$$|');
             fwrite($txt,        Carbon::parse($datum->expiry_date)->format('d/m/Y') . '|$$|');
-            
+
             if (strlen($datum->code) == 5) {
                 fwrite($txt, $this->htmlToPlainText($datum->code) . '|$$|');
             } else {
@@ -258,6 +258,14 @@ trait ReportsTxt
         })->get();
         $file = 'IBHV' . 22235 . Carbon::now()->format('mY') .  ".txt";
         $txt = fopen($file, "w") or die("Unable to open file!");
+
+        fwrite($txt,        '01' . '|$|');
+        fwrite($txt,        22235 . '|$|');
+        fwrite($txt,        count($data) + 2 . '|$|');
+        fwrite($txt,        Carbon::now()->format('dmY'));
+        fwrite($txt,  PHP_EOL);
+        fwrite($txt,  "\r\n");
+
         foreach ($data as $datum) {
             fwrite($txt,        '02' . '|$|');
             fwrite($txt,         22235 . '|$|');
@@ -304,6 +312,15 @@ trait ReportsTxt
             fwrite($txt,  PHP_EOL);
             fwrite($txt,  "\r\n");
         }
+
+        fwrite($txt,        99 . '|$|');
+        fwrite($txt,        22235 . '|$|');
+        fwrite($txt,        count($data) . '|$|');
+        fwrite($txt,        count($data) . '|$|');
+        fwrite($txt,        Carbon::now()->format('dmY'));
+        fwrite($txt,  PHP_EOL);
+        fwrite($txt,  "\r\n");
+
         fclose($txt);
         header('Content-Description: File Transfer');
         header('Content-Disposition: attachment; filename=' . basename($file));

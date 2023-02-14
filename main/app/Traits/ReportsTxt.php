@@ -290,7 +290,7 @@ trait ReportsTxt
                 fwrite($txt,        $exp->title . '|$|');
                 fwrite($txt,        169 . '|$|');
                 fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 0, 2) . '|$|' : '' . '|$|');
-                fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 0, 2) . '|$|' : '' . '|$|');
+                fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 2, 5) . '|$|' : '' . '|$|');
                 fwrite($txt,        Carbon::parse($exp->date_start)->format('dmY') . '|$|');
                 fwrite($txt,        Carbon::parse($exp->date_end)->format('dmY') . '|$|');
             }

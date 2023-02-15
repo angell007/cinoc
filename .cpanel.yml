@@ -4,5 +4,5 @@ deployment:
       - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
   post_deploy:
       - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
-    # - /bin/cp index.html $DEPLOYPATH
-    # - /bin/cp style.css $DEPLOYPATH
+      - /usr/local/cpanel/3rdparty/bin/git add .
+      - /usr/local/cpanel/3rdparty/bin/git commit -m "Resolved conflicts during deployment"

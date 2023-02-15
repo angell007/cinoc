@@ -88,8 +88,6 @@
 
 <script>
 
-    console.log('hola');
-
     $(document).ready(function ($) {
 
         $("form").submit(function () {

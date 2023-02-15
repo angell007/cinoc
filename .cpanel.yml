@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
-      - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
+    - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
+    - /bin/cp -R main $DEPLOYPATH
   post_deploy:
-      - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
+    - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .

@@ -29,7 +29,7 @@
 
                     <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
 
-                    <li> <span>Reportes!..</span> </li>
+                    <li> <span>Reportes!.</span> </li>
 
                 </ul>
 

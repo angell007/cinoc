@@ -123,7 +123,7 @@
 
                                     <div class="col-md-6 form-group">
 
-                                        <button type="submit" class="btn btn-primary">Descargar..</button>
+                                        <button type="submit" class="btn btn-primary">Descargar...</button>
 
                                     </div>
 

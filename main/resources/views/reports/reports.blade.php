@@ -29,7 +29,7 @@
 
                     <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
 
-                    <li> <span>Reportes!...</span> </li>
+                    <li> <span>Reportes</span> </li>
 
                 </ul>
 
@@ -123,7 +123,7 @@
 
                                     <div class="col-md-6 form-group">
 
-                                        <button type="submit" class="btn btn-primary">Descargar!</button>
+                                        <button type="submit" class="btn btn-primary">Descargar!!</button>
 
                                     </div>
 

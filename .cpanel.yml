@@ -3,6 +3,4 @@ deployment:
   tasks:
       - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
   post_deploy:
-      - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
-      - /usr/local/cpanel/3rdparty/bin/git add .
-      - /usr/local/cpanel/3rdparty/bin/git commit -m "Resolved conflicts during deployment"
+      - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .\

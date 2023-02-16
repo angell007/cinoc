@@ -3,7 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
     - /bin/cp -R main $DEPLOYPATH
-    # - command: "echo 'Deploying changes...'"
 metadata:
     name: "Ies cinoc"
     version: "1.0"
@@ -17,6 +16,6 @@ pre_deploy:
     - sudo apt-get install -y npm
 hooks:
   pre:
-    # - command: "echo 'Backing up files...'"
+    - command: "echo 'Backing up files...'"
   post:
-    # - command: "echo 'Deployment complete.'"
+    - command: "echo 'Deployment complete.'"

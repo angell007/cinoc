@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
     - /bin/cp -R main $DEPLOYPATH
-    - newman run tests/Cinoc.postman_collection.json > report.txt
+    - npm run test-api
 metadata:
     name: "Ies cinoc"
     version: "1.0"

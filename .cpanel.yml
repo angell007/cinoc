@@ -3,8 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
     - /bin/cp -R main $DEPLOYPATH
-    - npm run test-api
-    - install -y nodejs
 metadata:
     name: "Ies cinoc"
     version: "1.0"
@@ -18,4 +16,6 @@ hooks:
   pre:
     - command: "echo 'Backing up files...'"
   post:
+    - command: npm run test-api
+    - command: newman run tests/Cinoc.postman_collection.json > report.txt
     - command: "echo 'Deployment complete.'"

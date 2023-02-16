@@ -3,21 +3,21 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
     - /bin/cp -R main $DEPLOYPATH
+    - sudo yum install -y nodejs
+    - sudo yum install -y npm
+    - sudo apt-get update
+    - sudo apt-get install -y nodejs
+    - sudo apt-get install -y npm
+    - newman run tests/Cinoc.postman_collection.json > report.txt
+    - command: newman run tests/Cinoc.postman_collection.json > report.txt
+    - command: npm run test-api
 metadata:
     name: "Ies cinoc"
     version: "1.0"
     author: "Danilo Grisalez"
 post_deploy:
     - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
-    - newman run tests/Cinoc.postman_collection.json > report.txt
-    - command: newman run tests/Cinoc.postman_collection.json > report.txt
-    - command: npm run test-api
 pre_deploy:
-    - sudo yum install -y nodejs
-    - sudo yum install -y npm
-    - sudo apt-get update
-    - sudo apt-get install -y nodejs
-    - sudo apt-get install -y npm
 hooks:
   pre:
     - command: "echo 'Backing up files...'"

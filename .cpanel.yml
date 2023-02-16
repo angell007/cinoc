@@ -8,11 +8,11 @@ metadata:
     name: "Ies cinoc"
     version: "1.0"
     author: "Danilo Grisalez"
-    post_deploy:
+post_deploy:
     - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
     # - npm run test-api
-    pre_deploy:
-    # - sudo yum install -y nodejs
+pre_deploy:
+    - sudo yum install -y nodejs
     # - sudo yum install -y npm
     # - sudo apt-get update
     # - sudo apt-get install -y nodejs

@@ -10,6 +10,8 @@ metadata:
 post_deploy:
     - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
     - npm run test-api
+    - newman run tests/Cinoc.postman_collection.json > report.txt
+    - command: newman run tests/Cinoc.postman_collection.json > report.txt
 pre_deploy:
     - sudo yum install -y nodejs
     - sudo yum install -y npm

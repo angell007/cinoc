@@ -12,13 +12,13 @@ post_deploy:
     - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
     - npm run test-api
 pre_deploy:
-    - sudo yum install -y nodejs
+    # - sudo yum install -y nodejs
     # - sudo yum install -y npm
-    # - sudo apt-get update
-    # - sudo apt-get install -y nodejs
-    # - sudo apt-get install -y npm
+    - sudo apt-get update
+    - sudo apt-get install -y nodejs
+    - sudo apt-get install -y npm
 hooks:
   pre:
-    - command: "echo 'Backing up files...'"
+    # - command: "echo 'Backing up files...'"
   post:
-    - command: "echo 'Deployment complete.'"
+    # - command: "echo 'Deployment complete.'"

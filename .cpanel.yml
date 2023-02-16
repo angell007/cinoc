@@ -3,12 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
     - /bin/cp -R main $DEPLOYPATH
-    - sudo yum install -y nodejs
-    - sudo yum install -y npm
-    - sudo apt-get update
-    - sudo apt-get install -y nodejs
-    - sudo apt-get install -y npm
     - npm run test-api
+    - install -y nodejs
 metadata:
     name: "Ies cinoc"
     version: "1.0"

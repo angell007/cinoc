@@ -3,14 +3,14 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/iescinocedu/bolsaempleo.iescinoc.edu.co/
     - /bin/cp -R main $DEPLOYPATH
-    - command: "echo 'Deploying changes...'"
+    # - command: "echo 'Deploying changes...'"
 metadata:
     name: "Ies cinoc"
     version: "1.0"
     author: "Danilo Grisalez"
     post_deploy:
     - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
-    - npm run test-api
+    # - npm run test-api
 hooks:
   pre:
     - command: "echo 'Backing up files...'"

@@ -321,10 +321,15 @@ trait ReportsTxt
             fwrite($txt,  "\r\n");
         }
 
+        $countSex = 0;
+        foreach ($data as $datum) {
+            $countSex +=  ($datum->gender_id == 1) ? 1 : 2;
+        }
+
         fwrite($txt,        99 . '|$|');
         fwrite($txt,        22235 . '|$|');
         fwrite($txt,        count($data) . '|$|');
-        fwrite($txt,        count($data) . '|$|');
+        fwrite($txt,        $countSex . '|$|');
         fwrite($txt,        Carbon::now()->format('dmY'));
         fwrite($txt,  PHP_EOL);
         fwrite($txt,  "\r\n");

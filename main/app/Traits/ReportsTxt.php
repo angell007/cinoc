@@ -266,9 +266,8 @@ trait ReportsTxt
         fwrite($txt,  "\r\n");
 
         foreach ($data as $datum) {
-
-            $divipola_code = str_pad($datum->city->code, 5, '0', STR_PAD_LEFT);
-
+            $divipola_code = null;
+            if (isset($datum->city))  $divipola_code = str_pad($datum->city->code, 5, '0', STR_PAD_LEFT);
             fwrite($txt,        '02' . '|$|');
             fwrite($txt,         22235 . '|$|');
             fwrite($txt,         Carbon::parse($datum->date_of_birth)->format('dmY') . '|$|');
@@ -279,21 +278,20 @@ trait ReportsTxt
             fwrite($txt,         'CO' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 0, 2) . '|$|' : '' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 2, 5) . '|$|' : '' . '|$|');
-            fwrite($txt,        'FA' . '|$|');
+
             foreach ($datum->profileEducation as $edu) {
-
+                fwrite($txt,        'FA' . '|$|');
                 $estadoFormacion = 2;
-
                 if ($edu->date_completion && $edu->date_completion <= Carbon::now()->format('Y')) $estadoFormacion = 3;
-
                 fwrite($txt,        $edu->degree_title . '|$|');
                 fwrite($txt,        $edu->degreeLevel->qualification . '|$|');
                 fwrite($txt,       $this->getFieldDate($edu->date_completion) . '|$|');
                 fwrite($txt,        $estadoFormacion . '|$|');
                 fwrite($txt,      'CO' . '|$|');
             }
-            fwrite($txt,        'EL' . '|$|');
+
             foreach ($datum->profileExperience as $exp) {
+                fwrite($txt,        'EL' . '|$|');
                 fwrite($txt,        $exp->title . '|$|');
                 fwrite($txt,        explode(" ", $exp->title)[0] . '|$|');
                 fwrite($txt,        'CO' . '|$|');

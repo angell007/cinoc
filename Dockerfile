@@ -1,34 +1,42 @@
-FROM php:7.4-apache
+FROM php:7.4-fpm
 
-RUN a2enmod rewrite
+# Installing dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    default-mysql-client \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    libmagickwand-dev \
+    libzip-dev \
+    libonig-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    && pecl install imagick
 
-RUN apt-get update && apt-get install -y \
-        zlib1g-dev \
-        libicu-dev \
-        libxml2-dev \
-        libpq-dev \
-        libzip-dev \
-        && docker-php-ext-install pdo pdo_mysql zip intl xmlrpc soap opcache \
-        && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Installing extensions
+RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath opcache
+RUN docker-php-ext-enable imagick
 
-RUN apt-get update -y 
+# Installing composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Add Node 8 LTS
-# RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -- \
-# 	&& apt-get install -y nodejs \
-# 	&& apt-get autoremove -y
+# Changing Workdir
+WORKDIR /application
 
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
-COPY  docker/000-default.conf /etc/apache2/sites-available/000-default.conf
-COPY  docker/.env-pro /var/www/html/.env
-COPY  docker/php.ini /usr/local/etc/php/php.ini
+# Copy existing application directory contents
+COPY . /application
 
-ENV COMPOSER_ALLOW_SUPERUSER 1
+# Copy existing application directory permissions
+COPY --chown=www:www . /application
 
-COPY  . /var/www/html/
-WORKDIR /var/www/html/
-
-RUN chown -R www-data:www-data /var/www/html  \
-    && composer install  && composer dumpautoload 
+# Change current user to www
+USER www

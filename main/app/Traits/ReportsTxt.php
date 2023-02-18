@@ -258,12 +258,12 @@ trait ReportsTxt
         $file = 'IBHV' . 22235 . Carbon::now()->format('mY') .  ".txt";
         $txt = fopen($file, "w") or die("Unable to open file!");
 
-        // fwrite($txt,        '01' . '|$|');
-        // fwrite($txt,        22235 . '|$|');
-        // fwrite($txt,        count($data) + 2 . '|$|');
-        // fwrite($txt,        Carbon::now()->format('dmY'));
-        // fwrite($txt,  PHP_EOL);
-        // fwrite($txt,  "\r\n");
+        fwrite($txt,        '01' . '|$|');
+        fwrite($txt,        22235 . '|$|');
+        fwrite($txt,        count($data) + 2 . '|$|');
+        fwrite($txt,        Carbon::now()->format('dmY'));
+        fwrite($txt,  PHP_EOL);
+        fwrite($txt,  "\r\n");
 
         // foreach ($data as $datum) {
 

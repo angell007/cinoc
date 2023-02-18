@@ -46,6 +46,7 @@ trait ReportsTxt
                 'jobs.id',
             ])
             ->where('job_experiences.is_default', 1)
+            ->where('jobs.is_pl', 0)
             ->where('job_types.is_default', 1)->when(request()->get('inicio') && request()->get('fin'), function ($q) {
                 $q->whereBetween('jobs.created_at', [request()->get('inicio'), request()->get('fin')]);
             })->get();
@@ -249,9 +250,10 @@ trait ReportsTxt
                 ->where('lang', 'es');
         },            'state' => function ($q) {
             $q->select('state_id', 'state', 'lang');
-        },            'profileEducation',            'profileExperience'])->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-            $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
-        })->get();
+        },            'profileEducation',            'profileExperience'])
+            ->when(request()->get('inicio') && request()->get('fin'), function ($q) {
+                $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
+            })->get();
         $file = 'IBHV' . 22235 . Carbon::now()->format('mY') .  ".txt";
         $txt = fopen($file, "w") or die("Unable to open file!");
 
@@ -263,27 +265,36 @@ trait ReportsTxt
         fwrite($txt,  "\r\n");
 
         foreach ($data as $datum) {
+
+            $divipola_code = str_pad($datum->city->code, 5, '0', STR_PAD_LEFT);
+
             fwrite($txt,        '02' . '|$|');
             fwrite($txt,         22235 . '|$|');
             fwrite($txt,         Carbon::parse($datum->date_of_birth)->format('dmY') . '|$|');
             fwrite($txt,         'CO' . '|$|');
-            fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 0, 2) . '|$|' : '' . '|$|');
-            fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 2, 5) . '|$|' : '' . '|$|');
+            fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 0, 2) . '|$|' : '' . '|$|');
+            fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 2, 5) . '|$|' : '' . '|$|');
             fwrite($txt, ($datum->gender_id == 1) ? 1 . '|$|' : 2  . '|$|');
             fwrite($txt,         'CO' . '|$|');
-            fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 0, 2) . '|$|' : '' . '|$|');
-            fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 2, 5) . '|$|' : '' . '|$|');
+            fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 0, 2) . '|$|' : '' . '|$|');
+            fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 2, 5) . '|$|' : '' . '|$|');
             fwrite($txt,        'FA' . '|$|');
             foreach ($datum->profileEducation as $edu) {
+
+                $estadoFormacion = 'Incompleto';
+
+                if ($edu->date_completion && $edu->date_completion <= Carbon::now()->format('Y')) $estadoFormacion = 'Graduado';
+
                 fwrite($txt,        $edu->degree_title . '|$|');
                 fwrite($txt,        $edu->degreeLevel->degree_level . '|$|');
-                fwrite($txt,        Carbon::parse($edu->degreeLevel->date_completion)->format('dmY') . '|$|');
-                fwrite($txt,        $edu->degreeLevel->degree_result . '|$|');
+                fwrite($txt,       $this->getFieldDate($edu->date_completion) . '|$|');
+                fwrite($txt,        $estadoFormacion . '|$|');
                 fwrite($txt,      'CO' . '|$|');
             }
             fwrite($txt,        'EL' . '|$|');
             foreach ($datum->profileExperience as $exp) {
                 fwrite($txt,        $exp->title . '|$|');
+                fwrite($txt,        explode(" ", $exp->title)[0] . '|$|');
                 fwrite($txt,        'CO' . '|$|');
                 fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 0, 2) . '|$|' : '' . '|$|');
                 fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 2, 5) . '|$|' : '' . '|$|');
@@ -291,7 +302,7 @@ trait ReportsTxt
                 fwrite($txt,        Carbon::parse($exp->date_end)->format('dmY') . '|$|');
             }
             $s = 11;
-            $b = 1000000;
+            $b = 1160000;
             $mi = $this->htmlToPlainText($datum->expected_salary);
             if ($mi < $b)  $s = 1;
             if ($mi == $b)  $s = 2;
@@ -303,6 +314,7 @@ trait ReportsTxt
             if ($mi >= 12 * $b && $mi < 15 * $b)  $s = 8;
             if ($mi >= 15 * $b && $mi < 19 * $b)  $s = 9;
             if ($mi >= 20 * $b) $s = 10;
+
             fwrite($txt,        'MO' . '|$|');
             fwrite($txt,         $s);
             fwrite($txt,  PHP_EOL);
@@ -326,5 +338,14 @@ trait ReportsTxt
         header('Content-Length: ' . filesize($file));
         header("Content-Type: text/plain");
         return readfile($file);
+    }
+
+
+    public function  getFieldDate($field)
+    {
+        if (isset($field))
+            return Carbon::parse($field . '/12/01')->format('dmY');
+        else
+            return '';
     }
 }

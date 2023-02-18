@@ -1,0 +1,10 @@
+01|$|22235|$|5|$|18022023
+
+02|$|22235|$|11091992|$|CO|$|17|$|001|$|2|$|CO|$|17|$|001|$|FA|$|EL|$|MO|$|1
+
+02|$|22235|$|04021989|$|CO|$|17|$|541|$|1|$|CO|$|17|$|541|$|FA|$|Tecnólogo en Gestión Contable y Tributaria|$|Tecnólogo|$|01122016|$|Graduado|$|CO|$|Tecnologo en manejo de sistemas de agrobosques|$|Tecnólogo|$|01122016|$|Graduado|$|CO|$|Tecnico en asesoria comercial y operaciones de entidades financieras|$|Técnico Laboral|$|01122021|$|Graduado|$|CO|$|Tecnico profesiol en procesos empresariales|$|Técnico profesional|$|01122019|$|Graduado|$|CO|$|EL|$|Asesor Comercial|$|Asesor|$|CO|$|17|$|541|$|10022023|$|10022023|$|MO|$|1
+
+02|$|22235|$|13022023|$|CO|$|17|$|541|$|2|$|CO|$|17|$|541|$|FA|$|Tecnico en produccion agropecuaria|$|Técnico profesional|$|01122023|$|Graduado|$|CO|$|EL|$|pasantia|$|pasantia|$|CO|$|17|$|541|$|14042021|$|15112022|$|MO|$|1
+
+99|$|22235|$|3|$|3|$|18022023
+

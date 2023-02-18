@@ -270,7 +270,7 @@ trait ReportsTxt
             fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 0, 2) . '|$|' : '' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 2, 5) . '|$|' : '' . '|$|');
             fwrite($txt, ($datum->gender_id == 1) ? 1 . '|$|' : 2  . '|$|');
-            fwrite($txt,         169 . '|$|');
+            fwrite($txt,         'CO' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 0, 2) . '|$|' : '' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 2, 5) . '|$|' : '' . '|$|');
             fwrite($txt,        'FA' . '|$|');
@@ -279,12 +279,12 @@ trait ReportsTxt
                 fwrite($txt,        $edu->degreeLevel->degree_level . '|$|');
                 fwrite($txt,        Carbon::parse($edu->degreeLevel->date_completion)->format('dmY') . '|$|');
                 fwrite($txt,        $edu->degreeLevel->degree_result . '|$|');
-                fwrite($txt,        169 . '|$|');
+                fwrite($txt,      'CO' . '|$|');
             }
             fwrite($txt,        'EL' . '|$|');
             foreach ($datum->profileExperience as $exp) {
                 fwrite($txt,        $exp->title . '|$|');
-                fwrite($txt,        169 . '|$|');
+                fwrite($txt,        'CO' . '|$|');
                 fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 0, 2) . '|$|' : '' . '|$|');
                 fwrite($txt, (isset($exp->load('city')->city->code)) ? substr($exp->load('city')->city->code, 2, 5) . '|$|' : '' . '|$|');
                 fwrite($txt,        Carbon::parse($exp->date_start)->format('dmY') . '|$|');

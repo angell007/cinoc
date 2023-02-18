@@ -151,7 +151,7 @@ trait ReportsTxt
             fwrite($txt,        $datum->id . '|$$|');
             fwrite($txt,        'PL-' . $this->htmlToPlainText($datum->title) . '|$$|');
             fwrite($txt,        $this->htmlToPlainText($datum->description) . '|$$|');
-            fwrite($txt,        $this->replaceyears($datum->job_experience) . '|$$|');
+            fwrite($txt,        0 . '|$$|');
             fwrite($txt,        $this->htmlToPlainText($datum->qualification) . '|$$|');
             fwrite($txt,        $this->htmlToPlainText($datum->functional_area) . '|$$|');
             fwrite($txt,        $this->getSalary($datum->salary_from, $datum->salary_to) . '|$$|');
@@ -175,11 +175,7 @@ trait ReportsTxt
             }
             fwrite($txt,        $this->htmlToPlainText($datum->industry) . '|$$|');
             fwrite($txt,        $this->htmlToPlainText($datum->type_for_report) . '|$$|');
-            if ($datum->is_freelance) {
-                fwrite($txt, $this->htmlToPlainText(1 . '|$$|'));
-            } else {
-                fwrite($txt,  $this->htmlToPlainText(0 . '|$$|'));
-            }
+            fwrite($txt,        $this->htmlToPlainText(0 . '|$$|'));
             fwrite($txt,        '|$$|' . $datum->pcd . '|$$|');
             fwrite($txt,       'https://bolsaempleo.iescinoc.edu.co/job/' . $datum->slug);
             fwrite($txt,  PHP_EOL);
@@ -270,7 +266,7 @@ trait ReportsTxt
             fwrite($txt,        '02' . '|$|');
             fwrite($txt,         22235 . '|$|');
             fwrite($txt,         Carbon::parse($datum->date_of_birth)->format('dmY') . '|$|');
-            fwrite($txt,         169 . '|$|');
+            fwrite($txt,         'CO' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 0, 2) . '|$|' : '' . '|$|');
             fwrite($txt, (isset($datum->city)) ? substr($datum->city->code, 2, 5) . '|$|' : '' . '|$|');
             fwrite($txt, ($datum->gender_id == 1) ? 1 . '|$|' : 2  . '|$|');

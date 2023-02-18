@@ -62,7 +62,7 @@
 
 
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'benefits') !!}">
 
@@ -76,7 +76,7 @@
 
             {!! APFrmErrHelp::showErrors($errors, 'benefits') !!}</div>
 
-    </div>
+    </div> --}}
 
 
 

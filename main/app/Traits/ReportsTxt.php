@@ -282,12 +282,12 @@ trait ReportsTxt
             fwrite($txt,        'FA' . '|$|');
             foreach ($datum->profileEducation as $edu) {
 
-                $estadoFormacion = 'Incompleto';
+                $estadoFormacion = 2;
 
-                if ($edu->date_completion && $edu->date_completion <= Carbon::now()->format('Y')) $estadoFormacion = 'Graduado';
+                if ($edu->date_completion && $edu->date_completion <= Carbon::now()->format('Y')) $estadoFormacion = 3;
 
                 fwrite($txt,        $edu->degree_title . '|$|');
-                fwrite($txt,        $edu->degreeLevel->degree_level . '|$|');
+                fwrite($txt,        $edu->degreeLevel->qualification . '|$|');
                 fwrite($txt,       $this->getFieldDate($edu->date_completion) . '|$|');
                 fwrite($txt,        $estadoFormacion . '|$|');
                 fwrite($txt,      'CO' . '|$|');

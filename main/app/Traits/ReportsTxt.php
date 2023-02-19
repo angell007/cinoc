@@ -127,14 +127,15 @@ trait ReportsTxt
             fwrite($txt,  "\r\n");
         }
         fclose($txt);
-        header('Content-Description: File Transfer');
-        header('Content-Disposition: attachment; filename=' . basename($file));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        header("Content-Type: text/plain");
-        return readfile($file);
+        return response()->download($file, basename($file), [
+            'Content-Description' => 'File Transfer',
+            'Content-Disposition' => 'attachment',
+            'Expires' => '0',
+            'Cache-Control' => 'must-revalidate',
+            'Pragma' => 'public',
+            'Content-Length' => filesize($file),
+            'Content-Type' => 'text/plain',
+        ]);
     }
     public function PracticasLaboralesTxt()
     {
@@ -240,14 +241,15 @@ trait ReportsTxt
 
         fclose($txt);
 
-        header('Content-Description: File Transfer');
-        header('Content-Disposition: attachment; filename=' . basename($file));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        header("Content-Type: text/plain");
-        return readfile($file);
+        return response()->download($file, basename($file), [
+            'Content-Description' => 'File Transfer',
+            'Content-Disposition' => 'attachment',
+            'Expires' => '0',
+            'Cache-Control' => 'must-revalidate',
+            'Pragma' => 'public',
+            'Content-Length' => filesize($file),
+            'Content-Type' => 'text/plain',
+        ]);
     }
     public function OferentesMensualTxt()
     {
@@ -307,15 +309,15 @@ trait ReportsTxt
         fwrite($txt,  "\r\n");
         fclose($txt);
 
-        header('Content-Description: File Transfer');
-        header('Content-Disposition: attachment; filename=' . basename($file));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        header("Content-Type: text/plain");
-
-        return readfile($file);
+        return response()->download($file, basename($file), [
+            'Content-Description' => 'File Transfer',
+            'Content-Disposition' => 'attachment',
+            'Expires' => '0',
+            'Cache-Control' => 'must-revalidate',
+            'Pragma' => 'public',
+            'Content-Length' => filesize($file),
+            'Content-Type' => 'text/plain',
+        ]);
     }
     public function OferentesSemestralTxt()
     {
@@ -376,8 +378,8 @@ trait ReportsTxt
             $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
         })->get();
 
-        ob_end_clean(); 
-        ob_start(); 
+        ob_end_clean();
+        ob_start();
 
         $file = 'IBHV' . $this->codeIes . Carbon::now()->format('mY') .  ".txt";
 
@@ -494,7 +496,6 @@ trait ReportsTxt
             'Content-Length' => filesize($file),
             'Content-Type' => 'text/plain',
         ]);
-        
     }
     public function  getFieldDate($field)
     {

@@ -7,6 +7,7 @@ use App\Country;
 use App\State;
 use App\City;
 use App\Http\Requests;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 trait CountryStateCity
@@ -80,6 +81,10 @@ trait CountryStateCity
     {
         return $this->belongsTo('App\Country', 'country_id', 'country_id');
     }
+    public function countryborn()
+    {
+        return $this->belongsTo('App\Country', 'borncountry_id', 'country_id');
+    }
     public function getCountry($field = '')
     {
         $country = $this->country()->lang()->first();
@@ -98,6 +103,10 @@ trait CountryStateCity
     {
         return $this->belongsTo('App\State', 'state_id', 'state_id');
     }
+    public function stateborn()
+    {
+        return $this->belongsTo('App\State', 'bornstate_id', 'state_id');
+    }
     public function getState($field = '')
     {
         $state = $this->state()->lang()->first();
@@ -115,6 +124,10 @@ trait CountryStateCity
     public function city()
     {
         return $this->belongsTo('App\City', 'city_id', 'city_id');
+    }
+    public function cityborn()
+    {
+        return $this->belongsTo('App\City', 'borncity_id', 'city_id');
     }
     public function getCity($field = '')
     {
@@ -136,9 +149,9 @@ trait CountryStateCity
         $state = $this->getState('state');
         $city = $this->getCity('city');
         $str = '';
-        if (!empty($city))            $str .= $city;
-        if (!empty($state))            $str .= ', ' . $state;
-        if (!empty($country))            $str .= ', ' . $country;
+        if (!empty($city)) $str .= $city;
+        if (!empty($state)) $str .= ', ' . $state;
+        if (!empty($country)) $str .= ', ' . $country;
         return $str;
     }
 }

@@ -189,6 +189,9 @@ class ReportController extends Controller
 
         $data = [];
 
+        ob_end_clean(); 
+        ob_start(); 
+
         switch (request()->get('tipo_reporte')) {
 
             case 1:
@@ -396,8 +399,6 @@ class ReportController extends Controller
 
                     'career_levels.career_level',
 
-                    // 'job_skills.job_skill',
-
                     DB::raw("GROUP_CONCAT('--', `job_skills`.`job_skill`) As 'skill'"),
 
                     'functional_areas.functional_area',
@@ -502,8 +503,6 @@ class ReportController extends Controller
 
         return Job::join('companies', 'companies.id', 'jobs.company_id')
 
-            // $data = Job::join('companies', 'companies.id', 'jobs.company_id')
-
             ->join('job_experiences', 'job_experiences.job_experience_id', 'jobs.job_experience_id')
 
             ->join('functional_areas', 'functional_areas.functional_area_id', 'jobs.functional_area_id')
@@ -573,9 +572,6 @@ class ReportController extends Controller
 
             ->get();
 
-
-
-        // dd($data);
 
     }
 }

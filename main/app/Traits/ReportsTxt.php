@@ -376,6 +376,9 @@ trait ReportsTxt
             $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
         })->get();
 
+        ob_end_clean(); 
+        ob_start(); 
+
         $file = 'IBHV' . $this->codeIes . Carbon::now()->format('mY') .  ".txt";
 
         $txt = fopen($file, "w") or die("Unable to open file!");
@@ -480,14 +483,18 @@ trait ReportsTxt
         fwrite($txt,  PHP_EOL);
         fwrite($txt,  "\r\n");
         fclose($txt);
-        header('Content-Description: File Transfer');
-        header('Content-Disposition: attachment; filename=' . basename($file));
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        header("Content-Type: text/plain");
-        return readfile($file);
+
+
+        return response()->download($file, basename($file), [
+            'Content-Description' => 'File Transfer',
+            'Content-Disposition' => 'attachment',
+            'Expires' => '0',
+            'Cache-Control' => 'must-revalidate',
+            'Pragma' => 'public',
+            'Content-Length' => filesize($file),
+            'Content-Type' => 'text/plain',
+        ]);
+        
     }
     public function  getFieldDate($field)
     {

@@ -499,7 +499,7 @@ trait ReportsTxt
     }
     public function  getFieldDate($field)
     {
-        if (isset($field)) return Carbon::parse($field . '/12/01')->format('dmY');
+        if (isset($field)) return Carbon::parse($field)->format('dmY');
         else return '';
     }
 }

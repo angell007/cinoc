@@ -415,7 +415,8 @@ trait ReportsTxt
 
             $item  = $datum->profileEducation->whereIn('degree_level_id', [111, 109, 110])->sortByDesc('qualification')->first();
             if ($item) $studies[0] = $item;
-            if (isset($studies)) {
+
+            if (isset($studies) && count($studies) > 0) {
                 $item  = $datum->profileEducation->where('degree_level_id', 107)->first();
                 if ($item) $studies[1] = $item;
             } else {
@@ -423,37 +424,42 @@ trait ReportsTxt
                 if ($item) $studies[0] = $item;
             }
 
-            foreach ($studies as $edu) {
+            if (count($studies) > 0) {
+                foreach ($studies as $edu) {
+                    fwrite($txt, 'FA' . $this->separatorSingle);
+                    $estadoFormacion = 2;
+                    if (($edu->date_completion && $edu->date_completion < Carbon::now()->format('Y')) && $edu->degree_result == "NA") $estadoFormacion = 3;
+                    if (($edu->date_completion && $edu->date_completion >= Carbon::now()->format('Y')) && $edu->degree_result != "NA") $estadoFormacion = 1;
 
+                    fwrite($txt, $edu->degree_title . $this->separatorSingle);
+                    fwrite($txt, $edu->degreeLevel->qualification . $this->separatorSingle);
+                    fwrite($txt, $this->getFieldDate($edu->date_completion) . $this->separatorSingle);
+                    fwrite($txt, $estadoFormacion . $this->separatorSingle);
+                    fwrite($txt, 'CO' . $this->separatorSingle);
+                }
+            } else {
                 fwrite($txt, 'FA' . $this->separatorSingle);
-                $estadoFormacion = 2;
-                if (($edu->date_completion && $edu->date_completion < Carbon::now()->format('Y')) && $edu->degree_result == "NA") $estadoFormacion = 3;
-                if (($edu->date_completion && $edu->date_completion >= Carbon::now()->format('Y')) && $edu->degree_result != "NA") $estadoFormacion = 1;
-
-                fwrite($txt, $edu->degree_title . $this->separatorSingle);
-                fwrite($txt, $edu->degreeLevel->qualification . $this->separatorSingle);
-                fwrite($txt, $this->getFieldDate($edu->date_completion) . $this->separatorSingle);
-                fwrite($txt, $estadoFormacion . $this->separatorSingle);
-                fwrite($txt, 'CO' . $this->separatorSingle);
             }
 
-            foreach ($datum->profileExperience as $exp) {
+            if (isset($datum->profileExperience) && count($datum->profileExperience) > 0) {
+                foreach ($datum->profileExperience as $exp) {
 
-                fwrite($txt, 'EL' . $this->separatorSingle);
-                fwrite($txt,  $exp->position . $this->separatorSingle);
+                    fwrite($txt, 'EL' . $this->separatorSingle);
+                    fwrite($txt,  $exp->position . $this->separatorSingle);
 
-                $profession = '';
-                if ($exp->profession) $profession = DB::table('professions')->where('name', $exp->profession)->first();
+                    $profession = '';
+                    if ($exp->profession) $profession = DB::table('professions')->where('name', $exp->profession)->first();
 
-                fwrite($txt, ($profession) ? $profession->id . $this->separatorSingle : '' . $this->separatorSingle);
-                fwrite($txt, 'CO' . $this->separatorSingle);
+                    fwrite($txt, ($profession) ? $profession->id . $this->separatorSingle : '' . $this->separatorSingle);
+                    fwrite($txt, 'CO' . $this->separatorSingle);
 
-                if (isset($exp->load('city')->city->code))  $expCity = str_pad($exp->load('city')->city->code, 5, '0', STR_PAD_LEFT);
+                    if (isset($exp->load('city')->city->code))  $expCity = str_pad($exp->load('city')->city->code, 5, '0', STR_PAD_LEFT);
 
-                fwrite($txt, (isset($expCity)) ? substr($expCity, 0, 2) . $this->separatorSingle : '' . $this->separatorSingle);
-                fwrite($txt, (isset($expCity)) ? substr($expCity, 2, 5) . $this->separatorSingle : '' . $this->separatorSingle);
-                fwrite($txt, Carbon::parse($exp->date_start)->format('dmY') . $this->separatorSingle);
-                fwrite($txt, Carbon::parse($exp->date_end)->format('dmY') . $this->separatorSingle);
+                    fwrite($txt, (isset($expCity)) ? substr($expCity, 0, 2) . $this->separatorSingle : '' . $this->separatorSingle);
+                    fwrite($txt, (isset($expCity)) ? substr($expCity, 2, 5) . $this->separatorSingle : '' . $this->separatorSingle);
+                    fwrite($txt, Carbon::parse($exp->date_start)->format('dmY') . $this->separatorSingle);
+                    fwrite($txt, Carbon::parse($exp->date_end)->format('dmY') . $this->separatorSingle);
+                }
             }
             $s = 11;
             $b = $this->baseSalary;
@@ -468,6 +474,7 @@ trait ReportsTxt
             if ($mi >= 12 * $b && $mi < 15 * $b)  $s = 8;
             if ($mi >= 15 * $b && $mi < 19 * $b)  $s = 9;
             if ($mi >= 20 * $b) $s = 10;
+            
             fwrite($txt, 'MO' . $this->separatorSingle);
             fwrite($txt, $s);
             fwrite($txt,  PHP_EOL);

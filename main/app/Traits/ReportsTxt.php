@@ -460,7 +460,10 @@ trait ReportsTxt
                     fwrite($txt, Carbon::parse($exp->date_start)->format('dmY') . $this->separatorSingle);
                     fwrite($txt, Carbon::parse($exp->date_end)->format('dmY') . $this->separatorSingle);
                 }
+            } else {
+                fwrite($txt, 'EL' . $this->separatorSingle);
             }
+
             $s = 11;
             $b = $this->baseSalary;
             $mi = $this->htmlToPlainText($datum->expected_salary);
@@ -474,7 +477,7 @@ trait ReportsTxt
             if ($mi >= 12 * $b && $mi < 15 * $b)  $s = 8;
             if ($mi >= 15 * $b && $mi < 19 * $b)  $s = 9;
             if ($mi >= 20 * $b) $s = 10;
-            
+
             fwrite($txt, 'MO' . $this->separatorSingle);
             fwrite($txt, $s);
             fwrite($txt,  PHP_EOL);

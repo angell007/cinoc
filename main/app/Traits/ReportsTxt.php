@@ -466,7 +466,8 @@ trait ReportsTxt
 
             $s = 11;
             $b = $this->baseSalary;
-            $mi = $this->htmlToPlainText($datum->expected_salary);
+            $mi = $this->htmlToPlainText($this->getOnlyNumbers($datum->expected_salary));
+
             if ($mi < $b)  $s = 1;
             if ($mi == $b)  $s = 2;
             if ($mi >= $b && $mi < 2 * $b)  $s = 3;

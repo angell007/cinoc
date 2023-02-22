@@ -163,6 +163,10 @@ class ReportController extends Controller
             return preg_replace($pattern, "", $salary_from) . '-' . preg_replace($pattern, "", $salary_to);
         }
     }
+    public function getOnlyNumbers($salary)
+    {
+        return  (float)str_replace(array('$', ','), '', $salary);
+    }
     public function replaceyears($years)
     {
 
@@ -189,8 +193,8 @@ class ReportController extends Controller
 
         $data = [];
 
-        ob_end_clean(); 
-        ob_start(); 
+        ob_end_clean();
+        ob_start();
 
         switch (request()->get('tipo_reporte')) {
 
@@ -571,7 +575,5 @@ class ReportController extends Controller
             })
 
             ->get();
-
-
     }
 }

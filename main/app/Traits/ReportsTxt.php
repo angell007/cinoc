@@ -224,10 +224,12 @@ trait ReportsTxt
             fwrite($txt, 1 . $this->separatorDouble);
             fwrite($txt, $datum->identificacion . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->name) . $this->separatorDouble);
-            fwrite($txt, $this->yes . $this->separatorDouble);
+
+            fwrite($txt, $this->not . $this->separatorDouble);
 
             fwrite($txt, Carbon::parse($datum->created_at)->format('d/m/Y') . $this->separatorDouble);
             fwrite($txt, Carbon::parse($datum->expiry_date)->format('d/m/Y') . $this->separatorDouble);
+            
             if (strlen($datum->code) == 5) {
                 fwrite($txt, $this->htmlToPlainText($datum->code) . $this->separatorDouble);
             } else {

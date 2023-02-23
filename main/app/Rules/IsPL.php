@@ -82,6 +82,6 @@ class IsPL implements Rule
 
     {
 
-        return "Para practicas laborales el nivel de estudio debe ser minimo Técnico";
+        return "Para prácticas laborales el nivel de estudio debe ser  mínimo Técnico profesional";
     }
 }

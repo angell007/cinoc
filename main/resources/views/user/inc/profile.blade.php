@@ -395,7 +395,7 @@
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
 
-            <label for="">País de recidencia</label>
+            <label for="">País de residencia</label>
 
             <?php $country_id = old('country_id', isset($user) && (int) $user->country_id > 0 ? $user->country_id : $siteSetting->default_country_id); ?>
 
@@ -417,7 +417,7 @@
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'state_id') !!}">
 
-            <label for="">Departamento de recidencia</label>
+            <label for="">Departamento de residencia</label>
 
             <span id="state_dd"> {!! Form::select('state_id', ['' => __('Select State')], null, ['class' => 'form-control', 'id' => 'state_id']) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'state_id') !!}
 
@@ -429,7 +429,7 @@
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'city_id') !!}">
 
-            <label for="">Ciudad de recidencia</label>
+            <label for="">Ciudad de residencia</label>
 
             <span id="city_dd"> {!! Form::select('city_id', ['' => __('Select City')], null, ['class' => 'form-control', 'id' => 'city_id']) !!} </span> {!! APFrmErrHelp::showErrors($errors, 'city_id') !!}
 

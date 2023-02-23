@@ -119,7 +119,11 @@
 
         {!! Form::label('email', 'Email', ['class' => 'bold']) !!}
 
-        {!! Form::text('email', null, ['class' => 'form-control form-control-xs', 'id' => 'email', 'placeholder' => 'Email']) !!}
+        {!! Form::text('email', null, [
+            'class' => 'form-control form-control-xs',
+            'id' => 'email',
+            'placeholder' => 'Email',
+        ]) !!}
 
         {!! APFrmErrHelp::showErrors($errors, 'email') !!}
 
@@ -131,7 +135,11 @@
 
         {!! Form::label('password', 'Contraseña', ['class' => 'bold']) !!}
 
-        {!! Form::password('password', ['class' => 'form-control form-control-xs', 'id' => 'password', 'placeholder' => 'Contraseña']) !!}
+        {!! Form::password('password', [
+            'class' => 'form-control form-control-xs',
+            'id' => 'password',
+            'placeholder' => 'Contraseña',
+        ]) !!}
 
         {!! APFrmErrHelp::showErrors($errors, 'password') !!}
 
@@ -257,7 +265,10 @@
 
         <span id="default_city_dd">
 
-            {!! Form::select('city_id', ['' => 'Seleccione Ciudad'], null, ['class' => 'form-control form-control-xs', 'id' => 'city_id']) !!}
+            {!! Form::select('city_id', ['' => 'Seleccione Ciudad'], null, [
+                'class' => 'form-control form-control-xs',
+                'id' => 'city_id',
+            ]) !!}
 
         </span>
 
@@ -269,7 +280,11 @@
 
         {!! Form::label('phone', 'Teléfono', ['class' => 'bold']) !!}
 
-        {!! Form::text('phone', null, ['class' => 'form-control form-control-xs', 'id' => 'phone', 'placeholder' => 'Teléfono']) !!}
+        {!! Form::text('phone', null, [
+            'class' => 'form-control form-control-xs',
+            'id' => 'phone',
+            'placeholder' => 'Teléfono',
+        ]) !!}
 
         {!! APFrmErrHelp::showErrors($errors, 'phone') !!}
 

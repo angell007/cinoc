@@ -286,7 +286,7 @@ trait ReportsTxt
                 'countries.lang',
                 'es'
             )->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-                $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), Carbon::parse(request()->get('fin'))->endOfDay()]);
+                $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
             })->get();
 
         $file = 'DBO' . $this->codeIes . Carbon::now()->format('mY') .  ".txt";
@@ -387,7 +387,7 @@ trait ReportsTxt
             'profileEducation',
             'profileExperience'
         ])->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-            $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), Carbon::parse(request()->get('fin'))->endOfDay()]);
+            $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
         })->get();
 
         ob_end_clean();

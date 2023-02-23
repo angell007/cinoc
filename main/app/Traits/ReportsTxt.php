@@ -91,7 +91,7 @@ trait ReportsTxt
             fwrite($txt, $datum->id . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->title) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->description) . $this->separatorDouble);
-            fwrite($txt, $this->replaceyears($datum->experience_for_report) . $this->separatorDouble);
+            fwrite($txt, $datum->experience_for_report . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->qualification_2019) . $this->separatorDouble);
 
             if (isset($datum->functional_area)) {

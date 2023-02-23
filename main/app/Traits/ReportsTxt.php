@@ -56,7 +56,6 @@ trait ReportsTxt
             'job_experiences.experience_for_report',
             'functional_areas.functional_area',
             'degree_levels.qualification_2019',
-            'degree_levels.degree_level_d',
             'jobs.salary_currency',
             'jobs.num_of_positions',
             'jobs.position',
@@ -88,8 +87,6 @@ trait ReportsTxt
         $txt = fopen($file, "w") or die("Unable to open file!");
 
         foreach ($data as $datum) {
-
-            dd($datum);
 
             fwrite($txt, $this->codeIes . $this->separatorDouble);
             fwrite($txt, $datum->id . $this->separatorDouble);

@@ -197,9 +197,9 @@ trait ReportsTxt
             'industries.industry',
             'job_types.type_for_report',
             'jobs.is_freelance',
-            'jobs.is_freelance',
             'jobs.slug',
-            'jobs.id',
+            'jobs.pcd',
+            'jobs.to_publish',
         ])->where('job_experiences.is_default', 1)
             ->where('job_types.is_default', 1)
             ->where('jobs.is_pl', 1)
@@ -222,7 +222,7 @@ trait ReportsTxt
             fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
 
             fwrite($txt, $this->getSalary($datum->salary_from, $datum->salary_to) . $this->separatorDouble);
-            
+
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
             $profess =  DB::table('professions')->where('name', $datum->position)->first();
             fwrite($txt, $this->htmlToPlainText('000' . substr($profess->id, 0, 1)) . $this->separatorDouble);

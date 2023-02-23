@@ -72,9 +72,15 @@ trait JobTrait
         $job->salary_to =  $request->input('salary_to');
         $job->salary_currency = $request->input('salary_currency');
         $job->hide_salary = $request->input('hide_salary');
-        $job->functional_area_id = $request->input('functional_area_id');
-        $job->job_type_id = $request->input('job_type_id');
 
+        $study = 'NA';
+
+        if (in_array($request->input('degree_level_id'), [5, 6, 7, 8, 9, 11])) {
+            $study = $request->input('functional_area_id');
+        }
+
+        $job->functional_area_id = $study;
+        $job->job_type_id = $request->input('job_type_id');
         $job->job_shift_id = $request->input('job_shift_id');
         $job->num_of_positions = $request->input('num_of_positions');
         $job->gender_id = $request->input('gender_id');
@@ -85,7 +91,8 @@ trait JobTrait
         $job->show_info = ($request->input('mostrarInfo') == '1') ? 'si' : 'no';
         $job->is_pl = $request->input('is_pl');
         $job->pcd = $request->input('pcd');
-        $job->to_publish = $request->input('to_publish');
+        $job->to_publish = 'N';
+        // $job->to_publish = $request->input('to_publish');
         if ($job->is_pl == 1) $job->job_type_id = DB::table('job_types')->where('job_type_id', 32)->first()->id;
 
         return $job;

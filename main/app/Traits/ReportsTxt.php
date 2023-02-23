@@ -53,7 +53,7 @@ trait ReportsTxt
             'jobs.id',
             'jobs.title',
             'jobs.description',
-            'job_experiences.job_experience',
+            'job_experiences.experience_for_report',
             'functional_areas.functional_area',
             'degree_levels.qualification',
             'jobs.salary_currency',
@@ -83,7 +83,7 @@ trait ReportsTxt
                 $q->whereBetween('jobs.created_at', [request()->get('inicio'), request()->get('fin')]);
             })->get();
 
-        $file = "reporteVacantes.txt";
+        $file = $this->codeIes . Carbon::now()->format('Ymd') . ".txt";
         $txt = fopen($file, "w") or die("Unable to open file!");
 
         foreach ($data as $datum) {
@@ -91,9 +91,15 @@ trait ReportsTxt
             fwrite($txt, $datum->id . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->title) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->description) . $this->separatorDouble);
-            fwrite($txt, $this->replaceyears($datum->job_experience) . $this->separatorDouble);
-            fwrite($txt, $this->htmlToPlainText($datum->qualification) . $this->separatorDouble);
-            fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
+            fwrite($txt, $this->replaceyears($datum->experience_for_report) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText($datum->qualification_2019) . $this->separatorDouble);
+
+            if (strlen($datum->functional_area)) {
+                fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
+            } else {
+                fwrite($txt, $this->htmlToPlainText('NA') . $this->separatorDouble);
+            }
+
             fwrite($txt, $this->getSalary($datum->salary_from, $datum->salary_to) . $this->separatorDouble);
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->position) . $this->separatorDouble);
@@ -213,16 +219,12 @@ trait ReportsTxt
             fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
             fwrite($txt, $this->getSalary($datum->salary_from, $datum->salary_to) . $this->separatorDouble);
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
-            fwrite($txt, $this->htmlToPlainText($datum->position) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText(000 . substr($datum->position, 0, 1)) . $this->separatorDouble);
             fwrite($txt, 1 . $this->separatorDouble);
             fwrite($txt, $datum->identificacion . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->name) . $this->separatorDouble);
+            fwrite($txt, $this->yes . $this->separatorDouble);
 
-            if (strlen($datum->to_publish) == 1) {
-                fwrite($txt, $this->yes . $this->separatorDouble);
-            } else {
-                fwrite($txt, $this->not . $this->separatorDouble);
-            }
             fwrite($txt, Carbon::parse($datum->created_at)->format('d/m/Y') . $this->separatorDouble);
             fwrite($txt, Carbon::parse($datum->expiry_date)->format('d/m/Y') . $this->separatorDouble);
             if (strlen($datum->code) == 5) {
@@ -230,6 +232,7 @@ trait ReportsTxt
             } else {
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
+            
             fwrite($txt, $this->htmlToPlainText($datum->industry) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText(0 . $this->separatorDouble));

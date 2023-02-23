@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Front;
 
 use App\Http\Requests\Request;
+use App\Rules\IsPL;
 use Carbon\Carbon;
 
 class JobFrontFormRequest extends Request
@@ -21,7 +22,7 @@ class JobFrontFormRequest extends Request
                     return [
                         "title" => "required|max:180",
                         "description" => "required",
-                        "skills" => "required",
+                        // "skills" => "required",
                         "country_id" => "required",
                         "state_id" => "required",
                         "city_id" => "required",
@@ -30,6 +31,7 @@ class JobFrontFormRequest extends Request
                         "job_type_id" => "required",
                         "expiry_date" => "required|date|before:" . $sixMonthsAgo,
                         "job_experience_id" => "required",
+                        "degree_level_id" => new IsPL(),
                     ];
                 }
             default:

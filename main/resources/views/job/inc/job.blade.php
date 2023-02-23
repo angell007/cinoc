@@ -62,7 +62,7 @@
 
 
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'benefits') !!}">
 
@@ -76,13 +76,13 @@
 
             {!! APFrmErrHelp::showErrors($errors, 'benefits') !!}</div>
 
-    </div>
+    </div> --}}
 
 
 
 
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'skills') !!}">
 
@@ -102,7 +102,7 @@
 
             {!! APFrmErrHelp::showErrors($errors, 'skills') !!} </div>
 
-    </div>
+    </div> --}}
 
 
 
@@ -440,7 +440,7 @@
         </div>
     </div>
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'to_publish') !!}"> {!! Form::label('to_publish', __('Publicar en el Servicio público de empleo?'), ['class' => 'bold']) !!}
 
             <div class="radio-list">
@@ -480,7 +480,7 @@
             {!! APFrmErrHelp::showErrors($errors, 'to_publish') !!}
 
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="col-md-12">

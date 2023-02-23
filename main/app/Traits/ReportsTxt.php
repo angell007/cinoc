@@ -237,7 +237,9 @@ trait ReportsTxt
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
             fwrite($txt, $this->htmlToPlainText($datum->industry) . $this->separatorDouble);
+
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
+            
             fwrite($txt, $this->htmlToPlainText(0 . $this->separatorDouble));
             fwrite($txt, $this->separatorDouble  . $datum->pcd . $this->separatorDouble);
             fwrite($txt, $this->urlBase . 'job/' . $datum->slug);

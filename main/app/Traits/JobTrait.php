@@ -86,7 +86,7 @@ trait JobTrait
         $job->is_pl = $request->input('is_pl');
         $job->pcd = $request->input('pcd');
         $job->to_publish = 'N';
-        // $job->to_publish = $request->input('to_publish');
+        
         if ($job->is_pl == 1) $job->job_type_id = DB::table('job_types')->where('job_type_id', 32)->first()->id;
 
         return $job;

@@ -181,7 +181,7 @@ trait ReportsTxt
             'jobs.description',
             'job_experiences.job_experience',
             'functional_areas.functional_area',
-            'degree_levels.qualification',
+            'degree_levels.qualification_319',
             'jobs.salary_currency',
             'jobs.num_of_positions',
             'jobs.position',

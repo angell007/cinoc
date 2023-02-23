@@ -94,7 +94,7 @@ trait ReportsTxt
             fwrite($txt, $this->replaceyears($datum->experience_for_report) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->qualification_2019) . $this->separatorDouble);
 
-            if (strlen($datum->functional_area)) {
+            if (isset($datum->functional_area)) {
                 fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
             } else {
                 fwrite($txt, $this->htmlToPlainText('NA') . $this->separatorDouble);
@@ -229,7 +229,7 @@ trait ReportsTxt
 
             fwrite($txt, Carbon::parse($datum->created_at)->format('d/m/Y') . $this->separatorDouble);
             fwrite($txt, Carbon::parse($datum->expiry_date)->format('d/m/Y') . $this->separatorDouble);
-            
+
             if (strlen($datum->code) == 5) {
                 fwrite($txt, $this->htmlToPlainText($datum->code) . $this->separatorDouble);
             } else {

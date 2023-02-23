@@ -95,9 +95,12 @@ trait ReportsTxt
             fwrite($txt, $datum->experience_for_report . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->qualification_2019) . $this->separatorDouble);
 
+            if (in_array($datum->qualification_2019, [5, 6, 7, 8, 9, 11])) {
+                fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
+            } else {
+                fwrite($txt, $this->htmlToPlainText('NA') . $this->separatorDouble);
+            }
 
-            fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
-            
             fwrite($txt, $this->getSalary($datum->salary_from, $datum->salary_to) . $this->separatorDouble);
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->position) . $this->separatorDouble);

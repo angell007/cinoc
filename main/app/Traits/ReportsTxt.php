@@ -111,7 +111,7 @@ trait ReportsTxt
             // if (strlen($datum->to_publish) == 1) {
             //     fwrite($txt, $this->yes . $this->separatorDouble);
             // } else {
-                fwrite($txt, $this->not . $this->separatorDouble);
+            fwrite($txt, $this->not . $this->separatorDouble);
             // }
             fwrite($txt, Carbon::parse($datum->created_at)->format('d/m/Y') . $this->separatorDouble);
             fwrite($txt, Carbon::parse($datum->expiry_date)->format('d/m/Y') . $this->separatorDouble);
@@ -204,7 +204,7 @@ trait ReportsTxt
             ->where('job_types.is_default', 1)
             ->where('jobs.is_pl', 1)
             ->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-                $q->whereBetween('jobs.created_at', [request()->get('inicio'), request()->get('fin')]);
+                $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), request()->get('fin')]);
             })->get();
 
         $file =  'PL' . $this->codeIes . Carbon::now()->format('Ymd') .  ".txt";

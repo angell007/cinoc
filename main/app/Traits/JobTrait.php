@@ -72,13 +72,7 @@ trait JobTrait
         $job->salary_to =  $request->input('salary_to');
         $job->salary_currency = $request->input('salary_currency');
         $job->hide_salary = $request->input('hide_salary');
-
-        $study = 'NA';
-
-        if (in_array($request->input('degree_level_id'), [5, 6, 7, 8, 9, 11])) {
-            $study = $request->input('functional_area_id');
-        }
-
+        $study = $request->input('functional_area_id');
         $job->functional_area_id = $study;
         $job->job_type_id = $request->input('job_type_id');
         $job->job_shift_id = $request->input('job_shift_id');

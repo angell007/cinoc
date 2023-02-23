@@ -204,7 +204,7 @@ trait ReportsTxt
             ->where('job_types.is_default', 1)
             ->where('jobs.is_pl', 1)
             ->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-                $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), request()->get('fin')]);
+                $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), Carbon::parse(request()->get('fin'))->endOfDay()]);
             })->get();
 
         $file =  'PL' . $this->codeIes . Carbon::now()->format('Ymd') .  ".txt";
@@ -285,7 +285,7 @@ trait ReportsTxt
                 'countries.lang',
                 'es'
             )->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-                $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
+                $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), Carbon::parse(request()->get('fin'))->endOfDay()]);
             })->get();
 
         $file = 'DBO' . $this->codeIes . Carbon::now()->format('mY') .  ".txt";
@@ -386,7 +386,7 @@ trait ReportsTxt
             'profileEducation',
             'profileExperience'
         ])->when(request()->get('inicio') && request()->get('fin'), function ($q) {
-            $q->whereBetween('users.created_at', [request()->get('inicio'), request()->get('fin')]);
+            $q->whereBetween('jobs.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), Carbon::parse(request()->get('fin'))->endOfDay()]);
         })->get();
 
         ob_end_clean();

@@ -56,7 +56,7 @@ class IsPL implements Rule
 
         if (request()->get('is_pl')) {
 
-            if (in_array(request()->get('degree_level_id'), [111, 109, 110, 107, 104])) {
+            if (in_array(request()->get('degree_level_id'), [111, 109, 110, 107, 104, 102])) {
                 return true;
             }
 

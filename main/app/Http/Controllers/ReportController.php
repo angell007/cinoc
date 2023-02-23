@@ -157,6 +157,10 @@ class ReportController extends Controller
         $pattern = "/[^0-9]/";
         $patternOnlyZeros = "/^0+$/";
 
+        if (isset($salary_to)) {
+            return preg_replace($pattern, "", $salary_from);
+        }
+
         if (preg_match($patternOnlyZeros, preg_replace($pattern, "", $salary_to)) || preg_match($patternOnlyZeros,  $salary_to)) {
             return preg_replace($pattern, "", $salary_from);
         } else {

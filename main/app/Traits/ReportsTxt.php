@@ -222,6 +222,7 @@ trait ReportsTxt
             fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
 
             fwrite($txt, $this->getSalary($datum->salary_from, $datum->salary_to) . $this->separatorDouble);
+            
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
             $profess =  DB::table('professions')->where('name', $datum->position)->first();
             fwrite($txt, $this->htmlToPlainText('000' . substr($profess->id, 0, 1)) . $this->separatorDouble);

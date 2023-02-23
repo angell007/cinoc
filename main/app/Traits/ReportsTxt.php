@@ -216,8 +216,11 @@ trait ReportsTxt
             fwrite($txt, 'PL-' . $this->htmlToPlainText($datum->title) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->description) . $this->separatorDouble);
             fwrite($txt, 0 . $this->separatorDouble);
-            fwrite($txt, $this->htmlToPlainText($datum->qualification) . $this->separatorDouble);
+
+            fwrite($txt, $this->htmlToPlainText($datum->qualification_319) . $this->separatorDouble);
+
             fwrite($txt, $this->htmlToPlainText($datum->functional_area) . $this->separatorDouble);
+
             fwrite($txt, $this->getSalary($datum->salary_from, $datum->salary_to) . $this->separatorDouble);
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
             $profess =  DB::table('professions')->where('name', $datum->position)->first();
@@ -239,7 +242,7 @@ trait ReportsTxt
             fwrite($txt, $this->htmlToPlainText($datum->industry) . $this->separatorDouble);
 
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
-            
+
             fwrite($txt, $this->htmlToPlainText(0 . $this->separatorDouble));
             fwrite($txt, $this->separatorDouble  . $datum->pcd . $this->separatorDouble);
             fwrite($txt, $this->urlBase . 'job/' . $datum->slug);

@@ -41,39 +41,39 @@
             });
         }
 
-        // function submitProfileCvForm() {
-        //     var form = $('#add_edit_profile_cv');
-        //     var formData = new FormData();
-        //     formData.append("id", $('#id').val());
-        //     formData.append("_token", $('input[name=_token]').val());
-        //     formData.append("title", $('#title').val());
-        //     formData.append("is_default", $('input[name=is_default]:checked').val());
-        //     if (document.getElementById("cv_file").value != "") {
-        //         formData.append("cv_file", $('#cv_file')[0].files[0]);
-        //     }
-        //     $.ajax({
-        //         url: form.attr('action'),
-        //         type: 'POST',
-        //         data: formData,
-        //         dataType: 'json',
-        //         contentType: false,
-        //         processData: false,
-        //         success: function(json) {
-        //             $("#add_cv_modal").html(json.html);
-        //             showCvs();
-        //         },
-        //         error: function(json) {
-        //             if (json.status === 422) {
-        //                 var resJSON = json.responseJSON;
-        //                 $('.help-block').html('');
-        //                 $.each(resJSON.errors, function(key, value) {
-        //                     $('.' + key + '-error').html('  <strong > ' + value + ' </strong>');
-        //                     $('#div_' + key).addClass('has-error');
-        //                 });
-        //             } else {}
-        //         }
-        //     });
-        // }
+        function submitProfileCvForm() {
+            var form = $('#add_edit_profile_cv');
+            var formData = new FormData();
+            formData.append("id", $('#id').val());
+            formData.append("_token", $('input[name=_token]').val());
+            formData.append("title", $('#title').val());
+            formData.append("is_default", $('input[name=is_default]:checked').val());
+            if (document.getElementById("cv_file").value != "") {
+                formData.append("cv_file", $('#cv_file')[0].files[0]);
+            }
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function(json) {
+                    $("#add_cv_modal").html(json.html);
+                    showCvs();
+                },
+                error: function(json) {
+                    if (json.status === 422) {
+                        var resJSON = json.responseJSON;
+                        $('.help-block').html('');
+                        $.each(resJSON.errors, function(key, value) {
+                            $('.' + key + '-error').html('  <strong > ' + value + ' </strong>');
+                            $('#div_' + key).addClass('has-error');
+                        });
+                    } else {}
+                }
+            });
+        }
 
         function showProfileCvEditModal(cv_id) {
             $("#add_cv_modal").modal();

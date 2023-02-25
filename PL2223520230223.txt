@@ -1,4 +1,0 @@
-22235|$$|144|$$|PL-ingeniero|$$|ing en html|$$|0|$$|5|$$|ESPECIALIZACION EN GESTION AMBIENTAL|$$|0|$$|5|$$|0001|$$|1|$$|123456789|$$|empresa prueba|$$|S|$$|07/02/2023|$$|28/02/2023|$$|05045|$$|Educación|$$|1|$$|0|$$||$$|https://bolsaempleo.iescinoc.edu.co/job/ingeniero-144
-
-22235|$$|145|$$|PL-dev|$$|OK|$$|0|$$|3|$$|ESPECIALIZACION EN GEMOLOGIA Y TASACION DE JOYAS|$$|100000-15020000|$$|2|$$|0002|$$|1|$$||$$|Danilo|$$|S|$$|09/02/2023|$$|23/02/2023|$$|08001|$$|Educación|$$|6|$$|0|$$||$$|https://bolsaempleo.iescinoc.edu.co/job/dev-145
-

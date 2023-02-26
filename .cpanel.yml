@@ -7,15 +7,15 @@ metadata:
     name: "Ies cinoc"
     version: "1.0"
     author: "Danilo Grisalez"
-post_deploy:
-    - command: npm run test-api
-    - command: newman run tests/Cinoc.postman_collection.json > report.txt
-    - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
-pre_deploy:
-hooks:
-  pre:
-    - command: "echo 'Backing up files...'"
-  post:
-    - command: npm run test-api
-    - command: newman run tests/Cinoc.postman_collection.json > report.txt
-    - command: "echo 'Deployment complete.'"
+# post_deploy:
+#     - command: npm run test-api
+#     - command: newman run tests/Cinoc.postman_collection.json > report.txt
+#     - /usr/local/cpanel/3rdparty/bin/git checkout --theirs .
+# pre_deploy:
+# hooks:
+#   pre:
+#     - command: "echo 'Backing up files...'"
+#   post:
+#     - command: npm run test-api
+#     - command: newman run tests/Cinoc.postman_collection.json > report.txt
+#     - command: "echo 'Deployment complete.'"

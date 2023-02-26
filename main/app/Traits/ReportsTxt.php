@@ -68,7 +68,7 @@ trait ReportsTxt
             'jobs.salary_from',
             'jobs.salary_to',
             'cities.code',
-            'industries.industry',
+            'industries.code_for_report',
             'job_types.type_for_report',
             'jobs.is_freelance',
             'jobs.pcd',
@@ -121,7 +121,7 @@ trait ReportsTxt
             } else {
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
-            fwrite($txt, $this->htmlToPlainText($datum->industry) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText($datum->code_for_report) . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
             if ($datum->is_freelance) {
                 fwrite($txt, $this->htmlToPlainText(1 . $this->separatorDouble));
@@ -194,7 +194,7 @@ trait ReportsTxt
             'jobs.salary_from',
             'jobs.salary_to',
             'cities.code',
-            'industries.industry',
+            'industries.code_for_report',
             'job_types.type_for_report',
             'jobs.is_freelance',
             'jobs.slug',
@@ -240,7 +240,7 @@ trait ReportsTxt
             } else {
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
-            fwrite($txt, $this->htmlToPlainText($datum->industry) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText($datum->code_for_report) . $this->separatorDouble);
 
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
 

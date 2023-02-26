@@ -74,7 +74,7 @@ trait ProfileEducationTrait
     }
     public function getProfileEducationForm(Request $request, $user_id)
     {
-        $degreeLevels = DataArrayHelper::defaultDegreelevelsArray();
+        $degreeLevels = DataArrayHelper::langDegreelevelsArray();
         $resultTypes = DataArrayHelper::defaultResultTypesArray();
         $majorSubjects = DataArrayHelper::defaultMajorSubjectsArray();
         $countries = DataArrayHelper::defaultCountriesArray();

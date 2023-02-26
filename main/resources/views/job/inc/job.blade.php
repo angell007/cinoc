@@ -60,52 +60,6 @@
 
     </div>
 
-
-
-    {{-- <div class="col-md-12">
-
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'benefits') !!}">
-
-            {!! Form::label('Beneficios', __('Beneficios'), ['class' => 'bold']) !!}
-
-            {!! Form::textarea('benefits', null, [
-                'class' => 'form-control',
-                'id' => 'benefits',
-                'placeholder' => __('Job Benefits'),
-            ]) !!}
-
-            {!! APFrmErrHelp::showErrors($errors, 'benefits') !!}</div>
-
-    </div> --}}
-
-
-
-
-
-    {{-- <div class="col-md-12">
-
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'skills') !!}">
-
-            <?php
-            
-            $skills = old('skills', $jobSkillIds);
-            
-            ?>
-
-            {!! Form::label('Skills Required', __('Skills Required'), ['class' => 'bold']) !!}
-
-            {!! Form::select('skills[]', $jobSkills, $skills, [
-                'class' => 'form-control select2-multiple',
-                'id' => 'skills',
-                'multiple' => 'multiple',
-            ]) !!}
-
-            {!! APFrmErrHelp::showErrors($errors, 'skills') !!} </div>
-
-    </div> --}}
-
-
-
     <div class="col-md-4">
 
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'country_id') !!}">
@@ -440,47 +394,6 @@
         </div>
     </div>
 
-    {{-- <div class="col-md-12">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'to_publish') !!}"> {!! Form::label('to_publish', __('Publicar en el Servicio público de empleo?'), ['class' => 'bold']) !!}
-
-            <div class="radio-list">
-
-                <?php
-                
-                $to_publish_1 = '';
-                
-                $to_publish_2 = 'checked="checked"';
-                
-                if (old('to_publish', isset($job) ? $job->to_publish : 0) == 1) {
-                    $to_publish_1 = 'checked="checked"';
-                
-                    $to_publish_2 = '';
-                }
-                
-                ?>
-
-                <label class="radio-inline">
-
-                    <input id="to_publish_yes" name="to_publish" type="radio" value="1" {{ $to_publish_1 }}>
-
-                    {{ __('Yes') }} </label>
-
-                <label class="radio-inline">
-
-                    <input id="to_publish_no" name="to_publish" type="radio" value="0" {{ $to_publish_2 }}>
-
-                    {{ __('No') }} </label>
-
-                <br>
-
-                <br>
-
-            </div>
-
-            {!! APFrmErrHelp::showErrors($errors, 'to_publish') !!}
-
-        </div>
-    </div> --}}
 
 
     <div class="col-md-12">

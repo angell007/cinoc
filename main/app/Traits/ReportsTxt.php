@@ -117,9 +117,10 @@ trait ReportsTxt
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
              //TODO error on relationship
-            fwrite($txt, $this->htmlToPlainText($datum->code_for_report) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 5, '0', STR_PAD_LEFT)) . $this->separatorDouble);
             
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
+
             if ($datum->is_freelance) {
                 fwrite($txt, $this->htmlToPlainText(1 . $this->separatorDouble));
             } else {
@@ -238,7 +239,7 @@ trait ReportsTxt
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
             //TODO error on relationship
-            fwrite($txt, $this->htmlToPlainText($datum->code_for_report) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 5, '0', STR_PAD_LEFT)) . $this->separatorDouble);
 
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
 

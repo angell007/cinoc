@@ -21,7 +21,7 @@ use Carbon\Carbon;
 class CompanysExport implements FromView, WithEvents, ShouldAutoSize
 
 {
-    public function __construct($data)
+    public function __construct()
     {
     }
 

@@ -25,7 +25,10 @@
         </div>
     </div>
 </div>
-<div class="modal fade bs-modal-lg" id="add_education_modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+{{-- <div class="modal fade bs-modal-lg" id="add_education_modal" tabindex="-1" role="dialog" aria-hidden="true"> --}}
+<div class="modal" id="add_education_modal" role="dialog">
+
 </div>
 @push('css')
     <style type="text/css">

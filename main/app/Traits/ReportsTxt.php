@@ -117,7 +117,7 @@ trait ReportsTxt
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
              //TODO error on relationship
-            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 5, '0', STR_PAD_LEFT)) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 4, '0', STR_PAD_LEFT)) . $this->separatorDouble);
             
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
 
@@ -223,7 +223,7 @@ trait ReportsTxt
 
             fwrite($txt, $datum->num_of_positions . $this->separatorDouble);
             $profess =  DB::table('professions')->where('name', $datum->position)->first();
-            fwrite($txt, $this->htmlToPlainText('000' . substr($profess->id, 0, 1)) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText('000' . substr($profess->code, 0, 1)) . $this->separatorDouble);
             fwrite($txt, 1 . $this->separatorDouble);
             fwrite($txt, $datum->identificacion . $this->separatorDouble);
             fwrite($txt, $this->htmlToPlainText($datum->name) . $this->separatorDouble);
@@ -239,7 +239,7 @@ trait ReportsTxt
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
             //TODO error on relationship
-            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 5, '0', STR_PAD_LEFT)) . $this->separatorDouble);
+            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 4, '0', STR_PAD_LEFT)) . $this->separatorDouble);
 
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
 
@@ -459,9 +459,10 @@ trait ReportsTxt
                     fwrite($txt,  $exp->position . $this->separatorSingle);
 
                     $profession = '';
+
                     if ($exp->profession) $profession = DB::table('professions')->where('name', $exp->profession)->first();
 
-                    fwrite($txt, ($profession) ? $profession->id . $this->separatorSingle : '' . $this->separatorSingle);
+                    fwrite($txt, ($profession) ? $profession->code . $this->separatorSingle : '' . $this->separatorSingle);
                     fwrite($txt, 'CO' . $this->separatorSingle);
 
                     if (isset($exp->load('city')->city->code))  $expCity = str_pad($exp->load('city')->city->code, 5, '0', STR_PAD_LEFT);

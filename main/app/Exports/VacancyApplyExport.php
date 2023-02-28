@@ -29,7 +29,7 @@ class VacancyApplyExport implements FromView
 
         if (request()->get('inicio')) {
 
-            $OfertaLaboral = JobApply::whereBetween('job_apply.created_at', [request()->get('inicio')->startOfDay(), request()->get('fin')->endOfDay()])
+            $OfertaLaboral = JobApply::whereBetween('job_apply.created_at', [Carbon::parse(request()->get('inicio'))->startOfDay(), Carbon::parse(request()->get('fin'))->endOfDay()])
 
                 ->join('users', 'users.id', 'job_apply.user_id')
                 ->join('jobs', 'jobs.id', 'job_apply.job_id')

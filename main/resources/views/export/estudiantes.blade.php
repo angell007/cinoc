@@ -55,7 +55,9 @@
                 <td> {{ $datum->rol }}
                 </td>
                 <td> {{ $datum->functional_area }}
-                </td> <?php $porciones = explode('--', $datum->skill); ?> @if (count($porciones) > 0)
+                </td>
+
+                <?php $porciones = explode('--', $datum->skill); ?> @if (count($porciones) > 0)
                     <td>
                         <ul>
                             @foreach ($porciones as $p)
@@ -64,10 +66,10 @@
                         </ul>
                     </td>
                 @else
-                    <td>
-                    </td>
+                    <td></td>
                 @endif
-                <td> {{ $datum->industry }}
+
+                <td> {{ $datum->getIndustry('industry') }}
                 </td>
                 <td> {{ $datum->career_level }}
                 </td>

@@ -287,7 +287,7 @@ bolsaempleo.iescinoc.edu.co/user_images/' . $image  : null;
     }
     public function getIndustry($field = '')
     {
-        $industry = $this->industry()->lang()->first();
+        $industry = $this->industry()->first();
         if (null === $industry) {
             $industry = $this->industry()->first();
         }

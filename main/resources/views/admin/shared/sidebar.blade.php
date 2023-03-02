@@ -385,6 +385,8 @@
 
             @include('admin/shared/side_bars/links')
 
+            @include('admin/shared/side_bars/seo')
+
             @endif
 
         </li>

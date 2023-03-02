@@ -344,14 +344,7 @@ class ImageUploadingHelper
 
 
 
-        // /home/itc/public_html/bolsadeempleo/main/public/company_logos/custom-1616138705-613.jpeg
-
-        // return public_path() . DIRECTORY_SEPARATOR;
-
         return url('/') . DIRECTORY_SEPARATOR;
-
-        // return url('/main/public/') . DIRECTORY_SEPARATOR;
-
     }
 
 

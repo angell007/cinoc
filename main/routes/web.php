@@ -35,8 +35,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Http;
 
 use App\Exports\Ids;
-
-
+use Illuminate\Support\Facades\DB;
 
 Route::get('/clear-cache', function () {
 
@@ -152,52 +151,32 @@ Route::get('ruta', function () {
 
 
 Route::post('send-revision', function () {
-
-
-
-
-
   $user = User::select(
     'users.id',
     'users.email',
     'users.name',
     'users.id',
     'profile_cvs.cv_file as file',
-
     'profile_cvs.title as title_cv'
   )
-
     ->leftjoin('profile_cvs', 'profile_cvs.user_id', 'users.id')
-
     ->where('users.id', Auth::user()->id)
-
     ->first();
-
-
-
-
 
   $subject = "Nueva HV para revizar!";
 
-
-
-
-
   Mail::send('emails.revision', ['user' => $user], function ($msj) use ($subject) {
-
-
-
     $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
-
     $msj->subject($subject);
-
-    // $msj->to("angellphp@gmail.com","IES CINOC");
-
     $msj->to("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
   });
 
+  DB::table('advisory')->insert([
+    'user_id' => $user->id,
+    'cv' => $user->title_cv,
+    'created_at' => Carbon::now(),
 
-
+  ]);
 
 
   return response()->json('enviado');

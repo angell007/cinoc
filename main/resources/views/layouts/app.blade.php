@@ -105,10 +105,10 @@ if (!isset($seo)) {
     </script>
     <script type="text/javascript" src="{{ asset('/') }}js/revolution-slider/js/jquery.themepunch.revolution.min.js">
     </script>
-    <script src="https:// unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https:// cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-    <script src="https:// cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
-    <script src="https:// cdn.jsdelivr.net/npm/sweetalert2@10"></script> {!! NoCaptcha::renderJs() !!} @stack('scripts')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> {!! NoCaptcha::renderJs() !!} @stack('scripts')
     <!--Custom js -->
     <script src="{{ asset('/') }}js/script.js"></script>
     <script type="text/JavaScript">

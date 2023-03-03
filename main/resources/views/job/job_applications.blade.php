@@ -1,12 +1,16 @@
 @extends('layouts.app')
+
 @section('content')
+
     @include('includes.header')
 
     @include('includes.inner_page_title', ['page_title' => __('Job Applications')])
 
     <div class="listpgWraper">
         <div class="container">
-            <div class="row"> @include('includes.company_dashboard_menu') <div class="col-md-9 col-sm-8">
+            <div class="row"> 
+                @include('includes.company_dashboard_menu') 
+                <div class="col-md-9 col-sm-8">
                     <div class="myads">
                         <div class="row mb-3 p-3 bg-white text-center">
                             <div class="col-md-12 mb-5">
@@ -86,7 +90,8 @@
                                                             <br>
                                                             <h5 class="text text-primary">En proceso de entrevista
                                                             </h5> <br>
-                                                            @endif @if ($job_application->status == 'espera')
+                                                            @endif 
+                                                            @if ($job_application->status == 'espera')
                                                                 <a class=" entrevistar btn  btn-info"
                                                                     data-id="{{ $user->id }}"
                                                                     data-compa="{{ $company->id }}"
@@ -107,8 +112,7 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <p>{{ \Illuminate\Support\Str::limit($user->getProfileSummary('summary'), 150, '...') }}
-                                            </p>
+                                            <p>{{ \Illuminate\Support\Str::limit($user->getProfileSummary('summary'), 150, '...') }}</p>
                                         </li>
                                     @endif
                                 @endforeach
@@ -121,9 +125,9 @@
     </div>
 
     @include('includes.footer')
-    @endsection
-    @push('scripts')
-    
+
+@endsection
+@push('scripts')
     <script>
         $('document').ready(function() {
             $(".con-f").hide();
@@ -158,7 +162,9 @@
                                     title: 'Contratado le enviaremos una notificacion al candidato ',
                                     showConfirmButton: false,
                                     timer: 2500
-                                }) location.reload();
+                                }) 
+                                
+                                location.reload();
                             }
                         });
                     }
@@ -166,6 +172,7 @@
             });
         });
     </script>
+
     <script>
         $('document').ready(function() {
             var query = window.location.search.substring(1);
@@ -178,7 +185,9 @@
                 select = document.getElementById('select').value;
                 val = document.getElementById('value').value;
                 location.href = `${window.location.pathname}?${select}=${val}`;
-            }) $(".recha").click(function() {
+            }) 
+            
+            $(".recha").click(function() {
                 Swal.fire({
                     title: '¿Esta seguro que quiere rechazar a este candidato?',
                     text: "Luego de rechazar a este candidato sera irreversible",
@@ -206,7 +215,8 @@
                                     title: 'Rechazado le enviaremos una notificacion al candidato ',
                                     showConfirmButton: false,
                                     timer: 2500
-                                }) location.reload();
+                                }) 
+                                location.reload();
                             }
                         });
                     }
@@ -232,7 +242,8 @@
                                 _token: '{{ csrf_token() }}'
                             },
                             success: function(result) {
-                                console.log(result) $(".mm-" + result).hide();
+                                console.log(result) 
+                                $(".mm-" + result).hide();
                                 $(".re-f-" + result).show();
                                 Swal.fire({
                                     position: 'top-end',
@@ -240,7 +251,8 @@
                                     title: 'Le enviaremos una notificacion al candidato ',
                                     showConfirmButton: false,
                                     timer: 2500
-                                }) location.reload();
+                                })
+                                 location.reload();
                             }
                         });
                     }

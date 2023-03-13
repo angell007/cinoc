@@ -1,4 +1,3 @@
-<!-- Modal -->
 
 <div class="modal fade" id="fileModalUploaded" tabindex="-1" role="dialog" aria-labelledby="fileModalUpLabel" aria-hidden="true">
 
@@ -28,9 +27,6 @@
 
                 <div class="modal-body">
 
-
-
-                    <!--<input type="file" class="custom-up"  name="file" id="fileUp">-->
 
                     
 

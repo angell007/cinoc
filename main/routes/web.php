@@ -372,7 +372,13 @@ Route::get('/download-cv/{file?}/{title?}/{user}',  function ($a, $b, $c) {
     $q->where('title', $b);
   }])->find($c);
   if ($res->profileCvs && count($res->profileCvs) > 0) {
-    return response()->download(public_path() . '/cvs/' . $a);
+
+    $string = $a;
+    if (!ctype_alpha(substr($string, -1))) {
+      $string = substr($string, 0, -1);
+    }
+    
+    return response()->download(public_path() . '/cvs/' . $string);
   }
 });
 
@@ -448,14 +454,19 @@ Route::resource('admin/documento_contratado', 'documento_contratadoController');
 
 Route::resource('admin/documento_pasantias', 'documento_pasantiasController');
 
-
-
-Route::get('get-list-trainings', 'Admin\AdminController@listTrainings')->name('get-list-trainings');
-
 Route::get('admin/list/trainings', 'Admin\AdminController@viewlistTrainings')->name('list.trainings');
-
 Route::get('admin/list/participants/{id}', 'Admin\AdminController@viewlistParticipants')->name('list.participants');
+Route::get('admin/list/participants-companies/{id}', 'Admin\AdminController@viewlistParticipantsCompanies')->name('list.participants.companies');
 
 Route::get('list/participants-all', 'Admin\AdminController@listParticipants')->name('get-list-participants');
 
+Route::get('get-list-trainings', 'Admin\AdminController@listTrainingsUsers')->name('get-list-trainings');
 Route::get('list/participants-delete', 'Admin\AdminController@listParticipantsDelete')->name('list.participants-delete');
+
+
+Route::get('get-list-trainings-company', 'Admin\AdminController@listTrainingsComapnies')->name('get-list-trainings-company');
+Route::get('delete-training-company', 'Admin\AdminController@listParticipantsDelete')->name('delete-training-company');
+
+
+Route::get('admin/register_companies_training', 'Admin\AdminController@viewlistCompanies')->name('register_companies_training');
+Route::get('admin/register_users_training', 'Admin\AdminController@viewlistUsers')->name('register_users_training');

@@ -198,7 +198,6 @@ class UserController extends Controller
     public function myAlerts()
     {
         $alerts = Alert::where('email', Auth::user()->email)->orderBy('created_at', 'desc')->get(); //
-        dd($alerts);
         return view('user.applicant_alerts')->with('alerts', $alerts);
     }
     public function delete_alert($id)

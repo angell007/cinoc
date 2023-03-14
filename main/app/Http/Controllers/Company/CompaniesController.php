@@ -545,7 +545,7 @@ class CompaniesController extends Controller
 
     {
 
-        $jobs = Auth::guard('company')->user()->jobs()->get();
+        $jobs = Auth::guard('company')->user()->jobs()->get(10);
 
         return view('job.company_posted_jobs')
 

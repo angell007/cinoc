@@ -833,20 +833,9 @@
 
             });
 
-
-
-
-
-
-
-
-
         });
 
-
-
-
-
+        
         $(document).ready(function() {
 
             initdatepicker();

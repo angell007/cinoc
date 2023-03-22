@@ -68,7 +68,7 @@ trait ReportsTxt
             'jobs.salary_from',
             'jobs.salary_to',
             'cities.code',
-            'industries.code_for_report',
+            'industries.industry',
             'job_types.type_for_report',
             'jobs.is_freelance',
             'jobs.pcd',
@@ -116,9 +116,9 @@ trait ReportsTxt
             } else {
                 fwrite($txt,  $this->htmlToPlainText(0 . $datum->code) . $this->separatorDouble);
             }
-             //TODO error on relationship
-            fwrite($txt, $this->htmlToPlainText(str_pad($datum->code_for_report, 4, '0', STR_PAD_LEFT)) . $this->separatorDouble);
-            
+            //TODO error on relationship
+            fwrite($txt, $this->htmlToPlainText($datum->industry) . $this->separatorDouble);
+
             fwrite($txt, $this->htmlToPlainText($datum->type_for_report) . $this->separatorDouble);
 
             if ($datum->is_freelance) {
@@ -129,7 +129,6 @@ trait ReportsTxt
             fwrite($txt, $this->separatorDouble  . $datum->pcd . $this->separatorDouble);
             fwrite($txt, $this->urlBase . 'job/' . $datum->slug);
             fwrite($txt,  PHP_EOL);
-            fwrite($txt,  "\r\n");
         }
         fclose($txt);
         return response()->download($file, basename($file), [
@@ -247,7 +246,7 @@ trait ReportsTxt
             fwrite($txt, $this->separatorDouble  . $datum->pcd . $this->separatorDouble);
             fwrite($txt, $this->urlBase . 'job/' . $datum->slug);
             fwrite($txt,  PHP_EOL);
-            fwrite($txt,  "\r\n");
+            // fwrite($txt,  "\r\n");
         }
 
         fclose($txt);
@@ -296,19 +295,19 @@ trait ReportsTxt
         fwrite($txt, count($data) + 2 . $this->separatorSingle);
         fwrite($txt, Carbon::now()->format('dmY'));
         fwrite($txt,  PHP_EOL);
-        fwrite($txt,  "\r\n");
+        // fwrite($txt,  "\r\n");
 
         foreach ($data as $datum) {
             fwrite($txt, $datum->codigo . $this->separatorSingle);
             fwrite($txt, $this->codeIes . $this->separatorSingle);
             fwrite($txt, 1 . $this->separatorSingle);
             fwrite($txt, $datum->national_id_card_number . $this->separatorSingle);
-            fwrite($txt, 'CO' . $this->separatorSingle);
+            fwrite($txt, ($datum->code) ? 'CO' . $this->separatorSingle : '' . $this->separatorSingle);
             fwrite($txt, substr($datum->code, 0, 2) . $this->separatorSingle);
             fwrite($txt, substr($datum->code, 2, 5) . $this->separatorSingle);
             fwrite($txt, $datum->date);
             fwrite($txt,  PHP_EOL);
-            fwrite($txt,  "\r\n");
+            // fwrite($txt,  "\r\n");
         }
 
         fwrite($txt, 99 . $this->separatorSingle);
@@ -317,7 +316,7 @@ trait ReportsTxt
         fwrite($txt, count($data) . $this->separatorSingle);
         fwrite($txt, Carbon::now()->format('dmY'));
         fwrite($txt,  PHP_EOL);
-        fwrite($txt,  "\r\n");
+        // fwrite($txt,  "\r\n");
         fclose($txt);
 
         return response()->download($file, basename($file), [
@@ -402,7 +401,7 @@ trait ReportsTxt
 
         fwrite($txt, Carbon::now()->format('dmY'));
         fwrite($txt,  PHP_EOL);
-        fwrite($txt,  "\r\n");
+        // fwrite($txt,  "\r\n");
 
         foreach ($data as $datum) {
 
@@ -413,12 +412,14 @@ trait ReportsTxt
             fwrite($txt, '02' . $this->separatorSingle);
             fwrite($txt, $this->codeIes . $this->separatorSingle);
             fwrite($txt, Carbon::parse($datum->date_of_birth)->format('dmY') . $this->separatorSingle);
-            fwrite($txt, 'CO' . $this->separatorSingle);
+            // fwrite($txt, 'CO' . $this->separatorSingle);
+            fwrite($txt, ($datum->cityborn) ? 'CO' . $this->separatorSingle : '' . $this->separatorSingle);
 
             fwrite($txt, (isset($datum->cityborn)) ? substr($divipola_code, 0, 2) . $this->separatorSingle : '' . $this->separatorSingle);
             fwrite($txt, (isset($datum->cityborn)) ? substr($divipola_code, 2, 5) . $this->separatorSingle : '' . $this->separatorSingle);
             fwrite($txt, ($datum->gender_id == 1) ? 1 . $this->separatorSingle : 2  . $this->separatorSingle);
-            fwrite($txt, 'CO' . $this->separatorSingle);
+            // fwrite($txt, 'CO' . $this->separatorSingle);
+            fwrite($txt, ($datum->city) ? 'CO' . $this->separatorSingle : '' . $this->separatorSingle);
             fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 0, 2) . $this->separatorSingle : '' . $this->separatorSingle);
             fwrite($txt, (isset($datum->city)) ? substr($divipola_code, 2, 5) . $this->separatorSingle : '' . $this->separatorSingle);
 
@@ -462,7 +463,7 @@ trait ReportsTxt
 
                     if ($exp->profession) $profession = DB::table('professions')->where('name', $exp->profession)->first();
 
-                    fwrite($txt, ($profession) ? $profession->code . $this->separatorSingle : '' . $this->separatorSingle);
+                    fwrite($txt, ($profession) ?  preg_replace("/\./", "", $profession->code)  . $this->separatorSingle : '' . $this->separatorSingle);
                     fwrite($txt, 'CO' . $this->separatorSingle);
 
                     if (isset($exp->load('city')->city->code))  $expCity = str_pad($exp->load('city')->city->code, 5, '0', STR_PAD_LEFT);
@@ -494,7 +495,7 @@ trait ReportsTxt
             fwrite($txt, 'MO' . $this->separatorSingle);
             fwrite($txt, $s);
             fwrite($txt,  PHP_EOL);
-            fwrite($txt,  "\r\n");
+            // fwrite($txt,  "\r\n");
         }
 
         $countSex = 0;
@@ -506,7 +507,7 @@ trait ReportsTxt
         fwrite($txt, $countSex . $this->separatorSingle);
         fwrite($txt, Carbon::now()->format('dmY'));
         fwrite($txt,  PHP_EOL);
-        fwrite($txt,  "\r\n");
+        // fwrite($txt,  "\r\n");
         fclose($txt);
 
 

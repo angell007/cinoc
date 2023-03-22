@@ -128,7 +128,7 @@ class ReportController extends Controller
         }
 
         if (preg_match($patternOnlyZeros, preg_replace($pattern, "", $salary_to)) || preg_match($patternOnlyZeros,  $salary_to)) {
-            return preg_replace($pattern, "", $salary_from);
+            return preg_replace($pattern, "", 0);
         } else {
             return preg_replace($pattern, "", $salary_from) . '-' . preg_replace($pattern, "", $salary_to);
         }

@@ -443,7 +443,10 @@ trait ReportsTxt
                     if (($edu->date_completion && $edu->date_completion < Carbon::now()->format('Y')) && $edu->degree_result == "NA") $estadoFormacion = 3;
                     if (($edu->date_completion && $edu->date_completion >= Carbon::now()->format('Y')) && $edu->degree_result != "NA") $estadoFormacion = 1;
 
-                    fwrite($txt, $edu->degree_title . $this->separatorSingle);
+                    $profess =  DB::table('titles')->where('name', $edu->degree_title)->first();
+
+                    fwrite($txt, $this->htmlToPlainText(str_pad($profess->id ?? 0, 4, '0', STR_PAD_LEFT)) . $this->separatorDouble);
+                    // fwrite($txt, $edu->degree_title . $this->separatorSingle);
                     fwrite($txt, $edu->degreeLevel->qualification . $this->separatorSingle);
                     fwrite($txt, $this->getFieldDate($edu->date_completion) . $this->separatorSingle);
                     fwrite($txt, $estadoFormacion . $this->separatorSingle);
@@ -451,6 +454,11 @@ trait ReportsTxt
                 }
             } else {
                 fwrite($txt, 'FA' . $this->separatorSingle);
+                fwrite($txt, $this->htmlToPlainText('') . $this->separatorDouble);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
             }
 
             if (isset($datum->profileExperience) && count($datum->profileExperience) > 0) {

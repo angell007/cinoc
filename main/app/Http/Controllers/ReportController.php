@@ -124,12 +124,10 @@ class ReportController extends Controller
         $patternOnlyZeros = "/^0+$/";
 
         if (!isset($salary_to)) {
-            // if ($id == 153) {
             if (preg_replace($pattern, "", $salary_from) == 000) return 0;
             return preg_replace($pattern, "", $salary_from);
         }
-        // }
-
+        
         if (preg_match($patternOnlyZeros, preg_replace($pattern, "", $salary_to)) || preg_match($patternOnlyZeros,  $salary_to)) {
             return preg_replace($pattern, "", 0);
         } else {

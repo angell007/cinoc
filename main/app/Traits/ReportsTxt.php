@@ -483,6 +483,13 @@ trait ReportsTxt
                 }
             } else {
                 fwrite($txt, 'EL' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
+                fwrite($txt, '' . $this->separatorSingle);
             }
 
             $s = 11;

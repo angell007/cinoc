@@ -445,7 +445,7 @@ trait ReportsTxt
 
                     $profess =  DB::table('titles')->where('name', $edu->degree_title)->first();
 
-                    fwrite($txt, $this->htmlToPlainText(str_pad($profess->id ?? 0, 4, '0', STR_PAD_LEFT)) . $this->separatorDouble);
+                    fwrite($txt, $this->htmlToPlainText($profess->id ?? '') . $this->separatorDouble);
                     // fwrite($txt, $edu->degree_title . $this->separatorSingle);
                     fwrite($txt, $edu->degreeLevel->qualification . $this->separatorSingle);
                     fwrite($txt, $this->getFieldDate($edu->date_completion) . $this->separatorSingle);

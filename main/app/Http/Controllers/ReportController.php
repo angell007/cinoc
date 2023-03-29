@@ -117,7 +117,7 @@ class ReportController extends Controller
         return $str;
     }
 
-    public function getSalary($salary_from, $salary_to, $id)
+    public function getSalary($salary_from, $salary_to)
     {
 
         $pattern = "/[^0-9]/";

@@ -2,53 +2,54 @@
 
     <thead>
 
-    <tr>
-        <th>Empresa</th>
+        <tr>
+            <th>Empresa</th>
 
-        <th>Vacante</th>
+            <th>Vacante</th>
 
-        
-        <th>Candidato</th>
-        
-        <th>Identificación</th>
+            <th>Descripción</th>
 
-        <th>Programa</th>
+            <th>Candidato</th>
 
-        <th>Email de candidato</th>
+            <th>Identificación</th>
 
-        <th>Contacto</th>
+            <th>Programa</th>
 
-        <th>Rol</th>
+            <th>Email de candidato</th>
 
-    </tr>
+            <th>Contacto</th>
+
+            <th>Rol</th>
+
+        </tr>
 
     </thead>
 
     <tbody>
 
-    @foreach($vacancys as $user)
+        @foreach ($vacancys as $user)
+            <tr>
 
-        <tr>
+                <td>{{ $user->company }}</td>
 
-            <td>{{ $user->company }}</td>
+                <td>{{ $user->title }}</td>
 
-            <td>{{ $user->title }}</td>
+                <td>{{ $user->description }}</td>
 
-            <td>{{ $user->candidato }}</td>
+                <td>{{ $user->candidato }}</td>
 
-            <td>{{ $user->identificacion }}</td>
+                <td>{{ $user->identificacion }}</td>
 
-            <td>{{ $user->programa }}</td>
+                <td>{{ $user->programa }}</td>
 
-            <td>{{ $user->email }}</td>
+                <td>{{ $user->email }}</td>
 
-            <td>{!! $user->mobile_num !!}</td>
+                <td>{!! $user->mobile_num !!}</td>
 
-            <td>{{ $user->rol }}</td>
+                <td>{{ $user->rol }}</td>
 
-        </tr>
-
-    @endforeach
+            </tr>
+        @endforeach
 
     </tbody>
 

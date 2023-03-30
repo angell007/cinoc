@@ -42,6 +42,8 @@ class VacancyApplyExport implements FromView
 
                     'jobs.title',
 
+                    'jobs.description',
+
                     'users.name as candidato',
 
                     'users.national_id_card_number as identificacion',
@@ -82,6 +84,8 @@ class VacancyApplyExport implements FromView
                 'companies.name as company',
 
                 'jobs.title',
+                
+                'jobs.description',
 
                 'users.name as candidato',
 

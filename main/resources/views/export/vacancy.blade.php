@@ -34,7 +34,7 @@
 
                 <td>{{ $user->title }}</td>
 
-                <td>{{ $user->description }}</td>
+                <td>{!! $user->description !!}</td>
 
                 <td>{{ $user->candidato }}</td>
 

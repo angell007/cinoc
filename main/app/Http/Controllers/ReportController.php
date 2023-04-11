@@ -175,8 +175,7 @@ class ReportController extends Controller
                 return Excel::download(new InvoicesExport($data), 'Estudiantes' . '.xlsx');
             case 2:
                 $data = $this->getCompanys();
-
-                return Excel::download(new CompanysExport($data), 'Compañias' . '.xlsx');
+                return Excel::download(new CompanysExport(), 'Compañias' . '.xlsx');
             case 3:
                 $data = $this->getJobs();
 
@@ -394,11 +393,6 @@ class ReportController extends Controller
 
     public function getCompanys()
     {
-
-
-
-
-
         return  Company::join('cities', 'cities.id', 'companies.city_id')
 
             ->join('states', 'states.id', 'companies.state_id')

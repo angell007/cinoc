@@ -18,7 +18,7 @@ use Carbon\Carbon;
 
 
 
-class CompanysExport implements FromView, WithEvents, ShouldAutoSize
+class CompanysExport implements FromView, ShouldAutoSize
 
 {
     public function __construct()
@@ -32,13 +32,13 @@ class CompanysExport implements FromView, WithEvents, ShouldAutoSize
         $companies = Company::all();
         return view('export.companys', ['data' => $companies]);
     }
-    public function registerEvents(): array
-    {
-        return [
-            AfterSheet::class    => function (AfterSheet $event) {
-                $cellRange = 'A1:W1'; // All headers
-                $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(14);
-            },
-        ];
-    }
+    // public function registerEvents(): array
+    // {
+    //     return [
+    //         AfterSheet::class    => function (AfterSheet $event) {
+    //             $cellRange = 'A1:W1'; // All headers
+    //             $event->sheet->getDelegate()->getStyle($cellRange)->getFont()->setSize(14);
+    //         },
+    //     ];
+    // }
 }

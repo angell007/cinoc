@@ -18,13 +18,23 @@ class Trainings implements ToModel
 
             if (request()->get('to') == 'Empresas') {
 
-                DB::table('participants')->insertGetId([
-                    'name' =>  $row[3] . ' ' . $row[4],
-                    'email' => $row[0], 'phone' => $row[5],
-                    'identifier' => $row[2],
-                    'trainings_id' => $this->id,
-                    'status' => $row[10]
-                ]);
+                if (isset($row[2])) {
+
+                    $id = DB::table('trainings')->insertGetId([
+                        'name' =>  $row[2],
+                        'to' =>  'Empresas',
+                        'type' =>  request()->get('type'),
+                    ]);
+
+                    DB::table('participants')->insertGetId([
+                        'name' =>  $row[5],
+                        'email' => '',
+                        'phone' => $row[7],
+                        'identifier' => $row[4],
+                        'trainings_id' => $id,
+                        'status' => $row[8] ?? 'Culminó'
+                    ]);
+                }
             } else {
                 DB::table('participants')->insertGetId([
                     'name' =>  $row[3] . ' ' . $row[4],

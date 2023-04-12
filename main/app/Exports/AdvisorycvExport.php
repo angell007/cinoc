@@ -30,6 +30,7 @@ class AdvisorycvExport implements FromView
             ->join('functional_areas', 'functional_areas.functional_area_id', 'users.functional_area_id')
             ->distinct('advisory.user_id')
             ->get();
+            
         return view('export.staticticsuser', [
             'users' => $users->unique()
         ]);

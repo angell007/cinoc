@@ -21,15 +21,15 @@ class Trainings implements ToModel
                 if (isset($row[5])) {
 
                     DB::table('participants')->insertGetId([
-                        'name' =>  $row[5] . ' ' . $row[4],
+                        'name' =>  $row[2],
+                        'funcionario' =>  $row[5],
+                        'cargo' =>  $row[6],
                         'email' => $row[0] ?? ' ',
                         'phone' => $row[7],
                         'identifier' => $row[4],
                         'trainings_id' => $this->id,
                         'status' => $row[8] ?? 'Culminó',
                         'created_at' => Carbon::parse($row[0])
-                        // 'created_at' => Carbon::parse($row[0])
-                        // 'created_at' => Carbon::parse($row[0])
                     ]);
                 }
             } else {

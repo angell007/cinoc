@@ -465,7 +465,7 @@ Route::get('list/participants-delete', 'Admin\AdminController@listParticipantsDe
 
 
 Route::get('get-list-trainings-company', 'Admin\AdminController@listTrainingsComapnies')->name('get-list-trainings-company');
-Route::get('delete-training-company', 'Admin\AdminController@listParticipantsDelete')->name('delete-training-company');
+Route::post('delete-training-company', 'Admin\AdminController@listParticipantsDelete')->name('delete-training-company');
 
 
 Route::get('admin/register_companies_training', 'Admin\AdminController@viewlistCompanies')->name('register_companies_training');

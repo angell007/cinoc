@@ -144,9 +144,7 @@
 
                                 _token: '{{ csrf_token() }}'
 
-                            })
-
-                            .done(function(response) {
+                            }).done(function(response) {
 
             
 

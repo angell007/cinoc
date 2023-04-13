@@ -176,17 +176,17 @@
 
                     {
 
-                        data: 'employe',
+                        data: 'funcionario',
 
-                        name: 'employe'
+                        name: 'funcionario'
 
                     },
 
                     {
 
-                        data: 'position',
+                        data: 'cargo',
 
-                        name: 'position'
+                        name: 'cargo'
 
                     },
 

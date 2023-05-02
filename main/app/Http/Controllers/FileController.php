@@ -19,7 +19,7 @@ class FileController extends Controller
             Session::flash('alert-class', 'alert-success');
             return back();
         } catch (\Throwable $th) { //
-            // return $th->getMessage();
+            return $th->getMessage();
             Session::flash('message', 'No hemos podido subir los documentos por que el archivo no es correcto!!');
             Session::flash('alert-class', 'alert-danger');
             return back();

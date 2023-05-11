@@ -38,7 +38,7 @@ class CustomConfigServiceProvider extends ServiceProvider
 
         if ($settings = SiteSetting::findOrFail(1272)) {
 
-            
+
 
             $this->app['config']['mail'] = [
 
@@ -68,11 +68,7 @@ class CustomConfigServiceProvider extends ServiceProvider
 
                 'username' => 'bolsadeempleo@iescinoc.edu.co',
 
-                // 'username' => 'mdgrisalez@misena.edu.co',
-
-                'password' => 'qfaoagesxhycfkxc',
-
-                // 'password' => 'bksrokmzyppykenh',
+                'password' => 'fyfrdgwecfumwumu',
 
                 'sendmail' => 'bolsadeempleo@iescinoc.edu.co',
 
@@ -233,7 +229,6 @@ class CustomConfigServiceProvider extends ServiceProvider
                 'lists' => ['subscribers' => ['id' => $settings->mailchimp_list_id]]
 
             ];
-
         }
 
         $this->app['config']['default_lang'] = 'en';
@@ -243,11 +238,8 @@ class CustomConfigServiceProvider extends ServiceProvider
             if ($lang !== null) {
 
                 $this->app['config']['default_lang'] = $lang->iso_code;
-
             }
-
         }
-
     }
 
 
@@ -269,6 +261,4 @@ class CustomConfigServiceProvider extends ServiceProvider
         //
 
     }
-
 }
-

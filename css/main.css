@@ -4113,17 +4113,17 @@ blockquote:after {
 *************************************************/
 
 .footerWrap {
-	background: #18212e;
+	background: #143c6a;
 	padding: 50px 0;
 }
 .footerWrap h5 {
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: bold;
 	color: #fff;
 	margin-bottom: 15px;
 }
 .footerWrap p {
-	line-height: 22px;
+	line-height: 30px;
 	color: #ccc;
 }
 .footerWrap .ft-logo {

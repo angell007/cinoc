@@ -36,6 +36,7 @@ use Illuminate\Support\Facades\Http;
 
 use App\Exports\Ids;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 Route::get('/clear-cache', function () {
 
@@ -183,24 +184,23 @@ Route::post('send-revision', function () {
 })->name('send-revision');
 
 
+Route::get('/verify-email', function (Request $request) {
 
-
-
-
-
-
-
-
-
-Route::get('/pass', function (Request $request) {
-
-
-
-
-
-
-
-  return hash::make('Angell00-7');
+  $subject = "Correo de pruebas";
+  $for = "angellphp@gmail.com";
+  try {
+    Mail::send('angellphp@gmail.com', $request->all(), function ($msj) use ($subject, $for) {
+      try {
+        $msj->from("mdgrisalez@misena.edu.co", "Test Bolsa");
+        $msj->subject($subject);
+        $msj->to($for);
+      } catch (\Exception $th) {
+        return Redirect::back()->withErrors(['msg', 'Datos incorrectos']);
+      }
+    });
+  } catch (\Exception $th) {
+    return Redirect::back()->withErrors(['msg', $th->getMessage()]);
+  }
 });
 
 
@@ -377,7 +377,7 @@ Route::get('/download-cv/{file?}/{title?}/{user}',  function ($a, $b, $c) {
     if (!ctype_alpha(substr($string, -1))) {
       $string = substr($string, 0, -1);
     }
-    
+
     return response()->download(public_path() . '/cvs/' . $string);
   }
 });

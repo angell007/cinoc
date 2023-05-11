@@ -27,7 +27,7 @@ class JobFrontFormRequest extends Request
                         "state_id" => "required",
                         "city_id" => "required",
                         "position" => "required",
-                        "functional_area_id" => "required",
+                        // "functional_area_id" => "required",
                         "job_type_id" => "required",
                         "expiry_date" => "required|date|before:" . $sixMonthsAgo,
                         "job_experience_id" => "required",

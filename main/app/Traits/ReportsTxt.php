@@ -407,10 +407,10 @@ trait ReportsTxt
             if ($item) $studies[0] = $item;
 
             if (isset($studies) && count($studies) > 0) {
-                $item  = $datum->profileEducation->where('degree_level_id', 107)->first();
+                $item  = $this->htmlToPlainText($datum->profileEducation->where('degree_level_id', 107)->first());
                 if ($item) $studies[1] = $item;
             } else {
-                $item  = $datum->profileEducation->sortByDesc('qualification')->first();
+                $item  = $this->htmlToPlainText($datum->profileEducation->sortByDesc('qualification')->first());
                 if ($item) $studies[0] = $item;
             }
 

@@ -451,7 +451,7 @@ trait ReportsTxt
                     fwrite($txt, 'EL' . $this->separatorSingle);
                     fwrite($txt,  $exp->position . $this->separatorSingle);
                     $profession = '';
-                    if ($exp->profession) $profession = DB::table('professions')->where('name', $exp->profession)->first();
+                    if ($exp->profession) $profession = $this->htmlToPlainText(DB::table('professions')->where('name', $exp->profession)->first());
                     fwrite($txt, ($profession) ?  preg_replace("/\./", "", $profession->code)  . $this->separatorSingle : '' . $this->separatorSingle);
                     fwrite($txt, 'CO' . $this->separatorSingle);
                     if (isset($exp->load('city')->city->code))  $expCity = str_pad($exp->load('city')->city->code, 5, '0', STR_PAD_LEFT);

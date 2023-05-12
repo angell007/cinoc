@@ -96,6 +96,12 @@ class ReportController extends Controller
             $str
         );
 
+        $str = str_replace(
+            array('/', '-', ';', ':'),
+            array('', ' ', '', ''),
+            $str
+        );
+
 
 
         $str = str_replace(

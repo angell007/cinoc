@@ -416,16 +416,25 @@ trait ReportsTxt
 
             if (count($studies) > 0) {
                 foreach ($studies as $edu) {
-                    fwrite($txt, 'FA' . $this->separatorSingle);
-                    $estadoFormacion = 2;
-                    if (($edu->date_completion && $edu->date_completion < Carbon::now()->format('Y')) && $edu->degree_result == "NA") $estadoFormacion = 3;
-                    if (($edu->date_completion && $edu->date_completion >= Carbon::now()->format('Y')) && $edu->degree_result != "NA") $estadoFormacion = 1;
-                    $profess =  DB::table('titles')->where('name', $edu->degree_title)->first();
-                    fwrite($txt, $this->htmlToPlainText($profess->id ?? '') . $this->separatorDouble);
-                    fwrite($txt, $edu->degreeLevel->qualification . $this->separatorSingle);
-                    fwrite($txt, $this->getFieldDate($edu->date_completion) . $this->separatorSingle);
-                    fwrite($txt, $estadoFormacion . $this->separatorSingle);
-                    fwrite($txt, 'CO' . $this->separatorSingle);
+                    if (isset($edu->date_completion)) {
+                        fwrite($txt, 'FA' . $this->separatorSingle);
+                        $estadoFormacion = 2;
+                        if (($edu->date_completion && $edu->date_completion < Carbon::now()->format('Y')) && $edu->degree_result == "NA") $estadoFormacion = 3;
+                        if (($edu->date_completion && $edu->date_completion >= Carbon::now()->format('Y')) && $edu->degree_result != "NA") $estadoFormacion = 1;
+                        $profess =  DB::table('titles')->where('name', $edu->degree_title)->first();
+                        fwrite($txt, $this->htmlToPlainText($profess->id ?? '') . $this->separatorDouble);
+                        fwrite($txt, $edu->degreeLevel->qualification . $this->separatorSingle);
+                        fwrite($txt, $this->getFieldDate($edu->date_completion) . $this->separatorSingle);
+                        fwrite($txt, $estadoFormacion . $this->separatorSingle);
+                        fwrite($txt, 'CO' . $this->separatorSingle);
+                    } else {
+                        fwrite($txt, 'FA' . $this->separatorSingle);
+                        fwrite($txt, $this->htmlToPlainText('') . $this->separatorDouble);
+                        fwrite($txt, '' . $this->separatorSingle);
+                        fwrite($txt, '' . $this->separatorSingle);
+                        fwrite($txt, '' . $this->separatorSingle);
+                        fwrite($txt, '' . $this->separatorSingle);
+                    }
                 }
             } else {
                 fwrite($txt, 'FA' . $this->separatorSingle);

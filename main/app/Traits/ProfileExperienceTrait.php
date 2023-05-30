@@ -19,6 +19,7 @@ use App\Helpers\DataArrayHelper;
 use ImgUploader;
 use File;
 use Illuminate\Support\Facades\File as FacadesFile;
+use Illuminate\Support\Facades\Validator;
 
 trait ProfileExperienceTrait
 {
@@ -106,12 +107,23 @@ trait ProfileExperienceTrait
         return response()->json(array('success' => true, 'status' => 200, 'html' => $returnHTML), 200);
     }
     public function storeFrontProfileExperience(Request $request, $user_id)
-    {        
+    {
+
+        $validator = Validator::make($request->all(), [
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            return response()->json(['errors' => $errors], 422);
+        }
+
         if ($request->hasFile('file')) {
             $image = $request->file('file');
             $fileName = ImageUploadingHelper::UploadImage('experiences_file', $image, $request->input('file'), 300, 300, false);
             $request->merge(['adjunto' => $fileName]);
         }
+
         if ($request->get('is_currently_working') && $request->get('is_currently_working')  != 'undefined') {
         } else {
             $request->merge(['is_currently_working' => 0]);

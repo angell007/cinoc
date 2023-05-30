@@ -133,13 +133,13 @@ trait ReportsTxt
         fclose($txt);
         return response()->download($file, basename($file), [
             'Content-Description' => 'File Transfer',
-            'Content-Disposition' => 'attachment',
+            'Content-Disposition' => 'attachment; filename="' . basename($file) . '"',
             'Expires' => '0',
             'Cache-Control' => 'must-revalidate',
             'Pragma' => 'public',
             'Content-Length' => filesize($file),
-            'Content-Type' => 'text/plain',
-        ]);
+            'Content-type' => 'text/plain; charset=us-ascii',
+        ])->deleteFileAfterSend(true);
     }
     public function PracticasLaboralesTxt()
     {
@@ -242,13 +242,13 @@ trait ReportsTxt
 
         return response()->download($file, basename($file), [
             'Content-Description' => 'File Transfer',
-            'Content-Disposition' => 'attachment',
+            'Content-Disposition' => 'attachment; filename="' . basename($file) . '"',
             'Expires' => '0',
             'Cache-Control' => 'must-revalidate',
             'Pragma' => 'public',
             'Content-Length' => filesize($file),
-            'Content-Type' => 'text/plain',
-        ]);
+            'Content-type' => 'text/plain; charset=us-ascii',
+        ])->deleteFileAfterSend(true);
     }
     public function OferentesMensualTxt()
     {
@@ -304,15 +304,17 @@ trait ReportsTxt
         fwrite($txt,  PHP_EOL);
         fclose($txt);
 
+
+
         return response()->download($file, basename($file), [
             'Content-Description' => 'File Transfer',
-            'Content-Disposition' => 'attachment',
+            'Content-Disposition' => 'attachment; filename="' . basename($file) . '"',
             'Expires' => '0',
             'Cache-Control' => 'must-revalidate',
             'Pragma' => 'public',
             'Content-Length' => filesize($file),
-            'Content-Type' => 'text/plain',
-        ]);
+            'Content-type' => 'text/plain; charset=us-ascii',
+        ])->deleteFileAfterSend(true);
     }
     public function OferentesSemestralTxt()
     {
@@ -505,13 +507,13 @@ trait ReportsTxt
 
         return response()->download($file, basename($file), [
             'Content-Description' => 'File Transfer',
-            'Content-Disposition' => 'attachment',
+            'Content-Disposition' => 'attachment; filename="' . basename($file) . '"',
             'Expires' => '0',
             'Cache-Control' => 'must-revalidate',
             'Pragma' => 'public',
             'Content-Length' => filesize($file),
-            'Content-Type' => 'text/plain',
-        ]);
+            'Content-type' => 'text/plain; charset=us-ascii',
+        ])->deleteFileAfterSend(true);
     }
     public function  getFieldDate($field)
     {

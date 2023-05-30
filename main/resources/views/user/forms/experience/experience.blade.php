@@ -130,6 +130,7 @@
                         var resJSON = json.responseJSON;
                         $('.help-block').html('');
                         $.each(resJSON.errors, function(key, value) {
+                            if (key == 'file') key = 'adjunto'
                             $('.' + key + '-error').html(' <strong > ' + value + ' </strong>');
                             $('#div_' + key).addClass('has-error');
                         });

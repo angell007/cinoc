@@ -84,9 +84,13 @@
         </div>
         <div class="formrow" id="file-adjunto">
             <label>Adjuntar un archivo </label>
-            <input type="file" name="adjunto" accept="image/png, image/jpeg" class="form-control" id="adjunto"
+            <input type="file" name="adjunto" accept="image/*" class="form-control" id="adjunto"
                 placeholder="{{ __('Adjunto') }}">
-            <span class="help-block text-danger adjunto-error"> </span>
+                <span class="help-block text-danger adjunto-error">
+                    @if ($errors->has('file'))
+                        {{ $errors->first('file') }}
+                    @endif
+                </span>
         </div>
         <div class="formrow" id="div_description">
             <textarea name="description" class="form-control" id="descriptionExp" placeholder="{{ __('Experience description') }}">{{ isset($profileExperience) ? $profileExperience->description : '' }}</textarea>

@@ -131,8 +131,10 @@
             function delete_training(id) {
 
      
+                        console.log(id);
 
-                        var data={trainings_id: id}
+
+                        var data=id
 
     
 

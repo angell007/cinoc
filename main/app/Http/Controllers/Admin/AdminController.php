@@ -191,7 +191,8 @@ class AdminController extends Controller
     }
     public function listParticipantsDelete()
     {
-        DB::table('participants')->delete(request()->get('id'));
+        DB::table('participants')->delete(request()->get('data'));
+        DB::table('trainings')->delete(request()->get('data'));
         return back();
     }
 }

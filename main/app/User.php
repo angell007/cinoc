@@ -163,8 +163,7 @@ class User extends Authenticatable
     public function printCustomUserImage()
     {
         $image = (string)$this->image;
-        return (!empty($image)) ? 'https://
-bolsaempleo.iescinoc.edu.co/user_images/' . $image  : null;
+        return (!empty($image)) ? 'https://bolsaempleo.iescinoc.edu.co/user_images/' . $image  : null;
     }
     public function getNameAttribute()
     {

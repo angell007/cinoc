@@ -22,13 +22,13 @@ class Trainings implements ToModel
 
                     DB::table('participants')->insertGetId([
                         'name' =>  $row[2],
-                        'funcionario' =>  $row[5],
-                        'cargo' =>  $row[6],
-                        'email' => $row[0] ?? ' ',
-                        'phone' => $row[7],
-                        'identifier' => $row[4],
+                        'funcionario' =>  $row[4],
+                        'cargo' =>  $row[5],
+                        'email' => $row[1] ?? ' ',
+                        'phone' => $row[6],
+                        'identifier' => $row[3],
                         'trainings_id' => $this->id,
-                        'status' => $row[8] ?? 'Culminó',
+                        'status' => $row[7] ?? 'Culminó',
                         'created_at' => Carbon::parse($row[0])
                     ]);
                 }

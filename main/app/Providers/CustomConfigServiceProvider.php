@@ -1,25 +1,14 @@
 <?php
 
-
-
 namespace App\Providers;
 
-
-
 use App\SiteSetting;
-
 use App\Language;
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 
-
-
 class CustomConfigServiceProvider extends ServiceProvider
-
 {
-
-
-
     /**
 
      * Bootstrap any application services.
@@ -31,14 +20,12 @@ class CustomConfigServiceProvider extends ServiceProvider
      */
 
     public function boot()
-
     {
 
-
+        Artisan::call('config:clear');
+        Artisan::call('cache:clear');
 
         if ($settings = SiteSetting::findOrFail(1272)) {
-
-            
 
             $this->app['config']['mail'] = [
 
@@ -46,9 +33,13 @@ class CustomConfigServiceProvider extends ServiceProvider
 
                 'host' => $settings->mail_host,
 
+                // 'host' => 'dedi-1102715.bgsoluciones.net',
+
                 'port' => $settings->mail_port,
 
                 'from' => [
+
+                    // 'address' => 'noreply@iescinoc.edu.co',
 
                     'address' => $settings->mail_from_address,
 
@@ -66,17 +57,19 @@ class CustomConfigServiceProvider extends ServiceProvider
 
                 'encryption' => $settings->mail_encryption,
 
-                'username' => 'bolsadeempleo@iescinoc.edu.co',
+                // 'username' => 'noreply@iescinoc.edu.co',
+                'username' => 'bolsadeempleo@unioc.edu.co',
 
-                // 'username' => 'mdgrisalez@misena.edu.co',
+                // 'password' => 'NYg)2lB01HW=',
 
-                'password' => 'qfaoagesxhycfkxc',
+                'password' => 'uatmhcsnqucswsgo',
+                
+                // 'password' => 'rphurhebdptfdubd',
+                // 'password' => 'fyfrdgwecfumwumu',
 
-                // 'password' => 'bksrokmzyppykenh',
+                'sendmail' => 'noreply@iescinoc.edu.co',
 
-                'sendmail' => 'bolsadeempleo@iescinoc.edu.co',
-
-                'pretend' => $settings->mail_pretend
+                // 'pretend' => $settings->mail_pretend
 
             ];
 
@@ -233,7 +226,6 @@ class CustomConfigServiceProvider extends ServiceProvider
                 'lists' => ['subscribers' => ['id' => $settings->mailchimp_list_id]]
 
             ];
-
         }
 
         $this->app['config']['default_lang'] = 'en';
@@ -243,11 +235,8 @@ class CustomConfigServiceProvider extends ServiceProvider
             if ($lang !== null) {
 
                 $this->app['config']['default_lang'] = $lang->iso_code;
-
             }
-
         }
-
     }
 
 
@@ -263,12 +252,9 @@ class CustomConfigServiceProvider extends ServiceProvider
      */
 
     public function register()
-
     {
 
         //
 
     }
-
 }
-

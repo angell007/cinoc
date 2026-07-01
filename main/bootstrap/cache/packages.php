@@ -18,8 +18,7 @@
     ),
     'aliases' => 
     array (
-      'Pdf' => 'Barryvdh\\DomPDF\\Facade\\Pdf',
-      'PDF' => 'Barryvdh\\DomPDF\\Facade\\Pdf',
+      'PDF' => 'Barryvdh\\DomPDF\\Facade',
     ),
   ),
   'facade/ignition' => 

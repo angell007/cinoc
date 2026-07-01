@@ -1,0 +1,6 @@
+.env
+vendor/*
+node_modules
+error_log
+lix.php
+scripts/lix-decoded.txt

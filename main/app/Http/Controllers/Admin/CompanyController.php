@@ -61,6 +61,10 @@ use Illuminate\Support\Str;
 
 use Mail;
 
+use App\Mail\CompanyActivatedMailable;
+
+use App\Mail\CompanyRegistrationRejectedMailable;
+
 
 
 
@@ -395,8 +399,10 @@ class CompanyController extends Controller
         $company->state_id = $request->input('state_id');
         
         $company->city_id = $request->input('city_id');
-        
-        $company->is_active = $request->input('is_active');
+
+        $wasActive = (int) $company->is_active;
+        $newActive = (int) $request->input('is_active');
+        $company->is_active = $newActive;
         
         $company->is_featured = $request->input('is_featured');
         
@@ -407,6 +413,10 @@ class CompanyController extends Controller
         $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
         
         $company->update();
+
+        if ($wasActive === 0 && $newActive === 1) {
+            Mail::send(new CompanyActivatedMailable($company));
+        }
         
         
         
@@ -567,6 +577,14 @@ class CompanyController extends Controller
                     $activeIcon = 'check-square-o';
                 }
 
+                $rejectAction = '';
+
+                if ((int) $companies->is_active == 0) {
+
+                    $rejectAction = '<li><a href="javascript:void(0);" onClick="rejectCompanyRegistration(' . $companies->id . ');"><i class="fa fa-times" aria-hidden="true"></i>Rechazar registro</a></li>';
+
+                }
+
                 /*                             * ************************* */
 
                 $featuredTxt = 'Destacar';
@@ -620,6 +638,8 @@ class CompanyController extends Controller
 
 <li><a href="javascript:void(0);" onClick="' . $activeHref . '" id="onclickActive' . $companies->id . '"><i class="fa fa-' . $activeIcon . '" aria-hidden="true"></i>' . $activeTxt . '</a></li>
 
+						' . $rejectAction . '
+
 						
 
 <li><a href="javascript:void(0);" onClick="' . $featuredHref . '" id="onclickFeatured' . $companies->id . '"><i class="fa fa-' . $featuredIcon . '" aria-hidden="true"></i>' . $featuredTxt . '</a></li>
@@ -670,32 +690,40 @@ class CompanyController extends Controller
 
             $company = Company::findOrFail($id);
 
+            $wasActive = (int) $company->is_active;
             $company->is_active = 1;
 
             $company->update();
 
-
-
-            $subject = "Cambio estado de su registro";
-
-            $for = $company->email;
-
-            Mail::send('emails.changestate', ['company' => $company, 'estado' => 'activado'], function ($msj) use ($subject, $for) {
-
-
-
-                $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
-
-                $msj->subject($subject);
-
-                $msj->to($for);
-            });
-
-
+            if ($wasActive === 0) {
+                Mail::send(new CompanyActivatedMailable($company));
+            }
 
             echo 'ok';
         } catch (ModelNotFoundException $e) {
 
+            echo 'notok';
+        }
+    }
+
+
+
+    public function rejectCompanyRegistration(Request $request)
+    {
+        $id = $request->input('id');
+
+        try {
+            $company = Company::findOrFail($id);
+
+            if ((int) $company->is_active === 1) {
+                echo 'notok';
+                return;
+            }
+
+            Mail::send(new CompanyRegistrationRejectedMailable($company));
+
+            echo 'ok';
+        } catch (ModelNotFoundException $e) {
             echo 'notok';
         }
     }

@@ -743,32 +743,6 @@
 
     <div class="col-md-12">
 
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'is_subscribed') !!}">
-
-            <?php
-
-            $is_checked = 'checked="checked"';
-
-            if (old('is_subscribed', isset($user) ? $user->is_subscribed : 1) == 0) {
-
-                $is_checked = '';
-
-            }
-
-            ?>
-
-            <input type="checkbox" value="1" name="is_subscribed" {{ $is_checked }} />
-
-            {{ __('Subscribe to news letter') }}
-
-            {!! APFrmErrHelp::showErrors($errors, 'is_subscribed') !!}
-
-        </div>
-
-    </div>
-
-    <div class="col-md-12">
-
         <div class="formrow"><button type="submit" class="btn">{{ __('Update Profile and Save') }} <i
 
                     class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div>

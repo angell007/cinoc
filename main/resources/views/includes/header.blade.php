@@ -47,23 +47,12 @@
 
 
 
-            <div class=" col-lg-2 col-md-4 col-4 mx-auto">
+            <div class="col-lg-2 col-md-4 col-4 mx-auto d-lg-none">
 
-                <button class="navbar-toggler collapsed logo" type="button" data-toggle="collapse"
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                     data-target="#nav-main" aria-controls="nav-main" aria-expanded="false"
                     aria-label="Toggle navigation">
-
-
-
-                    <!--<a href="{{ url('/') }}" class="logo">-->
-
-                    <img style="height: 60px; border-radius: 25%;" src="{{ url('/images/Logo-bolsa-de-empleo.png') }}"
-                        alt="{{ $siteSetting->site_name }}" />
-
-                    <!--</a>-->
-
-
-
+                    <i class="fa fa-bars"></i>
                 </button>
 
                 <div class="clearfix"></div>
@@ -72,7 +61,7 @@
 
 
 
-            <div class="col-lg-8 col-md-12 col-12">
+            <div class="col-lg-10 col-md-12 col-12">
 
 
 

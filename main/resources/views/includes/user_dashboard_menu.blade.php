@@ -27,9 +27,9 @@
         </li>
         <li><a href="{{ route('my-alerts') }}"><i class="fa fa-bullhorn" aria-hidden="true"></i> {{__('My Job Alerts')}}</a>
         </li>
-        <li><a href="{{ route('my.cv.preview') }}"><i class="fa fa-file-text" aria-hidden="true"></i> Ver mi hoja de vida</a>
+        <li><a href="{{ url('my-cv') }}"><i class="fa fa-file-text" aria-hidden="true"></i> Ver mi hoja de vida</a>
         </li>
-        <li><a href="{{ route('download.my.cv') }}"><i class="fa fa-download" aria-hidden="true"></i> Descargar hoja de vida (PDF)</a>
+        <li><a href="{{ url('download-my-cv') }}"><i class="fa fa-download" aria-hidden="true"></i> Descargar hoja de vida (PDF)</a>
         </li>
         <li><a href="{{url('my-profile#cvs')}}"><i class="fa fa-folder-o" aria-hidden="true"></i> {{__('Manage Resume')}}</a>
         </li>

@@ -35,7 +35,7 @@
                                 <button type="button" id="btnEnviar" class="btn btn-primary" onclick="sendRevision()">
                                     Enviar solicitud
                                 </button>
-                                <a href="{{ route('my.cv.preview') }}" class="btn btn-default">Ver mi hoja de vida</a>
+                                <a href="{{ url('my-cv') }}" class="btn btn-default">Ver mi hoja de vida</a>
                                 <a href="{{ url('my-profile#cvs') }}" class="btn btn-default">Gestionar archivos de CV</a>
                             </div>
                         </form>

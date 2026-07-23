@@ -12,7 +12,7 @@
             <a href="{{ route('my.profile') }}" class="btn btn-default">
                 <i class="fa fa-pencil" aria-hidden="true"></i> Actualizar hoja de vida
             </a>
-            <a href="{{ route('download.my.cv') }}" class="btn btn-primary">
+            <a href="{{ url('download-my-cv') }}" class="btn btn-primary">
                 <i class="fa fa-download" aria-hidden="true"></i> Descargar PDF
             </a>
             <button type="button" class="btn btn-warning" onclick="window.print();">

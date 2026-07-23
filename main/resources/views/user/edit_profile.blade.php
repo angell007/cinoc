@@ -33,7 +33,7 @@
                         <div class="userccount">
                             <div class="formpanel mt0">
                                 <div class="mb-3">
-                                    <a href="{{ route('my.cv.preview') }}" class="btn btn-primary">
+                                    <a href="{{ url('my-cv') }}" class="btn btn-primary">
                                         <i class="fa fa-file-text" aria-hidden="true"></i> Ver, imprimir o descargar mi hoja de vida
                                     </a>
                                 </div>

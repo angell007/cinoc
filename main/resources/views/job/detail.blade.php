@@ -282,6 +282,7 @@
                     <div class="jobButtons applybox">
 
                         @auth
+                            @if(class_exists(\App\Helpers\ProfileCompletionHelper::class))
                             @php($profileCompletion = \App\Helpers\ProfileCompletionHelper::assess(Auth::user()))
                             @if(!$profileCompletion['is_complete'])
                             <div class="alert alert-warning" style="text-align:left; margin-bottom:15px;">
@@ -289,6 +290,7 @@
                                 Para aplicar debes completar al menos el {{ $profileCompletion['threshold'] }}% de los campos obligatorios.
                                 <br><a href="{{ route('my.profile') }}">Completar hoja de vida</a>
                             </div>
+                            @endif
                             @endif
                         @endauth
 
@@ -298,7 +300,7 @@
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
                             <a href="javascript:;" class="btn apply applied"><i class="fa fa-paper-plane"
                                     aria-hidden="true"></i> {{ __('Already Applied') }}</a>
-                        @elseif(Auth::check() && !\App\Helpers\ProfileCompletionHelper::canApplyToJobs(Auth::user()))
+                        @elseif(Auth::check() && class_exists(\App\Helpers\ProfileCompletionHelper::class) && !\App\Helpers\ProfileCompletionHelper::canApplyToJobs(Auth::user()))
                             <a href="{{ route('my.profile') }}" class="btn apply" style="background:#999; border-color:#999;">
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Completar hoja de vida para aplicar
                             </a>

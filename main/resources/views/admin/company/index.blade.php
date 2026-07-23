@@ -203,6 +203,25 @@
             });
     }
 
+    function rejectCompanyRegistration(id) {
+        if (!confirm('¿Desea enviar la notificación de rechazo al empleador?')) {
+            return;
+        }
+
+        $.post("{{ route('reject.company.registration') }}", {
+                id: id,
+                _method: 'PUT',
+                _token: '{{ csrf_token() }}'
+            })
+            .done(function(response) {
+                if (response == 'ok') {
+                    alert('Notificación de rechazo enviada.');
+                } else {
+                    alert('Request Failed!');
+                }
+            });
+    }
+
     function makeFeatured(id) {
         $.post("{{ route('make.featured.company') }}", {
                 id: id,

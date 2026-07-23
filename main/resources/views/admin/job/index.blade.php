@@ -41,7 +41,6 @@
                                             <td><input type="text" class="form-control" name="description" id="description" autocomplete="off" placeholder="Descripción"></td>
                                             <td>
                                                 <?php $default_country_id = Request::query('country_id', $siteSetting->default_country_id); ?>
-
                                                
                                                 
                                                 <span>
@@ -60,8 +59,8 @@
                                             
                                             </td>
                                             <td><select name="is_active" id="is_active" class="form-control">
-                                                    <option value="-1">Activo?</option>
-                                                    <option value="1" selected="selected">Activo</option>
+                                                    <option value="-1" selected="selected">Activo?</option>
+                                                    <option value="1">Activo</option>
                                                     <option value="0">Inactivo</option>
                                                 </select>
                                                 <select name="is_featured" id="is_featured" class="form-control">
@@ -208,6 +207,20 @@
                         table.row('jobDtRow' + id).remove().draw(false);
                     } else
                     {
+                        alert('Request Failed!');
+                    }
+                });
+    }
+    function rejectJob(id) {
+        if (!confirm('¿Desea enviar la notificación de rechazo al empleador?')) {
+            return;
+        }
+
+        $.post("{{ route('reject.job') }}", {id: id, _method: 'PUT', _token: '{{ csrf_token() }}'})
+                .done(function (response) {
+                    if (response == 'ok') {
+                        alert('Notificación de rechazo enviada.');
+                    } else {
                         alert('Request Failed!');
                     }
                 });

@@ -6,11 +6,11 @@ use App\Helpers\ImageUploadingHelper;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\UploadedFile;
 use App\User;
-use App\Subscription;
 use App\ApplicantMessage;
 use App\Company;
 use App\FavouriteCompany;
 use App\Alert;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Traits\CommonUserFunctions;
@@ -19,17 +19,17 @@ use App\Traits\ProfileCvsTrait;
 use App\Traits\ProfileProjectsTrait;
 use App\Traits\ProfileExperienceTrait;
 use App\Traits\ProfileEducationTrait;
-use App\Traits\ProfileEducationNonFormalTrait;
 use App\Traits\ProfileSkillTrait;
 use App\Traits\ProfileLanguageTrait;
 use App\Traits\Skills;
 use App\Http\Requests\Front\UserFrontFormRequest;
 use App\Helpers\DataArrayHelper;
+use App\Helpers\ProfileCompletionHelper;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
-use Spatie\Newsletter\NewsletterFacade;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class UserController extends Controller
 {
@@ -39,28 +39,21 @@ class UserController extends Controller
     use ProfileProjectsTrait;
     use ProfileExperienceTrait;
     use ProfileEducationTrait;
-    use ProfileEducationNonFormalTrait;
     use ProfileSkillTrait;
     use ProfileLanguageTrait;
     use Skills;
-
+    /** * Create a new controller instance. * * @return void */
     public function __construct()
-    {
-        $this->middleware('auth', ['only' => ['myProfile', 'updateMyProfile', 'viewPublicProfile']]);
+    { //
+        $this->middleware('auth', ['only' => ['myProfile', 'updateMyProfile', 'viewPublicProfile', 'viewMyCv', 'downloadMyCv']]);
         $this->middleware('auth', ['except' => ['showApplicantProfileEducation', 'changePass', 'uploadParticipant', 'showApplicantProfileProjects', 'showApplicantProfileExperience', 'showApplicantProfileSkills', 'showApplicantProfileLanguages']]);
     }
-
     public function viewPublicProfile($id)
     {
         $user = User::findOrFail($id);
         $profileCv = $user->getDefaultCv();
-        return view('user.applicant_profile')
-            ->with('user', $user)
-            ->with('profileCv', $profileCv)
-            ->with('page_title', $user->getName())
-            ->with('form_title', 'Contact ' . $user->getName());
+        return view('user.applicant_profile')->with('user', $user)->with('profileCv', $profileCv)->with('page_title', $user->getName())->with('form_title', 'Contact ' . $user->getName());
     }
-
     public function deleteletter()
     {
         try {
@@ -75,7 +68,6 @@ class UserController extends Controller
             return response()->json($th->getMessage());
         }
     }
-
     public function uploadletter()
     {
         $fileName = '';
@@ -83,15 +75,12 @@ class UserController extends Controller
             $this->deleteletter();
             $user = User::find(request()->get('id'));
             $filename = '_' . time() . '.' . request()->file('file')->getClientOriginalExtension();
-            request()
-                ->file('file')
-                ->move(public_path() . '/letters', $filename);
+            request()->file('file')->move(public_path() . "/letters", $filename);
             $user->letter = $filename;
             $user->save();
         }
         return back()->with('status', 'Archivo subido correctamente');
     }
-
     public function myProfile()
     {
         $genders = DataArrayHelper::langGendersArray();
@@ -103,40 +92,32 @@ class UserController extends Controller
         $careerLevels = DataArrayHelper::langCareerLevelsArray();
         $industries = DataArrayHelper::langIndustriesArray();
         $functionalAreas = DataArrayHelper::langFunctionalAreasArray();
-        $upload_max_filesize = UploadedFile::getMaxFilesize() / 1048576;
+        $upload_max_filesize = UploadedFile::getMaxFilesize() / (1048576);
         $user = User::findOrFail(Auth::user()->id);
         return view('user.edit_profile')->with('genders', $genders)->with('maritalStatuses', $maritalStatuses)->with('nationalities', $nationalities)->with('countries', $countries)->with('jobExperiences', $jobExperiences)->with('careerLevels', $careerLevels)->with('industries', $industries)->with('functionalAreas', $functionalAreas)->with('user', $user)->with('upload_max_filesize', $upload_max_filesize)->with('civilStatuses', $civilStatuses);
     }
-
     public function updateMyProfile(UserFrontFormRequest $request)
     {
-
-        $user = User::findOrFail(Auth::user()->id);
-
+        $user = User::findOrFail(Auth::user()->id); /* * **************************************** */
         if ($request->hasFile('image')) {
-            $this->deleteUserImage($user->id);
+            $is_deleted = $this->deleteUserImage($user->id);
             $image = $request->file('image');
             $fileName = ImageUploadingHelper::UploadImage('user_images', $image, $request->input('name'), 300, 300, false);
             $user->image = $fileName;
-        }
-
+        } /* * ************************************** */
         $user->first_name = $request->input('first_name');
         $user->middle_name = $request->input('middle_name');
         $user->last_name = $request->input('last_name', '');
         $user->first_lastname = $request->input('first_lastname');
-        $user->second_lastname = $request->input('second_lastname');
-        $user->name = $user->getName();
+        $user->second_lastname = $request->input('second_lastname'); /* * *********************** */
+        $user->name = $user->getName(); /* * *********************** */
         $user->email = $request->input('email');
-
         if (!empty($request->input('password'))) {
             $user->password = Hash::make($request->input('password'));
         }
-
         $user->father_name = $request->input('father_name');
         $user->date_of_birth = $request->input('date_of_birth');
-        $user->identification_genero = $request->input('identification_genero');
         $user->gender_id = $request->input('gender_id');
-        $user->sexual_orientation = $request->input('sexual_orientation');
         $user->marital_status_id = $request->input('marital_status_id');
         $user->nationality_id = $request->input('nationality_id');
         $user->national_id_card_number = $request->input('national_id_card_number');
@@ -153,41 +134,14 @@ class UserController extends Controller
         $user->expected_salary = $request->input('expected_salary');
         $user->salary_currency = $request->input('salary_currency');
         $user->street_address = $request->input('street_address');
-        $user->is_subscribed = $request->input('is_subscribed', 0);
         $user->civil_status_id = $request->input('civil_status_id', 1);
         $user->borncountry_id = $request->input('borncountry_id');
         $user->bornstate_id = $request->input('bornstate_id');
         $user->borncity_id = $request->input('borncity_id');
         $user->rol = $request->input('status_edu', 'Estudiante');
         $user->status_parcticas = $request->input('status_parcticas', 'Si');
-
-
-        // Nuevos campos
-        $user->travel_possibility = $request->input('travel_possibility');
-        $user->relocation_possibility = $request->input('relocation_possibility');
-        $user->own_transport = $request->input('own_transport');
-        $user->non_formal_education = $request->input('non_formal_education');
-        $user->car_license = $request->input('car_license');
-        $user->car_license_category = $request->input('car_license') == 'No' ? 'NA' : $request->input('car_license_category');
-        $user->motorcycle_license = $request->input('motorcycle_license');
-        $user->motorcycle_license_category = $request->input('motorcycle_license') == 'No' ? 'NA' : $request->input('motorcycle_license_category');
-        $user->current_job_situation = $request->input('current_job_situation');
-
         $user->update();
-
         $this->updateUserFullTextSearch($user);
-
-        Subscription::where('email', 'like', $user->email)->delete();
-        if ((bool) $user->is_subscribed) {
-            $subscription = new Subscription();
-            $subscription->email = $user->email;
-            $subscription->name = $user->name;
-            $subscription->save();
-            NewsletterFacade::subscribeOrUpdate($subscription->email, ['FNAME' => $subscription->name]);
-        } else {
-            NewsletterFacade::unsubscribe($user->email);
-        }
-
         flash(__('You have updated your profile successfully'))->success();
         return Redirect::route('my.profile');
     }
@@ -216,10 +170,7 @@ class UserController extends Controller
     public function myMessages()
     {
         $user = User::findOrFail(Auth::user()->id);
-        $messages = ApplicantMessage::where('user_id', '=', $user->id)
-            ->orderBy('is_read', 'asc')
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $messages = ApplicantMessage::where('user_id', '=', $user->id)->orderBy('is_read', 'asc')->orderBy('created_at', 'desc')->get();
         return view('user.applicant_messages')->with('user', $user)->with('messages', $messages);
     }
     public function applicantMessageDetail($message_id)
@@ -231,16 +182,14 @@ class UserController extends Controller
     }
     public function myAlerts()
     {
-        $alerts = Alert::where('email', Auth::user()->email)
-            ->orderBy('created_at', 'desc')
-            ->get(); //
+        $alerts = Alert::where('email', Auth::user()->email)->orderBy('created_at', 'desc')->get(); //
         return view('user.applicant_alerts')->with('alerts', $alerts);
     }
     public function delete_alert($id)
     {
         $alert = Alert::findOrFail($id);
         $alert->delete();
-        $arr = ['msg' => 'A Alert has been successfully deleted. ', 'status' => true];
+        $arr = array('msg' => 'A Alert has been successfully deleted. ', 'status' => true);
         return Response()->json($arr);
     }
     public function changePass()
@@ -249,15 +198,66 @@ class UserController extends Controller
         if (Hash::check(request()->get('pass'), $user->password)) {
             $user->password = Hash::make(request()->get('repass'));
             $user->save();
-            $arr = ['msg' => 'Contraseña actualizada correctamente ', 'status' => true];
+            $arr = array('msg' => 'Contraseña actualizada correctamente ', 'status' => true);
             return Response()->json($arr);
         }
-        $arr = ['msg' => 'La contraseña no coincide con tu contraseña actual ', 'status' => true];
+        $arr = array('msg' => 'La contraseña no coincide con tu contraseña actual ', 'status' => true);
         return Response()->json($arr, 400);
     }
-    public function uploadParticipant()
+    public function  uploadParticipant()
     {
         DB::table('participants')->insertGetId(request()->get('data'));
         return Response()->json(request()->all(), 200);
+    }
+
+    public function viewMyCv()
+    {
+        $user = $this->loadUserForCv();
+        $cvImageSource = $this->cvImageSource($user, false);
+        $canDownloadCv = ProfileCompletionHelper::canGenerateCv($user);
+
+        return view('user.cv_preview', compact('user', 'cvImageSource', 'canDownloadCv'));
+    }
+
+    public function downloadMyCv()
+    {
+        $user = $this->loadUserForCv();
+
+        if (!ProfileCompletionHelper::canGenerateCv($user)) {
+            flash(ProfileCompletionHelper::downloadBlockedMessage($user))->warning();
+
+            return Redirect::route('my.profile');
+        }
+
+        $cvImageSource = $this->cvImageSource($user, true);
+        $pdf = PDF::loadView('user.cv_pdf', compact('user', 'cvImageSource'));
+        $fileName = 'hoja-de-vida-' . preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName())) . '.pdf';
+
+        return $pdf->download($fileName);
+    }
+
+    private function loadUserForCv()
+    {
+        return User::with([
+            'profileEducation',
+            'profileExperience',
+            'profileSkills',
+            'profileLanguages',
+            'profileProjects',
+        ])->findOrFail(Auth::id());
+    }
+
+    private function cvImageSource(User $user, bool $forPdf)
+    {
+        if (empty($user->image)) {
+            return null;
+        }
+
+        $path = public_path('user_images/' . $user->image);
+        if (!file_exists($path)) {
+            return null;
+        }
+
+        return $forPdf ? $path : asset('user_images/' . $user->image);
     }
 }

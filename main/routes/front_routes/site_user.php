@@ -6,6 +6,10 @@
 
 Route::get('my-profile', 'UserController@myProfile')->name('my.profile');
 
+Route::get('my-cv', 'UserController@viewMyCv')->name('my.cv.preview');
+
+Route::get('download-my-cv', 'UserController@downloadMyCv')->name('download.my.cv');
+
 Route::put('my-profile', 'UserController@updateMyProfile')->name('my.profile');
 
 Route::get('view-public-profile/{id}', 'UserController@viewPublicProfile')->name('view.public.profile');
@@ -117,20 +121,6 @@ Route::put('update-front-profile-education/{education_id}/{user_id}', 'UserContr
 
 Route::delete('delete-front-profile-education', 'UserController@deleteProfileEducation')->name('delete.front.profile.education');
 
-/* * *********************************** */
-Route::post('show-front-profile-education_non_formal/{id}', 'UserController@showFrontProfileEducationNonFormal')->name('show.front.profile.education_non_formal');
-
-Route::post('show-applicant-profile-education_non_formal/{id}', 'UserController@showApplicantProfileEducationNonFormal')->name('show.applicant.profile.education_non_formal');
-
-Route::post('get-front-profile-education_non_formal-form/{id}', 'UserController@getFrontProfileEducationNonFormalForm')->name('get.front.profile.education_non_formal.form');
-
-Route::post('store-front-profile-education_non_formal/{id}', 'UserController@storeFrontProfileEducationNonFormal')->name('store.front.profile.education_non_formal');
-
-Route::post('get-front-profile-education_non_formal-edit-form/{id}', 'UserController@getFrontProfileEducationNonFormalEditForm')->name('get.front.profile.education_non_formal.edit.form');
-
-Route::put('update-front-profile-education_non_formal/{education_non_formal_id}/{user_id}', 'UserController@updateFrontProfileEducationNonFormal')->name('update.front.profile.education_non_formal');
-
-Route::delete('delete-front-profile-education_non_formal', 'UserController@deleteProfileEducationNonFormal')->name('delete.front.profile.education_non_formal');
 /* * *********************************** */
 
 Route::post('show-front-profile-skills/{id}', 'UserController@showProfileSkills')->name('show.front.profile.skills');

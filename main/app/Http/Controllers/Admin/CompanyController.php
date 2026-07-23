@@ -1,39 +1,84 @@
 <?php
 
+
+
 namespace App\Http\Controllers\Admin;
+
+
 
 use App\Helpers\ImageUploadingHelper;
 use Hash;
+
 use File;
+
 use ImgUploader;
+
 use Auth;
+
 use DB;
+
 use Input;
+
 use Redirect;
+
 use App\Package;
+
 use App\Company;
+
 use App\Country;
+
 use App\State;
+
 use App\City;
+
 use App\Industry;
+
 use App\OwnershipType;
+
 use Carbon\Carbon;
+
 use App\Helpers\MiscHelper;
+
 use App\Helpers\DataArrayHelper;
+
 use App\Http\Requests;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 use DataTables;
+
 use App\Http\Requests\CompanyFormRequest;
+
 use App\Http\Controllers\Controller;
+
 use App\Traits\CompanyTrait;
+
 use App\Traits\CompanyPackageTrait;
+
 use Illuminate\Support\Str;
+
 use Mail;
+
+use App\Mail\CompanyActivatedMailable;
+
+use App\Mail\CompanyRegistrationRejectedMailable;
+
+
+
+
+
 use App\Helpers\AdminAuthorizationHelper as APAuthHelp;
 
+
+
 class CompanyController extends Controller
+
 {
+
+
+
     use CompanyTrait;
 
     use CompanyPackageTrait;
@@ -51,15 +96,17 @@ class CompanyController extends Controller
      */
 
     public function __construct()
+
     {
     }
 
 
 
     public function indexCompanies()
+
     {
 
-        // if (!APAuthHelp::hasPermission('company')) return response()->view('admin.errors.401', [], 401);
+        if (!APAuthHelp::hasPermission('company')) return response()->view('admin.errors.401', [], 401);
 
 
 
@@ -69,11 +116,10 @@ class CompanyController extends Controller
 
 
     public function createCompany()
+
     {
 
-        if (!APAuthHelp::hasPermission('company')) {
-            return response()->view('admin.errors.401', [], 401);
-        }
+        if (!APAuthHelp::hasPermission('company')) return response()->view('admin.errors.401', [], 401);
 
 
 
@@ -101,6 +147,7 @@ class CompanyController extends Controller
 
 
     public function download($company)
+
     {
 
 
@@ -122,6 +169,7 @@ class CompanyController extends Controller
 
 
     public function storeCompany(CompanyFormRequest $request)
+
     {
 
         $company = new Company();
@@ -225,6 +273,7 @@ class CompanyController extends Controller
 
 
     public function editCompany($id)
+
     {
 
         $countries = DataArrayHelper::defaultCountriesArray();
@@ -265,6 +314,7 @@ class CompanyController extends Controller
 
 
     public function updateCompany($id, CompanyFormRequest $request)
+
     {
 
         $url = '';
@@ -275,122 +325,129 @@ class CompanyController extends Controller
         if ($request->hasFile('logo')) {
 
             $is_deleted = $this->deleteCompanyLogo($company->id);
-
-
+            
+            
             $image = $request->file('logo');
-
+            
             $fileName = ImageUploadingHelper::UploadImage('company_logos', $image, $request->input('name'), 300, 300, false);
-
+            
             $company->logo = $fileName;
         }
-
+        
         if ($request->hasFile('camara_comercio')) {
-
+            
             $file = $request->file('camara_comercio');
-
+            
             $destinationPath = 'uploads';
-
+            
             $file->move($destinationPath, $file->getClientOriginalName());
-
+            
             $url = $destinationPath . '/' . $file->getClientOriginalName();
-
+            
             $company->camara_comercio = $url;
         }
-
+        
         /*         * ************************************** */
-
+        
         $company->name = $request->input('name');
-
+        
         $company->email = $request->input('email');
-
+        
         if (!empty($request->input('password'))) {
-
+            
             $company->password = Hash::make($request->input('password'));
         }
-
+        
         $company->ceo = $request->input('ceo');
-
+        
         $company->industry_id = $request->input('industry_id');
-
+        
         $company->ownership_type_id = $request->input('ownership_type_id');
-
+        
         $company->description = $request->input('description');
-
+        
         $company->location = $request->input('location');
-
+        
         $company->map = $request->input('map');
-
+        
         $company->no_of_offices = $request->input('no_of_offices');
-
+        
         $website = $request->input('website');
-
+        
         $company->website = (false === strpos($website, 'http')) ? 'http://' . $website : $website;
-
+        
         $company->no_of_employees = $request->input('no_of_employees');
-
+        
         $company->established_in = $request->input('established_in');
-
+        
         $company->fax = $request->input('fax');
-
+        
         $company->phone = $request->input('phone');
-
+        
         $company->facebook = $request->input('facebook');
-
+        
         $company->twitter = $request->input('twitter');
-
+        
         $company->linkedin = $request->input('linkedin');
-
+        
         $company->google_plus = $request->input('google_plus');
-
+        
         $company->pinterest = $request->input('pinterest');
-
+        
         $company->country_id = $request->input('country_id');
-
+        
         $company->state_id = $request->input('state_id');
-
+        
         $company->city_id = $request->input('city_id');
 
-        $company->is_active = $request->input('is_active');
-
+        $wasActive = (int) $company->is_active;
+        $newActive = (int) $request->input('is_active');
+        $company->is_active = $newActive;
+        
         $company->is_featured = $request->input('is_featured');
-
+        
         $company->tipo_identificacion = $request->input('tipo_identificacion');
-
+        
         $company->identificacion = $request->input('identificacion');
-
+        
         $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
-
+        
         $company->update();
 
-
-
+        if ($wasActive === 0 && $newActive === 1) {
+            Mail::send(new CompanyActivatedMailable($company));
+        }
+        
+        
+        
         /*         * ************************************ */
-
+        
         if ($request->has('company_package_id') && $request->input('company_package_id') > 0) {
 
             $package_id = $request->input('company_package_id');
-
+            
             $package = Package::find($package_id);
-
+            
             if ($company->package_id > 0) {
-
+                
                 $this->updateCompanyPackage($company, $package);
             } else {
-
+                
                 $this->addCompanyPackage($company, $package);
             }
         }
-
+        
         /*         * ************************************ */
-
+        
         flash('Empresa ha sido actualizada!')->success();
-
+        
         return \Redirect::route('edit.company', array($company->id));
     }
 
 
 
     public function deleteCompany(Request $request)
+
     {
 
         $id = $request->input('id');
@@ -413,6 +470,7 @@ class CompanyController extends Controller
 
 
     public function fetchCompaniesData(Request $request)
+
     {
 
         $companies = Company::select([
@@ -519,6 +577,14 @@ class CompanyController extends Controller
                     $activeIcon = 'check-square-o';
                 }
 
+                $rejectAction = '';
+
+                if ((int) $companies->is_active == 0) {
+
+                    $rejectAction = '<li><a href="javascript:void(0);" onClick="rejectCompanyRegistration(' . $companies->id . ');"><i class="fa fa-times" aria-hidden="true"></i>Rechazar registro</a></li>';
+
+                }
+
                 /*                             * ************************* */
 
                 $featuredTxt = 'Destacar';
@@ -572,6 +638,8 @@ class CompanyController extends Controller
 
 <li><a href="javascript:void(0);" onClick="' . $activeHref . '" id="onclickActive' . $companies->id . '"><i class="fa fa-' . $activeIcon . '" aria-hidden="true"></i>' . $activeTxt . '</a></li>
 
+						' . $rejectAction . '
+
 						
 
 <li><a href="javascript:void(0);" onClick="' . $featuredHref . '" id="onclickFeatured' . $companies->id . '"><i class="fa fa-' . $featuredIcon . '" aria-hidden="true"></i>' . $featuredTxt . '</a></li>
@@ -611,6 +679,7 @@ class CompanyController extends Controller
 
 
     public function makeActiveCompany(Request $request)
+
     {
 
         $id = $request->input('id');
@@ -621,28 +690,14 @@ class CompanyController extends Controller
 
             $company = Company::findOrFail($id);
 
+            $wasActive = (int) $company->is_active;
             $company->is_active = 1;
 
             $company->update();
 
-
-
-            $subject = "Cambio estado de su registro";
-
-            $for = $company->email;
-
-            Mail::send('emails.changestate', ['company' => $company, 'estado' => 'activado'], function ($msj) use ($subject, $for) {
-
-
-
-                $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
-
-                $msj->subject($subject);
-
-                $msj->to($for);
-            });
-
-
+            if ($wasActive === 0) {
+                Mail::send(new CompanyActivatedMailable($company));
+            }
 
             echo 'ok';
         } catch (ModelNotFoundException $e) {
@@ -653,7 +708,30 @@ class CompanyController extends Controller
 
 
 
+    public function rejectCompanyRegistration(Request $request)
+    {
+        $id = $request->input('id');
+
+        try {
+            $company = Company::findOrFail($id);
+
+            if ((int) $company->is_active === 1) {
+                echo 'notok';
+                return;
+            }
+
+            Mail::send(new CompanyRegistrationRejectedMailable($company));
+
+            echo 'ok';
+        } catch (ModelNotFoundException $e) {
+            echo 'notok';
+        }
+    }
+
+
+
     public function makeNotActiveCompany(Request $request)
+
     {
 
         $id = $request->input('id');
@@ -697,6 +775,7 @@ class CompanyController extends Controller
 
 
     public function makeFeaturedCompany(Request $request)
+
     {
 
         $id = $request->input('id');
@@ -719,6 +798,7 @@ class CompanyController extends Controller
 
 
     public function makeNotFeaturedCompany(Request $request)
+
     {
 
         $id = $request->input('id');

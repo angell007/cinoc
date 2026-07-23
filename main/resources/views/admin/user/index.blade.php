@@ -1,296 +1,162 @@
 @extends('admin.layouts.admin_layout')
 
 @section('content')
-    <style type="text/css">
-        .table td,
-        .table th {
 
-            font-size: 12px;
+<style type="text/css">
 
-            line-height: 2.42857 !important;
+    .table td, .table th {
 
-        }
-    </style>
+        font-size: 12px;
 
-    <div class="page-content-wrapper">
+        line-height: 2.42857 !important;
 
-        <!-- BEGIN CONTENT BODY -->
+    }	
 
-        <div class="page-content">
+</style>
 
-            <!-- BEGIN PAGE HEADER-->
+<div class="page-content-wrapper"> 
 
-            <!-- BEGIN PAGE BAR -->
+    <!-- BEGIN CONTENT BODY -->
 
-            <div class="page-bar">
+    <div class="page-content"> 
 
-                <ul class="page-breadcrumb">
+        <!-- BEGIN PAGE HEADER--> 
 
-                    <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
+        <!-- BEGIN PAGE BAR -->
 
-                    <li> <span>Estudiantes/Egresados</span> </li>
+        <div class="page-bar">
 
-                </ul>
+            <ul class="page-breadcrumb">
 
-            </div>
+                <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
 
-            <!-- END PAGE BAR -->
+                <li> <span>Estudiantes/Egresados</span> </li>
 
-            <!-- BEGIN PAGE TITLE-->
+            </ul>
 
-            <h3 class="page-title">Gestión de estudiantes <small>estudiantes</small> </h3>
+        </div>
 
+        <!-- END PAGE BAR --> 
 
+        <!-- BEGIN PAGE TITLE-->
 
-            @if (Session::has('message'))
-                <p class="alert {{ Session::get('alert-class') }}">{{ Session::get('message') }}</p>
-            @endif
+        <h3 class="page-title">Gestión de estudiantes <small>estudiantes</small> </h3>
 
+        
 
+        @if(Session::has('message'))
 
-            <!-- END PAGE TITLE-->
+            <p class="alert {{Session::get('alert-class')}}">{{ Session::get('message') }}</p>
 
-            <!-- END PAGE HEADER-->
+        @endif
 
-            <div class="row">
 
-                <div class="col-md-12">
 
-                    <!-- Begin: life time stats -->
+        <!-- END PAGE TITLE--> 
 
-                    <div class="portlet light portlet-fit portlet-datatable bordered">
+        <!-- END PAGE HEADER-->
 
-                        <div class="portlet-title">
+        <div class="row">
 
+            <div class="col-md-12"> 
 
+                <!-- Begin: life time stats -->
 
-                            <div class="caption"> <i class="icon-settings font-dark"></i> <span
-                                    class="caption-subject font-dark sbold uppercase">estudiantes</span> </div>
+                <div class="portlet light portlet-fit portlet-datatable bordered">
 
-                            <div class="actions">
+                    <div class="portlet-title">
 
 
 
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    title="importar archivo para habilitación de registro " data-target="#fileModalUp">
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">estudiantes</span> </div>
 
-                                    <i class="fa fa-upload"></i>
+                        <div class="actions">
 
-                                </button>
 
 
+                            <button type="button" class="btn btn-primary" data-toggle="modal" title="importar archivo para habilitación de registro " data-target="#fileModalUp">
 
-                                <button type="button" class="btn btn-info" title="importar archivo para cambio de Rol "
-                                    data-toggle="modal" title="upload data" data-target="#fileModalImport">
+                            <i class="fa fa-upload"></i>
 
-                                    <i class="fa fa-upload"></i>
+                            </button>
 
-                                </button>
+                            
 
-                                <button type="button" class="btn btn-info"
-                                    title="Filtrar estudiantes con fecha de nacimiento vacia "
-                                    onclick="filterEmptyDateOfBirth()">
+                            <button type="button" class="btn btn-info" title="importar archivo para cambio de Rol " data-toggle="modal" title="upload data" data-target="#fileModalImport">
 
-                                    <i class="fa fa-filter"></i>
+                            <i class="fa fa-upload"></i>
 
-                                </button>
+                            </button>
 
 
 
-                                <a href="{{ route('create.user') }}" class="btn btn-xs btn-success"><i
-                                        class="glyphicon glyphicon-plus"></i> Nuevo estudiante/egresado </a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="portlet-body">
-
-                            <div class="table-container">
-
-                                <form method="post" role="form" id="user-search-form">
-
-                                    <table class="table table-striped table-bordered table-hover" id="user_datatable_ajax">
-
-                                        <thead>
-
-                                            <tr role="row" class="filter">
-
-                                                <td><input placeholder="ID" type="text" class="form-control"
-                                                        name="id" id="id" autocomplete="off"></td>
-
-                                                <td><input placeholder="Identificación" type="text" class="form-control"
-                                                        name="national_id_card_number" id="national_id_card_number"
-                                                        autocomplete="off"></td>
-
-                                                <td><input placeholder="Nombre" type="text" class="form-control"
-                                                        name="name" id="name" autocomplete="off"></td>
-
-                                                <!--<td><input placeholder="" type="text" class="form-control" name="" id="" autocomplete="off"></td>-->
-
-                                                <td><input placeholder="Email" type="text" class="form-control"
-                                                        name="email" id="email" autocomplete="off"></td>
-
-                                                <td></td>
-
-                                                <td><input placeholder="Ciudad" type="text" class="form-control"
-                                                        name="ciudad" id="ciudad" autocomplete="off"></td>
-
-                                                <td><input placeholder="Fecha de Nacimiento" type="text"
-                                                        class="form-control" name="date_of_birth" id="date_of_birth"
-                                                        autocomplete="off"></td>
-
-                                                <td></td>
-
-                                                <td></td>
-
-                                                <td></td>
-
-                                            </tr>
-
-                                            <tr role="row" class="heading">
-
-                                                <th>Id</th>
-
-                                                <th>Identificación</th>
-
-                                                <th>Nombre</th>
-
-                                                <th>Email</th>
-
-                                                <th>Rol</th>
-
-                                                <th>Ciudad</th>
-
-                                                <th>Fecha de nacimiento</th>
-
-                                                <th>Hoja de vida</th>
-
-                                                <th>Carta de presentación</th>
-
-                                                <th>Actions</th>
-
-                                            </tr>
-
-                                        </thead>
-
-                                        <tbody>
-
-                                        </tbody>
-
-                                    </table>
-                                </form>
-
-                            </div>
+                            <a href="{{ route('create.user') }}" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-plus"></i> Nuevo estudiante/egresado </a>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <div class="portlet-body">
 
-            </div>
+                        <div class="table-container">
 
-            <div class="row">
+                            <form method="post" role="form" id="user-search-form">
 
-                <div class="col-md-12">
+                                <table class="table table-striped table-bordered table-hover"  id="user_datatable_ajax">
 
-                    <!-- Begin: life time stats -->
+                                    <thead>
 
-                    <div class="portlet light portlet-fit portlet-datatable bordered">
+                                        <tr role="row" class="filter">                  
 
-                        <div class="portlet-title">
+                                            <td><input placeholder="ID" type="text" class="form-control" name="id" id="id" autocomplete="off"></td>                    
 
+                                            <td><input placeholder="Identificación" type="text" class="form-control" name="national_id_card_number" id="national_id_card_number" autocomplete="off"></td>                    
 
+                                            <td><input placeholder="Nombre" type="text" class="form-control" name="name" id="name" autocomplete="off"></td>
 
-                            <div class="caption"> <i class="icon-settings font-dark"></i> <span
-                                    class="caption-subject font-dark sbold uppercase">Documentos subidos
+                                            <!--<td><input placeholder="" type="text" class="form-control" name="" id="" autocomplete="off"></td>-->
 
+                                            <td><input placeholder="Email" type="text" class="form-control" name="email" id="email" autocomplete="off"></td>
 
+                                            <td></td>
 
-                                    <button type="button" class="btn btn-info" id="downloadids"
-                                        title="Descargar todos los documentos" onclick="getXls()">
+                                            <td><input placeholder="Ciudad" type="text" class="form-control" name="ciudad" id="ciudad" autocomplete="off"></td>
 
-                                        <i class="fa fa-download"></i>
+                                            <td></td>
 
-                                    </button>
+                                            <td></td>
 
+                                            <td></td>
 
+                                        </tr>
 
-                                </span>
+                                        <tr role="row" class="heading"> 
 
+                                            <th>Id</th>                                        
 
+                                            <th>Identificación</th>                                        
 
+                                            <th>Nombre</th>
 
+                                            <th>Email</th>                                        
 
-                            </div>
+                                            <th>Rol</th>                                        
 
-                            <div class="actions">
+                                            <th>Ciudad</th>                                        
 
+                                            <th>Hoja de vida</th>                                        
 
+                                            <th>Actions</th>
 
+                                        </tr>
 
+                                    </thead>
 
+                                    <tbody>
 
+                                    </tbody>
 
-                            </div>
-
-                        </div>
-
-                        <div class="portlet-body">
-
-                            <div class="table-container">
-
-                                <form method="post" role="form" id="user-search-form">
-
-                                    <table class="table table-striped table-bordered table-hover"
-                                        id="documents_datatable_ajax">
-
-                                        <thead>
-
-                                            <tr role="row" class="filter">
-
-                                                <td><input placeholder="ID" type="text" class="form-control"
-                                                        name="id" id="id" autocomplete="off"></td>
-
-                                                <td><input placeholder="Identificación" type="text"
-                                                        class="form-control" name="national_id_card_number2"
-                                                        id="national_id_card_number2" autocomplete="off"></td>
-
-                                                <td><input placeholder="Nombre" type="text" class="form-control"
-                                                        name="name" id="name" autocomplete="off"></td>
-
-                                                <td><input placeholder="Email" type="text" class="form-control"
-                                                        name="email" id="email" autocomplete="off"></td>
-
-                                                <td></td>
-
-                                            </tr>
-
-                                            <tr role="row" class="heading">
-
-                                                <th>Id</th>
-
-                                                <th>Identificacion</th>
-
-                                                <th>Nombre</th>
-
-                                                <th>Email</th>
-
-                                                <th>Actions</th>
-
-                                            </tr>
-
-                                        </thead>
-
-                                        <tbody>
-
-                                        </tbody>
-
-                                    </table>
-                                </form>
-
-                            </div>
+                                </table></form>
 
                         </div>
 
@@ -302,353 +168,379 @@
 
         </div>
 
+        <div class="row">
+
+            <div class="col-md-12"> 
+
+                <!-- Begin: life time stats -->
+
+                <div class="portlet light portlet-fit portlet-datatable bordered">
+
+                    <div class="portlet-title">
 
 
-        @include('partials.modal')
 
-        @include('partials.fileModalImport')
+                        <div class="caption"> <i class="icon-settings font-dark"></i> <span class="caption-subject font-dark sbold uppercase">Documentos subidos
+
+                        
+
+                               <button type="button" class="btn btn-info" id="downloadids" title="Descargar todos los documentos" onclick="getXls()">
+
+                                   <i class="fa fa-download"></i>
+
+                               </button>
 
 
 
-        <!-- END CONTENT BODY -->
+                        </span> 
+
+                        
+
+               
+
+                        </div>
+
+                        <div class="actions">
+
+
+
+                           
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="portlet-body">
+
+                        <div class="table-container">
+
+                            <form method="post" role="form" id="user-search-form">
+
+                                <table class="table table-striped table-bordered table-hover"  id="documents_datatable_ajax">
+
+                                    <thead>
+
+                                        <tr role="row" class="filter">                  
+
+                                            <td><input placeholder="ID" type="text" class="form-control" name="id" id="id" autocomplete="off"></td>                    
+
+                                            <td><input placeholder="Identificación" type="text" class="form-control" name="national_id_card_number2" id="national_id_card_number2" autocomplete="off"></td>                    
+
+                                            <td><input placeholder="Nombre" type="text" class="form-control" name="name" id="name" autocomplete="off"></td>
+
+                                            <td><input placeholder="Email" type="text" class="form-control" name="email" id="email" autocomplete="off"></td>
+
+                                            <td></td>
+
+                                        </tr>
+
+                                        <tr role="row" class="heading"> 
+
+                                            <th>Id</th>                                        
+
+                                            <th>Identificacion</th>                                        
+
+                                            <th>Nombre</th>
+
+                                            <th>Email</th>                                        
+
+                                            <th>Actions</th>
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                    </tbody>
+
+                                </table></form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
+
+
+
+    @include('partials.modal')
+
+    @include('partials.fileModalImport')
+
+
+
+    <!-- END CONTENT BODY --> 
+
+</div>
+
 @endsection
 
-@push('scripts')
-    <script>
-        $(function() {
+@push('scripts') 
 
-            var oTable = $('#user_datatable_ajax').DataTable({
+<script>
 
-                processing: true,
+    $(function () {
 
-                serverSide: true,
+        var oTable = $('#user_datatable_ajax').DataTable({
 
-                stateSave: true,
+            processing: true,
 
-                searching: false,
+            serverSide: true,
 
-                dom: 'lBrtip',
+            stateSave: true,
 
-                pageLength: 25,
+            searching: false,
 
-                lengthMenu: [
-                    [25, 100, -1],
-                    [25, 100, "All"]
+               dom: 'lBrtip',
+
+            pageLength: 25,
+
+            lengthMenu: [[25, 100, -1], [25, 100, "All"]],
+
+            buttons: [
+
+                'copy','csv','excel','pdf','print'
+
                 ],
 
-                buttons: [
+            "order": [[0, "desc"]],
 
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+            info: false,
 
-                ],
+            /*		
 
-                "order": [
-                    [0, "desc"]
-                ],
+             paging: true,
 
-                info: false,
+             */
 
-                /*		
+            ajax: {
 
-                 paging: true,
+                url: '{!! route('fetch.data.users') !!}',
 
-                 */
+                data: function (d) {
 
-                ajax: {
+                    d.id = $('input[name=id]').val();
 
-                    url: '{!! route('fetch.data.users') !!}',
+                    d.national_id_card_number = $('input[name=national_id_card_number]').val();
 
-                    data: function(d) {
+                    d.name = $('input[name=name]').val();
 
-                        d.id = $('input[name=id]').val();
+                    d.email = $('input[name=email]').val();
 
-                        d.national_id_card_number = $('input[name=national_id_card_number]').val();
+                    d.ciudad = $('input[name=ciudad]').val();
 
-                        d.name = $('input[name=name]').val();
+                }
 
-                        d.email = $('input[name=email]').val();
+            }, columns: [
 
-                        d.ciudad = $('input[name=ciudad]').val();
+                /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, searchable: false},*/
 
-                        d.date_of_birth = $('input[name=date_of_birth]').val();
+                {data: 'id', name: 'id'},
 
-                    }
+                {data: 'national_id_card_number', name: 'national_id_card_number'},
+
+                {data: 'name', name: 'name'},
+
+                {data: 'email', name: 'email'},
+
+                {data: 'rol', name: 'rol'},
+
+                {data: 'ciudad', name: 'ciudad'},
+
+                 {
+
+                    data:'cv',
+
+                    name:'cv'
 
                 },
-                columns: [
 
-                    /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, searchable: false},*/
+                {data: 'action', name: 'action', orderable: false, searchable: false}
 
-                    {
-                        data: 'id',
-                        name: 'id'
-                    },
-
-                    {
-                        data: 'national_id_card_number',
-                        name: 'national_id_card_number'
-                    },
-
-                    {
-                        data: 'name',
-                        name: 'name'
-                    },
-
-                    {
-                        data: 'email',
-                        name: 'email'
-                    },
-
-                    {
-                        data: 'rol',
-                        name: 'rol'
-                    },
-
-                    {
-                        data: 'ciudad',
-                        name: 'ciudad'
-                    },
-
-                    {
-                        data: 'date_of_birth',
-                        name: 'date_of_birth'
-                    },
-
-                    {
-
-                        data: 'cv',
-
-                        name: 'cv'
-
-                    },
-
-                    {
-
-                        data: 'letter',
-
-                        name: 'letter'
-
-                    },
-
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    }
-
-                ]
-
-            });
-
-            $('#user-search-form').on('submit', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#id').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#name').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#email').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#ciudad').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#date_of_birth').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#national_id_card_number').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
+            ]
 
         });
 
+        $('#user-search-form').on('submit', function (e) {
 
+            oTable.draw();
 
-        $(function() {
-
-            var oTable = $('#documents_datatable_ajax').DataTable({
-
-                processing: true,
-
-                serverSide: true,
-
-                stateSave: true,
-
-                searching: false,
-
-                dom: 'lBrtip',
-
-                pageLength: 25,
-
-                lengthMenu: [
-                    [25, 100, -1],
-                    [25, 100, "All"]
-                ],
-
-                buttons: [
-
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-
-                ],
-
-                "order": [
-                    [0, "desc"]
-                ],
-
-                info: false,
-
-                /*		
-
-                 paging: true,
-
-                 */
-
-                ajax: {
-
-                    url: '{!! route('fetch.data.documents') !!}',
-
-                    data: function(d) {
-
-                        d.id = $('input[name=id]').val();
-
-                        d.national_id_card_number2 = $('input[name=national_id_card_number2]').val();
-
-                        d.name = $('input[name=name]').val();
-
-                        d.email = $('input[name=email]').val();
-
-                    }
-
-                },
-                columns: [
-
-                    /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, searchable: false},*/
-
-                    {
-                        data: 'id',
-                        name: 'id'
-                    },
-
-                    {
-                        data: 'national_id_card_number',
-                        name: 'national_id_card_number'
-                    },
-
-                    {
-                        data: 'name',
-                        name: 'name'
-                    },
-
-                    {
-                        data: 'email',
-                        name: 'email'
-                    },
-
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    }
-
-                ]
-
-            });
-
-            $('#user-search-form').on('submit', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#id').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#name').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#email').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
-
-            $('#national_id_card_number2').on('keyup', function(e) {
-
-                oTable.draw();
-
-                e.preventDefault();
-
-            });
+            e.preventDefault();
 
         });
 
+        $('#id').on('keyup', function (e) {
 
+            oTable.draw();
 
-        function delete_document(id) {
+            e.preventDefault();
 
-            if (confirm('Deseas eleminar este documento?')) {
+        });
 
-                $.post("{{ route('delete.document') }}", {
-                        id: id,
-                        _method: 'DELETE',
-                        _token: '{{ csrf_token() }}'
-                    })
+        $('#name').on('keyup', function (e) {
 
-                    .done(function(response) {
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#email').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#ciudad').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#national_id_card_number').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+    });
+
+    
+
+    $(function () {
+
+        var oTable = $('#documents_datatable_ajax').DataTable({
+
+            processing: true,
+
+            serverSide: true,
+
+            stateSave: true,
+
+            searching: false,
+
+                dom: 'lBrtip',
+
+            pageLength: 25,
+
+            lengthMenu: [[25, 100, -1], [25, 100, "All"]],
+
+            buttons: [
+
+                'copy','csv','excel','pdf','print'
+
+                ],
+
+            "order": [[0, "desc"]],
+
+            info: false,
+
+            /*		
+
+             paging: true,
+
+             */
+
+            ajax: {
+
+                url: '{!! route('fetch.data.documents') !!}',
+
+                data: function (d) {
+
+                    d.id = $('input[name=id]').val();
+
+                    d.national_id_card_number2 = $('input[name=national_id_card_number2]').val();
+
+                    d.name = $('input[name=name]').val();
+
+                    d.email = $('input[name=email]').val();
+
+                }
+
+            }, columns: [
+
+                /*{data: 'id_checkbox', name: 'id_checkbox', orderable: false, searchable: false},*/
+
+                {data: 'id', name: 'id'},
+
+                {data: 'national_id_card_number', name: 'national_id_card_number'},
+
+                {data: 'name', name: 'name'},
+
+                {data: 'email', name: 'email'},
+
+                {data: 'action', name: 'action', orderable: false, searchable: false}
+
+            ]
+
+        });
+
+        $('#user-search-form').on('submit', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#id').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#name').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#email').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#national_id_card_number2').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+    });
+
+    
+
+    function delete_document(id) {
+
+        if (confirm('Deseas eleminar este documento?')) {
+
+            $.post("{{ route('delete.document') }}", {id: id, _method: 'DELETE', _token: '{{ csrf_token() }}'})
+
+                    .done(function (response) {
 
                         if (response == 'ok')
 
@@ -668,21 +560,17 @@
 
                     });
 
-            }
-
         }
 
-        function delete_user(id) {
+    }
 
-            if (confirm('Are you sure! you want to delete?')) {
+    function delete_user(id) {
 
-                $.post("{{ route('delete.user') }}", {
-                        id: id,
-                        _method: 'DELETE',
-                        _token: '{{ csrf_token() }}'
-                    })
+        if (confirm('Are you sure! you want to delete?')) {
 
-                    .done(function(response) {
+            $.post("{{ route('delete.user') }}", {id: id, _method: 'DELETE', _token: '{{ csrf_token() }}'})
+
+                    .done(function (response) {
 
                         if (response == 'ok')
 
@@ -702,19 +590,15 @@
 
                     });
 
-            }
-
         }
 
-        function make_active(id) {
+    }
 
-            $.post("{{ route('make.active.user') }}", {
-                    id: id,
-                    _method: 'PUT',
-                    _token: '{{ csrf_token() }}'
-                })
+    function make_active(id) {
 
-                .done(function(response) {
+        $.post("{{ route('make.active.user') }}", {id: id, _method: 'PUT', _token: '{{ csrf_token() }}'})
+
+                .done(function (response) {
 
                     if (response == 'ok')
 
@@ -722,8 +606,7 @@
 
                         $('#onclick_active_' + id).attr("onclick", "make_not_active(" + id + ")");
 
-                        $('#onclick_active_' + id).html(
-                            "<i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i>Make InActive");
+                        $('#onclick_active_' + id).html("<i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i>Make InActive");
 
                     } else
 
@@ -735,17 +618,13 @@
 
                 });
 
-        }
+    }
 
-        function make_not_active(id) {
+    function make_not_active(id) {
 
-            $.post("{{ route('make.not.active.user') }}", {
-                    id: id,
-                    _method: 'PUT',
-                    _token: '{{ csrf_token() }}'
-                })
+        $.post("{{ route('make.not.active.user') }}", {id: id, _method: 'PUT', _token: '{{ csrf_token() }}'})
 
-                .done(function(response) {
+                .done(function (response) {
 
                     if (response == 'ok')
 
@@ -753,8 +632,7 @@
 
                         $('#onclick_active_' + id).attr("onclick", "make_active(" + id + ")");
 
-                        $('#onclick_active_' + id).html(
-                            "<i class=\"fa fa-square-o\" aria-hidden=\"true\"></i>Make Active");
+                        $('#onclick_active_' + id).html("<i class=\"fa fa-square-o\" aria-hidden=\"true\"></i>Make Active");
 
                     } else
 
@@ -766,17 +644,13 @@
 
                 });
 
-        }
+    }
 
-        function make_verified(id) {
+    function make_verified(id) {
 
-            $.post("{{ route('make.verified.user') }}", {
-                    id: id,
-                    _method: 'PUT',
-                    _token: '{{ csrf_token() }}'
-                })
+        $.post("{{ route('make.verified.user') }}", {id: id, _method: 'PUT', _token: '{{ csrf_token() }}'})
 
-                .done(function(response) {
+                .done(function (response) {
 
                     if (response == 'ok')
 
@@ -784,8 +658,7 @@
 
                         $('#onclick_verified_' + id).attr("onclick", "make_not_verified(" + id + ")");
 
-                        $('#onclick_verified_' + id).html(
-                            "<i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i>Verified");
+                        $('#onclick_verified_' + id).html("<i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i>Verified");
 
                     } else
 
@@ -797,17 +670,13 @@
 
                 });
 
-        }
+    }
 
-        function make_not_verified(id) {
+    function make_not_verified(id) {
 
-            $.post("{{ route('make.not.verified.user') }}", {
-                    id: id,
-                    _method: 'PUT',
-                    _token: '{{ csrf_token() }}'
-                })
+        $.post("{{ route('make.not.verified.user') }}", {id: id, _method: 'PUT', _token: '{{ csrf_token() }}'})
 
-                .done(function(response) {
+                .done(function (response) {
 
                     if (response == 'ok')
 
@@ -815,8 +684,7 @@
 
                         $('#onclick_verified_' + id).attr("onclick", "make_verified(" + id + ")");
 
-                        $('#onclick_verified_' + id).html(
-                            "<i class=\"fa fa-square-o\" aria-hidden=\"true\"></i>Not Verified");
+                        $('#onclick_verified_' + id).html("<i class=\"fa fa-square-o\" aria-hidden=\"true\"></i>Not Verified");
 
                     } else
 
@@ -828,53 +696,52 @@
 
                 });
 
-        }
+    }
 
+    
 
+    
 
+      function getXls(){
 
+          
 
-        function getXls() {
+          console.log('obtain xls');
 
+          
 
-
-            console.log('obtain xls');
-
-
-
-            fetch('./get-xls')
+                fetch('./get-xls')
 
                 .then(response => response.blob())
 
-                .then((blob) => {
+                .then((blob )=>{ 
 
+                    
 
+            var url = window.URL.createObjectURL(blob);
 
-                    var url = window.URL.createObjectURL(blob);
+            var a = document.createElement('a');
 
-                    var a = document.createElement('a');
+            a.href = url;
 
-                    a.href = url;
+            a.download = "Documentos.xlsx";
 
-                    a.download = "Documentos.xlsx";
+            document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
 
-                    document.body.appendChild(
-                        a); // we need to append the element to the dom -> otherwise it will not work in firefox
+            a.click();    
 
-                    a.click();
+            a.remove();  //afterwards we remove the element again 
 
-                    a.remove(); //afterwards we remove the element again 
-
-
+                    
 
                 })
 
-        }
+            }
 
-        function filterEmptyDateOfBirth() {
-            var table = $('#user_datatable_ajax').DataTable();
-            $('#date_of_birth').val('no_date');
-            table.draw();
-        }
-    </script>
+            
+
+            
+
+</script> 
+
 @endpush

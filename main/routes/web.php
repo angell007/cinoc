@@ -1,198 +1,282 @@
 <?php
 
 use App\Company;
+
 use App\Job;
+
 use App\Mail\cartaMail;
+
 use App\MaritalStatus;
+
 use App\Models\template_contrato;
+
 use App\User;
+
 use App\JobApply;
+
 use Illuminate\Support\Facades\Artisan;
+
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Support\Facades\Request;
+
 use Illuminate\Support\Facades\Route;
+
 use Barryvdh\DomPDF\Facade as PDF;
+
 use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Mail;
+
+// use Newsletter; 
+
 use Illuminate\Support\Facades\Http;
+
 use App\Exports\Ids;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 Route::get('/clear-cache', function () {
-    $exitCode = Artisan::call('config:clear');
-    $exitCode = Artisan::call('cache:clear');
-    $exitCode = Artisan::call('config:cache');
-    return 'DONE'; //Return anything
+
+
+
+  $exitCode = Artisan::call('config:clear');
+
+
+
+  $exitCode = Artisan::call('cache:clear');
+
+
+
+  $exitCode = Artisan::call('config:cache');
+
+
+
+  return 'DONE'; //Return anything
+
+
+
 });
+
+
+
+
 
 Route::post('upload-participant', 'UserController@uploadParticipant')->name('upload-participant');
 
-
 Route::get('info', array_merge(['uses' => 'Admin\VideoController@indexVideosCap']))->name('info');
+
 Route::get('/getconst/{file}', function ($file) {
-    $name = $file;
-    $user = Auth::user();
-    $pdf = PDF::loadView('pdf.constancies', compact('name', 'user'));
-    return $pdf->download($name . '.pdf');
+
+  $name = $file;
+  $user = Auth::user();
+  $pdf = PDF::loadView('pdf.constancies', compact('name', 'user'));
+
+  //   return $pdf->stream('pruebapdf.pdf');
+
+  return $pdf->download($name . '.pdf');
 });
 
+
+
+
+
 Route::get('cv', function () {
-    $cvs = User::select(
-        'users.id',
-        'profile_cvs.cv_file as file',
-        'profile_cvs.title as title_cv'
-    )->leftjoin('profile_cvs', 'profile_cvs.user_id', 'users.id')
-    ->where('users.id', Auth::user()->id)
+  if (!Auth::check()) {
+    return redirect()->route('login');
+  }
+
+  $cvs = DB::table('profile_cvs')
+    ->select('profile_cvs.id', 'profile_cvs.cv_file as file', 'profile_cvs.title as title_cv')
+    ->where('profile_cvs.user_id', Auth::id())
+    ->orderBy('profile_cvs.id', 'desc')
     ->get();
-    return view('orientacion.cv', compact('cvs'));
-})->name('cv');
+
+  return view('orientacion.cv', compact('cvs'));
+})->middleware('auth')->name('cv');
 
 Route::get('test', function () {
-    return view('orientacion.test');
+  return view('orientacion.test');
 })->name('test');
 
 Route::get('interview', function () {
-    return view('orientacion.interview');
+  return view('orientacion.interview');
 })->name('interview');
 
 Route::get('contrats', function () {
-    return view('orientacion.contrats');
+  return view('orientacion.contrats');
 })->name('contrats');
 
+
+
+
+
+
+
+
+
+
+
 Route::get('include', function () {
-    return view('orientacion.include');
+  return view('orientacion.include');
 })->name('include');
 
 Route::get('modals', function () {
-    return view('orientacion.modals');
+  return view('orientacion.modals');
 })->name('modals');
 
 Route::get('benefits', function () {
-    return view('orientacion.benefits');
+  return view('orientacion.benefits');
 })->name('benefits');
 
 Route::get('education', function () {
-    return view('orientacion.education');
+  return view('orientacion.education');
 })->name('education');
 
 Route::get('ruta', function () {
-    return view('orientacion.ruta');
+  return view('orientacion.ruta');
 })->name('ruta');
 
+
+
+
+
 Route::post('send-revision', function () {
-    $user = User::select(
-        'users.id',
-        'users.email',
-        'users.name',
-        'users.id',
-        'profile_cvs.cv_file as file',
-        'profile_cvs.title as title_cv'
-    )
-      ->leftjoin('profile_cvs', 'profile_cvs.user_id', 'users.id')
-      ->where('users.id', Auth::user()->id)
+  if (!Auth::check()) {
+    return response()->json(['error' => 'No autorizado'], 401);
+  }
+
+  $cvId = request()->input('cv_id');
+  $user = Auth::user();
+  $cvTitle = 'Hoja de vida registrada en la plataforma';
+  $cvFile = null;
+
+  if ($cvId !== 'platform') {
+    $cv = DB::table('profile_cvs')
+      ->where('id', $cvId)
+      ->where('user_id', $user->id)
       ->first();
 
-    $subject = "Nueva HV para revisar!";
+    if (!$cv) {
+      return response()->json(['error' => 'Hoja de vida no encontrada'], 422);
+    }
 
-    Mail::send('emails.revision', ['user' => $user], function ($msj) use ($subject) {
-        $msj->from("bolsadeempleo@unioc.edu.co", "IES CINOC");
-        $msj->subject($subject);
-        $msj->to("bolsadeempleo@unioc.edu.co", "IES CINOC");
-    });
+    $cvTitle = $cv->title;
+    $cvFile = $cv->cv_file;
+  }
 
-    DB::table('advisory')->insert([
-      'user_id' => $user->id,
-      'cv' => $user->title_cv ?? 'no cv',
-      'created_at' => Carbon::now(),
+  $mailUser = (object) [
+    'id' => $user->id,
+    'email' => $user->email,
+    'name' => $user->name,
+    'title_cv' => $cvTitle,
+    'file' => $cvFile,
+    'is_platform_cv' => $cvId === 'platform',
+  ];
 
-    ]);
+  $subject = 'Nueva solicitud de revisión de hoja de vida';
 
-    return response()->json('enviado');
-})->name('send-revision');
+  Mail::send('emails.revision', ['user' => $mailUser], function ($msj) use ($subject) {
+    $msj->from('bolsadeempleo@unioc.edu.co', 'Bolsa de Empleo UNIOC');
+    $msj->subject($subject);
+    $msj->to('bolsadeempleo@unioc.edu.co', 'Bolsa de Empleo UNIOC');
+  });
+
+  DB::table('advisory')->insert([
+    'user_id' => $user->id,
+    'cv' => $cvTitle,
+    'created_at' => Carbon::now(),
+  ]);
+
+  return response()->json('enviado');
+})->middleware('auth')->name('send-revision');
 
 
 Route::get('/verify-email', function (Request $request) {
-    $subject = "Correo de pruebas";
-    $for = "angellphp@gmail.com";
-    
-    try {
-        // Mostrar configuración de correo actual
-        $config = config('mail');
-        
-        // Intentar enviar el correo
-        Mail::send('emails.test', ['content' => 'Esto es un correo de prueba'], function ($msj) use ($subject, $for) {
-            $msj->from("bolsadeempleo@unioc.edu.co", "Test Bolsa");
-            $msj->subject($subject);
-            $msj->to($for);
-        });
 
-        // Si no hay errores, el correo se envió correctamente
-        return response()->json([
-            'success' => true,
-            'message' => 'El correo se envió correctamente',
-        ]);
-
-    } catch (\Exception $e) {
-        // Capturar y devolver información detallada del error
-        return response()->json([
-            'success' => false,
-            'message' => 'Error al enviar el correo',
-            'error' => [
-                'type' => get_class($e),
-                'message' => $e->getMessage(),
-                'file' => $e->getFile(),
-                'line' => $e->getLine()
-            ],
-            'mail_config' => config('mail')
-        ], 500);
-    }
+  $subject = "Correo de pruebas";
+  $for = "angellphp@gmail.com";
+  try {
+    Mail::send('angellphp@gmail.com', $request->all(), function ($msj) use ($subject, $for) {
+      try {
+        $msj->from("mdgrisalez@misena.edu.co", "Test Bolsa");
+        $msj->subject($subject);
+        $msj->to($for);
+      } catch (\Exception $th) {
+        return Redirect::back()->withErrors(['msg', 'Datos incorrectos']);
+      }
+    });
+  } catch (\Exception $th) {
+    return Redirect::back()->withErrors(['msg', $th->getMessage()]);
+  }
 });
 
 
 
 Route::get('fetch-documents', array_merge(['uses' => 'Admin\UserController@fetchUsersDataDocuments']))->name('fetch.data.documents');
+
 Route::post('letter', array_merge(['uses' => 'UserController@uploadletter']))->name('update.front.profile.letter');
+
 Route::get('letter-delete', array_merge(['uses' => 'UserController@deleteletter']));
+
+
+
+
 
 Route::get('/send-mail', function (Request $request) {
 
-    $formato = template_contrato::find(request()->get('plantilla'));
-    $empresa = Company::find(request()->get('company'));
-    $estudiante = User::with('profileEducation')->find(request()->get('user'));
-    $formato->html =  preg_replace("/@nombre_empresa@/", $empresa->name, $formato->html);
-    $formato->html =  preg_replace("/@nit_empresa@/", '', $formato->html);
-    $formato->html =  preg_replace("/@nombre_estudiante@/", $estudiante->name . ' ' . $estudiante->last_name, $formato->html);
-    $formato->html =  preg_replace("/@documento_estudiante@/", $estudiante->national_id_card_number, $formato->html);
-    if (isset($estudiante->profileEducation->institution)) {
-        $formato->html =  preg_replace("/@instituto@/", $estudiante->profileEducation->institution, $formato->html);
-    } else {
-        $formato->html =  preg_replace("/@instituto@/", '', $formato->html);
-    }
-    if (isset($estudiante->profileEducation->degree_title)) {
-        $formato->html =  preg_replace("/@estudio@/", $estudiante->profileEducation->degree_title, $formato->html);
-    } else {
-        $formato->html =  preg_replace("/@estudio@/", '', $formato->html);
-    }
-    $formato->html =  preg_replace("/@modalidad@/", '', $formato->html);
-    $formato->html =  preg_replace("/@fecha@/", Carbon::now('America/Bogota')->locale('es')->isoFormat('LLLL'), $formato->html);
-    $data = ['estudiante' => $estudiante, 'empresa' => $empresa, 'formato' => $formato];
-    $pdf = \App::make('dompdf.wrapper');
-    $pdf->setPaper("A4", "portrait");
-    $pdf = PDF::loadView('plantilla.base', compact('formato', 'empresa', 'estudiante'));
-    Mail::send('plantilla.mail', $data, function ($message) use ($data, $pdf) {
-        try {
 
-            $message->to($data["empresa"]['email'], $data["empresa"]['email'])
-              ->subject($data["formato"]['nombre'])
-              ->attachData($pdf->output(), "carta.pdf");
-        } catch (\Exception $th) {
-            return Redirect::back()->withErrors(['msg', 'No se ha podido enviar el email correctamente']);
-        }
-    });
+  $formato = template_contrato::find(request()->get('plantilla'));
 
-    return redirect()->back()->with('success', 'Email enviado correctamente');
+  $empresa = Company::find(request()->get('company'));
+
+  $estudiante = User::with('profileEducation')->find(request()->get('user'));
+  $formato->html =  preg_replace("/@nombre_empresa@/",  $empresa->name, $formato->html);
+
+  $formato->html =  preg_replace("/@nit_empresa@/",  '', $formato->html);
+
+  $formato->html =  preg_replace("/@nombre_estudiante@/",  $estudiante->name . ' ' . $estudiante->last_name, $formato->html);
+
+  $formato->html =  preg_replace("/@documento_estudiante@/",  $estudiante->national_id_card_number, $formato->html);
+
+  if (isset($estudiante->profileEducation->institution)) {
+
+    $formato->html =  preg_replace("/@instituto@/",  $estudiante->profileEducation->institution, $formato->html);
+  } else {
+
+    $formato->html =  preg_replace("/@instituto@/", '', $formato->html);
+  }
+
+  if (isset($estudiante->profileEducation->degree_title)) {
+
+    $formato->html =  preg_replace("/@estudio@/",  $estudiante->profileEducation->degree_title, $formato->html);
+  } else {
+
+    $formato->html =  preg_replace("/@estudio@/",  '', $formato->html);
+  }
+
+  $formato->html =  preg_replace("/@modalidad@/",  '', $formato->html);
+
+  $formato->html =  preg_replace("/@fecha@/",  Carbon::now('America/Bogota')->locale('es')->isoFormat('LLLL'), $formato->html);
+
+  $data = ['estudiante' => $estudiante, 'empresa' => $empresa, 'formato' => $formato];
+  $pdf = \App::make('dompdf.wrapper');
+  $pdf->setPaper("A4", "portrait");
+  $pdf = PDF::loadView('plantilla.base', compact('formato', 'empresa', 'estudiante'));
+  Mail::send('plantilla.mail', $data, function ($message) use ($data, $pdf) {
+    try {
+
+      $message->to($data["empresa"]['email'], $data["empresa"]['email'])
+        ->subject($data["formato"]['nombre'])
+        ->attachData($pdf->output(), "carta.pdf");
+    } catch (\Exception $th) {
+      return Redirect::back()->withErrors(['msg', 'No se ha podido enviar el email correctamente']);
+    }
+  });
+
+  return redirect()->back()->with('success', 'Email enviado correctamente');
 })->name('send-mail');
 
 $real_path = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'front_routes' . DIRECTORY_SEPARATOR;
@@ -261,57 +345,138 @@ include_once($real_path . 'admin_auth.php');
 /* * ******** routes to upload file of idCards ************ */
 
 include_once($real_path . 'custom/files.php');
+
 Route::get('blog', 'BlogController@index')->name('blogs');
+
 Route::get('blog/search', 'BlogController@search')->name('blog-search');
+
 Route::get('blog/{slug}', 'BlogController@details')->name('blog-detail');
+
 Route::get('/blog/category/{blog}', 'BlogController@categories')->name('blog-category');
+
 Route::get('/company-change-message-status', 'CompanyMessagesController@change_message_status')->name('company-change-message-status');
+
 Route::get('/seeker-change-message-status', 'Job\SeekerSendController@change_message_status')->name('seeker-change-message-status');
+
 Route::get('/sitemap', 'SitemapController@index');
+
 Route::get('/sitemap/companies', 'SitemapController@companies');
-Route::get('/donwload-camara/{company?}', 'Company\CompanyController@download');
-Route::get('/donwload-camara-by-admin/{company?}', 'Admin\CompanyController@download');
-Route::get('/download-cv/{file?}/{title?}/{user}', function ($a, $b, $c) {
-    $res = User::with(['profileCvs' => function ($q) use ($b) {
-        $q->where('title', $b);
-    }])->find($c);
-    if ($res->profileCvs && count($res->profileCvs) > 0) {
-        // Asigna el valor de $a a la variable $string
-        $string = $a;
-        // Verifica si el último carácter de $string no es una letra
-        if (!ctype_alpha(substr($string, -1))) {
-            // Si no es una letra, elimina el último carácter de $string
-            $string = substr($string, 0, -1);
-        }
-        if (!file_exists(public_path() . '/cvs/' . $string)) {
-            return response()->download(public_path() . '/cvs/' . $a, 'documento.pdf');
-            
-        }
-        return response()->download(public_path() . '/cvs/' . $string);
+
+Route::get('/reports', 'ReportController@showView')->name('reports');
+
+Route::post('/download/reports', 'ReportController@download')->name('download.reports');
+
+Route::get('/gestion-permisos', 'Admin\GestionController@gestionar')->name('gestion-permisos');
+
+Route::post('/save-permissions', 'Admin\GestionController@store')->name('save-permissions');
+
+Route::get('/donwload-statictics-download',  'ExportController@download')->name('download');
+
+Route::get('/donwload-camara/{company?}',  'Company\CompanyController@download');
+
+Route::get('/donwload-camara-by-admin/{company?}',  'Admin\CompanyController@download');
+
+Route::get('/download-cv/{file?}/{title?}/{user}',  function ($a, $b, $c) {
+  $res = User::with(['profileCvs' => function ($q) use ($b) {
+
+    $q->where('title', $b);
+  }])->find($c);
+  if ($res->profileCvs && count($res->profileCvs) > 0) {
+
+    $string = $a;
+    if (!ctype_alpha(substr($string, -1))) {
+      $string = substr($string, 0, -1);
     }
+
+    return response()->download(public_path() . '/cvs/' . $string);
+  }
 });
 
-Route::get('/download-cv-on-candidate/{file?}/{user}/{jobs}', function ($a, $c, $d) {
+Route::get('/download-cv-on-candidate/{file?}/{user}/{jobs}',  function ($a, $c, $d) {
 
-    if (Auth::guard('company')->check()) {
-        $jobs = Job::findOrFail($d);
-        if ($jobs->company_id == Auth::guard('company')->user()->id) {
-            if (in_array($c, $jobs->getAppliedUserIdsArray())) {
-                return response()->download(public_path() . '/cvs/' . $a);
-            }
-        }
+  if (Auth::guard('company')->check()) {
+    $jobs = Job::findOrFail($d);
+    if ($jobs->company_id == Auth::guard('company')->user()->id) {
+      if (in_array($c, $jobs->getAppliedUserIdsArray())) {
+        return response()->download(public_path() . '/cvs/' . $a);
+      }
     }
-    abort(404);
+  }
+
+
+
+  abort(404);
 });
 
-Route::get('donwload-letter/{c?}', function ($a) {
-    $user = User::findOrFail($a);
-    if ($user->letter && $user->letter != '') {
-        return response()->download(public_path() . '/letters/' . $user->letter);
-    }
-    return back();
+
+Route::get('donwload-letter/{c?}',  function ($a) {
+
+  $user = User::findOrFail($a);
+
+  if ($user->letter && $user->letter != '') {
+
+    return response()->download(public_path() . '/letters/' . $user->letter);
+  }
+
+  return back();
 });
+
+
 
 Route::post('contratar_emp', 'documento_contratadoController@contrato');
+
 Route::post('rechazar_emp', 'documento_contratadoController@rechazar');
+
 Route::post('entrevistar', 'documento_contratadoController@entrevistar');
+
+
+
+Route::get('admin/send-cvs', function () {
+
+  $companies = Company::get(['id', 'name']);
+
+  return view('admin.send-cvs', compact('companies'));
+});
+
+
+
+Route::get('admin/job-index/{id}', function ($id) {
+
+  return response()->json(Job::where('company_id', $id)->get(['id', 'title']));
+});
+
+
+
+Route::get('admin/job-users/{search}', 'Job\JobController@searchStudenByJobs');
+
+Route::get('admin/job-users-send-emails/{data}/{comapny}/{job}', 'Job\JobController@sendEmails');
+
+
+
+Route::get('admin/get-xls',  function () {
+
+  return (new Ids)->download('documentos.xlsx');
+});
+
+
+
+Route::resource('admin/documento_contratado', 'documento_contratadoController');
+
+Route::resource('admin/documento_pasantias', 'documento_pasantiasController');
+
+Route::get('admin/list/trainings', 'Admin\AdminController@viewlistTrainings')->name('list.trainings');
+Route::get('admin/list/participants/{id}', 'Admin\AdminController@viewlistParticipants')->name('list.participants');
+Route::get('admin/list/participants-companies/{id}', 'Admin\AdminController@viewlistParticipantsCompanies')->name('list.participants.companies');
+
+Route::get('list/participants-all', 'Admin\AdminController@listParticipants')->name('get-list-participants');
+
+Route::get('get-list-trainings', 'Admin\AdminController@listTrainingsUsers')->name('get-list-trainings');
+Route::get('list/participants-delete', 'Admin\AdminController@listParticipantsDelete')->name('list.participants-delete');
+
+
+Route::get('get-list-trainings-company', 'Admin\AdminController@listTrainingsComapnies')->name('get-list-trainings-company');
+Route::post('delete-training-company', 'Admin\AdminController@listParticipantsDelete')->name('delete-training-company');
+
+
+Route::get('admin/register_companies_training', 'Admin\AdminController@viewlistCompanies')->name('register_companies_training');
+Route::get('admin/register_users_training', 'Admin\AdminController@viewlistUsers')->name('register_users_training');

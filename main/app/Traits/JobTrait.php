@@ -15,7 +15,9 @@ use App\Traits\Skills;
 use App\Events\JobPosted;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use App\Mail\JobApprovedMailable;
 use Illuminate\Support\Str;
 
 trait JobTrait
@@ -86,10 +88,8 @@ trait JobTrait
         $job->is_pl = $request->input('is_pl');
         $job->pcd = $request->input('pcd');
         $job->to_publish = 'N';
-
-        if ($job->is_pl == 1) {
-            $job->job_type_id = DB::table('job_types')->where('job_type_id', 32)->first()->id;
-        }
+        
+        if ($job->is_pl == 1) $job->job_type_id = DB::table('job_types')->where('job_type_id', 32)->first()->id;
 
         return $job;
     }
@@ -184,7 +184,9 @@ trait JobTrait
         $job = Job::findOrFail($id);
         $job->company_id = $request->input('company_id');
         $job = $this->assignJobValues($job, $request);
-        $job->is_active = $request->input('is_active');
+        $wasActive = (int) $job->is_active;
+        $newActive = (int) $request->input('is_active');
+        $job->is_active = $newActive;
         $job->is_featured = $request->input('is_featured');
 
         /*         * ******************************* */
@@ -198,6 +200,11 @@ trait JobTrait
         /*         * ************************************ */
         $this->updateFullTextSearch($job);
         /*         * ************************************ */
+
+        if ($wasActive === 0 && $newActive === 1) {
+            Mail::send(new JobApprovedMailable($job));
+        }
+
         flash('Vacante actualizada!')->success();
         return Redirect::route('edit.job', array($job->id));
     }
@@ -261,6 +268,7 @@ trait JobTrait
         $job = new Job();
         $job->company_id = $company->id;
         $job = $this->assignJobValues($job, $request);
+        $job->is_active = 0;
         $job->save();
         /*         * ******************************* */
         $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
@@ -279,7 +287,7 @@ trait JobTrait
         /*         * ******************************* */
 
         event(new JobPosted($job));
-        flash('Vacante publicada!')->success();
+        flash('Su vacante ha sido registrada exitosamente. Permanecerá inactiva e invisible hasta que la administradora de la Bolsa de Empleo la revise y apruebe. Recibirá una notificación por correo electrónico cuando sea publicada o rechazada.')->success();
         return Redirect::route('edit.front.job', array($job->id));
     }
 
@@ -316,6 +324,7 @@ trait JobTrait
     }
 
     public function updateFrontJob($id, JobFrontFormRequest $request)
+
     {
         // dd($request->all());
         $job = Job::findOrFail($id);
@@ -336,82 +345,83 @@ trait JobTrait
     }
 
     public static function countNumJobs($field = 'title', $value = '')
+
     {
 
         if (!empty($value)) {
 
             if ($field == 'title') {
 
-                return DB::table('jobs')->where('title', 'like', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('title', 'like', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'company_id') {
 
-                return DB::table('jobs')->where('company_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('company_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'industry_id') {
 
                 $company_ids = Company::where('industry_id', '=', $value)->where('is_active', '=', 1)->pluck('id')->toArray();
 
-                return DB::table('jobs')->whereIn('company_id', $company_ids)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->whereIn('company_id', $company_ids)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'job_skill_id') {
 
                 $job_ids = JobSkillManager::where('job_skill_id', '=', $value)->pluck('job_id')->toArray();
 
-                return DB::table('jobs')->whereIn('id', array_unique($job_ids))->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->whereIn('id', array_unique($job_ids))->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'functional_area_id') {
 
-                return DB::table('jobs')->where('functional_area_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('functional_area_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'careel_level_id') {
 
-                return DB::table('jobs')->where('careel_level_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('careel_level_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'job_type_id') {
 
-                return DB::table('jobs')->where('job_type_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('job_type_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'job_shift_id') {
 
-                return DB::table('jobs')->where('job_shift_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('job_shift_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'gender_id') {
 
-                return DB::table('jobs')->where('gender_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('gender_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'degree_level_id') {
 
-                return DB::table('jobs')->where('degree_level_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('degree_level_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'job_experience_id') {
 
-                return DB::table('jobs')->where('job_experience_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('job_experience_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'country_id') {
 
-                return DB::table('jobs')->where('country_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('country_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'state_id') {
 
-                return DB::table('jobs')->where('state_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('state_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
 
             if ($field == 'city_id') {
 
-                return DB::table('jobs')->where('city_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>', \Carbon\Carbon::now())->count('id');
+                return DB::table('jobs')->where('city_id', '=', $value)->where('is_active', '=', 1)->where('expiry_date', '>',  \Carbon\Carbon::now())->count('id');
             }
         }
     }

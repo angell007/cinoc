@@ -1,33 +1,95 @@
 <?php
 
+
+
 namespace App\Http\Controllers\Company;
 
+
+
+use Mail;
+
+use Hash;
+
+use File;
+
 use ImgUploader;
+
+use Auth;
+
 use Validator;
+
+use DB;
+
+use Input;
+
+use Redirect;
+
+use App\Subscription;
+
+use Newsletter;
+
 use App\User;
+
 use App\Company;
+
 use App\CompanyMessage;
+
 use App\ApplicantMessage;
+
+use App\Country;
+
+use App\CountryDetail;
+
+use App\State;
+
+use App\City;
+
+use App\Industry;
+
+use App\FavouriteCompany;
+
 use App\FavouriteApplicant;
+
+use App\OwnershipType;
+
 use App\JobApply;
+
 use Carbon\Carbon;
+
+use App\Helpers\MiscHelper;
+
 use App\Helpers\DataArrayHelper;
+
+use App\Http\Requests;
+
 use App\Mail\CompanyContactMail;
+
 use App\Mail\ApplicantContactMail;
+
 use Illuminate\Http\Request;
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 use App\Http\Requests\Front\CompanyFrontFormRequest;
+
 use App\Http\Controllers\Controller;
+
 use App\Traits\CompanyTrait;
+
 use App\Traits\Cron;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Redirect;
+
 use Illuminate\Support\Str;
 
+
+
+
+
 class CompanyController extends Controller
+
 {
+
+
+
     use CompanyTrait;
 
     use Cron;
@@ -45,6 +107,7 @@ class CompanyController extends Controller
      */
 
     public function __construct()
+
     {
 
         $this->middleware('company', ['except' => ['companyDetail', 'sendContactForm']]);
@@ -56,6 +119,7 @@ class CompanyController extends Controller
 
 
     public function index()
+
     {
 
         return view('company_home');
@@ -63,6 +127,7 @@ class CompanyController extends Controller
     }
 
     public function company_listing()
+
     {
 
         $data['companies'] = Company::paginate(20);
@@ -74,6 +139,7 @@ class CompanyController extends Controller
 
 
     public function companyProfile()
+
     {
 
         $countries = DataArrayHelper::defaultCountriesArray();
@@ -97,15 +163,16 @@ class CompanyController extends Controller
     }
 
     public function download($company)
+
     {
 
+        
 
-
-        if (Auth::guard('admin')->user() != null || Auth::guard('company')->user()->id ==  $company) {
+        if(Auth::guard('admin')->user() != null || Auth::guard('company')->user()->id ==  $company ){
 
             $c = Company::findOrFail($company);
 
-            return response()->download($c->camara_comercio);
+                return response()->download($c->camara_comercio);
 
         }
 
@@ -118,35 +185,36 @@ class CompanyController extends Controller
 
 
     public function updateCompanyProfile(CompanyFrontFormRequest $request)
-    {
 
+    {   
 
+       
 
-        $url = '';
+       $url = '';
 
+       
 
+    
 
-
-
-
+     
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
 
-        if (request()->hasFile('camara_comercio')) {
+       if(request()->hasFile('camara_comercio')){
 
-            $file = $request->file('camara_comercio');
+           $file = $request->file('camara_comercio');
 
-            $destinationPath = 'uploads';
+             $destinationPath = 'uploads';
 
-            $file->move($destinationPath, $file->getClientOriginalName());
+             $file->move($destinationPath,$file->getClientOriginalName());
 
-            $url = $destinationPath.'/'.$file->getClientOriginalName();
+             $url= $destinationPath.'/'.$file->getClientOriginalName();
 
-            $company->camara_comercio = $url;
+             $company->camara_comercio = $url;
 
 
 
-        }
+       }
 
         /*         * **************************************** */
 
@@ -220,8 +288,6 @@ class CompanyController extends Controller
 
         $company->city_id = $request->input('city_id');
 
-        $company->is_subscribed = $request->input('is_subscribed', 0);
-
         $company->tipo_identificacion = $request->input('tipo_identificacion');
 
         $company->identificacion = $request->input('identificacion');
@@ -234,7 +300,7 @@ class CompanyController extends Controller
 
         // Subscription::where('email', 'like', $company->email)->delete();
 
-
+        
 
         // if ((bool)$company->is_subscribed) {
 
@@ -268,13 +334,14 @@ class CompanyController extends Controller
 
         flash(__('Empresa ha sido actualizada'))->success();
 
-        return Redirect::route('company.profile');
+        return \Redirect::route('company.profile');
 
     }
 
 
 
     public function addToFavouriteApplicant(Request $request, $application_id, $user_id, $job_id, $company_id)
+
     {
 
         $data['user_id'] = $user_id;
@@ -289,13 +356,14 @@ class CompanyController extends Controller
 
         flash(__('Job seeker has been added in favorites list'))->success();
 
-        return Redirect::route('applicant.profile', $application_id);
+        return \Redirect::route('applicant.profile', $application_id);
 
     }
 
 
 
     public function removeFromFavouriteApplicant(Request $request, $application_id, $user_id, $job_id, $company_id)
+
     {
 
         $data['user_id'] = $user_id;
@@ -316,13 +384,14 @@ class CompanyController extends Controller
 
         flash(__('Job seeker has been removed from favorites list'))->success();
 
-        return Redirect::route('applicant.profile', $application_id);
+        return \Redirect::route('applicant.profile', $application_id);
 
     }
 
 
 
     public function companyDetail(Request $request, $company_slug)
+
     {
 
         $company = Company::where('slug', 'like', $company_slug)->firstOrFail();
@@ -344,6 +413,7 @@ class CompanyController extends Controller
 
 
     public function sendContactForm(Request $request)
+
     {
 
         $msgresponse = array();
@@ -439,6 +509,7 @@ class CompanyController extends Controller
 
 
     public function sendApplicantContactForm(Request $request)
+
     {
 
         $msgresponse = array();
@@ -532,6 +603,7 @@ class CompanyController extends Controller
 
 
     public function postedJobs(Request $request)
+
     {
 
         $jobs = Auth::guard('company')->user()->jobs()->get();
@@ -545,9 +617,10 @@ class CompanyController extends Controller
 
 
     public function listAppliedUsers(Request $request, $job_id)
+
     {
 
-
+        
 
         $city = null;
 
@@ -575,35 +648,35 @@ class CompanyController extends Controller
 
         $cargos = null;
 
-
+        
 
         $expected_salaries = null;
 
+        
 
+        if(request()->has('ciudad')) {
 
-        if (request()->has('ciudad')) {
+        $city = request()->get('ciudad');
 
-            $city = request()->get('ciudad');
+        $cities = DB::table('cities')->where('city', $city )->pluck('city_id');
 
-            $cities = DB::table('cities')->where('city', $city)->pluck('city_id');
-
-            $cities = DB::table('users')->whereIn('city_id', $cities)->pluck('id');
+        $cities = DB::table('users')->whereIn('city_id',  $cities)->pluck('id');
 
         };
 
+        
 
+        if(request()->has('edad')) {
 
-        if (request()->has('edad')) {
+        $age =  explode("-", request()->get('edad'));
 
-            $age =  explode("-", request()->get('edad'));
-
-            if (isset($age[0]) && isset($age[1])) {
+            if(isset($age[0]) && isset($age[1])){
 
                 $end = Carbon::now()->subYears($age[0]);
 
                 $init = Carbon::now()->subYears($age[1]);
 
-                $ages = DB::table('users')->whereBetween('date_of_birth', [$init, $end])->pluck('id');
+                $ages = DB::table('users')->whereBetween('date_of_birth',  [$init, $end] )->pluck('id');
 
             }
 
@@ -613,131 +686,134 @@ class CompanyController extends Controller
 
 
 
-        if (request()->has('expectativa')) {
+        if(request()->has('expectativa')) {
 
-            $expected_salary = request()->get('expectativa');
+        $expected_salary = request()->get('expectativa');
 
-            $expected_salaries = DB::table('job_apply')->where('expected_salary', '<=', $expected_salary)->pluck('id');
-
-        };
-
-
-
-        if (request()->has('educacion')) {
-
-            $education = request()->get('educacion');
-
-            $educations = DB::table('profile_educations')
-
-                                                        ->join('users', 'users.id', 'profile_educations.user_id')
-
-                                                        ->join('degree_levels', 'profile_educations.degree_level_id', 'degree_levels.degree_level_id')
-
-                                                        ->where('degree_levels.degree_level', 'LIKE', '%'. $education .'%')
-
-                                                        ->pluck('users.id');
+        $expected_salaries = DB::table('job_apply')->where('expected_salary', '<=',  $expected_salary)->pluck('id');
 
         };
 
+        
 
+        if(request()->has('educacion')) {
 
+        $education = request()->get('educacion');
 
+        $educations = DB::table('profile_educations')
 
-        if (request()->has('experiencia')) {
+                                                    ->join('users', 'users.id', 'profile_educations.user_id')
 
+                                                    ->join('degree_levels', 'profile_educations.degree_level_id', 'degree_levels.degree_level_id')
 
+                                                    ->where('degree_levels.degree_level', 'LIKE', '%'. $education .'%' )
 
-
-
-            $title = DB::table('jobs')->select('title')->Where('id', '=', $job_id)->limit(1)->first();
-
-
-
-            $experience = request()->get('experiencia') * 365 ;
-
-
-
-            $experiences = DB::table('profile_experiences')
-
-                            ->join('users', 'users.id', 'profile_experiences.user_id')
-
-                            ->where('profile_experiences.title', 'LIKE', '%'. $title->title .'%')
-
-                            ->whereRaw("DATEDIFF(date_end, IFNULL(date_start, CURDATE() )) >= {$experience} ")
-
-                            ->pluck('users.id');
+                                                    ->pluck('users.id');
 
         };
 
+        
+
+        
+
+        if(request()->has('experiencia')) {
+
+            
+
+       
+
+        $title = DB::table('jobs')->select('title')->Where('id', '=', $job_id)->limit(1)->first();
 
 
-        if (request()->has('cargo')) {
 
-            $cargo = request()->get('cargo');
+        $experience = request()->get('experiencia') * 365 ;
 
-            $cargos = DB::table('profile_experiences')
 
-                                                        ->join('users', 'users.id', 'profile_experiences.user_id')
 
-                                                        ->where('profile_experiences.title', 'LIKE', '%'. $cargo .'%')
+        $experiences = DB::table('profile_experiences')
 
-                                                        ->pluck('users.id');
+                        ->join('users', 'users.id', 'profile_experiences.user_id')
+
+                        ->where('profile_experiences.title', 'LIKE', '%'. $title->title .'%' )
+
+                        ->whereRaw("DATEDIFF(date_end, IFNULL(date_start, CURDATE() )) >= {$experience} " )
+
+                        ->pluck('users.id');
 
         };
 
+        
 
+        if(request()->has('cargo')) {
+
+        $cargo = request()->get('cargo');
+
+        $cargos = DB::table('profile_experiences')
+
+                                                    ->join('users', 'users.id', 'profile_experiences.user_id')
+
+                                                    ->where('profile_experiences.title', 'LIKE', '%'. $cargo .'%' )
+
+                                                    ->pluck('users.id');
+
+        };
+
+        
 
         $job_applications = JobApply::where('job_id', '=', $job_id)
 
-        ->when($city != null, function ($q) use ($cities) {
+        ->when($city != null, function($q) use($cities){
 
             $q->whereIn('user_id', $cities);
 
-
+            
 
         })
 
-        ->when($age != null, function ($q) use ($ages) {
+        ->when($age != null, function($q) use($ages){
 
             $q->whereIn('user_id', $ages);
 
-
+            
 
         })
 
-        ->when($expected_salary != null, function ($q) use ($expected_salaries) {
+        ->when($expected_salary != null, function($q) use($expected_salaries){
 
             $q->whereIn('id', $expected_salaries);
 
-
+            
 
         })
 
-        ->when($education != null, function ($q) use ($educations) {
+        ->when($education != null, function($q) use($educations){
 
             $q->whereIn('user_id', $educations);
 
-
+            
 
         })
 
-        ->when($experience != null, function ($q) use ($experiences) {
+        ->when($experience != null, function($q) use($experiences){
 
             $q->whereIn('user_id', $experiences);
 
-
+            
 
         })
 
-        ->when($cargo != null, function ($q) use ($cargos) {
+        ->when($cargo != null, function($q) use($cargos){
 
             $q->whereIn('user_id', $cargos);
 
-
+            
 
         })
 
         ->get();
+
+        
+
 
 
         return view('job.job_applications')
@@ -749,6 +825,7 @@ class CompanyController extends Controller
 
 
     public function listFavouriteAppliedUsers(Request $request, $job_id)
+
     {
 
         $company_id = Auth::guard('company')->user()->id;
@@ -768,6 +845,7 @@ class CompanyController extends Controller
 
 
     public function applicantProfile($application_id)
+
     {
 
 
@@ -815,6 +893,7 @@ class CompanyController extends Controller
 
 
     public function userProfile($id)
+
     {
 
 
@@ -850,6 +929,7 @@ class CompanyController extends Controller
 
 
     public function companyFollowers()
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -871,6 +951,7 @@ class CompanyController extends Controller
 
 
     public function companyMessages()
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -896,6 +977,7 @@ class CompanyController extends Controller
 
 
     public function companyMessageDetail($message_id)
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -915,3 +997,4 @@ class CompanyController extends Controller
     }
 
 }
+

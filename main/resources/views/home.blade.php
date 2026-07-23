@@ -1,119 +1,121 @@
 @extends('layouts.app')
-
-@section('content')
-
-<!-- Encabezado -->
-@include('includes.header')
-
-<!-- Título de la página interna -->
-@include('includes.inner_page_title', ['page_title'=>__('Panel de Control')])
-
-<div class="dashboard-wrapper py-5">
-    <div class="container">
-        @include('flash::message')
-        <div class="row">
-            @include('includes.user_dashboard_menu')
+@section('content') 
+<!-- Header start --> 
+@include('includes.header') 
+<!-- Header end --> 
+<!-- Inner Page Title start --> 
+@include('includes.inner_page_title', ['page_title'=>__('Dashboard')]) 
+<!-- Inner Page Title end -->
+<div class="listpgWraper">
+    <div class="container">@include('flash::message')
+        @includeIf('user.inc.profile_completion_notice')
+        <div class="row"> @include('includes.user_dashboard_menu')
             <div class="col-lg-9">
-                <div class="profile-banner bg-light rounded p-4 mb-4 shadow-sm">
-                    <div class="row align-items-center">
-                        <div class="col-lg-2 col-md-3 mb-3 mb-md-0">
-                            <div class="avatar-wrapper">
-                                {{auth()->user()->printUserImage()}}
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-md-9">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div>
-                                    <h2 class="mb-1">{{auth()->user()->name}}</h2>
-                                    <p class="text-muted mb-0"><i class="fa fa-map-marker-alt mr-2"></i>{{Auth::user()->getLocation()}}</p>
-                                </div>
-                                <a href="{{ route('my.profile') }}" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt mr-2"></i>{{__('Editar Perfil')}}</a>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-2 mb-md-0">
-                                    <p class="mb-0"><i class="fa fa-phone mr-2"></i>{{auth()->user()->phone}}</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="mb-0"><i class="fa fa-envelope mr-2"></i>{{auth()->user()->email}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				
+		<div class="profileban">
+			<div class="abtuser">
+				<div class="row">
+					<div class="col-lg-2 col-md-2">
+						<div class="uavatar">{{auth()->user()->printUserImage()}}</div>
+					</div>
+					<div class="col-lg-10 col-md-10">
+						<div class="row">
+							<div class="col-lg-7">
+								<h4>{{auth()->user()->name}}</h4> 
+								<h6><i class="fa fa-map-marker" aria-hidden="true"></i> {{Auth::user()->getLocation()}}</h6>
+							</div>
+							<div class="col-lg-5"><div class="editbtbn"><a href="{{ route('my.profile') }}"><i class="fas fa-pencil-alt" aria-hidden="true"></i> {{__('Edit Profile')}}</a>
+						</div></div>
+						</div>
 
-                @include('includes.user_dashboard_stats')
+						<ul class="row userdata">
+							<li class="col-lg-6 col-md-6"><i class="fa fa-phone" aria-hidden="true"></i> {{auth()->user()->phone}}</li>							
+							<li class="col-lg-6 col-md-6"><i class="fa fa-envelope" aria-hidden="true"></i> {{auth()->user()->email}}</li>
+						</ul>
 
+					</div>
+				</div>
+			</div>
+		</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				@include('includes.user_dashboard_stats')
                 @if((bool)config('jobseeker.is_jobseeker_package_active'))
-                    @php
-                    $packages = App\Package::where('package_for', 'like', 'job_seeker')->get();
-                    $package = Auth::user()->getPackage();
-                    if(null !== $package){
-                        $packages = App\Package::where('package_for', 'like', 'job_seeker')->where('id', '<>', $package->id)->where('package_price', '>=', $package->package_price)->get();
-                    }
-                    @endphp
+                @php        
+                $packages = App\Package::where('package_for', 'like', 'job_seeker')->get();
+                $package = Auth::user()->getPackage();
+                if(null !== $package){
+                $packages = App\Package::where('package_for', 'like', 'job_seeker')->where('id', '<>', $package->id)->where('package_price', '>=', $package->package_price)->get();
+                }
+                @endphp
 
-                    @if(null !== $package)
-                        @include('includes.user_package_msg')
-                        @include('includes.user_packages_upgrade')
-                    @else
-                        @if(null !== $packages)
-                            @include('includes.user_packages_new')
-                        @endif
-                    @endif
+                @if(null !== $package)
+                @include('includes.user_package_msg')
+                @include('includes.user_packages_upgrade')
+                @else
+
+                @if(null !== $packages)
+                @include('includes.user_packages_new')
                 @endif
-
-                <div class="row">
-                    <div class="col-lg-7 mb-4 mb-lg-0">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-header bg-light">
-                                <h3 class="mb-0 text-secondary"><i class="fa fa-briefcase mr-2"></i>{{__('Trabajos Recomendados')}}</h3>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled">
-                                    @if(null!==($matchingJobs))
-                                        @foreach($matchingJobs as $match)
-                                            <li class="mb-3 pb-3 border-bottom">
-                                                <h4 class="mb-1"><a href="{{route('job.detail', [$match->slug])}}" class="text-dark">{{$match->title}}</a></h4>
-                                                <p class="text-muted mb-0">{{$match->getCompany()->name}}</p>
-                                            </li>
-                                        @endforeach
-                                    @endif
+                @endif
+                @endif 
+			
+			
+			 <div class="row">
+                        <div class="col-lg-7">
+                            <div class="profbox">
+                                <h3><i class="fa fa-black-tie" aria-hidden="true"></i> {{__('Recommended Jobs')}}</h3>
+                                <ul class="recomndjobs">
+                                    @if(null!==($matchingJobs)) @foreach($matchingJobs as $match)
+                                    <li>
+                                        <h4><a href="{{route('job.detail', [$match->slug])}}">{{$match->title}}</a></h4>
+                                        <p>{{$match->getCompany()->name}}</p>
+                                    </li>
+                                    @endforeach @endif
                                 </ul>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-5">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-header bg-light">
-                                <h3 class="mb-0 text-secondary"><i class="fa fa-users mr-2"></i>{{__('Mis Seguimientos')}}</h3>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled">
-                                    @if(isset($followers) && null!==($followers))
-                                        @foreach($followers as $follow)
-                                            @php $company = DB::table('companies')->where('slug',$follow->company_slug)->where('is_active',1)->first(); @endphp
-                                            <li class="mb-3 pb-3 border-bottom">
-                                                <h5 class="mb-1">{{$company->name}}</h5>
-                                                <p class="text-muted mb-2">{{$company->location}}</p>
-                                                <a href="{{route('company.detail',$company->slug)}}" class="btn btn-sm btn-outline-secondary">{{__('Ver Detalles')}}</a>
-                                            </li>
-                                        @endforeach
-                                    @endif
-                                </ul>
-                                <a href="{{route('my.followings')}}" class="btn btn-block btn-outline-secondary"><i class="fa fa-user mr-2"></i>{{__('Ver Todos')}}</a>
-                            </div>
-                        </div>
+                   <div class="col-lg-5">
+							<div class="profbox followbox">
+								<h3><i class="fa fa-users"></i> {{__('My Followings')}}</h3>
+
+								<ul class="followinglist">
+									@if(isset($followers) && null!==($followers)) @foreach($followers as $follow) @php $company = DB::table('companies')->where('slug',$follow->company_slug)->where('is_active',1)->first(); @endphp
+									<li>
+										<span>{{$company->name}}</span>
+										<p>{{$company->location}}</p>
+										<a href="{{route('company.detail',$company->slug)}}">{{__('View Details')}}</a>
+									</li>
+									@endforeach @endif
+
+								</ul>
+
+								<div class="allbtn"><a href="{{route('my.followings')}}"><i class="fa fa-user"></i>{{__('View All')}}</a>
+								</div>
+							</div>
+						</div>
+
                     </div>
-                </div>
-            </div>
+			
+			
+			</div>
+               
         </div>
     </div>
 </div>
-
 @include('includes.footer')
 @endsection
-
 @push('scripts')
 @include('includes.immediate_available_btn')
 @endpush

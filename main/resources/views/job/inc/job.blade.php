@@ -2,6 +2,16 @@
 
 <h5>{{ __('Job Details') }}</h5>
 
+@if (!isset($job))
+    <div class="alert alert-info" style="margin-bottom: 15px;">
+        Al registrar la vacante, esta quedará inactiva e invisible para los buscadores de empleo hasta que la administradora de la Bolsa de Empleo la revise y apruebe. Recibirá una notificación por correo electrónico cuando sea publicada o rechazada.
+    </div>
+@elseif (isset($job) && !(bool) $job->is_active)
+    <div class="alert alert-warning" style="margin-bottom: 15px;">
+        Esta vacante se encuentra pendiente de revisión y aún no es visible en la Bolsa de Empleo.
+    </div>
+@endif
+
 @if (isset($job))
     {!! Form::model($job, [
         'method' => 'put',
@@ -181,17 +191,17 @@
             <div class="radio-list">
 
                 <?php
-
+                
                 $hide_salary_1 = '';
-
+                
                 $hide_salary_2 = 'checked="checked"';
-
+                
                 if (old('hide_salary', isset($job) ? $job->hide_salary : 0) == 1) {
                     $hide_salary_1 = 'checked="checked"';
-
+                
                     $hide_salary_2 = '';
                 }
-
+                
                 ?>
 
                 <label class="radio-inline">
@@ -314,17 +324,17 @@
             <div class="radio-list">
 
                 <?php
-
+                
                 $is_freelance_1 = '';
-
+                
                 $is_freelance_2 = 'checked="checked"';
-
+                
                 if (old('is_freelance', isset($job) ? $job->is_freelance : 0) == 1) {
                     $is_freelance_1 = 'checked="checked"';
-
+                
                     $is_freelance_2 = '';
                 }
-
+                
                 ?>
 
                 <label class="radio-inline">
@@ -357,17 +367,17 @@
             <div class="radio-list">
 
                 <?php
-
+                
                 $pcd_1 = '';
-
+                
                 $pcd_2 = 'checked="checked"';
-
+                
                 if (old('pcd', isset($job) ? $job->pcd : 0) == 1) {
                     $pcd_1 = 'checked="checked"';
-
+                
                     $pcd_2 = '';
                 }
-
+                
                 ?>
 
                 <label class="radio-inline">
@@ -403,17 +413,17 @@
             <div class="radio-list">
 
                 <?php
-
+                
                 $is_pl_1 = '';
-
+                
                 $is_pl_2 = 'checked="checked"';
-
+                
                 if (old('is_pl', isset($job) ? $job->is_pl : 0) == 1) {
                     $is_pl_1 = 'checked="checked"';
-
+                
                     $is_pl_2 = '';
                 }
-
+                
                 ?>
 
                 <label class="radio-inline">

@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
 
 class VideoController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -35,38 +36,21 @@ class VideoController extends Controller
         $languages = DataArrayHelper::languagesNativeCodeArray();
         return view('admin.video.index')->with('languages', $languages);
     }
-
+    
     public function indexVideosCap()
     {
         if (Auth::guard('web')->user()) {
-            $videos = DB::table('videos')->where('rol', 'Candidato')->get();
-
-            $links = DB::table('participants')
-                ->join('trainings', 'trainings.id', 'participants.trainings_id')
-                ->join('users', 'users.national_id_card_number', 'participants.identifier')
-                ->where('participants.identifier', Auth::user()->national_id_card_number)
-                ->where('participants.status', 'Culmino')
-                ->select('users.name', 'users.national_id_card_number', 'participants.status', 'trainings.*')
-                ->get();
-
-            $faqs = DB::table('faqs')->where('rol', 'Candidato')->get();
-           return view('video.index', compact('videos', 'faqs', 'links'));
-        }else{
-            
-            return redirect()->route('login');
+            return redirect()->route('cv');
         }
-
-        if (Auth::guard('company')->user()) {
+        
+        if(Auth::guard('company')->user()){
             $videos = DB::table('videos')->where('rol', 'Empleador')->get();
             $faqs = DB::table('faqs')->where('rol', 'Empleador')->get();
             $links = [];
-            return view('video.index', compact('videos', 'faqs', 'links'));
-        }else{
-            
-            return redirect()->route('login');
+            // $links = DB::table('links')->where('rol', 'Empleador')->get();
         }
-
-        return view('video.index', compact('videos', 'faqs', 'links'));
+        
+        return view('video.index', compact('videos', 'faqs', 'links' ));
     }
 
     public function createVideo()
@@ -85,7 +69,7 @@ class VideoController extends Controller
         $video->rol = $request->input('rol');
         $video->video_title = $request->input('video_title');
         $video->video_text = $request->input('video_text');
-        $video->video_link = str_replace('https://youtu.be/', 'https://www.youtube.com/embed/', $request->input('video_link'));
+        $video->video_link = str_replace('https://youtu.be/','https://www.youtube.com/embed/', $request->input('video_link')); 
         $video->is_default = $request->input('is_default');
         $video->video_id = $request->input('video_id');
         $video->is_active = $request->input('is_active');
@@ -122,7 +106,7 @@ class VideoController extends Controller
         $video->rol = $request->input('rol');
         $video->video_title = $request->input('video_title');
         $video->video_text = $request->input('video_text');
-        $video->video_link = str_replace('https://youtu.be/', 'https://www.youtube.com/embed/', $request->input('video_link'));
+        $video->video_link = str_replace('https://youtu.be/','https://www.youtube.com/embed/', $request->input('video_link')); 
         $video->is_default = $request->input('is_default');
         $video->video_id = $request->input('video_id');
         $video->is_active = $request->input('is_active');
@@ -198,22 +182,22 @@ class VideoController extends Controller
                     $activeIcon = 'check-square-o';
                 }
                 return '
-                <div class="btn-group">
-                    <button class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Acción
-                        <i class="fa fa-angle-down"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="' . route('edit.video', ['id' => $videos->id]) . '"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</a>
-                        </li>						
-                        <li>
-                            <a href="javascript:void(0);" onclick="deleteVideo(' . $videos->id . ', ' . $videos->is_default . ');" class=""><i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar</a>
-                        </li>
-                        <li>
-                        <a href="javascript:void(0);" onClick="' . $activeHref . '" id="onclickActive' . $videos->id . '"><i class="fa fa-' . $activeIcon . '" aria-hidden="true"></i>' . $activeTxt . '</a>
-                        </li>																																		
-                    </ul>
-                </div>';
+				<div class="btn-group">
+					<button class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Acción
+						<i class="fa fa-angle-down"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="' . route('edit.video', ['id' => $videos->id]) . '"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</a>
+						</li>						
+						<li>
+							<a href="javascript:void(0);" onclick="deleteVideo(' . $videos->id . ', ' . $videos->is_default . ');" class=""><i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar</a>
+						</li>
+						<li>
+						<a href="javascript:void(0);" onClick="' . $activeHref . '" id="onclickActive' . $videos->id . '"><i class="fa fa-' . $activeIcon . '" aria-hidden="true"></i>' . $activeTxt . '</a>
+						</li>																																		
+					</ul>
+				</div>';
             })
             ->rawColumns(['action', 'video_title'])
             ->setRowId(function ($videos) {

@@ -74,12 +74,6 @@
 
 <!-- Testimonials End -->
 
-<!-- Subscribe start -->
-
-@include('includes.subscribe')
-
-<!-- Subscribe End -->
-
 @include('includes.footer')
 
 @endsection

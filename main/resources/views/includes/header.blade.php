@@ -47,24 +47,13 @@
 
 
 
-            <div class=" col-lg-2 col-md-4 col-4 ">
+            <div class="col-lg-2 col-md-4 col-4 mx-auto d-lg-none">
 
-                <!--<button class="navbar-toggler collapsed logo" type="button" data-toggle="collapse"-->
-                <!--    data-target="#nav-main" aria-controls="nav-main" aria-expanded="false"-->
-                <!--    aria-label="Toggle navigation">-->
-
-
-
-                    <!--<a href="{{ url('/') }}" class="logo">-->
-
-                    <img style="height: 90px; border-radius: 25%;" src="{{ url('/images/logo_principal_SPE.jpg') }}"
-                        alt="{{ $siteSetting->site_name }}" />
-
-                    <!--</a>-->
-
-
-
-                <!--</button>-->
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#nav-main" aria-controls="nav-main" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
 
                 <div class="clearfix"></div>
 
@@ -72,7 +61,7 @@
 
 
 
-            <div class="col-lg-8 col-md-12 col-12">
+            <div class="col-lg-10 col-md-12 col-12">
 
 
 
@@ -112,9 +101,9 @@
                                     href="https://iescinoc.edu.co/quienes-somos/" target="_blank" class="nav-link "
                                     style="background-color: ##d46441;">Quienes Somos</a> </li>
 
-                            <!--<li class="nav-item "><a href="https://bolsaempleo.iescinoc.edu.co/publicaciones"-->
-                            <!--        class="nav-link " style="background-color: ##d46441;"-->
-                            <!--        target="_blank">Publicaciones</a> </li>-->
+                            <li class="nav-item "><a href="https://bolsaempleo.iescinoc.edu.co/publicaciones"
+                                    class="nav-link " style="background-color: ##d46441;"
+                                    target="_blank">Publicaciones</a> </li>
                                     
 
                             @if (Auth::guard('company')->check())
@@ -128,8 +117,8 @@
 
 
 
-                            <!--<li class="nav-item {{ Request::url() == url('/companies') ? 'active' : '' }}"><a-->
-                            <!--        href="{{ url('/companies') }}" class="nav-link">Empresas</a> </li>-->
+                            <li class="nav-item {{ Request::url() == url('/companies') ? 'active' : '' }}"><a
+                                    href="{{ url('/companies') }}" class="nav-link">Empresas</a> </li>
 
                             @foreach ($show_in_top_menu as $top_menu)
                                 @php $cmsContent = App\CmsContent::getContentBySlug($top_menu->page_slug); @endphp

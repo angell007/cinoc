@@ -19,11 +19,34 @@ use App\Subscription;
 
 class RegisterController extends Controller
 {
+    /*
+      |--------------------------------------------------------------------------
+      | Register Controller
+      |--------------------------------------------------------------------------
+      |
+      | This controller handles the registration of new users as well as their
+      | validation and creation. By default this controller uses a trait to
+      | provide this functionality without requiring any additional code.
+      |
+     */
+
     use RegistersUsers;
     use VerifiesUsers;
 
+    /**
+     * Where to redirect users after registration.
+     *
+     * @var string
+     */
     protected $redirectTo = '/home';
+    protected $redirectIfVerified = '/home';
+    protected $redirectAfterVerification = '/login';
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('guest', ['except' => ['getVerification', 'getVerificationError']]);
@@ -31,57 +54,52 @@ class RegisterController extends Controller
 
     public function register(UserFrontRegisterFormRequest $request)
     {
-        $user = $this->createUser($request);
-        $this->handleSubscription($request, $user);
-        $this->deleteIdCardNumber($user);
-        $this->updateUserName($user);
-
-        event(new Registered($user));
-        event(new UserRegistered($user));
-
-        return $this->registered($request, $user) ?: redirect($this->redirectPath());
-    }
-
-    private function createUser(UserFrontRegisterFormRequest $request)
-    {
         $user = new User();
         $user->first_name = $request->input('first_name');
         $user->middle_name = $request->input('middle_name');
+        
         $user->first_lastname = $request->input('first_lastname', '');
         $user->second_lastname = $request->input('second_lastname', '');
+         
         $user->rol = $request->input('rol', 'Estudiante');
         $user->email = $request->input('email');
         $user->national_id_card_number = $request->input('national_id_card_number');
         $user->password = bcrypt($request->input('password'));
-
+        $user->is_active = 0;
+        $user->verified = 0;
+        
         $user->saveOrFail();
-
-        return $user;
-    }
-
-    private function handleSubscription(UserFrontRegisterFormRequest $request, User $user)
-    {
-        if ((bool)$request->input('is_subscribed')) {
+        
+        if ((bool) $request->input('is_subscribed')) {
             $subscription = new Subscription();
             $subscription->email = $user->email;
             $subscription->name = $user->name;
             $subscription->save();
-
             Newsletter::subscribeOrUpdate($subscription->email, ['FNAME' => $subscription->name]);
-        } else {
-            Newsletter::unsubscribe($user->email);
         }
-    }
-
-    private function deleteIdCardNumber(User $user)
-    {
+		
+        
         $idNumber = IdcardsNumber::firstWhere('id_number', $user->national_id_card_number);
         $idNumber->delete();
-    }
-
-    private function updateUserName(User $user)
-    {
+        
+        /*         * *********************** */
         $user->name = $user->getName();
         $user->update();
+        /*         * *********************** */
+        event(new Registered($user));
+        event(new UserRegistered($user));
+
+        UserVerification::generate($user);
+        UserVerification::send(
+            $user,
+            'Activación de cuenta - Bolsa de Empleo UNIOC',
+            config('mail.recieve_to.address'),
+            config('mail.recieve_to.name')
+        );
+
+        flash('Registro exitoso. Revisa tu correo electrónico y activa tu cuenta con el enlace de verificación. Luego podrás ingresar con tu correo y contraseña para diligenciar tu hoja de vida.')->success();
+        return redirect()->route('login');
     }
+
+   
 }

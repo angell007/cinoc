@@ -1,47 +1,93 @@
 <?php
 
+
+
 namespace App\Http\Controllers\Company;
 
+
+
 use Mail;
+
 use Hash;
+
 use File;
+
 use ImgUploader;
+
 use Auth;
+
 use Validator;
+
 use DB;
+
 use Input;
+
 use Redirect;
+
 use App\Subscription;
+
 use Newsletter;
+
 use App\User;
+
 use App\Company;
+
 use App\CompanyMessage;
+
 use App\ApplicantMessage;
+
 use App\Country;
+
 use App\CountryDetail;
+
 use App\State;
+
 use App\City;
+
 use App\Industry;
+
 use App\FavouriteCompany;
+
 use App\FavouriteApplicant;
+
 use App\OwnershipType;
+
 use App\JobApply;
+
 use Carbon\Carbon;
+
 use App\Helpers\MiscHelper;
+
 use App\Helpers\DataArrayHelper;
+
 use App\Http\Requests;
+
 use App\Mail\CompanyContactMail;
+
 use App\Mail\ApplicantContactMail;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 use App\Http\Requests\Front\CompanyFrontFormRequest;
+
 use App\Http\Controllers\Controller;
+
 use App\Traits\CompanyTrait;
+
 use App\Traits\Cron;
+
 use Illuminate\Support\Str;
 
+
+
 class CompaniesController extends Controller
+
 {
+
+
+
     use CompanyTrait;
 
     use Cron;
@@ -59,18 +105,21 @@ class CompaniesController extends Controller
      */
 
     public function __construct()
+
     {
     }
 
 
 
     public function index()
+
     {
 
         return view('company_home');
     }
 
     public function company_listing(Request $request)
+
     {
 
         $search = $request->get('search');
@@ -96,6 +145,7 @@ class CompaniesController extends Controller
 
 
     public function companyProfile()
+
     {
 
         $countries = DataArrayHelper::defaultCountriesArray();
@@ -120,6 +170,7 @@ class CompaniesController extends Controller
 
 
     public function updateCompanyProfile(CompanyFrontFormRequest $request)
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -190,45 +241,9 @@ class CompaniesController extends Controller
 
         $company->city_id = $request->input('city_id');
 
-        $company->is_subscribed = $request->input('is_subscribed', 0);
-
-
-
         $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
 
         $company->update();
-
-        /*************************/
-
-        Subscription::where('email', 'like', $company->email)->delete();
-
-        if ((bool)$company->is_subscribed) {
-
-            $subscription = new Subscription();
-
-            $subscription->email = $company->email;
-
-            $subscription->name = $company->name;
-
-            $subscription->save();
-
-            /*************************/
-
-            //	Newsletter::subscribeOrUpdate($subscription->email, ['FNAME'=>$subscription->name]);
-
-            /*************************/
-        } else {
-
-            /*************************/
-
-            //	Newsletter::unsubscribe($company->email);
-
-            /*************************/
-        }
-
-
-
-
 
         flash(__('Una vez se active la empresa comunicar vía correo electrónico que su cuenta para publicar ofertas laborales fue activada.'))->success();
 
@@ -238,6 +253,7 @@ class CompaniesController extends Controller
 
 
     public function addToFavouriteApplicant(Request $request, $application_id, $user_id, $job_id, $company_id)
+
     {
 
         $data['user_id'] = $user_id;
@@ -258,6 +274,7 @@ class CompaniesController extends Controller
 
 
     public function removeFromFavouriteApplicant(Request $request, $application_id, $user_id, $job_id, $company_id)
+
     {
 
         $data['user_id'] = $user_id;
@@ -284,6 +301,7 @@ class CompaniesController extends Controller
 
 
     public function companyDetail(Request $request, $company_slug)
+
     {
 
         $company = Company::where('slug', 'like', $company_slug)->firstOrFail();
@@ -304,6 +322,7 @@ class CompaniesController extends Controller
 
 
     public function sendContactForm(Request $request)
+
     {
 
         $msgresponse = array();
@@ -396,6 +415,7 @@ class CompaniesController extends Controller
 
 
     public function sendApplicantContactForm(Request $request)
+
     {
 
         $msgresponse = array();
@@ -486,6 +506,7 @@ class CompaniesController extends Controller
 
 
     public function postedJobs(Request $request)
+
     {
 
         $jobs = Auth::guard('company')->user()->jobs()->get(10);
@@ -498,18 +519,22 @@ class CompaniesController extends Controller
 
 
     public function listAppliedUsers(Request $request, $job_id)
+
     {
 
-        // $job_applications = JobApply::where('job_id', '=', $job_id)->get();
+        $job_applications = JobApply::where('job_id', '=', $job_id)->get();
 
-        // return view('job.job_applications')
 
-        //     ->with('job_applications', $job_applications);
+
+        return view('job.job_applications')
+
+            ->with('job_applications', $job_applications);
     }
 
 
 
     public function listFavouriteAppliedUsers(Request $request, $job_id)
+
     {
 
         $company_id = Auth::guard('company')->user()->id;
@@ -528,6 +553,7 @@ class CompaniesController extends Controller
 
 
     public function applicantProfile($application_id)
+
     {
 
 
@@ -574,6 +600,7 @@ class CompaniesController extends Controller
 
 
     public function userProfile($id)
+
     {
 
 
@@ -608,6 +635,7 @@ class CompaniesController extends Controller
 
 
     public function companyFollowers()
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -628,6 +656,7 @@ class CompaniesController extends Controller
 
 
     public function companyMessages()
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);
@@ -652,6 +681,7 @@ class CompaniesController extends Controller
 
 
     public function companyMessageDetail($message_id)
+
     {
 
         $company = Company::findOrFail(Auth::guard('company')->user()->id);

@@ -1,119 +1,84 @@
 @extends('layouts.app')
+@section('content') 
+<!-- Header start --> 
+@include('includes.header') 
+<!-- Header end --> 
+<!-- Inner Page Title start --> 
+@include('includes.inner_page_title', ['page_title'=>__('My Profile')]) 
+<!-- Inner Page Title end -->
+<div class="listpgWraper">
+    <div class="container">
+        <div class="row">
+            @include('includes.user_dashboard_menu')
 
-@section('content')
-    <!-- Header start -->
-
-    @include('includes.header')
-
-    <!-- Header end -->
-
-    <!-- Inner Page Title start -->
-
-    @include('includes.inner_page_title', ['page_title' => __('My Profile')])
-
-    <!-- Inner Page Title end -->
-
-    <div class="listpgWraper">
-
-        <div class="container">
-
-            <div class="row">
-
-                @include('includes.user_dashboard_menu')
-
-
-
-                <div class="col-md-9 col-sm-8">
-
-
-
-                    <div class="userccount">
-
-                        <div class="formpanel mt0"> @include('flash::message')
-
-                            <!-- Personal Information -->
-
-                            @include('user.inc.profile')
-
+            <div class="col-md-9 col-sm-8"> 
+              
+                        <div class="userccount">
+                            <div class="formpanel mt0"> @include('flash::message')
+                                @auth
+                                @includeIf('user.inc.profile_completion_notice')
+                                @endauth
+                                <!-- Personal Information -->
+                                @include('user.inc.profile')                              
+                            </div>
                         </div>
-
-                    </div>
-
-
-
-                    <div class="userccount">
-
-                        <div class="formpanel mt0" <!-- Personal Information -->
-
-                            @include('user.inc.summary')
-
+						
+						<div class="userccount">
+                            <div class="formpanel mt0"
+                                <!-- Personal Information -->
+                                @include('user.inc.summary')                                
+                            </div>
                         </div>
-
-                    </div>
-
-
-
-                    <div class="userccount">
-
-                        <div class="formpanel mt0">
-
-                            <!-- Personal Information -->
-
-                            @include('user.forms.cv.cvs')
-
-                            @include('user.forms.project.projects')
-
-                            @include('user.forms.experience.experience')
-
-                            @include('user.forms.education.education')
-
-                            @include('user.forms.non_formal_education.education')
-
-                            @include('user.forms.skill.skills')
-
-                            @include('user.forms.language.languages')
-
+						
+                        <div class="userccount">
+                            <div class="formpanel mt0">
+                                @php
+                                    $canDownloadCv = class_exists(\App\Helpers\ProfileCompletionHelper::class)
+                                        && \App\Helpers\ProfileCompletionHelper::canGenerateCv(Auth::user());
+                                @endphp
+                                <div class="mb-3">
+                                    <a href="{{ url('my-cv') }}" class="btn btn-primary">
+                                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        @if($canDownloadCv)
+                                            Ver, imprimir o descargar mi hoja de vida
+                                        @else
+                                            Ver avance de mi hoja de vida
+                                        @endif
+                                    </a>
+                                    @unless($canDownloadCv)
+                                    <p class="text-muted" style="margin-top:8px;">
+                                        Cuando completes al menos el {{ \App\Helpers\ProfileCompletionHelper::COMPLETION_THRESHOLD }}% de los campos obligatorios podrás descargar tu hoja de vida en PDF.
+                                    </p>
+                                    @endunless
+                                </div>
+                                @include('user.forms.cv.cvs')
+                                @include('user.forms.project.projects')
+                                @include('user.forms.experience.experience')
+                                @include('user.forms.education.education')
+                                @include('user.forms.skill.skills')
+                                @include('user.forms.language.languages')
+                            </div>
                         </div>
-
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-
+						
+						
+						
+						
+						
+						
+						
+						
+			
             </div>
-
         </div>
-
-    </div>
-
-    @include('includes.footer')
+    </div>  
+</div>
+@include('includes.footer')
 @endsection
-
 @push('styles')
-    <style type="text/css">
-        .userccount p {
-            text-align: left !important;
-        }
-    </style>
+<style type="text/css">
+    .userccount p{ text-align:left !important;}
+</style>
 @endpush
-
 @push('scripts')
-    @include('includes.immediate_available_btn')
+@include('includes.immediate_available_btn')
 @endpush

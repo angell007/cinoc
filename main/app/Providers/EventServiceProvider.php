@@ -7,69 +7,41 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 
 class EventServiceProvider extends ServiceProvider
 {
+
     /**
-
      * The event listener mappings for the application.
-
      *
-
      * @var array
-
      */
-
     protected $listen = [
-
         'App\Events\UserRegistered' => [
-
             'App\Listeners\UserRegisterdListener',
-
             'App\Listeners\UserNotifyRegisterdListener',
-
         ],
-
         'App\Events\CompanyRegistered' => [
-
             'App\Listeners\CompanyRegisterdListener',
-
         ],
-
+        \Jrean\UserVerification\Events\UserVerified::class => [
+            'App\Listeners\ActivateVerifiedUser',
+        ],
         'App\Events\JobPosted' => [
-
             'App\Listeners\JobPostedListener',
-
         ],
-
         'App\Events\JobApplied' => [
-
             'App\Listeners\JobAppliedJobSeekerListener',
-
             'App\Listeners\JobAppliedCompanyListener',
-
         ],
-
     ];
 
-
-
     /**
-
      * Register any events for your application.
-
      *
-
      * @return void
-
      */
-
     public function boot()
     {
-
         parent::boot();
-
         //
-
     }
-
-
 
 }

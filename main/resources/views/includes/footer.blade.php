@@ -2,28 +2,28 @@
 
 <div class="largebanner shadow3">
 
-    <!--<div class="adin">-->
+    <div class="adin">
 
 
 
-        <!--<div class="row justify-content-center">-->
+        <div class="row justify-content-center">
 
             <!--<div class="col-6 ">-->
 
-            <!--<img style="height: 120px;" src="{{ asset('images/logo.jpeg') }}" alt="">-->
+            <img style="height: 120px;" src="{{ asset('images/logo.jpeg') }}" alt="">
 
             <!--</div>-->
 
             <!--<div class="col-6 ">-->
 
-            <!--<img style="height: 120px;" src="{{ asset('images/logo-egresados.png') }}" alt="">-->
+            <img style="height: 120px;" src="{{ asset('images/logo-egresados.png') }}" alt="">
 
 
 
             <!--<div class="col-6 ">-->
 
-            <!--<img class="mt-2" style="height: 95px; border-radius: 25%"-->
-            <!--    src="{{ asset('images/Logo-bolsa-de-empleo.png') }}" alt="">-->
+            <img class="mt-2" style="height: 95px; border-radius: 25%"
+                src="{{ asset('images/Logo-bolsa-de-empleo.png') }}" alt="">
 
             <!--</div>-->
 
@@ -37,7 +37,7 @@
 
             <!--</div>-->
 
-        <!--</div>-->
+        </div>
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-    <!--</div>-->
+    </div>
 
     <div class="clearfix"></div>
 
@@ -70,19 +70,18 @@
             <div class="col-md-3 col-sm-12 ">
                 <aside id="text-3" class="widget widget_text">
                     <div class="widget_title text-white">
-                        <h3>IES UNIOC</h3>
+                        <h3>UNIOC</h3>
                     </div>
                     <div class="textwidget">
-                        <p><strong>Institución de Educación Superior Colegio Integrado Nacional Oriente
-                                de Caldas</strong></p>
+                        <p><strong>Institución Universitaria Oriente de Caldas – UNIOC</strong></p>
                         <p>Nit: 890.802.678-4</p>
                         <p><strong>Notificaciones Judiciales:</strong><br>
-                            notificacionesjudiciales@iescinoc.edu.co</p>
+                            <a href="mailto:notificacionesjudiciales@unioc.edu.co">notificacionesjudiciales@unioc.edu.co</a></p>
                         <p><strong>Correo institucional</strong><br>
-                            prensa@iescinoc.edu.co</p>
+                            <a href="mailto:prensa@unioc.edu.co">prensa@unioc.edu.co</a></p>
                         <p><a href="https://iescinoc.edu.co/pqrs">Realiza aquí tu PQRSDF</a></p>
                         {{-- <p><a href="https://iescinoc.edu.co/sitemap_index.xml">Mapa del sitio</a></p> --}}
-                        <p><a href="https://glpi.cinocvirtual.edu.co/">Mesa de ayuda</a></p>
+                        <p><a href="http://cinocvirtual.edu.co/glpi">Mesa de ayuda</a></p>
                     </div>
                 </aside>
             </div>
@@ -91,25 +90,35 @@
                     <div class="widget_title text-white">
                         <h3>Sedes y horario</h3>
                     </div>
-                    <div class="textwidget custom-html-widget text-white">
-                        <p><b>Pensilvania, Caldas:</b> Carrera 5 # 6-30<br>
-                            (Sede principal y dirección de correspondencia)<br>
-                            Cels. +57 3136516109</p>
+                    <div class="textwidget custom-html-widget text-white"><b>Pensilvania, Caldas:</b>&nbsp;Carrera
+                        5 # 6-30
+                        <p>
+                            (Sede principal y dirección de correspondencia)
+                        </p>
+                        <p>
+                            Lunes a viernes de 8:00 a.m. a 12:00 m. y de 2:00 a 6:00 p.m.
+                        </p>
 
-                        <p><b>Manzanares, Caldas:</b> Carrera 5 # 4-08<br>
-                            Cel. +57 3218151488</p>
+                        <p>
+                            Cels. +57 3118368165
+                        </p>
 
-                        <p><b>Marquetalia, Caldas:</b> Calle 3 # 1a-26 escuela Cervantes<br>
-                            Miércoles, jueves y viernes de 2:00 p.m. a 6:00 p.m.<br>
-                            Sábados de 8:00 a 12:00 m. y de 1:00 p.m. a 4:00 p.m.<br>
-                            Cel. +57 3218151499</p>
-
-                        <p><b>Norcasia, Caldas:</b> Cr 7 # 8-41 centro<br>
-                            Cel. +57 310 2111358</p>
-
-                        <p><b>Horario de Atención</b><br>
-                            Lunes a Jueves de 8:00 a.m. a 12:00 m, y de 2:00 p.m a 6:30 p.m.<br>
-                            Viernes de 8:00 a.m. a 2:00 p.m.</p>
+                        <p>
+                            <b>Manzanares, Caldas:</b>&nbsp;Cra 6 # 7-62 escuela Salvador Ramírez
+                        </p>
+                        <p>
+                            Cel. +57 3218151488
+                        </p>
+                        <p>
+                            <b>Marquetalia, Caldas</b>: Calle 3 # 1a-26 escuela Cervantes
+                        </p>
+                        <p>
+                            Miércoles, jueves y viernes de 2:00 p.m. a 6:00 p.m. Sábados de 8:00 a 12:00
+                            m. y de 1:00 p.m. a 4:00 p.m.
+                        </p>
+                        <p>
+                            Cel. +57 3218151499
+                        </p>
                     </div>
                 </aside>
             </div>

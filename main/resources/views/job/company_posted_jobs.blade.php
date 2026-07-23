@@ -53,7 +53,13 @@
                                                     <div class="jobinfo">
 
                                                         <h3><a href="{{ route('job.detail', [$job->slug]) }}"
-                                                                title="{{ $job->title }}">{{ $job->title }}</a></h3>
+                                                                title="{{ $job->title }}">{{ $job->title }}</a>
+                                                            @if (!(bool) $job->is_active)
+                                                                <span class="label label-warning">Pendiente de revisión</span>
+                                                            @else
+                                                                <span class="label label-success">Publicada</span>
+                                                            @endif
+                                                        </h3>
 
                                                         <div class="companyName"><a
                                                                 href="{{ route('company.detail', $company->slug) }}"

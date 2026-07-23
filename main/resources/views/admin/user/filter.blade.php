@@ -121,8 +121,6 @@
                                                 </th>
                                                 <th>Hoja de vida
                                                 </th>
-                                                <th>Carta de presentación
-                                                </th>
                                                 <th>Actions
                                                 </th>
                                             </tr>
@@ -192,9 +190,6 @@
             }, {
                 data: 'cv',
                 name: 'cv'
-            }, {
-                data: 'letter',
-                name: 'letter'
             }, {
                 data: 'action',
                 name: 'action',

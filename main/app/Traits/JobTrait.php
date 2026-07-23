@@ -15,7 +15,9 @@ use App\Traits\Skills;
 use App\Events\JobPosted;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use App\Mail\JobApprovedMailable;
 use Illuminate\Support\Str;
 
 trait JobTrait
@@ -182,7 +184,9 @@ trait JobTrait
         $job = Job::findOrFail($id);
         $job->company_id = $request->input('company_id');
         $job = $this->assignJobValues($job, $request);
-        $job->is_active = $request->input('is_active');
+        $wasActive = (int) $job->is_active;
+        $newActive = (int) $request->input('is_active');
+        $job->is_active = $newActive;
         $job->is_featured = $request->input('is_featured');
 
         /*         * ******************************* */
@@ -196,6 +200,11 @@ trait JobTrait
         /*         * ************************************ */
         $this->updateFullTextSearch($job);
         /*         * ************************************ */
+
+        if ($wasActive === 0 && $newActive === 1) {
+            Mail::send(new JobApprovedMailable($job));
+        }
+
         flash('Vacante actualizada!')->success();
         return Redirect::route('edit.job', array($job->id));
     }
@@ -259,6 +268,7 @@ trait JobTrait
         $job = new Job();
         $job->company_id = $company->id;
         $job = $this->assignJobValues($job, $request);
+        $job->is_active = 0;
         $job->save();
         /*         * ******************************* */
         $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
@@ -277,7 +287,7 @@ trait JobTrait
         /*         * ******************************* */
 
         event(new JobPosted($job));
-        flash('Vacante publicada!')->success();
+        flash('Su vacante ha sido registrada exitosamente. Permanecerá inactiva e invisible hasta que la administradora de la Bolsa de Empleo la revise y apruebe. Recibirá una notificación por correo electrónico cuando sea publicada o rechazada.')->success();
         return Redirect::route('edit.front.job', array($job->id));
     }
 

@@ -2,6 +2,16 @@
 
 <h5>{{ __('Job Details') }}</h5>
 
+@if (!isset($job))
+    <div class="alert alert-info" style="margin-bottom: 15px;">
+        Al registrar la vacante, esta quedará inactiva e invisible para los buscadores de empleo hasta que la administradora de la Bolsa de Empleo la revise y apruebe. Recibirá una notificación por correo electrónico cuando sea publicada o rechazada.
+    </div>
+@elseif (isset($job) && !(bool) $job->is_active)
+    <div class="alert alert-warning" style="margin-bottom: 15px;">
+        Esta vacante se encuentra pendiente de revisión y aún no es visible en la Bolsa de Empleo.
+    </div>
+@endif
+
 @if (isset($job))
     {!! Form::model($job, [
         'method' => 'put',

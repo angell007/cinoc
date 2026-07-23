@@ -2,3 +2,6 @@
 vendor/*
 node_modulesbackup/
 backup/
+.git-corrupto-backup/
+main/storage/app/temp/
+temp_project_images/

@@ -6,7 +6,6 @@ use App\Helpers\ImageUploadingHelper;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\UploadedFile;
 use App\User;
-use App\Subscription;
 use App\ApplicantMessage;
 use App\Company;
 use App\FavouriteCompany;
@@ -29,7 +28,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
-use Spatie\Newsletter\NewsletterFacade;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class UserController extends Controller
 {
@@ -45,7 +44,7 @@ class UserController extends Controller
     /** * Create a new controller instance. * * @return void */
     public function __construct()
     { //
-        $this->middleware('auth', ['only' => ['myProfile', 'updateMyProfile', 'viewPublicProfile']]);
+        $this->middleware('auth', ['only' => ['myProfile', 'updateMyProfile', 'viewPublicProfile', 'viewMyCv', 'downloadMyCv']]);
         $this->middleware('auth', ['except' => ['showApplicantProfileEducation', 'changePass', 'uploadParticipant', 'showApplicantProfileProjects', 'showApplicantProfileExperience', 'showApplicantProfileSkills', 'showApplicantProfileLanguages']]);
     }
     public function viewPublicProfile($id)
@@ -134,7 +133,6 @@ class UserController extends Controller
         $user->expected_salary = $request->input('expected_salary');
         $user->salary_currency = $request->input('salary_currency');
         $user->street_address = $request->input('street_address');
-        $user->is_subscribed = $request->input('is_subscribed', 0);
         $user->civil_status_id = $request->input('civil_status_id', 1);
         $user->borncountry_id = $request->input('borncountry_id');
         $user->bornstate_id = $request->input('bornstate_id');
@@ -143,20 +141,6 @@ class UserController extends Controller
         $user->status_parcticas = $request->input('status_parcticas', 'Si');
         $user->update();
         $this->updateUserFullTextSearch($user);
-        /*************************/        Subscription::where('email', 'like', $user->email)->delete();
-        if ((bool)$user->is_subscribed) {
-            $subscription = new Subscription();
-            $subscription->email = $user->email;
-            $subscription->name = $user->name;
-            $subscription->save();
-            /*************************/
-            NewsletterFacade::subscribeOrUpdate($subscription->email, ['FNAME' => $subscription->name]);
-            /*************************/
-        } else {
-            /*************************/
-            NewsletterFacade::unsubscribe($user->email);
-            /*************************/
-        }
         flash(__('You have updated your profile successfully'))->success();
         return Redirect::route('my.profile');
     }
@@ -223,5 +207,48 @@ class UserController extends Controller
     {
         DB::table('participants')->insertGetId(request()->get('data'));
         return Response()->json(request()->all(), 200);
+    }
+
+    public function viewMyCv()
+    {
+        $user = $this->loadUserForCv();
+        $cvImageSource = $this->cvImageSource($user, false);
+
+        return view('user.cv_preview', compact('user', 'cvImageSource'));
+    }
+
+    public function downloadMyCv()
+    {
+        $user = $this->loadUserForCv();
+        $cvImageSource = $this->cvImageSource($user, true);
+        $pdf = PDF::loadView('user.cv_pdf', compact('user', 'cvImageSource'));
+        $fileName = 'hoja-de-vida-' . preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName())) . '.pdf';
+
+        return $pdf->download($fileName);
+    }
+
+    private function loadUserForCv()
+    {
+        return User::with([
+            'profileEducation',
+            'profileExperience',
+            'profileSkills',
+            'profileLanguages',
+            'profileProjects',
+        ])->findOrFail(Auth::id());
+    }
+
+    private function cvImageSource(User $user, bool $forPdf)
+    {
+        if (empty($user->image)) {
+            return null;
+        }
+
+        $path = public_path('user_images/' . $user->image);
+        if (!file_exists($path)) {
+            return null;
+        }
+
+        return $forPdf ? $path : asset('user_images/' . $user->image);
     }
 }

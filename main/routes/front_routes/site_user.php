@@ -6,6 +6,10 @@
 
 Route::get('my-profile', 'UserController@myProfile')->name('my.profile');
 
+Route::get('my-cv', 'UserController@viewMyCv')->name('my.cv.preview');
+
+Route::get('download-my-cv', 'UserController@downloadMyCv')->name('download.my.cv');
+
 Route::put('my-profile', 'UserController@updateMyProfile')->name('my.profile');
 
 Route::get('view-public-profile/{id}', 'UserController@viewPublicProfile')->name('view.public.profile');

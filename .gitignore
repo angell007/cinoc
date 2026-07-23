@@ -5,3 +5,11 @@ backup/
 .git-corrupto-backup/
 main/storage/app/temp/
 temp_project_images/
+.codegraph/
+.cursor/
+.vscode/
+company_logos/
+experiences_file/
+Dockerfile
+docker-compose.yml
+docker/

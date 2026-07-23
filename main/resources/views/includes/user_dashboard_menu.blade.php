@@ -29,8 +29,14 @@
         </li>
         <li><a href="{{ url('my-cv') }}"><i class="fa fa-file-text" aria-hidden="true"></i> Ver mi hoja de vida</a>
         </li>
+        @php
+            $canDownloadCv = class_exists(\App\Helpers\ProfileCompletionHelper::class)
+                && \App\Helpers\ProfileCompletionHelper::canGenerateCv(Auth::user());
+        @endphp
+        @if($canDownloadCv)
         <li><a href="{{ url('download-my-cv') }}"><i class="fa fa-download" aria-hidden="true"></i> Descargar hoja de vida (PDF)</a>
         </li>
+        @endif
         <li><a href="{{url('my-profile#cvs')}}"><i class="fa fa-folder-o" aria-hidden="true"></i> {{__('Manage Resume')}}</a>
         </li>
         <li><a href="{{route('my.messages')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{__('My Messages')}}</a>

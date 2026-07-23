@@ -39,6 +39,21 @@ class ProfileCompletionHelper
         return self::assess($user)['is_complete'];
     }
 
+    public static function canGenerateCv(User $user): bool
+    {
+        return self::assess($user)['is_complete'];
+    }
+
+    public static function downloadBlockedMessage(User $user): string
+    {
+        $assessment = self::assess($user);
+
+        return 'Aún no puedes descargar tu hoja de vida en PDF. '
+            . 'Completa al menos el ' . $assessment['threshold'] . '% de los campos obligatorios '
+            . '(actualmente tienes ' . $assessment['percentage'] . '%). '
+            . 'Pendientes: ' . implode(', ', $assessment['missing']) . '.';
+    }
+
     private static function checks(User $user): array
     {
         $summary = trim((string) $user->getProfileSummary('summary'));

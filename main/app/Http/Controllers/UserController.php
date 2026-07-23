@@ -24,6 +24,7 @@ use App\Traits\ProfileLanguageTrait;
 use App\Traits\Skills;
 use App\Http\Requests\Front\UserFrontFormRequest;
 use App\Helpers\DataArrayHelper;
+use App\Helpers\ProfileCompletionHelper;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -213,13 +214,21 @@ class UserController extends Controller
     {
         $user = $this->loadUserForCv();
         $cvImageSource = $this->cvImageSource($user, false);
+        $canDownloadCv = ProfileCompletionHelper::canGenerateCv($user);
 
-        return view('user.cv_preview', compact('user', 'cvImageSource'));
+        return view('user.cv_preview', compact('user', 'cvImageSource', 'canDownloadCv'));
     }
 
     public function downloadMyCv()
     {
         $user = $this->loadUserForCv();
+
+        if (!ProfileCompletionHelper::canGenerateCv($user)) {
+            flash(ProfileCompletionHelper::downloadBlockedMessage($user))->warning();
+
+            return Redirect::route('my.profile');
+        }
+
         $cvImageSource = $this->cvImageSource($user, true);
         $pdf = PDF::loadView('user.cv_pdf', compact('user', 'cvImageSource'));
         $fileName = 'hoja-de-vida-' . preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName())) . '.pdf';

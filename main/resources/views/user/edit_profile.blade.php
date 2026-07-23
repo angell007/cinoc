@@ -32,10 +32,24 @@
 						
                         <div class="userccount">
                             <div class="formpanel mt0">
+                                @php
+                                    $canDownloadCv = class_exists(\App\Helpers\ProfileCompletionHelper::class)
+                                        && \App\Helpers\ProfileCompletionHelper::canGenerateCv(Auth::user());
+                                @endphp
                                 <div class="mb-3">
                                     <a href="{{ url('my-cv') }}" class="btn btn-primary">
-                                        <i class="fa fa-file-text" aria-hidden="true"></i> Ver, imprimir o descargar mi hoja de vida
+                                        <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        @if($canDownloadCv)
+                                            Ver, imprimir o descargar mi hoja de vida
+                                        @else
+                                            Ver avance de mi hoja de vida
+                                        @endif
                                     </a>
+                                    @unless($canDownloadCv)
+                                    <p class="text-muted" style="margin-top:8px;">
+                                        Cuando completes al menos el {{ \App\Helpers\ProfileCompletionHelper::COMPLETION_THRESHOLD }}% de los campos obligatorios podrás descargar tu hoja de vida en PDF.
+                                    </p>
+                                    @endunless
                                 </div>
                                 @include('user.forms.cv.cvs')
                                 @include('user.forms.project.projects')

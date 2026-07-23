@@ -288,8 +288,6 @@ class CompanyController extends Controller
 
         $company->city_id = $request->input('city_id');
 
-        $company->is_subscribed = $request->input('is_subscribed', 0);
-
         $company->tipo_identificacion = $request->input('tipo_identificacion');
 
         $company->identificacion = $request->input('identificacion');

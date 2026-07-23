@@ -241,45 +241,9 @@ class CompaniesController extends Controller
 
         $company->city_id = $request->input('city_id');
 
-        $company->is_subscribed = $request->input('is_subscribed', 0);
-
-
-
         $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
 
         $company->update();
-
-        /*************************/
-
-        Subscription::where('email', 'like', $company->email)->delete();
-
-        if ((bool)$company->is_subscribed) {
-
-            $subscription = new Subscription();
-
-            $subscription->email = $company->email;
-
-            $subscription->name = $company->name;
-
-            $subscription->save();
-
-            /*************************/
-
-            //	Newsletter::subscribeOrUpdate($subscription->email, ['FNAME'=>$subscription->name]);
-
-            /*************************/
-        } else {
-
-            /*************************/
-
-            //	Newsletter::unsubscribe($company->email);
-
-            /*************************/
-        }
-
-
-
-
 
         flash(__('Una vez se active la empresa comunicar vía correo electrónico que su cuenta para publicar ofertas laborales fue activada.'))->success();
 

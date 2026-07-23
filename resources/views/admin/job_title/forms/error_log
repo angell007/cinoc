@@ -1,0 +1,40 @@
+[24-Nov-2025 05:10:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[24-Nov-2025 05:10:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[24-Nov-2025 05:10:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[24-Nov-2025 05:10:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[11-Feb-2026 13:54:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[11-Feb-2026 16:35:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[11-Feb-2026 16:35:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[11-Feb-2026 16:35:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[11-Feb-2026 16:36:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3
+[17-Apr-2026 11:33:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job_title/forms/form.blade.php on line 3

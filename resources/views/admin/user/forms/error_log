@@ -1,0 +1,24 @@
+[11-Feb-2026 13:56:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php:626
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php on line 626
+[11-Feb-2026 16:39:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php:626
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php on line 626
+[11-Feb-2026 16:39:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php:626
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php on line 626
+[11-Feb-2026 16:39:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php:626
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php on line 626
+[11-Feb-2026 16:39:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php:626
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php on line 626
+[17-Apr-2026 11:34:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php:626
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/form.blade.php on line 626

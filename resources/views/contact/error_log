@@ -1,0 +1,120 @@
+[24-Nov-2025 04:46:54 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[24-Nov-2025 04:46:55 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[24-Nov-2025 04:46:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[24-Nov-2025 04:47:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[24-Nov-2025 04:47:04 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[24-Nov-2025 04:47:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[24-Nov-2025 04:47:10 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[24-Nov-2025 04:47:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[24-Nov-2025 04:47:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[24-Nov-2025 04:47:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[24-Nov-2025 04:47:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[24-Nov-2025 04:47:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[11-Feb-2026 14:01:56 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[11-Feb-2026 14:01:57 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[11-Feb-2026 14:01:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[11-Feb-2026 16:35:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[11-Feb-2026 16:35:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[11-Feb-2026 16:35:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[11-Feb-2026 16:35:26 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40
+[11-Feb-2026 16:35:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[11-Feb-2026 16:35:27 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[11-Feb-2026 16:35:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[11-Feb-2026 16:35:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[11-Feb-2026 16:35:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[11-Feb-2026 16:35:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[11-Feb-2026 16:35:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[11-Feb-2026 16:35:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[17-Apr-2026 11:33:07 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_company_page.blade.php on line 29
+[17-Apr-2026 11:33:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/report_abuse_page.blade.php on line 29
+[17-Apr-2026 11:33:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Auth' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php:40
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/contact/email_to_friend_page.blade.php on line 40

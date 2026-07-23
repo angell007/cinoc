@@ -1,0 +1,40 @@
+[24-Nov-2025 05:11:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[24-Nov-2025 05:11:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[24-Nov-2025 05:11:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[24-Nov-2025 05:11:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[11-Feb-2026 13:53:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[11-Feb-2026 16:39:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[11-Feb-2026 16:39:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[11-Feb-2026 16:39:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[11-Feb-2026 16:39:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59
+[17-Apr-2026 11:34:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/site_setting/forms/paymentGatewaysSetting_form.blade.php on line 59

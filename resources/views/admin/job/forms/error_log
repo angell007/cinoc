@@ -1,0 +1,40 @@
+[24-Nov-2025 05:45:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[24-Nov-2025 05:46:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[24-Nov-2025 05:46:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[24-Nov-2025 05:46:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[11-Feb-2026 13:58:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[11-Feb-2026 16:37:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[11-Feb-2026 16:37:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[11-Feb-2026 16:37:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[11-Feb-2026 16:37:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24
+[17-Apr-2026 11:33:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/forms/form.blade.php on line 24

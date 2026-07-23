@@ -1,0 +1,1776 @@
+[30-May-2024 08:50:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[29-Jul-2024 10:09:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[28-Sep-2024 12:05:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[29-Nov-2024 09:10:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[22-Sep-2025 01:29:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[22-Sep-2025 01:29:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[01-Oct-2025 20:23:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[01-Oct-2025 20:23:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[01-Oct-2025 20:23:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[01-Oct-2025 20:23:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[29-Oct-2025 04:32:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[29-Oct-2025 04:32:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[29-Oct-2025 04:32:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[29-Oct-2025 04:32:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Nov-2025 04:35:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Nov-2025 04:35:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Nov-2025 04:35:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Nov-2025 04:35:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Nov-2025 04:35:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[24-Nov-2025 04:35:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[24-Nov-2025 04:35:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[24-Nov-2025 04:35:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[24-Nov-2025 04:35:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[24-Nov-2025 04:35:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[24-Nov-2025 04:35:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[24-Nov-2025 04:35:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[24-Nov-2025 04:35:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[24-Nov-2025 04:35:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[24-Nov-2025 04:36:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[24-Nov-2025 04:36:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[24-Nov-2025 04:36:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[24-Nov-2025 04:36:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[24-Nov-2025 04:36:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[24-Nov-2025 04:36:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[24-Nov-2025 04:36:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[24-Nov-2025 04:36:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[24-Nov-2025 04:36:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[24-Nov-2025 04:36:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[24-Nov-2025 04:36:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[24-Nov-2025 04:36:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[24-Nov-2025 04:36:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[24-Nov-2025 04:36:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[24-Nov-2025 04:36:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[24-Nov-2025 04:36:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[24-Nov-2025 04:36:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[24-Nov-2025 04:36:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[24-Nov-2025 04:36:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[24-Nov-2025 04:37:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[24-Nov-2025 04:37:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[24-Nov-2025 04:37:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[24-Nov-2025 04:37:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[24-Nov-2025 04:37:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[24-Nov-2025 04:37:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[24-Nov-2025 04:37:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[24-Nov-2025 04:37:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[24-Nov-2025 04:37:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[24-Nov-2025 04:37:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[24-Nov-2025 04:37:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[24-Nov-2025 04:37:38 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[24-Nov-2025 04:37:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[24-Nov-2025 04:37:43 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[24-Nov-2025 04:37:48 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[24-Nov-2025 04:37:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[24-Nov-2025 04:37:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[24-Nov-2025 04:37:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[24-Nov-2025 04:37:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[24-Nov-2025 04:38:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[24-Nov-2025 04:38:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[24-Nov-2025 04:38:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[24-Nov-2025 04:38:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[24-Nov-2025 04:38:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[24-Nov-2025 04:38:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[24-Nov-2025 04:38:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[24-Nov-2025 04:38:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[24-Nov-2025 04:38:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[24-Nov-2025 04:38:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[24-Nov-2025 04:38:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[24-Nov-2025 04:38:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[24-Nov-2025 04:38:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[24-Nov-2025 04:38:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[24-Nov-2025 04:38:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[24-Nov-2025 04:38:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[24-Nov-2025 04:38:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[24-Nov-2025 04:38:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[24-Nov-2025 04:38:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[24-Nov-2025 04:38:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[24-Nov-2025 04:38:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[24-Nov-2025 04:38:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[24-Nov-2025 04:39:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[24-Nov-2025 04:39:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[25-Dec-2025 22:15:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[25-Dec-2025 22:16:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[25-Dec-2025 22:16:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[25-Dec-2025 22:16:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Jan-2026 18:00:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[24-Jan-2026 18:00:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[24-Jan-2026 18:00:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[24-Jan-2026 18:00:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Jan-2026 18:02:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[24-Jan-2026 18:08:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[24-Jan-2026 18:08:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[24-Jan-2026 18:08:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[24-Jan-2026 18:08:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[24-Jan-2026 18:08:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[24-Jan-2026 18:08:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[30-Jan-2026 02:03:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[30-Jan-2026 02:03:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[30-Jan-2026 02:03:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[30-Jan-2026 02:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[30-Jan-2026 02:05:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[30-Jan-2026 02:10:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[30-Jan-2026 02:10:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[30-Jan-2026 02:10:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[30-Jan-2026 02:10:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[30-Jan-2026 02:10:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[30-Jan-2026 02:10:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[01-Feb-2026 02:50:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[01-Feb-2026 02:50:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[01-Feb-2026 02:50:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[01-Feb-2026 02:50:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[01-Feb-2026 02:52:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[01-Feb-2026 02:58:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[01-Feb-2026 02:58:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[01-Feb-2026 02:58:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[01-Feb-2026 02:58:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[01-Feb-2026 02:58:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[01-Feb-2026 02:58:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[02-Feb-2026 15:53:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[02-Feb-2026 15:53:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[02-Feb-2026 15:53:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[02-Feb-2026 15:53:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[02-Feb-2026 15:55:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[02-Feb-2026 16:00:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[02-Feb-2026 16:00:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[02-Feb-2026 16:00:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[02-Feb-2026 16:00:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[02-Feb-2026 16:00:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[02-Feb-2026 16:00:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[06-Feb-2026 01:35:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[06-Feb-2026 01:35:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[06-Feb-2026 01:35:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[06-Feb-2026 01:35:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[06-Feb-2026 01:37:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[06-Feb-2026 01:42:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[06-Feb-2026 01:42:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[06-Feb-2026 01:42:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[06-Feb-2026 01:42:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[06-Feb-2026 01:42:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[06-Feb-2026 01:42:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[10-Feb-2026 05:32:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Feb-2026 16:32:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[11-Feb-2026 16:32:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[11-Feb-2026 16:32:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[11-Feb-2026 16:32:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[11-Feb-2026 16:32:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[11-Feb-2026 16:32:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[11-Feb-2026 16:32:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[11-Feb-2026 16:32:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[11-Feb-2026 16:32:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[11-Feb-2026 16:32:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[11-Feb-2026 16:32:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[11-Feb-2026 16:32:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[11-Feb-2026 16:32:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[11-Feb-2026 16:32:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[11-Feb-2026 16:32:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[11-Feb-2026 16:32:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[11-Feb-2026 16:32:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[11-Feb-2026 16:32:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[11-Feb-2026 16:32:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[11-Feb-2026 16:32:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[11-Feb-2026 16:32:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[11-Feb-2026 16:32:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[11-Feb-2026 16:32:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[11-Feb-2026 16:32:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[11-Feb-2026 16:32:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[11-Feb-2026 16:32:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[11-Feb-2026 16:32:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[11-Feb-2026 16:32:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[11-Feb-2026 16:33:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[11-Feb-2026 16:33:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[11-Feb-2026 16:33:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[11-Feb-2026 16:33:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[11-Feb-2026 16:33:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[11-Feb-2026 16:33:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[11-Feb-2026 16:33:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[11-Feb-2026 16:33:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[11-Feb-2026 16:33:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[11-Feb-2026 16:33:12 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[11-Feb-2026 16:33:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[11-Feb-2026 16:33:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[11-Feb-2026 16:33:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[11-Feb-2026 16:33:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[11-Feb-2026 16:33:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[11-Feb-2026 16:33:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[11-Feb-2026 16:33:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[11-Feb-2026 16:33:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[11-Feb-2026 16:33:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[11-Feb-2026 16:33:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[11-Feb-2026 16:33:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[11-Feb-2026 16:33:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[11-Feb-2026 16:33:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[11-Feb-2026 16:33:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[11-Feb-2026 16:33:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[11-Feb-2026 16:33:33 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[11-Feb-2026 16:33:35 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[11-Feb-2026 16:33:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[11-Feb-2026 16:33:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Feb-2026 16:33:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Feb-2026 16:33:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Feb-2026 16:33:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Feb-2026 16:33:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[11-Feb-2026 16:33:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[11-Feb-2026 16:33:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[11-Feb-2026 16:33:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[11-Feb-2026 16:33:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[11-Feb-2026 16:33:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[11-Feb-2026 16:33:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[11-Feb-2026 16:33:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[11-Feb-2026 16:33:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[11-Feb-2026 16:33:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[11-Feb-2026 16:33:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[11-Feb-2026 16:34:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[11-Feb-2026 16:34:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[11-Feb-2026 16:34:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[11-Feb-2026 16:34:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[11-Feb-2026 16:34:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[13-Feb-2026 21:55:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[13-Feb-2026 21:55:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[13-Feb-2026 21:55:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[13-Feb-2026 21:55:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[13-Feb-2026 21:57:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[13-Feb-2026 22:02:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[13-Feb-2026 22:02:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[13-Feb-2026 22:02:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[13-Feb-2026 22:02:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[13-Feb-2026 22:02:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[13-Feb-2026 22:02:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[14-Feb-2026 02:23:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[14-Feb-2026 02:23:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[14-Feb-2026 02:23:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[14-Feb-2026 02:23:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[14-Feb-2026 02:27:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[14-Feb-2026 02:29:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[14-Feb-2026 02:29:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[14-Feb-2026 02:29:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[14-Feb-2026 02:29:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[14-Feb-2026 02:29:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[14-Feb-2026 02:29:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[15-Feb-2026 05:03:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[17-Feb-2026 02:26:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[17-Feb-2026 02:26:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[17-Feb-2026 02:26:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[17-Feb-2026 02:26:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[17-Feb-2026 02:29:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[17-Feb-2026 02:34:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[17-Feb-2026 02:34:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[17-Feb-2026 02:34:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[17-Feb-2026 02:34:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[17-Feb-2026 02:34:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[17-Feb-2026 02:34:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[18-Feb-2026 08:31:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[18-Feb-2026 08:31:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[18-Feb-2026 08:31:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[18-Feb-2026 08:31:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[18-Feb-2026 08:33:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[18-Feb-2026 08:38:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[18-Feb-2026 08:38:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[18-Feb-2026 08:38:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[18-Feb-2026 08:38:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[18-Feb-2026 08:38:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[18-Feb-2026 08:38:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[19-Feb-2026 01:17:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[24-Feb-2026 16:36:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[24-Feb-2026 16:36:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[24-Feb-2026 16:36:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[24-Feb-2026 16:36:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[24-Feb-2026 16:38:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[24-Feb-2026 16:46:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[24-Feb-2026 16:46:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[24-Feb-2026 16:46:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[24-Feb-2026 16:46:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[24-Feb-2026 16:46:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[24-Feb-2026 16:46:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[26-Feb-2026 18:55:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[26-Feb-2026 21:56:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[26-Feb-2026 21:56:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[26-Feb-2026 21:56:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[26-Feb-2026 21:56:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[26-Feb-2026 21:59:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[26-Feb-2026 22:06:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[26-Feb-2026 22:06:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[26-Feb-2026 22:06:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[26-Feb-2026 22:06:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[26-Feb-2026 22:06:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[26-Feb-2026 22:06:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[01-Mar-2026 19:02:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[03-Mar-2026 17:44:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[03-Mar-2026 17:44:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[03-Mar-2026 17:44:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[03-Mar-2026 17:44:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[03-Mar-2026 17:47:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[03-Mar-2026 17:52:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[03-Mar-2026 17:52:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[03-Mar-2026 17:52:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[03-Mar-2026 17:52:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[03-Mar-2026 17:52:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[03-Mar-2026 17:52:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[04-Mar-2026 03:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[04-Mar-2026 03:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[04-Mar-2026 03:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[04-Mar-2026 03:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[04-Mar-2026 03:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[04-Mar-2026 03:23:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[04-Mar-2026 03:23:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[04-Mar-2026 03:23:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[04-Mar-2026 03:23:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[04-Mar-2026 03:23:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Mar-2026 00:53:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[11-Mar-2026 00:53:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[11-Mar-2026 00:53:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[11-Mar-2026 00:53:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[11-Mar-2026 00:55:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[11-Mar-2026 01:01:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[11-Mar-2026 01:01:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[11-Mar-2026 01:01:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[11-Mar-2026 01:01:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[11-Mar-2026 01:01:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[11-Mar-2026 01:01:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[18-Mar-2026 00:35:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[18-Mar-2026 00:35:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[18-Mar-2026 00:35:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[18-Mar-2026 00:35:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[18-Mar-2026 00:35:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[18-Mar-2026 00:35:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[18-Mar-2026 00:35:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[18-Mar-2026 00:35:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[18-Mar-2026 00:35:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[18-Mar-2026 00:36:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[18-Mar-2026 00:36:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[18-Mar-2026 00:36:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[18-Mar-2026 00:36:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[18-Mar-2026 00:37:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[18-Mar-2026 00:37:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[18-Mar-2026 00:37:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[18-Mar-2026 00:37:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[18-Mar-2026 00:37:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[20-Mar-2026 22:58:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[20-Mar-2026 22:59:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[20-Mar-2026 23:02:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[20-Mar-2026 23:02:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[20-Mar-2026 23:03:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[20-Mar-2026 23:07:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[20-Mar-2026 23:08:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[20-Mar-2026 23:09:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[20-Mar-2026 23:10:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[20-Mar-2026 23:12:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[22-Mar-2026 09:39:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[22-Mar-2026 09:40:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[23-Mar-2026 17:55:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[23-Mar-2026 17:55:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[23-Mar-2026 17:55:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[23-Mar-2026 17:55:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[23-Mar-2026 17:58:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[01-Apr-2026 09:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[01-Apr-2026 09:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[01-Apr-2026 09:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[01-Apr-2026 09:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[01-Apr-2026 09:05:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[01-Apr-2026 09:10:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[01-Apr-2026 09:10:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[01-Apr-2026 09:10:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[01-Apr-2026 09:10:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[01-Apr-2026 09:10:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[01-Apr-2026 09:10:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[17-Apr-2026 11:31:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php:127
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/datatables.php on line 127
+[17-Apr-2026 11:31:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/paypal.php on line 7
+[17-Apr-2026 11:31:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[17-Apr-2026 11:31:39 UTC] PHP Fatal error:  Uncaught Error: Class 'Maatwebsite\Excel\Excel' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/excel.php on line 109
+[17-Apr-2026 11:31:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[17-Apr-2026 11:31:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/captcha.php on line 7
+[17-Apr-2026 11:31:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/payu.php on line 17
+[17-Apr-2026 11:31:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[17-Apr-2026 11:31:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[17-Apr-2026 11:31:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php:75
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/trustedproxy.php on line 75
+[17-Apr-2026 11:31:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[17-Apr-2026 11:31:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/newsletter.php on line 17
+[17-Apr-2026 11:31:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[17-Apr-2026 11:31:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[17-Apr-2026 11:31:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[17-Apr-2026 11:31:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[17-Apr-2026 11:31:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[17-Apr-2026 11:31:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[17-Apr-2026 11:31:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function app() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php:433
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/repository.php on line 433
+[18-Apr-2026 07:42:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[18-Apr-2026 07:42:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[19-Apr-2026 02:08:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[19-Apr-2026 02:09:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[10-May-2026 23:57:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[10-May-2026 23:57:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[10-May-2026 23:57:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[10-May-2026 23:57:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[10-May-2026 23:57:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[15-May-2026 21:04:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[15-May-2026 21:04:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[15-May-2026 21:04:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[15-May-2026 21:04:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[15-May-2026 21:08:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[15-May-2026 21:16:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[15-May-2026 21:16:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[15-May-2026 21:16:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/session.php on line 41
+[15-May-2026 21:16:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[15-May-2026 21:16:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[15-May-2026 21:16:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[20-May-2026 19:49:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[30-May-2026 20:28:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[30-May-2026 20:28:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[30-May-2026 20:28:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[30-May-2026 20:28:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[12-Jun-2026 04:55:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[19-Jun-2026 18:13:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[20-Jun-2026 17:58:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[20-Jun-2026 18:00:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[20-Jun-2026 18:04:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[20-Jun-2026 18:09:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[20-Jun-2026 18:23:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[20-Jun-2026 19:31:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[20-Jun-2026 19:33:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[20-Jun-2026 19:40:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[20-Jun-2026 19:41:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[20-Jun-2026 19:42:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[01-Jul-2026 15:31:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[02-Jul-2026 15:51:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php:41
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/cache.php on line 41
+[06-Jul-2026 17:44:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[06-Jul-2026 17:44:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[09-Jul-2026 20:23:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/view.php on line 29
+[09-Jul-2026 20:23:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/mail.php on line 31
+[09-Jul-2026 21:13:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27
+[09-Jul-2026 21:15:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/filesystems.php on line 16
+[09-Jul-2026 21:21:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/services.php on line 31
+[09-Jul-2026 21:23:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/broadcasting.php on line 31
+[15-Jul-2026 20:16:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/queue.php on line 31
+[15-Jul-2026 20:21:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/app.php on line 27
+[15-Jul-2026 20:22:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/logging.php on line 20
+[18-Jul-2026 18:02:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/config/database.php on line 27

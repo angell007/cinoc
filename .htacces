@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# 1. Reemplaza '123.45.67.89' con tu IP real si quieres seguir accediendo tú mismo al sitio
+# RewriteCond %{REMOTE_ADDR} !^123\.45\.67\.89$
+
+# 2. Evita un bucle infinito permitiendo que se cargue la página de error
+RewriteCond %{REQUEST_URI} !/mantenimiento\.html$ [NC]
+
+# 3. Redirige todo lo demás con un estado 503
+RewriteRule ^(.*)$ /mantenimiento.html [R=503,L]
+
+# Define la página que se mostrará para el error 503
+ErrorDocument 503 /mantenimiento.html

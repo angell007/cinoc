@@ -1,0 +1,24 @@
+[11-Feb-2026 14:00:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php on line 3
+[11-Feb-2026 16:36:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php on line 3
+[11-Feb-2026 16:36:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php on line 3
+[11-Feb-2026 16:36:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php on line 3
+[11-Feb-2026 16:36:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php on line 3
+[17-Apr-2026 11:33:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/testimonial/forms/form.blade.php on line 3

@@ -1,0 +1,44 @@
+[24-Nov-2025 04:55:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[24-Nov-2025 04:55:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[24-Nov-2025 04:55:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[24-Nov-2025 04:55:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[11-Feb-2026 14:01:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[11-Feb-2026 16:42:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[11-Feb-2026 16:42:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[11-Feb-2026 16:42:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[11-Feb-2026 16:42:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[17-Apr-2026 11:33:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310
+[18-Apr-2026 04:46:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php:310
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/inc/profile.blade.php on line 310

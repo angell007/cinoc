@@ -1,0 +1,8 @@
+# Bloquear acceso web directo a CKEditor y sus plugins (vector de ataque conocido)
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order Deny,Allow
+    Deny from all
+</IfModule>

@@ -1,0 +1,12 @@
+[24-Nov-2025 04:48:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/appendonly-messages.blade.php on line 2
+[24-Nov-2025 04:48:59 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/append-messages.blade.php on line 3
+[24-Nov-2025 04:49:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/all-messages.blade.php on line 22
+[11-Feb-2026 14:03:36 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/append-messages.blade.php on line 3
+[11-Feb-2026 14:03:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/all-messages.blade.php on line 22
+[11-Feb-2026 14:03:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/appendonly-messages.blade.php on line 2
+[11-Feb-2026 16:41:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/appendonly-messages.blade.php on line 2
+[11-Feb-2026 16:41:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/all-messages.blade.php on line 22
+[11-Feb-2026 16:41:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/append-messages.blade.php on line 3
+[17-Apr-2026 11:32:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/append-messages.blade.php on line 3
+[17-Apr-2026 11:32:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/all-messages.blade.php on line 22
+[17-Apr-2026 11:32:22 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/company/appendonly-messages.blade.php on line 2

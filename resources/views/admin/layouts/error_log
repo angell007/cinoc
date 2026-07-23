@@ -1,0 +1,24 @@
+[11-Feb-2026 13:57:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function csrf_token() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php on line 26
+[11-Feb-2026 16:41:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function csrf_token() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php on line 26
+[11-Feb-2026 16:41:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function csrf_token() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php on line 26
+[11-Feb-2026 16:41:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function csrf_token() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php on line 26
+[11-Feb-2026 16:41:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function csrf_token() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php on line 26
+[17-Apr-2026 11:34:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function csrf_token() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/layouts/app.blade.php on line 26

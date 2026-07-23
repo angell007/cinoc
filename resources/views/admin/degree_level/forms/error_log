@@ -1,0 +1,24 @@
+[11-Feb-2026 13:53:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php on line 3
+[11-Feb-2026 16:38:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php on line 3
+[11-Feb-2026 16:38:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php on line 3
+[11-Feb-2026 16:39:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php on line 3
+[11-Feb-2026 16:39:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php on line 3
+[17-Apr-2026 11:34:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function config() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/degree_level/forms/form.blade.php on line 3

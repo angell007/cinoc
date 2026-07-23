@@ -1,0 +1,24 @@
+[11-Feb-2026 13:56:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:40:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:40:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:40:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:40:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php on line 28
+[17-Apr-2026 11:34:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/user/forms/education/education_form.blade.php on line 28

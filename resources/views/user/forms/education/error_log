@@ -1,0 +1,40 @@
+[24-Nov-2025 04:53:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[24-Nov-2025 04:53:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[24-Nov-2025 04:53:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[24-Nov-2025 04:53:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 14:01:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:41:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:41:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:41:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[11-Feb-2026 16:42:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28
+[17-Apr-2026 11:32:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function old() in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/user/forms/education/education_form.blade.php on line 28

@@ -1,0 +1,160 @@
+[24-Nov-2025 05:58:52 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[24-Nov-2025 05:58:54 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[24-Nov-2025 05:58:56 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[24-Nov-2025 05:59:02 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[24-Nov-2025 05:59:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[24-Nov-2025 05:59:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[24-Nov-2025 05:59:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[24-Nov-2025 05:59:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[24-Nov-2025 05:59:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[24-Nov-2025 05:59:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[24-Nov-2025 05:59:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[24-Nov-2025 05:59:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[24-Nov-2025 05:59:34 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[24-Nov-2025 05:59:35 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[24-Nov-2025 05:59:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[24-Nov-2025 05:59:42 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[11-Feb-2026 14:02:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[11-Feb-2026 14:02:22 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[11-Feb-2026 14:02:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[11-Feb-2026 14:02:31 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[11-Feb-2026 16:42:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[11-Feb-2026 16:42:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[11-Feb-2026 16:42:29 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[11-Feb-2026 16:42:31 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[11-Feb-2026 16:42:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[11-Feb-2026 16:42:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[11-Feb-2026 16:42:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[11-Feb-2026 16:42:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[11-Feb-2026 16:42:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[11-Feb-2026 16:42:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[11-Feb-2026 16:42:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[11-Feb-2026 16:42:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13
+[11-Feb-2026 16:42:50 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[11-Feb-2026 16:42:50 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[11-Feb-2026 16:42:52 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[11-Feb-2026 16:42:54 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[17-Apr-2026 11:35:38 UTC] PHP Fatal error:  Uncaught Error: Class 'App\FunctionalArea' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php:29
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/popular_searches.blade.php on line 29
+[17-Apr-2026 11:35:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Company' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/top_employers.blade.php on line 14
+[17-Apr-2026 11:35:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/latest_jobs.blade.php on line 12
+[17-Apr-2026 11:35:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getCompany() on null in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/includes/featured_jobs.blade.php on line 13

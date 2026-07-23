@@ -1,0 +1,40 @@
+[24-Nov-2025 05:45:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[24-Nov-2025 05:45:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[24-Nov-2025 05:45:25 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[24-Nov-2025 05:45:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[11-Feb-2026 13:58:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[11-Feb-2026 16:37:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[11-Feb-2026 16:37:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[11-Feb-2026 16:37:18 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[11-Feb-2026 16:37:20 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43
+[17-Apr-2026 11:33:52 UTC] PHP Fatal error:  Uncaught Error: Class 'Request' not found in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php:43
+Stack trace:
+#0 {main}
+  thrown in /home/iescinocedu/bolsaempleo.iescinoc.edu.co/resources/views/admin/job/index.blade.php on line 43

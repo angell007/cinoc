@@ -24,13 +24,6 @@
             <li><a href="{{ route('company.followers') }}"><i class="fa fa-users" aria-hidden="true"></i> Seguidores
                 </a></li>
 
-
-
-            <li><a href="{{ route('info') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> Orientación
-                    ocupacional </a></li>
-
-
-
             <li><a href="{{ route('company.logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                         class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }}</a>

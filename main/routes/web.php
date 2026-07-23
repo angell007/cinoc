@@ -84,26 +84,18 @@ Route::get('/getconst/{file}', function ($file) {
 
 
 Route::get('cv', function () {
+  if (!Auth::check()) {
+    return redirect()->route('login');
+  }
 
-
-
-  $cvs = User::select(
-    'users.id',
-    'profile_cvs.cv_file as file',
-
-    'profile_cvs.title as title_cv'
-  )
-
-    ->leftjoin('profile_cvs', 'profile_cvs.user_id', 'users.id')
-
-    ->where('users.id', Auth::user()->id)
-
+  $cvs = DB::table('profile_cvs')
+    ->select('profile_cvs.id', 'profile_cvs.cv_file as file', 'profile_cvs.title as title_cv')
+    ->where('profile_cvs.user_id', Auth::id())
+    ->orderBy('profile_cvs.id', 'desc')
     ->get();
 
-
-
   return view('orientacion.cv', compact('cvs'));
-})->name('cv');
+})->middleware('auth')->name('cv');
 
 Route::get('test', function () {
   return view('orientacion.test');
@@ -152,36 +144,54 @@ Route::get('ruta', function () {
 
 
 Route::post('send-revision', function () {
-  $user = User::select(
-    'users.id',
-    'users.email',
-    'users.name',
-    'users.id',
-    'profile_cvs.cv_file as file',
-    'profile_cvs.title as title_cv'
-  )
-    ->leftjoin('profile_cvs', 'profile_cvs.user_id', 'users.id')
-    ->where('users.id', Auth::user()->id)
-    ->first();
+  if (!Auth::check()) {
+    return response()->json(['error' => 'No autorizado'], 401);
+  }
 
-  $subject = "Nueva HV para revizar!";
+  $cvId = request()->input('cv_id');
+  $user = Auth::user();
+  $cvTitle = 'Hoja de vida registrada en la plataforma';
+  $cvFile = null;
 
-  Mail::send('emails.revision', ['user' => $user], function ($msj) use ($subject) {
-    $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+  if ($cvId !== 'platform') {
+    $cv = DB::table('profile_cvs')
+      ->where('id', $cvId)
+      ->where('user_id', $user->id)
+      ->first();
+
+    if (!$cv) {
+      return response()->json(['error' => 'Hoja de vida no encontrada'], 422);
+    }
+
+    $cvTitle = $cv->title;
+    $cvFile = $cv->cv_file;
+  }
+
+  $mailUser = (object) [
+    'id' => $user->id,
+    'email' => $user->email,
+    'name' => $user->name,
+    'title_cv' => $cvTitle,
+    'file' => $cvFile,
+    'is_platform_cv' => $cvId === 'platform',
+  ];
+
+  $subject = 'Nueva solicitud de revisión de hoja de vida';
+
+  Mail::send('emails.revision', ['user' => $mailUser], function ($msj) use ($subject) {
+    $msj->from('bolsadeempleo@unioc.edu.co', 'Bolsa de Empleo UNIOC');
     $msj->subject($subject);
-    $msj->to("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+    $msj->to('bolsadeempleo@unioc.edu.co', 'Bolsa de Empleo UNIOC');
   });
 
   DB::table('advisory')->insert([
     'user_id' => $user->id,
-    'cv' => $user->title_cv,
+    'cv' => $cvTitle,
     'created_at' => Carbon::now(),
-
   ]);
 
-
   return response()->json('enviado');
-})->name('send-revision');
+})->middleware('auth')->name('send-revision');
 
 
 Route::get('/verify-email', function (Request $request) {

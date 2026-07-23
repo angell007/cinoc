@@ -8,7 +8,7 @@
 <!-- Inner Page Title end -->
 <div class="listpgWraper">
     <div class="container">@include('flash::message')
-        @include('user.inc.profile_completion_notice')
+        @includeIf('user.inc.profile_completion_notice')
         <div class="row"> @include('includes.user_dashboard_menu')
             <div class="col-lg-9">
 				

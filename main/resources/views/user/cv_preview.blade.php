@@ -6,7 +6,7 @@
 <div class="listpgWraper">
     <div class="container">
         @include('flash::message')
-        @include('user.inc.profile_completion_notice')
+        @includeIf('user.inc.profile_completion_notice')
 
         <div class="cv-toolbar mb-3" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
             <a href="{{ route('my.profile') }}" class="btn btn-default">

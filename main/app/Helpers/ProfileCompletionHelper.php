@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\ProfileEducation;
 use App\User;
 
 class ProfileCompletionHelper
@@ -56,82 +57,91 @@ class ProfileCompletionHelper
 
     private static function checks(User $user): array
     {
-        $summary = trim((string) $user->getProfileSummary('summary'));
+        $education = self::educationReference($user);
 
         return [
-            'first_name' => [
-                'label' => 'Nombre',
-                'filled' => self::hasText($user->first_name),
-            ],
-            'first_lastname' => [
-                'label' => 'Primer apellido',
-                'filled' => self::hasText($user->first_lastname),
-            ],
-            'national_id_card_number' => [
-                'label' => 'Identificación',
-                'filled' => self::hasText($user->national_id_card_number),
-            ],
             'date_of_birth' => [
                 'label' => 'Fecha de nacimiento',
                 'filled' => self::hasDate($user->date_of_birth),
             ],
-            'nationality_id' => [
-                'label' => 'Nacionalidad',
-                'filled' => self::hasId($user->nationality_id),
+            'borncountry_id' => [
+                'label' => 'País de nacimiento',
+                'filled' => self::hasId($user->borncountry_id),
+            ],
+            'bornstate_id' => [
+                'label' => 'Departamento de nacimiento',
+                'filled' => self::hasId($user->bornstate_id),
+            ],
+            'borncity_id' => [
+                'label' => 'Municipio de nacimiento',
+                'filled' => self::hasId($user->borncity_id),
+            ],
+            'gender_id' => [
+                'label' => 'Sexo',
+                'filled' => self::hasId($user->gender_id),
             ],
             'country_id' => [
                 'label' => 'País de residencia',
                 'filled' => self::hasId($user->country_id),
             ],
             'state_id' => [
-                'label' => 'Departamento',
+                'label' => 'Departamento de residencia',
                 'filled' => self::hasId($user->state_id),
             ],
             'city_id' => [
-                'label' => 'Ciudad',
+                'label' => 'Municipio de residencia',
                 'filled' => self::hasId($user->city_id),
             ],
-            'phone' => [
-                'label' => 'Teléfono',
-                'filled' => self::hasText($user->phone),
+            'education_degree_title' => [
+                'label' => 'Educación: título de la formación académica',
+                'filled' => $education !== null && self::hasText($education->degree_title),
             ],
-            'industry_id' => [
-                'label' => 'Industria',
-                'filled' => self::hasId($user->industry_id),
+            'education_degree_level' => [
+                'label' => 'Educación: nivel educativo',
+                'filled' => $education !== null && self::hasId($education->degree_level_id),
             ],
-            'functional_area_id' => [
-                'label' => 'Área funcional',
-                'filled' => self::hasId($user->functional_area_id),
+            'education_date_completion' => [
+                'label' => 'Educación: fecha de finalización',
+                'filled' => $education !== null && self::hasDate($education->date_completion),
             ],
-            'street_address' => [
-                'label' => 'Dirección',
-                'filled' => self::hasText($user->street_address),
+            'education_status' => [
+                'label' => 'Educación: estado de la formación',
+                'filled' => $education !== null && self::hasText($education->education_status),
             ],
-            'summary' => [
-                'label' => 'Resumen del perfil',
-                'filled' => $summary !== '',
+            'education_country' => [
+                'label' => 'Educación: país',
+                'filled' => $education !== null && self::hasId($education->country_id),
             ],
-            'education' => [
-                'label' => 'Educación',
-                'filled' => $user->profileEducation()->count() > 0,
-            ],
-            'experience' => [
-                'label' => 'Experiencia laboral',
-                'filled' => $user->profileExperience()->count() > 0,
-            ],
-            'skills' => [
-                'label' => 'Habilidades',
-                'filled' => $user->profileSkills()->count() > 0,
-            ],
-            'cv' => [
-                'label' => 'Hoja de vida (archivo CV)',
-                'filled' => $user->profileCvs()->count() > 0,
-            ],
-            'image' => [
-                'label' => 'Foto de perfil',
-                'filled' => self::hasText($user->image),
+            'expected_salary' => [
+                'label' => 'Aspiración salarial',
+                'filled' => self::hasText($user->expected_salary),
             ],
         ];
+    }
+
+    /**
+     * Usa el registro de educación más completo; si hay empate, el más reciente.
+     */
+    private static function educationReference(User $user): ?ProfileEducation
+    {
+        $educations = $user->relationLoaded('profileEducation')
+            ? $user->profileEducation
+            : $user->profileEducation()->get();
+
+        if ($educations->isEmpty()) {
+            return null;
+        }
+
+        return $educations->sortByDesc(function ($education) {
+            $score = 0;
+            $score += self::hasText($education->degree_title) ? 1 : 0;
+            $score += self::hasId($education->degree_level_id) ? 1 : 0;
+            $score += self::hasDate($education->date_completion) ? 1 : 0;
+            $score += self::hasText($education->education_status) ? 1 : 0;
+            $score += self::hasId($education->country_id) ? 1 : 0;
+
+            return ($score * 100000) + (int) $education->id;
+        })->first();
     }
 
     private static function hasText($value): bool

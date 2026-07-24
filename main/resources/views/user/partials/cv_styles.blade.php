@@ -1,102 +1,159 @@
 <style>
-    body {
-      font-family: "Roboto", sans-serif;
-      color: #545E6C;
-      background: #fff;
-      font-size: 14px;
+    .cv-doc {
+        --cv-navy: #0b3a6e;
+        --cv-blue: #2f6ea8;
+        --cv-text: #5a6570;
+        --cv-line: #2f6ea8;
+        --cv-bg: #f7f8fa;
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        color: var(--cv-text);
+        font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 1.45;
+        border: 1px solid #e6e9ee;
     }
 
-    h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+    .cv-doc * { box-sizing: border-box; }
 
-    p { line-height: 1.5; }
-
-    .wrapper {
-      background: #FDA246;
-      max-width: 960px;
-      margin: 0 auto;
-      position: relative;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .cv-logos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 22px;
+        background: #f2f4f7;
     }
 
-    .sidebar-wrapper {
-      background: #FDA246;
-      position: absolute;
-      right: 0;
-      width: 240px;
-      font-weight: bold;
-      color: #fff;
+    .cv-logos img {
+        max-height: 52px;
+        width: auto;
     }
 
-    .sidebar-wrapper .profile-container {
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.2);
-      text-align: center;
-      color: #fff;
+    .cv-hero {
+        background: var(--cv-navy);
+        color: #fff;
+        text-align: center;
+        padding: 22px 16px 18px;
     }
 
-    .sidebar-wrapper .name {
-      font-size: 32px;
-      font-weight: 900;
-      margin-top: 0;
-      margin-bottom: 10px;
+    .cv-hero h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #fff;
     }
 
-    .sidebar-wrapper .tagline {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 400;
-      margin-top: 0;
-      margin-bottom: 0;
+    .cv-hero .cv-role {
+        margin: 8px 0 0;
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #fff;
     }
 
-    .sidebar-wrapper .profile { margin-bottom: 15px; }
-
-    .sidebar-wrapper .contact-list li { margin-bottom: 15px; list-style: none; }
-
-    .main-wrapper {
-      background: #fff;
-      padding: 60px;
-      padding-right: 300px;
+    .cv-columns {
+        display: flex;
+        gap: 0;
+        background: #fff;
+        min-height: 640px;
     }
 
-    .main-wrapper .section-title {
-      text-transform: uppercase;
-      font-size: 20px;
-      font-weight: 500;
-      color: #f47c03;
-      margin-top: 0;
-      margin-bottom: 20px;
+    .cv-left {
+        width: 34%;
+        padding: 24px 20px 28px;
+        background: #fff;
+        border-right: 1px solid #edf0f4;
     }
 
-    .main-wrapper .section { margin-bottom: 60px; }
-
-    .main-wrapper .experiences-section .item { margin-bottom: 30px; }
-
-    .main-wrapper .upper-row {
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 2px;
+    .cv-right {
+        width: 66%;
+        padding: 24px 28px 28px;
+        background: #fff;
     }
 
-    .main-wrapper .job-title {
-      color: #3F4650;
-      font-size: 16px;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-weight: 500;
+    .cv-section { margin-bottom: 22px; }
+
+    .cv-section-title {
+        margin: 0 0 8px;
+        color: var(--cv-navy);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
-    .main-wrapper .time {
-      position: absolute;
-      right: 0;
-      top: 0;
-      color: rgb(99, 99, 99);
+    .cv-section-title::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--cv-line);
+        margin-top: 6px;
     }
 
-    .page_break { page-break-before: always; }
+    .cv-left .cv-section-title::after {
+        height: 1px;
+    }
+
+    .cv-text {
+        margin: 0;
+        color: var(--cv-text);
+        text-align: justify;
+    }
+
+    .cv-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .cv-list li {
+        position: relative;
+        padding-left: 14px;
+        margin-bottom: 6px;
+        color: var(--cv-text);
+    }
+
+    .cv-list li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--cv-text);
+    }
+
+    .cv-contact p {
+        margin: 0 0 8px;
+        color: var(--cv-text);
+    }
+
+    .cv-contact .label {
+        font-weight: 700;
+        color: #44505c;
+    }
+
+    .cv-item { margin-bottom: 18px; }
+
+    .cv-item-title {
+        margin: 0 0 2px;
+        color: var(--cv-blue);
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .cv-item-meta {
+        margin: 0 0 8px;
+        color: #7a8692;
+        font-style: italic;
+        font-size: 12px;
+    }
 
     @media print {
-      .cv-toolbar { display: none !important; }
-      .listpgWraper { padding: 0; }
+        .cv-doc { border: none; max-width: none; }
+        .cv-toolbar { display: none !important; }
     }
 </style>

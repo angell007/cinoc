@@ -263,7 +263,7 @@
         {{-- <div class="row">
                             <div class="col-md-6 col-sm-8">
                                 <div class="clearfix">
-                                    <div class="copyright_text">Desarrollado por Prensa, IES CINOC</div>
+                                    <div class="copyright_text">Desarrollado por Prensa, UNIOC</div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-4">
@@ -378,8 +378,8 @@
 
             <div class="col-md-8">
 
-                <div class="bttxt">{{ __('Copyright') }} &copy; {{ date('Y') }} {{ $siteSetting->site_name }}.
-                    {{ __('All Rights Reserved') }}. </div>
+                <div class="bttxt">{{ __('Copyright') }} &copy; {{ date('Y') }} UNIOC.
+                    {{ __('All Rights Reserved') }}. Desarrollado por Prensa, UNIOC.</div>
 
             </div>
 

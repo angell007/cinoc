@@ -48,12 +48,17 @@
 @push('styles')
 <style>
     @media print {
-        header, footer, .cv-toolbar, .innerpagetitle, .pageTitle, .breadcrumb, .flash-message {
+        header, footer, .cv-toolbar, .innerpagetitle, .pageTitle, .breadcrumb, .flash-message, .usernavwrap {
             display: none !important;
         }
         .listpgWraper, .container, .cv-print-area {
             padding: 0 !important;
             margin: 0 !important;
+            width: 100% !important;
+            max-width: none !important;
+        }
+        .cv-doc {
+            border: none !important;
         }
     }
 </style>

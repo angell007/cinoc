@@ -70,16 +70,15 @@
             <div class="col-md-3 col-sm-12 ">
                 <aside id="text-3" class="widget widget_text">
                     <div class="widget_title text-white">
-                        <h3>IES CINOC</h3>
+                        <h3>UNIOC</h3>
                     </div>
                     <div class="textwidget">
-                        <p><strong>Institución de Educación Superior Colegio Integrado Nacional Oriente
-                                de Caldas</strong></p>
+                        <p><strong>Institución Universitaria Oriente de Caldas – UNIOC</strong></p>
                         <p>Nit: 890.802.678-4</p>
                         <p><strong>Notificaciones Judiciales:</strong><br>
-                            notificacionesjudiciales@iescinoc.edu.co</p>
+                            <a href="mailto:notificacionesjudiciales@unioc.edu.co">notificacionesjudiciales@unioc.edu.co</a></p>
                         <p><strong>Correo institucional</strong><br>
-                            prensa@iescinoc.edu.co</p>
+                            <a href="mailto:prensa@unioc.edu.co">prensa@unioc.edu.co</a></p>
                         <p><a href="https://iescinoc.edu.co/pqrs">Realiza aquí tu PQRSDF</a></p>
                         {{-- <p><a href="https://iescinoc.edu.co/sitemap_index.xml">Mapa del sitio</a></p> --}}
                         <p><a href="http://cinocvirtual.edu.co/glpi">Mesa de ayuda</a></p>
@@ -264,7 +263,7 @@
         {{-- <div class="row">
                             <div class="col-md-6 col-sm-8">
                                 <div class="clearfix">
-                                    <div class="copyright_text">Desarrollado por Prensa, IES CINOC</div>
+                                    <div class="copyright_text">Desarrollado por Prensa, UNIOC</div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-4">
@@ -379,8 +378,8 @@
 
             <div class="col-md-8">
 
-                <div class="bttxt">{{ __('Copyright') }} &copy; {{ date('Y') }} {{ $siteSetting->site_name }}.
-                    {{ __('All Rights Reserved') }}. </div>
+                <div class="bttxt">{{ __('Copyright') }} &copy; {{ date('Y') }} UNIOC.
+                    {{ __('All Rights Reserved') }}. Desarrollado por Prensa, UNIOC.</div>
 
             </div>
 

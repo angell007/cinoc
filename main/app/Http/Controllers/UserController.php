@@ -229,11 +229,26 @@ class UserController extends Controller
             return Redirect::route('my.profile');
         }
 
-        $cvImageSource = $this->cvImageSource($user, true);
-        $pdf = PDF::loadView('user.cv_pdf', compact('user', 'cvImageSource'));
-        $fileName = 'hoja-de-vida-' . preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName())) . '.pdf';
+        try {
+            $cvImageSource = $this->cvImageSource($user, true);
+            $forPdf = true;
+            $pdf = PDF::loadView('user.cv_pdf', compact('user', 'cvImageSource', 'forPdf'))
+                ->setPaper('letter')
+                ->setOptions([
+                    'isHtml5ParserEnabled' => true,
+                    'isRemoteEnabled' => true,
+                    'defaultFont' => 'DejaVu Sans',
+                ]);
+            $safeName = preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName() ?: 'candidato'));
+            $fileName = 'hoja-de-vida-' . trim($safeName, '-') . '.pdf';
 
-        return $pdf->download($fileName);
+            return $pdf->download($fileName);
+        } catch (\Throwable $e) {
+            report($e);
+            flash('No fue posible generar la hoja de vida en PDF. Intenta nuevamente o completa los datos faltantes del perfil.')->error();
+
+            return Redirect::route('my.cv.preview');
+        }
     }
 
     private function loadUserForCv()

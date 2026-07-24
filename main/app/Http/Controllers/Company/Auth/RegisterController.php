@@ -68,19 +68,27 @@ class RegisterController extends Controller
 
     public function register(CompanyFrontRegisterFormRequest $request)
     {
-        
         $company = new Company();
+        $company->person_type = $request->input('person_type');
         $company->name = $request->input('name');
+        $company->tipo_identificacion = $request->input('tipo_identificacion');
+        $company->identificacion = $request->input('identificacion');
+        $company->ceo = $request->input('ceo');
+        $company->ceo_email = $request->input('ceo_email');
+        $company->country_id = $request->input('country_id');
+        $company->state_id = $request->input('state_id');
+        $company->city_id = $request->input('city_id');
+        $company->contact_name = $request->input('contact_name');
+        $company->phone = $request->input('phone');
         $company->email = $request->input('email');
         $company->password = bcrypt($request->input('password'));
         $company->is_active = 0;
         $company->verified = 0;
         $company->save();
-        /*         * ******************** */
+
         $company->slug = Str::slug($company->name, '-') . '-' . $company->id;
         $company->update();
-        /*         * ******************** */
-        
+
         if ((bool) $request->input('is_subscribed')) {
             $subscription = new Subscription();
             $subscription->email = $company->email;
@@ -91,20 +99,18 @@ class RegisterController extends Controller
 
         event(new Registered($company));
         event(new CompanyRegistered($company));
-        
+
         $this->guard()->login($company);
-        
+
         UserVerification::generate($company);
         UserVerification::send($company, 'Company Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
 
         Mail::send(new CompanyRegistrationReceivedMailable($company));
-        
+
         $this->guard()->logout();
 
         flash('Registro exitoso. Hemos enviado un correo confirmando la recepción de su solicitud. Revise también su bandeja de entrada para verificar su correo electrónico. El acceso a la plataforma se habilitará una vez la Bolsa de Empleo valide y active su empresa.')->success();
         return redirect()->back();
-
-        // return $this->registered($request, $company) ?: redirect($this->redirectPath());
     }
 
 }

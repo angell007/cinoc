@@ -212,15 +212,15 @@
 
 
 
-                                <select type="text" name="rol" class="form-control" required="required" placeholder="{{__('Rol')}}" value="{{old('rol')}}">
+                                <select name="rol" class="form-control" required="required">
 
-                                            <option value="Estudiante" selected>Estudiante</option>
+                                    <option value="" disabled {{ old('rol') ? '' : 'selected' }}>Rol</option>
 
-                                            <option value="Egresado">Egresado</option>
+                                    <option value="Estudiante" {{ old('rol') === 'Estudiante' ? 'selected' : '' }}>Estudiante</option>
+
+                                    <option value="Egresado" {{ old('rol') === 'Egresado' ? 'selected' : '' }}>Egresado</option>
 
                                 </select>
-
-                                <!-- <input type="text" name="rol" class="form-control" required="required" placeholder="{{__('Apellidos')}}" value="{{old('rol')}}"> -->
 
 
 
@@ -297,116 +297,123 @@
 
                     <div id="employer" class="formpanel tab-pane fade {{($c_or_e == 'employer')? 'active':''}}">
 
-
-
                         <form class="form-horizontal" method="POST" action="{{ route('company.register') }}">
-
-
 
                             {{ csrf_field() }}
 
-
-
                             <input type="hidden" name="candidate_or_employer" value="employer" />
 
+                            <div class="alert alert-info" style="margin-bottom: 15px;">
+                                Al registrarse recibirá un correo confirmando la recepción de su solicitud. Sus credenciales serán el correo electrónico de contacto y la contraseña que defina aquí. El acceso permanecerá deshabilitado hasta que la Bolsa de Empleo valide y active su empresa.
+                            </div>
 
+                            <div class="formrow{{ $errors->has('person_type') ? ' has-error' : '' }}">
+                                <select name="person_type" class="form-control" required>
+                                    <option value="" disabled {{ old('person_type') ? '' : 'selected' }}>Tipo de persona</option>
+                                    <option value="natural" {{ old('person_type') === 'natural' ? 'selected' : '' }}>Persona natural</option>
+                                    <option value="juridica" {{ old('person_type') === 'juridica' ? 'selected' : '' }}>Persona jurídica</option>
+                                </select>
+                                @if ($errors->has('person_type')) <span class="help-block text-danger"><strong>{{ $errors->first('person_type') }}</strong></span> @endif
+                            </div>
 
                             <div class="formrow{{ $errors->has('name') ? ' has-error' : '' }}">
-
-                                <div class="alert alert-info" style="margin-bottom: 15px;">
-                                    Al registrarse recibirá un correo confirmando la recepción de su solicitud. Sus credenciales serán su correo electrónico y la contraseña que defina aquí. El acceso permanecerá deshabilitado hasta que la Bolsa de Empleo valide y active su empresa.
-                                </div>
-
-                                <input type="text" name="name" class="form-control" required="required" placeholder="Nombre de empresa" value="{{old('name')}}">
-
-
-
-                                @if ($errors->has('name')) <span class="help-block text-danger"> <strong>{{ $errors->first('name') }}</strong> </span> @endif
-
+                                <input type="text" name="name" class="form-control" required placeholder="Razón social o nombre" value="{{ old('name') }}">
+                                @if ($errors->has('name')) <span class="help-block text-danger"><strong>{{ $errors->first('name') }}</strong></span> @endif
                             </div>
 
+                            <div class="formrow{{ $errors->has('tipo_identificacion') ? ' has-error' : '' }}">
+                                <select name="tipo_identificacion" class="form-control" required>
+                                    <option value="" disabled {{ old('tipo_identificacion') ? '' : 'selected' }}>Tipo de identificación (NIT o documento)</option>
+                                    <option value="NIT" {{ old('tipo_identificacion') === 'NIT' ? 'selected' : '' }}>NIT</option>
+                                    <option value="CC" {{ old('tipo_identificacion') === 'CC' ? 'selected' : '' }}>CC</option>
+                                    <option value="CE" {{ old('tipo_identificacion') === 'CE' ? 'selected' : '' }}>CE</option>
+                                </select>
+                                @if ($errors->has('tipo_identificacion')) <span class="help-block text-danger"><strong>{{ $errors->first('tipo_identificacion') }}</strong></span> @endif
+                            </div>
 
+                            <div class="formrow{{ $errors->has('identificacion') ? ' has-error' : '' }}">
+                                <input type="text" name="identificacion" class="form-control" required placeholder="NIT o documento de identificación" value="{{ old('identificacion') }}">
+                                @if ($errors->has('identificacion')) <span class="help-block text-danger"><strong>{{ $errors->first('identificacion') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('ceo') ? ' has-error' : '' }}">
+                                <input type="text" name="ceo" class="form-control" required placeholder="Nombre del representante legal" value="{{ old('ceo') }}">
+                                @if ($errors->has('ceo')) <span class="help-block text-danger"><strong>{{ $errors->first('ceo') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('ceo_email') ? ' has-error' : '' }}">
+                                <input type="email" name="ceo_email" class="form-control" required placeholder="Correo del representante legal" value="{{ old('ceo_email') }}">
+                                @if ($errors->has('ceo_email')) <span class="help-block text-danger"><strong>{{ $errors->first('ceo_email') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('country_id') ? ' has-error' : '' }}">
+                                <select name="country_id" id="reg_country_id" class="form-control" required>
+                                    <option value="">Seleccione País</option>
+                                    @foreach(($countries ?? []) as $id => $label)
+                                        <option value="{{ $id }}" {{ (string) old('country_id', $siteSetting->default_country_id ?? '') === (string) $id ? 'selected' : '' }}>{{ $label }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('country_id')) <span class="help-block text-danger"><strong>{{ $errors->first('country_id') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('state_id') ? ' has-error' : '' }}">
+                                <span id="reg_state_dd">
+                                    <select name="state_id" id="state_id" class="form-control" required>
+                                        <option value="">Seleccione Departamento</option>
+                                    </select>
+                                </span>
+                                @if ($errors->has('state_id')) <span class="help-block text-danger"><strong>{{ $errors->first('state_id') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('city_id') ? ' has-error' : '' }}">
+                                <span id="reg_city_dd">
+                                    <select name="city_id" id="city_id" class="form-control" required>
+                                        <option value="">Seleccione Ciudad</option>
+                                    </select>
+                                </span>
+                                @if ($errors->has('city_id')) <span class="help-block text-danger"><strong>{{ $errors->first('city_id') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('contact_name') ? ' has-error' : '' }}">
+                                <input type="text" name="contact_name" class="form-control" required placeholder="Nombre de la persona de contacto" value="{{ old('contact_name') }}">
+                                @if ($errors->has('contact_name')) <span class="help-block text-danger"><strong>{{ $errors->first('contact_name') }}</strong></span> @endif
+                            </div>
+
+                            <div class="formrow{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <input type="text" name="phone" class="form-control" required placeholder="Teléfono de contacto" value="{{ old('phone') }}">
+                                @if ($errors->has('phone')) <span class="help-block text-danger"><strong>{{ $errors->first('phone') }}</strong></span> @endif
+                            </div>
 
                             <div class="formrow{{ $errors->has('email') ? ' has-error' : '' }}">
-
-
-
-                                <input type="email" name="email" class="form-control" required="required" placeholder="{{__('Email')}}" value="{{old('email')}}">
-
-
-
-                                @if ($errors->has('email')) <span class="help-block text-danger"> <strong>{{ $errors->first('email') }}</strong> </span> @endif
-
+                                <input type="email" name="email" class="form-control" required placeholder="Correo electrónico de contacto (usuario de acceso)" value="{{ old('email') }}">
+                                @if ($errors->has('email')) <span class="help-block text-danger"><strong>{{ $errors->first('email') }}</strong></span> @endif
                             </div>
-
-
 
                             <div class="formrow{{ $errors->has('password') ? ' has-error' : '' }}">
-
-
-
-                                <input type="password" name="password" class="form-control" required="required" placeholder="{{__('Password')}}" value="">
-
-
-
-                                @if ($errors->has('password')) <span class="help-block text-danger"> <strong>{{ $errors->first('password') }}</strong> </span> @endif
-
+                                <input type="password" name="password" class="form-control" required placeholder="{{ __('Password') }}" value="">
+                                @if ($errors->has('password')) <span class="help-block text-danger"><strong>{{ $errors->first('password') }}</strong></span> @endif
                             </div>
-
-
 
                             <div class="formrow{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-
-
-
-                                <input type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" value="">
-
-
-
-                                @if ($errors->has('password_confirmation')) <span class="help-block text-danger"> <strong>{{ $errors->first('password_confirmation') }}</strong> </span> @endif
-
+                                <input type="password" name="password_confirmation" class="form-control" required placeholder="{{ __('Password Confirmation') }}" value="">
+                                @if ($errors->has('password_confirmation')) <span class="help-block text-danger"><strong>{{ $errors->first('password_confirmation') }}</strong></span> @endif
                             </div>
-<div class="formrow{{ $errors->has('terms_of_use') ? ' has-error' : '' }}">
 
-
-
+                            <div class="formrow{{ $errors->has('terms_of_use') ? ' has-error' : '' }}">
                                 <input type="checkbox" value="1" name="terms_of_use" />
-
-
-
-                                <a href="https://bolsaempleo.iescinoc.edu.co/files/OFICIO Y ACUERDO POLITICA DE TRATAMIENTO DE DATOS.pdf" target="_blank">{{__('I accept Terms of Use')}}</a>
-
-
-
-                                    <br>
-
-                                    <br>
-
-                                    
-
-                                     <!--<a href="https://bolsaempleo.iescinoc.edu.co/files/OFICIO Y ACUERDO POLITICA DE TRATAMIENTO DE DATOS.pdf" target="_blank">{{__('Política de protección de datos')}}</a>-->
-
-
-
-                                @if ($errors->has('terms_of_use')) <span class="help-block text-danger"> <strong>{{ $errors->first('terms_of_use') }}</strong> </span> @endif
-
+                                <a href="https://bolsaempleo.iescinoc.edu.co/files/OFICIO Y ACUERDO POLITICA DE TRATAMIENTO DE DATOS.pdf" target="_blank">{{ __('Acepto los términos de uso') }}</a>
+                                @if ($errors->has('terms_of_use')) <span class="help-block text-danger"><strong>{{ $errors->first('terms_of_use') }}</strong></span> @endif
                             </div>
 
-
-
-
-
-
-
-                            <input type="submit" class="btn" value="{{__('Register')}}">
-
-
+                            <input type="submit" class="btn" value="{{ __('Register') }}">
 
                         </form>
 
-
-
                     </div>
+
+
+
+
 
 
 
@@ -457,5 +464,55 @@
 @include('includes.footer')
 
 
+
+
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#reg_country_id').on('change', function(e) {
+            e.preventDefault();
+            filterRegStates(0);
+        });
+        $(document).on('change', '#employer #state_id', function(e) {
+            e.preventDefault();
+            filterRegCities(0);
+        });
+        if ($('#reg_country_id').val()) {
+            filterRegStates({{ (int) old('state_id', 0) }});
+        }
+    });
+
+    function filterRegStates(state_id) {
+        var country_id = $('#reg_country_id').val();
+        if (!country_id) {
+            return;
+        }
+        $.post("{{ route('filter.lang.states.dropdown') }}", {
+            country_id: country_id,
+            state_id: state_id,
+            _method: 'POST',
+            _token: '{{ csrf_token() }}'
+        }).done(function(response) {
+            $('#reg_state_dd').html(response);
+            filterRegCities({{ (int) old('city_id', 0) }});
+        });
+    }
+
+    function filterRegCities(city_id) {
+        var state_id = $('#employer #state_id').val();
+        if (!state_id) {
+            return;
+        }
+        $.post("{{ route('filter.lang.cities.dropdown') }}", {
+            state_id: state_id,
+            city_id: city_id,
+            _method: 'POST',
+            _token: '{{ csrf_token() }}'
+        }).done(function(response) {
+            $('#reg_city_dd').html(response);
+        });
+    }
+</script>
+@endpush
 
 @endsection

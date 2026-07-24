@@ -14,6 +14,7 @@ use App\Http\Requests\Front\UserFrontRegisterFormRequest;
 use Illuminate\Auth\Events\Registered;
 use App\Events\UserRegistered;
 use App\Models\IdcardsNumber;
+use App\Helpers\DataArrayHelper;
 use Newsletter;
 use App\Subscription;
 
@@ -52,6 +53,13 @@ class RegisterController extends Controller
         $this->middleware('guest', ['except' => ['getVerification', 'getVerificationError']]);
     }
 
+    public function showRegistrationForm()
+    {
+        $countries = DataArrayHelper::langCountriesArray();
+
+        return view('auth.register', compact('countries'));
+    }
+
     public function register(UserFrontRegisterFormRequest $request)
     {
         $user = new User();
@@ -61,7 +69,7 @@ class RegisterController extends Controller
         $user->first_lastname = $request->input('first_lastname', '');
         $user->second_lastname = $request->input('second_lastname', '');
          
-        $user->rol = $request->input('rol', 'Estudiante');
+        $user->rol = $request->input('rol');
         $user->email = $request->input('email');
         $user->national_id_card_number = $request->input('national_id_card_number');
         $user->password = bcrypt($request->input('password'));

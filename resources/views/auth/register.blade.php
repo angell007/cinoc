@@ -109,9 +109,10 @@
                             
                             <div class="formrow{{ $errors->has('rol') ? ' has-error' : '' }}">
 
-                                <select type="text" name="rol" class="form-control" required="required" placeholder="{{__('Rol')}}" value="{{old('rol')}}">
-                                            <option value="Estudiante" selected>Estudiante</option>
-                                            <option value="Egresado">Egresado</option>
+                                <select name="rol" class="form-control" required="required">
+                                    <option value="" disabled {{ old('rol') ? '' : 'selected' }}>Rol</option>
+                                    <option value="Estudiante" {{ old('rol') === 'Estudiante' ? 'selected' : '' }}>Estudiante</option>
+                                    <option value="Egresado" {{ old('rol') === 'Egresado' ? 'selected' : '' }}>Egresado</option>
                                 </select>
                                 <!-- <input type="text" name="rol" class="form-control" required="required" placeholder="{{__('Apellidos')}}" value="{{old('rol')}}"> -->
 
@@ -131,36 +132,6 @@
                                 <input type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" value="">
 
                                 @if ($errors->has('password_confirmation')) <span class="help-block text-danger"> <strong>{{ $errors->first('password_confirmation') }}</strong> </span> @endif
-                            </div>
-
-
-
-                            <div class="formrow{{ $errors->has('is_subscribed') ? ' has-error' : '' }}">
-
-                                <?php
-
-
-
-                                $is_checked = '';
-
-
-
-                        if (old('is_subscribed', 1)) {
-
-
-
-                            $is_checked = 'checked="checked"';
-
-                        }
-
-
-
-                        ?>
-
-
-                                <input type="checkbox" value="1" name="is_subscribed" {{$is_checked}} />{{__('Suscríbete al boletín de noticias')}}
-
-                                @if ($errors->has('is_subscribed')) <span class="help-block text-danger"> <strong>{{ $errors->first('is_subscribed') }}</strong> </span> @endif
                             </div>
 
 
@@ -220,34 +191,6 @@
                                 <input type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" value="">
 
                                 @if ($errors->has('password_confirmation')) <span class="help-block text-danger"> <strong>{{ $errors->first('password_confirmation') }}</strong> </span> @endif
-                            </div>
-
-                            <div class="formrow{{ $errors->has('is_subscribed') ? ' has-error' : '' }}">
-
-                                <?php
-
-
-
-                        $is_checked = '';
-
-
-
-                        if (old('is_subscribed', 1)) {
-
-
-
-                            $is_checked = 'checked="checked"';
-
-                        }
-
-
-
-                        ?>
-
-
-                                <input type="checkbox" value="1" name="is_subscribed" {{$is_checked}} />{{__('Suscríbete al boletín de noticias')}}
-
-                                @if ($errors->has('is_subscribed')) <span class="help-block text-danger"> <strong>{{ $errors->first('is_subscribed') }}</strong> </span> @endif
                             </div>
 
                             <div class="formrow{{ $errors->has('terms_of_use') ? ' has-error' : '' }}">

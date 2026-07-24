@@ -1,10 +1,9 @@
 <?php
 
-
-
-use Illuminate\Support\Facades\Route;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::post('file-upload', 'FileController@uploadData')->name('file-upload');
 
@@ -17,11 +16,32 @@ Route::post('file-import-trainings', 'FileController@datosimporttrainings')->nam
 Route::post('file-import-trainings-participants', 'FileController@importPaticipantsTrainings')->name('file-import-trainings-participants');
 
 Route::get('createpdf', function () {
+    $userId = Auth::id();
+    if (!$userId) {
+        return redirect()->route('login');
+    }
 
-    $user = User::with('jobExperience', 'profileEducation', 'profileExperience', 'profileSkills')->find(Auth::user()->id);
+    $user = User::with([
+        'profileEducation',
+        'profileExperience',
+        'profileSkills',
+        'profileLanguages',
+    ])->find($userId);
 
-    $pdf = PDF::loadView('ejemplo', compact('user'));
+    if (!$user) {
+        abort(404);
+    }
 
-    return $pdf->download($user->name . '.PDF');
+    try {
+        $pdf = PDF::loadView('ejemplo', compact('user'))->setPaper('letter');
+        $safeName = preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName() ?: 'candidato'));
 
-})->name('download.my.cv');
+        return $pdf->download('hoja-de-vida-' . trim($safeName, '-') . '.pdf');
+    } catch (\Throwable $e) {
+        report($e);
+
+        return redirect()
+            ->back()
+            ->with('error', 'No fue posible generar la hoja de vida en PDF. Intenta nuevamente.');
+    }
+})->name('download.my.cv')->middleware('auth');

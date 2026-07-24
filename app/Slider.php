@@ -59,4 +59,22 @@ class Slider extends Model
 
     }
 
+    public function getSliderHeadingAttribute($value)
+    {
+        return self::normalizeHeading($value);
+    }
+
+    public static function normalizeHeading($value)
+    {
+        $heading = trim((string) $value);
+        $heading = preg_replace('/\bIES[\s\-]+/i', '', $heading);
+        $heading = preg_replace('/\s+/', ' ', $heading);
+
+        if ($heading === '' || preg_match('/UNIOC.*TRANSFORMAR COMUNIDADES/i', $heading)) {
+            return 'LA UNIOC EL MEJOR ALIADO PARA TRANSFORMAR COMUNIDADES';
+        }
+
+        return $heading;
+    }
+
 }

@@ -50,7 +50,7 @@ class UserFrontRegisterFormRequest extends Request
 
             // 'first_lastname' => 'required|max:80',
 
-            'rol' => 'required',
+            'rol' => 'required|in:Estudiante,Egresado',
 
             // 'last_name' => 'required|max:80',
 
@@ -108,6 +108,10 @@ class UserFrontRegisterFormRequest extends Request
 
 
 
+
+            'rol.required' => __('Debes seleccionar un rol'),
+
+            'rol.in' => __('El rol seleccionado no es válido'),
 
             'first_name.required' => __('Nombre es requerido'),
 

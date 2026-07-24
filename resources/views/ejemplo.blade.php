@@ -429,7 +429,7 @@
           <div class="meta">
             <div class="upper-row">
               <h3 class="job-title">Cargo : {{$item->title}}</h3>
-              <div class="time">Tiempo laborado : {{ date("d-m-Y", strtotime($item->date_start)) }}  - {{ date("d-m-Y", strtotime($item->date_end)) }} </div>
+              <div class="time">Tiempo laborado : {{ !empty($item->date_start) ? date("d-m-Y", strtotime($item->date_start)) : 'N/D' }}  - {{ !empty($item->date_end) ? date("d-m-Y", strtotime($item->date_end)) : 'Actual' }} </div>
             </div>
             <!--//upper-row-->
             <div>Compañia : {{$item->company}}</div>

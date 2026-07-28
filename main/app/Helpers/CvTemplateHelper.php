@@ -66,10 +66,12 @@ class CvTemplateHelper
             $birthDate = date('d/m/Y', strtotime($user->date_of_birth));
         }
 
-        $speLogoPath = public_path('images/logo_principal_SPE.jpg');
-        $uniocLogoPath = public_path('images/bannerescuelatecnologicav2.jpg');
+        $publicRoot = realpath(base_path('..')) ?: public_path();
+
+        $speLogoPath = $publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'logo_principal_SPE.jpg';
+        $uniocLogoPath = $publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'bannerescuelatecnologicav2.jpg';
         if (!file_exists($uniocLogoPath)) {
-            $uniocLogoPath = public_path('images/logo.jpeg');
+            $uniocLogoPath = $publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'logo.jpeg';
         }
 
         $speLogo = $forPdf && file_exists($speLogoPath)
@@ -78,7 +80,7 @@ class CvTemplateHelper
 
         $uniocLogo = $forPdf && file_exists($uniocLogoPath)
             ? $uniocLogoPath
-            : asset(file_exists(public_path('images/bannerescuelatecnologicav2.jpg'))
+            : asset(file_exists($publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'bannerescuelatecnologicav2.jpg')
                 ? 'images/bannerescuelatecnologicav2.jpg'
                 : 'images/logo.jpeg');
 

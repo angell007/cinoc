@@ -1,5 +1,4 @@
-@php $forPdf = false; @endphp
-@include('user.partials.cv_data')
+@php extract(\App\Helpers\CvTemplateHelper::data($user, false)); @endphp
 
 <div class="cv-doc">
     <div class="cv-logos">

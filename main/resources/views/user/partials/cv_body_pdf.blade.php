@@ -1,5 +1,4 @@
-@php $forPdf = true; @endphp
-@include('user.partials.cv_data')
+@php extract(\App\Helpers\CvTemplateHelper::data($user, true)); @endphp
 
 <style>
     body { margin: 0; padding: 0; }

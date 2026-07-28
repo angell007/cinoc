@@ -80,12 +80,12 @@
                 <div style="margin:0 0 6px;"><strong>Aspiración salarial:</strong> {{ $user->expected_salary }}@if(!empty($user->salary_currency)) {{ $user->salary_currency }}@endif</div>
             @endif
 
-            @if($user->profileLanguages->isNotEmpty())
+            @if($user->profileLanguages->count() > 0)
                 <div style="height:12px;"></div>
                 <div style="color:#0b3a6e; font-size:12px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Idiomas</div>
                 <div style="border-top:1px solid #2f6ea8; margin-bottom:10px;"></div>
                 @foreach($user->profileLanguages as $item)
-                    <div style="margin:0 0 6px;">- {{ $item->getLanguage('lang') }} — {{ $item->getLanguageLevel('language_level') }}</div>
+                    <div style="margin:0 0 6px;">- {{ $item->getLanguage('lang') ?: 'Idioma' }} — {{ $item->getLanguageLevel('language_level') ?: 'Nivel no registrado' }}</div>
                 @endforeach
             @endif
         </td>
@@ -127,8 +127,12 @@
                 <div style="margin:0 0 14px;">
                     <div style="color:#2f6ea8; font-size:13px; font-weight:bold;">{{ $item->institution ?: 'Institución no registrada' }}</div>
                     <div style="color:#7a8692; font-style:italic; margin:2px 0 6px;">{{ $item->degree_title ?: 'Programa no registrado' }}</div>
-                    @if($item->getDegreeLevel('degree_level'))
-                        <div style="margin:0 0 4px;">- Nivel educativo: {{ $item->getDegreeLevel('degree_level') }}</div>
+                    @php
+                        try { $degreeLevelLabel = $item->getDegreeLevel('degree_level'); } catch (\Throwable $e) { $degreeLevelLabel = null; }
+                        try { $educationCountry = $item->getCountry('country'); } catch (\Throwable $e) { $educationCountry = null; }
+                    @endphp
+                    @if($degreeLevelLabel)
+                        <div style="margin:0 0 4px;">- Nivel educativo: {{ $degreeLevelLabel }}</div>
                     @endif
                     @if(!empty($item->date_completion) && $item->date_completion !== '0000-00-00')
                         <div style="margin:0 0 4px;">- Fecha de finalización: {{ date('d/m/Y', strtotime($item->date_completion)) }}</div>
@@ -136,8 +140,8 @@
                     @if(!empty($statusLabel))
                         <div style="margin:0 0 4px;">- Estado de la formación: {{ $statusLabel }}</div>
                     @endif
-                    @if($item->getCountry('country'))
-                        <div style="margin:0 0 4px;">- País: {{ $item->getCountry('country') }}</div>
+                    @if($educationCountry)
+                        <div style="margin:0 0 4px;">- País: {{ $educationCountry }}</div>
                     @endif
                 </div>
             @empty

@@ -1,22 +1,63 @@
 @php
-    $cvName = mb_strtoupper($user->getName() ?: 'CANDIDATO', 'UTF-8');
-    $cvRole = mb_strtoupper(trim((string) ($user->rol ?: $user->getFunctionalArea('functional_area') ?: 'Candidato')), 'UTF-8');
-    $cvSummary = $user->getProfileSummary('summary') ?: 'Sin perfil profesional registrado.';
+    $forPdf = !empty($forPdf);
 
-    $bornCountryModel = $user->countryborn()->lang()->first() ?: $user->countryborn()->first();
-    $bornStateModel = $user->stateborn()->lang()->first() ?: $user->stateborn()->first();
-    $bornCityModel = $user->cityborn()->lang()->first() ?: $user->cityborn()->first();
+    $cvName = mb_strtoupper((string) ($user->getName() ?: 'CANDIDATO'), 'UTF-8');
+
+    $roleSource = $user->rol;
+    if ($roleSource === null || $roleSource === '') {
+        $roleSource = $user->getFunctionalArea('functional_area');
+    }
+    if (!is_scalar($roleSource) || $roleSource === null || $roleSource === '') {
+        $roleSource = 'Candidato';
+    }
+    $cvRole = mb_strtoupper(trim((string) $roleSource), 'UTF-8');
+
+    try {
+        $cvSummary = $user->getProfileSummary('summary') ?: 'Sin perfil profesional registrado.';
+    } catch (\Throwable $e) {
+        $cvSummary = 'Sin perfil profesional registrado.';
+    }
+
+    $bornCountryModel = null;
+    $bornStateModel = null;
+    $bornCityModel = null;
+
+    try {
+        if (!empty($user->borncountry_id)) {
+            $bornCountryModel = $user->countryborn()->lang()->first() ?: $user->countryborn()->first();
+        }
+        if (!empty($user->bornstate_id)) {
+            $bornStateModel = $user->stateborn()->lang()->first() ?: $user->stateborn()->first();
+        }
+        if (!empty($user->borncity_id)) {
+            $bornCityModel = $user->cityborn()->lang()->first() ?: $user->cityborn()->first();
+        }
+    } catch (\Throwable $e) {
+        // Si falla la relación de nacimiento, la HV sigue renderizando.
+    }
+
     $bornLocation = trim(implode(', ', array_filter([
-        $bornCityModel->city ?? null,
-        $bornStateModel->state ?? null,
-        $bornCountryModel->country ?? null,
+        $bornCityModel ? $bornCityModel->city : null,
+        $bornStateModel ? $bornStateModel->state : null,
+        $bornCountryModel ? $bornCountryModel->country : null,
     ])));
 
-    $residenceLocation = $user->getLocation();
-    $genderLabel = $user->getGender('gender');
-    $birthDate = !empty($user->date_of_birth) && $user->date_of_birth !== '0000-00-00'
-        ? date('d/m/Y', strtotime($user->date_of_birth))
-        : null;
+    try {
+        $residenceLocation = $user->getLocation();
+    } catch (\Throwable $e) {
+        $residenceLocation = '';
+    }
+
+    try {
+        $genderLabel = $user->getGender('gender');
+    } catch (\Throwable $e) {
+        $genderLabel = null;
+    }
+
+    $birthDate = null;
+    if (!empty($user->date_of_birth) && (string) $user->date_of_birth !== '0000-00-00') {
+        $birthDate = date('d/m/Y', strtotime($user->date_of_birth));
+    }
 
     $educationStatusLabels = [
         'en_curso' => 'En curso',
@@ -30,6 +71,13 @@
         $uniocLogoPath = public_path('images/logo.jpeg');
     }
 
-    $speLogo = !empty($forPdf) && file_exists($speLogoPath) ? $speLogoPath : asset('images/logo_principal_SPE.jpg');
-    $uniocLogo = !empty($forPdf) && file_exists($uniocLogoPath) ? $uniocLogoPath : asset(file_exists(public_path('images/bannerescuelatecnologicav2.jpg')) ? 'images/bannerescuelatecnologicav2.jpg' : 'images/logo.jpeg');
+    $speLogo = $forPdf && file_exists($speLogoPath)
+        ? $speLogoPath
+        : asset('images/logo_principal_SPE.jpg');
+
+    $uniocLogo = $forPdf && file_exists($uniocLogoPath)
+        ? $uniocLogoPath
+        : asset(file_exists(public_path('images/bannerescuelatecnologicav2.jpg'))
+            ? 'images/bannerescuelatecnologicav2.jpg'
+            : 'images/logo.jpeg');
 @endphp

@@ -212,11 +212,18 @@ class UserController extends Controller
 
     public function viewMyCv()
     {
-        $user = $this->loadUserForCv();
-        $cvImageSource = $this->cvImageSource($user, false);
-        $canDownloadCv = ProfileCompletionHelper::canGenerateCv($user);
+        try {
+            $user = $this->loadUserForCv();
+            $cvImageSource = $this->cvImageSource($user, false);
+            $canDownloadCv = ProfileCompletionHelper::canGenerateCv($user);
 
-        return view('user.cv_preview', compact('user', 'cvImageSource', 'canDownloadCv'));
+            return view('user.cv_preview', compact('user', 'cvImageSource', 'canDownloadCv'));
+        } catch (\Throwable $e) {
+            report($e);
+            flash('No fue posible mostrar el avance de tu hoja de vida. Intenta nuevamente.')->error();
+
+            return Redirect::route('my.profile');
+        }
     }
 
     public function downloadMyCv()

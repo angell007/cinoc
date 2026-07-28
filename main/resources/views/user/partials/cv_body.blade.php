@@ -23,7 +23,7 @@
                 <h2 class="cv-section-title">Fortalezas principales</h2>
                 <ul class="cv-list">
                     @forelse($user->profileSkills as $item)
-                        <li>{{ $item->getJobSkill('job_skill') }}</li>
+                        <li>{{ $item->getJobSkill('job_skill') ?: 'Habilidad registrada' }}</li>
                     @empty
                         <li>Sin fortalezas registradas.</li>
                     @endforelse
@@ -61,12 +61,12 @@
                 </div>
             </section>
 
-            @if($user->profileLanguages->isNotEmpty())
+            @if(isset($user->profileLanguages) && $user->profileLanguages->count() > 0)
             <section class="cv-section">
                 <h2 class="cv-section-title">Idiomas</h2>
                 <ul class="cv-list">
                     @foreach($user->profileLanguages as $item)
-                        <li>{{ $item->getLanguage('lang') }} — {{ $item->getLanguageLevel('language_level') }}</li>
+                        <li>{{ $item->getLanguage('lang') ?: 'Idioma' }} — {{ $item->getLanguageLevel('language_level') ?: 'Nivel no registrado' }}</li>
                     @endforeach
                 </ul>
             </section>
@@ -112,8 +112,12 @@
                         <h3 class="cv-item-title">{{ $item->institution ?: 'Institución no registrada' }}</h3>
                         <p class="cv-item-meta">{{ $item->degree_title ?: 'Programa no registrado' }}</p>
                         <ul class="cv-list">
-                            @if($item->getDegreeLevel('degree_level'))
-                                <li>Nivel educativo: {{ $item->getDegreeLevel('degree_level') }}</li>
+                            @php
+                                try { $degreeLevelLabel = $item->getDegreeLevel('degree_level'); } catch (\Throwable $e) { $degreeLevelLabel = null; }
+                                try { $educationCountry = $item->getCountry('country'); } catch (\Throwable $e) { $educationCountry = null; }
+                            @endphp
+                            @if($degreeLevelLabel)
+                                <li>Nivel educativo: {{ $degreeLevelLabel }}</li>
                             @endif
                             @if(!empty($item->date_completion) && $item->date_completion !== '0000-00-00')
                                 <li>Fecha de finalización: {{ date('d/m/Y', strtotime($item->date_completion)) }}</li>
@@ -121,8 +125,8 @@
                             @if(!empty($statusLabel))
                                 <li>Estado de la formación: {{ $statusLabel }}</li>
                             @endif
-                            @if($item->getCountry('country'))
-                                <li>País: {{ $item->getCountry('country') }}</li>
+                            @if($educationCountry)
+                                <li>País: {{ $educationCountry }}</li>
                             @endif
                         </ul>
                     </div>

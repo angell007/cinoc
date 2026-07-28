@@ -68,17 +68,21 @@ class CvTemplateHelper
 
         $publicRoot = self::publicRoot();
         $speLogoPath = self::resolveAssetPath($publicRoot, [
+            'images/cv/spe-header.png',
             'images/cv/spe.png',
             'images/logo_principal_SPE.jpg',
             'images/logo_principal_SPE_.jpg',
         ]) ?: self::resolveAssetPath(base_path(), [
+            'storage/app/cv-logos/spe-header.png',
             'storage/app/cv-logos/spe.png',
         ]);
         $uniocLogoPath = self::resolveAssetPath($publicRoot, [
+            'images/cv/unioc-header.png',
             'images/cv/unioc.png',
             'images/bannerescuelatecnologicav2.jpg',
             'images/logo.jpeg',
         ]) ?: self::resolveAssetPath(base_path(), [
+            'storage/app/cv-logos/unioc-header.png',
             'storage/app/cv-logos/unioc.png',
         ]);
 

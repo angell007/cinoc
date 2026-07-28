@@ -1,23 +1,26 @@
 @php extract(\App\Helpers\CvTemplateHelper::data($user, true)); @endphp
 
-<table width="100%" cellpadding="0" cellspacing="0" style="font-family: DejaVu Sans, Arial, sans-serif; font-size: 11px; color: #5a6570; border-collapse: collapse;">
+{{-- Encabezado: logos completos + franja azul (formato guía) --}}
+<table width="100%" cellpadding="0" cellspacing="0" style="font-family: DejaVu Sans, Arial, sans-serif; border-collapse: collapse; table-layout: fixed;">
     <tr>
-        <td style="background:#ffffff; padding:14px 22px 10px;">
-            <table width="100%" cellpadding="0" cellspacing="0">
+        <td style="background:#ffffff; padding:8px 18px 12px;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
                 <tr>
-                    <td width="48%" align="left" valign="middle">
+                    <td width="45%" align="left" valign="middle" style="height:78px;">
                         @if(!empty($speLogo))
-                            <img src="{{ $speLogo }}" height="52" alt="SPE">
+                            <img src="{{ $speLogo }}" width="90" height="65" alt="SPE" style="width:90px; height:65px;">
                         @else
-                            <span style="color:#6b1f2a; font-weight:bold; font-size:12px;">Servicio Público de Empleo</span>
+                            <span style="color:#6b1f2a; font-weight:bold; font-size:11px;">Servicio Público de Empleo</span>
                         @endif
                     </td>
-                    <td width="52%" align="right" valign="middle">
+                    <td width="55%" align="right" valign="middle" style="height:78px;">
                         @if(!empty($uniocLogo))
-                            <img src="{{ $uniocLogo }}" height="44" alt="UNIOC">
+                            <img src="{{ $uniocLogo }}" width="170" height="48" alt="UNIOC" style="width:170px; height:48px; margin-left:auto;">
                         @else
-                            <span style="color:#0b3a6e; font-weight:bold; font-size:16px;">UNIOC</span><br>
-                            <span style="color:#0b3a6e; font-size:10px;">Institución Universitaria</span>
+                            <div style="text-align:right;">
+                                <span style="color:#0b3a6e; font-weight:bold; font-size:18px;">UNIOC</span><br>
+                                <span style="color:#0b3a6e; font-size:9px;">Institución Universitaria</span>
+                            </div>
                         @endif
                     </td>
                 </tr>
@@ -25,9 +28,9 @@
         </td>
     </tr>
     <tr>
-        <td style="background:#0b3a6e; color:#ffffff; text-align:center; padding:22px 16px;">
-            <div style="font-size:26px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; color:#ffffff; line-height:1.2;">{{ $cvName }}</div>
-            <div style="font-size:12px; letter-spacing:3px; text-transform:uppercase; margin-top:10px; color:#ffffff;">{{ $cvRole }}</div>
+        <td style="background:#0b3a6e; text-align:center; padding:26px 20px 24px;">
+            <div style="font-size:28px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#ffffff; line-height:1.15;">{{ $cvName }}</div>
+            <div style="font-size:12px; font-weight:normal; letter-spacing:4px; text-transform:uppercase; margin-top:10px; color:#ffffff;">{{ $cvRole }}</div>
         </td>
     </tr>
 </table>

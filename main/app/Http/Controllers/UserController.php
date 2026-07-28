@@ -245,6 +245,7 @@ class UserController extends Controller
                     'isHtml5ParserEnabled' => true,
                     'isRemoteEnabled' => true,
                     'defaultFont' => 'DejaVu Sans',
+                    'dpi' => 96,
                 ]);
             $safeName = preg_replace('/[^a-z0-9]+/i', '-', strtolower($user->getName() ?: 'candidato'));
             $fileName = 'hoja-de-vida-' . trim($safeName, '-') . '.pdf';

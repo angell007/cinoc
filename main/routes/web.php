@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Request;
 
 use Illuminate\Support\Facades\Route;
 
-use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 use Carbon\Carbon;
 

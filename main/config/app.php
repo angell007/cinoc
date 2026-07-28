@@ -436,7 +436,7 @@ return [
 
     'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
 
-    'PDF' => Barryvdh\DomPDF\Facade::class,
+    'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
 
   ],
 

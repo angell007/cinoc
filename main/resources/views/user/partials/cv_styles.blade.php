@@ -5,6 +5,7 @@
         --cv-text: #5a6570;
         --cv-line: #2f6ea8;
         --cv-bg: #f7f8fa;
+        --cv-accent: #f5a623;
         max-width: 900px;
         margin: 0 auto;
         background: #fff;
@@ -13,6 +14,9 @@
         font-size: 12px;
         line-height: 1.45;
         border: 1px solid #e6e9ee;
+        position: relative;
+        min-height: 1100px;
+        padding-bottom: 22px;
     }
 
     .cv-doc * { box-sizing: border-box; }
@@ -31,8 +35,12 @@
     }
 
     .cv-footer-bar {
-        height: 18px;
-        background: #f5a623;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 22px;
+        background: var(--cv-accent, #f5a623);
     }
 
     .cv-hero {

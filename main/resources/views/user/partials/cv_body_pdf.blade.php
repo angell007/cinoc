@@ -35,7 +35,7 @@
     </tr>
 </table>
 
-<table width="100%" cellpadding="0" cellspacing="0" style="font-family: DejaVu Sans, Arial, sans-serif; font-size: 11px; color: #5a6570; border-collapse: collapse;">
+<table width="100%" cellpadding="0" cellspacing="0" style="font-family: DejaVu Sans, Arial, sans-serif; font-size: 11px; color: #5a6570; border-collapse: collapse; margin-bottom: 28px;">
     <tr>
         <td width="34%" valign="top" style="padding:22px 16px 28px 20px; border-right:1px solid #edf0f4;">
             <div style="color:#0b3a6e; font-size:12px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Perfil profesional</div>
@@ -147,9 +147,4 @@
         </td>
     </tr>
 </table>
-
-<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
-    <tr>
-        <td style="background:#f5a623; height:18px; line-height:18px; font-size:1px;">&nbsp;</td>
-    </tr>
-</table>
+{{-- La franja naranja va fija al fondo de la hoja en cv_pdf.blade.php --}}

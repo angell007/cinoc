@@ -275,7 +275,7 @@ class UserController extends Controller
             return null;
         }
 
-        $path = (realpath(base_path('..')) ?: public_path()) . '/user_images/' . $user->image;
+        $path = \App\Helpers\CvTemplateHelper::publicRoot() . '/user_images/' . $user->image;
         if (!file_exists($path)) {
             return null;
         }

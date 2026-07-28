@@ -66,23 +66,34 @@ class CvTemplateHelper
             $birthDate = date('d/m/Y', strtotime($user->date_of_birth));
         }
 
-        $publicRoot = realpath(base_path('..')) ?: public_path();
+        $publicRoot = self::publicRoot();
+        $speLogoPath = self::resolveAssetPath($publicRoot, [
+            'images/cv/spe.png',
+            'images/logo_principal_SPE.jpg',
+            'images/logo_principal_SPE_.jpg',
+        ]) ?: self::resolveAssetPath(base_path(), [
+            'storage/app/cv-logos/spe.png',
+        ]);
+        $uniocLogoPath = self::resolveAssetPath($publicRoot, [
+            'images/cv/unioc.png',
+            'images/bannerescuelatecnologicav2.jpg',
+            'images/logo.jpeg',
+        ]) ?: self::resolveAssetPath(base_path(), [
+            'storage/app/cv-logos/unioc.png',
+        ]);
 
-        $speLogoPath = $publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'logo_principal_SPE.jpg';
-        $uniocLogoPath = $publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'bannerescuelatecnologicav2.jpg';
-        if (!file_exists($uniocLogoPath)) {
-            $uniocLogoPath = $publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'logo.jpeg';
+        if ($forPdf) {
+            $speLogo = self::imageDataUri($speLogoPath);
+            $uniocLogo = self::imageDataUri($uniocLogoPath);
+        } else {
+            // Preview web: preferir assets públicos; si solo existen en storage, usar data URI.
+            $speLogo = self::publicAssetUrl($publicRoot, $speLogoPath)
+                ?: self::imageDataUri($speLogoPath)
+                ?: asset('images/logo_principal_SPE.jpg');
+            $uniocLogo = self::publicAssetUrl($publicRoot, $uniocLogoPath)
+                ?: self::imageDataUri($uniocLogoPath)
+                ?: asset('images/bannerescuelatecnologicav2.jpg');
         }
-
-        $speLogo = $forPdf && file_exists($speLogoPath)
-            ? $speLogoPath
-            : asset('images/logo_principal_SPE.jpg');
-
-        $uniocLogo = $forPdf && file_exists($uniocLogoPath)
-            ? $uniocLogoPath
-            : asset(file_exists($publicRoot . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'bannerescuelatecnologicav2.jpg')
-                ? 'images/bannerescuelatecnologicav2.jpg'
-                : 'images/logo.jpeg');
 
         return [
             'forPdf' => $forPdf,
@@ -103,5 +114,62 @@ class CvTemplateHelper
             'speLogo' => $speLogo,
             'uniocLogo' => $uniocLogo,
         ];
+    }
+
+    public static function publicRoot(): string
+    {
+        $parent = realpath(base_path('..'));
+        if ($parent && is_dir($parent . DIRECTORY_SEPARATOR . 'images')) {
+            return $parent;
+        }
+
+        return realpath(public_path()) ?: base_path();
+    }
+
+    private static function resolveAssetPath(string $root, array $candidates): ?string
+    {
+        foreach ($candidates as $relative) {
+            $path = $root . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relative);
+            if (is_file($path)) {
+                return $path;
+            }
+        }
+
+        return null;
+    }
+
+    private static function publicAssetUrl(string $publicRoot, ?string $absolutePath): ?string
+    {
+        if ($absolutePath === null) {
+            return null;
+        }
+
+        $normalizedRoot = rtrim(str_replace('\\', '/', $publicRoot), '/');
+        $normalizedPath = str_replace('\\', '/', $absolutePath);
+        if (strpos($normalizedPath, $normalizedRoot . '/') !== 0) {
+            return null;
+        }
+
+        $relative = ltrim(substr($normalizedPath, strlen($normalizedRoot)), '/');
+
+        return asset($relative);
+    }
+
+    private static function imageDataUri(?string $path): ?string
+    {
+        if ($path === null || !is_file($path)) {
+            return null;
+        }
+
+        $mime = function_exists('mime_content_type')
+            ? (mime_content_type($path) ?: 'image/png')
+            : 'image/png';
+
+        // Los assets del sitio usan extensión .jpg aunque el contenido real sea PNG.
+        if (!preg_match('#^image/#', $mime)) {
+            $mime = 'image/png';
+        }
+
+        return 'data:' . $mime . ';base64,' . base64_encode((string) file_get_contents($path));
     }
 }

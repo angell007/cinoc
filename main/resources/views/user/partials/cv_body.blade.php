@@ -135,4 +135,6 @@
             </section>
         </main>
     </div>
+
+    <div class="cv-footer-bar"></div>
 </div>

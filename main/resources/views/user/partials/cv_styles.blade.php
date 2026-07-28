@@ -21,13 +21,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 14px 22px;
-        background: #f2f4f7;
+        padding: 16px 24px 12px;
+        background: #fff;
     }
 
     .cv-logos img {
-        max-height: 52px;
+        max-height: 56px;
         width: auto;
+    }
+
+    .cv-footer-bar {
+        height: 18px;
+        background: #f5a623;
     }
 
     .cv-hero {

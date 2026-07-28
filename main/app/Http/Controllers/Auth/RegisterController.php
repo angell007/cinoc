@@ -56,8 +56,10 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $countries = DataArrayHelper::langCountriesArray();
+        $industries = DataArrayHelper::langIndustriesArray();
+        $ownershipTypes = DataArrayHelper::langOwnershipTypesArray();
 
-        return view('auth.register', compact('countries'));
+        return view('auth.register', compact('countries', 'industries', 'ownershipTypes'));
     }
 
     public function register(UserFrontRegisterFormRequest $request)

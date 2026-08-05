@@ -126,8 +126,6 @@
 
                                             <td></td>
 
-                                            <td></td>
-
                                         </tr>
 
                                         <tr role="row" class="heading"> 
@@ -297,6 +295,18 @@
             serverSide: true,
 
             stateSave: true,
+
+            stateLoadParams: function (settings, data) {
+
+                // Descarta estado guardado si el número de columnas ya no coincide
+
+                if (!data.columns || data.columns.length !== 8) {
+
+                    return false;
+
+                }
+
+            },
 
             searching: false,
 

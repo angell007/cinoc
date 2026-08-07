@@ -292,7 +292,7 @@
                 <div class="formrow{{ $errors->has('terms_of_use') ? ' has-error' : '' }}">
                     <label class="employer-terms">
                         <input type="checkbox" value="1" name="terms_of_use" {{ old('terms_of_use') ? 'checked' : '' }} required>
-                        <a href="https://bolsaempleo.iescinoc.edu.co/files/OFICIO Y ACUERDO POLITICA DE TRATAMIENTO DE DATOS.pdf" target="_blank">Acepto los términos de uso</a>
+                        <a href="#" data-toggle="modal" data-target="#modalProteccionDatos">Acepto los términos de uso</a>
                     </label>
                     @if ($errors->has('terms_of_use')) <span class="help-block text-danger"><strong>{{ $errors->first('terms_of_use') }}</strong></span> @endif
                 </div>

@@ -101,10 +101,10 @@
                                     href="https://iescinoc.edu.co/quienes-somos/" target="_blank" class="nav-link "
                                     style="background-color: ##d46441;">Quienes Somos</a> </li>
 
-                            <li class="nav-item "><a href="https://bolsaempleo.iescinoc.edu.co/publicaciones"
+                            {{-- Publicaciones: deshabilitado (módulo no usado / con error) --}}
+                            <!--<li class="nav-item "><a href="https://bolsaempleo.iescinoc.edu.co/publicaciones"
                                     class="nav-link " style="background-color: ##d46441;"
-                                    target="_blank">Publicaciones</a> </li>
-                                    
+                                    target="_blank">Publicaciones</a> </li>-->
 
                             @if (Auth::guard('company')->check())
                                 <!-- <li class="nav-item"><a href="{{ url('/job-seekers') }}" class="nav-link">{{ __('Seekers') }}</a> </li> -->
@@ -115,10 +115,9 @@
                                 </li>
                             @endif
 
-
-
-                            <li class="nav-item {{ Request::url() == url('/companies') ? 'active' : '' }}"><a
-                                    href="{{ url('/companies') }}" class="nav-link">Empresas</a> </li>
+                            {{-- Empresas: oculto del menú público según solicitud --}}
+                            <!--<li class="nav-item {{ Request::url() == url('/companies') ? 'active' : '' }}"><a
+                                    href="{{ url('/companies') }}" class="nav-link">Empresas</a> </li>-->
 
                             @foreach ($show_in_top_menu as $top_menu)
                                 @php $cmsContent = App\CmsContent::getContentBySlug($top_menu->page_slug); @endphp

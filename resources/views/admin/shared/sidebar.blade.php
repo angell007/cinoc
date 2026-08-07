@@ -40,11 +40,12 @@
         @include('admin/shared/side_bars/job')
         @endif
         
-        @if(APAuthHelp::hasPermission('publicaciones'))
+        {{-- Publicaciones: deshabilitado (módulo no usado / con error) --}}
+        {{-- @if(APAuthHelp::hasPermission('publicaciones'))
          <li class="">
                 <a href="https://bolsaempleo.iescinoc.edu.co/publicaciones" class="nav-link text text-white" target="_blank"> <i class="fa fa-bell"></i> <span class="title">Publicaciones</span> </a> 
         </li>
-        @endif
+        @endif --}}
         
         </li>
         @endif

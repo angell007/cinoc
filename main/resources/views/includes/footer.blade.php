@@ -81,7 +81,7 @@
                             <a href="mailto:prensa@unioc.edu.co">prensa@unioc.edu.co</a></p>
                         <p><a href="https://iescinoc.edu.co/pqrs">Realiza aquí tu PQRSDF</a></p>
                         {{-- <p><a href="https://iescinoc.edu.co/sitemap_index.xml">Mapa del sitio</a></p> --}}
-                        <p><a href="http://cinocvirtual.edu.co/glpi">Mesa de ayuda</a></p>
+                        <p><a href="https://glpi.cinocvirtual.edu.co/">Mesa de ayuda</a></p>
                     </div>
                 </aside>
             </div>
@@ -90,35 +90,25 @@
                     <div class="widget_title text-white">
                         <h3>Sedes y horario</h3>
                     </div>
-                    <div class="textwidget custom-html-widget text-white"><b>Pensilvania, Caldas:</b>&nbsp;Carrera
-                        5 # 6-30
-                        <p>
-                            (Sede principal y dirección de correspondencia)
-                        </p>
-                        <p>
-                            Lunes a viernes de 8:00 a.m. a 12:00 m. y de 2:00 a 6:00 p.m.
-                        </p>
+                    <div class="textwidget custom-html-widget text-white">
+                        <p><b>Pensilvania, Caldas:</b> Carrera 5 # 6-30<br>
+                            (Sede principal y dirección de correspondencia)<br>
+                            Cels. +57 3136516109</p>
 
-                        <p>
-                            Cels. +57 3118368165
-                        </p>
+                        <p><b>Manzanares, Caldas:</b> Carrera 5 # 4-08<br>
+                            Cel. +57 3218151488</p>
 
-                        <p>
-                            <b>Manzanares, Caldas:</b>&nbsp;Cra 6 # 7-62 escuela Salvador Ramírez
-                        </p>
-                        <p>
-                            Cel. +57 3218151488
-                        </p>
-                        <p>
-                            <b>Marquetalia, Caldas</b>: Calle 3 # 1a-26 escuela Cervantes
-                        </p>
-                        <p>
-                            Miércoles, jueves y viernes de 2:00 p.m. a 6:00 p.m. Sábados de 8:00 a 12:00
-                            m. y de 1:00 p.m. a 4:00 p.m.
-                        </p>
-                        <p>
-                            Cel. +57 3218151499
-                        </p>
+                        <p><b>Marquetalia, Caldas:</b> Calle 3 # 1a-26 escuela Cervantes<br>
+                            Miércoles, jueves y viernes de 2:00 p.m. a 6:00 p.m.<br>
+                            Sábados de 8:00 a 12:00 m. y de 1:00 p.m. a 4:00 p.m.<br>
+                            Cel. +57 3218151499</p>
+
+                        <p><b>Norcasia, Caldas:</b> Cr 7 # 8-41 centro<br>
+                            Cel. +57 310 2111358</p>
+
+                        <p><b>Horario de Atención</b><br>
+                            Lunes a Jueves de 8:00 a.m. a 12:00 m, y de 2:00 p.m a 6:30 p.m.<br>
+                            Viernes de 8:00 a.m. a 2:00 p.m.</p>
                     </div>
                 </aside>
             </div>

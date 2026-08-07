@@ -4,7 +4,7 @@
     $defaultCountry = old('country_id', $siteSetting->default_country_id ?? '');
 @endphp
 
-<form id="employerRegisterForm" class="employer-register-form" method="POST" action="{{ route('company.register') }}" enctype="multipart/form-data">
+<form id="employerRegisterForm" class="employer-register-form" method="POST" action="{{ route('company.register') }}" enctype="multipart/form-data" novalidate>
     {{ csrf_field() }}
     <input type="hidden" name="candidate_or_employer" value="employer" />
 

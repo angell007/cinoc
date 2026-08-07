@@ -636,27 +636,54 @@
         $('#employerSubmitBtn').toggle(step === totalSteps);
     }
 
-    function validateCurrentStep() {
-        var valid = true;
-        var $panel = $('.employer-panel[data-step="' + currentStep + '"]');
+    function getInvalidRequiredInPanel(step) {
+        var $panel = $('.employer-panel[data-step="' + step + '"]');
+        var invalidEl = null;
         $panel.find('[required]').each(function() {
-            var $el = $(this);
+            var el = this;
+            var $el = $(el);
             if ($el.is(':checkbox')) {
                 if (!$el.is(':checked')) {
-                    valid = false;
-                    $el.focus();
+                    invalidEl = el;
+                    return false;
+                }
+                return;
+            }
+            if (typeof el.checkValidity === 'function') {
+                if (!el.checkValidity()) {
+                    invalidEl = el;
                     return false;
                 }
             } else if (!$.trim($el.val())) {
-                valid = false;
-                $el.focus();
+                invalidEl = el;
                 return false;
             }
         });
-        if (!valid) {
+        return invalidEl;
+    }
+
+    function validateCurrentStep() {
+        var invalidEl = getInvalidRequiredInPanel(currentStep);
+        if (!invalidEl) {
+            return true;
+        }
+        if (typeof invalidEl.reportValidity === 'function') {
+            invalidEl.reportValidity();
+        } else {
+            $(invalidEl).focus();
             alert('Complete los campos obligatorios de este paso antes de continuar.');
         }
-        return valid;
+        return false;
+    }
+
+    function findFirstInvalidStep() {
+        for (var step = 1; step <= totalSteps; step++) {
+            var invalidEl = getInvalidRequiredInPanel(step);
+            if (invalidEl) {
+                return { step: step, el: invalidEl };
+            }
+        }
+        return null;
     }
 
     $(document).ready(function() {
@@ -671,6 +698,23 @@
 
         $('#employerPrevBtn').on('click', function() {
             showStep(Math.max(1, currentStep - 1));
+        });
+
+        $('#employerRegisterForm').on('submit', function(e) {
+            var invalid = findFirstInvalidStep();
+            if (!invalid) {
+                return;
+            }
+            e.preventDefault();
+            showStep(invalid.step);
+            setTimeout(function() {
+                if (typeof invalid.el.reportValidity === 'function') {
+                    invalid.el.reportValidity();
+                } else {
+                    $(invalid.el).focus();
+                    alert('Complete los campos obligatorios antes de registrar la empresa.');
+                }
+            }, 0);
         });
 
         $('.employer-step').on('click', function() {

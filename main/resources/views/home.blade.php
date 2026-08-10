@@ -86,25 +86,6 @@
                             </div>
                         </div>
 
-                   <div class="col-lg-5">
-							<div class="profbox followbox">
-								<h3><i class="fa fa-users"></i> {{__('My Followings')}}</h3>
-
-								<ul class="followinglist">
-									@if(isset($followers) && null!==($followers)) @foreach($followers as $follow) @php $company = DB::table('companies')->where('slug',$follow->company_slug)->where('is_active',1)->first(); @endphp
-									<li>
-										<span>{{$company->name}}</span>
-										<p>{{$company->location}}</p>
-										<a href="{{route('company.detail',$company->slug)}}">{{__('View Details')}}</a>
-									</li>
-									@endforeach @endif
-
-								</ul>
-
-								<div class="allbtn"><a href="{{route('my.followings')}}"><i class="fa fa-user"></i>{{__('View All')}}</a>
-								</div>
-							</div>
-						</div>
 
                     </div>
 			

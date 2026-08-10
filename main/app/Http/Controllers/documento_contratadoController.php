@@ -46,7 +46,7 @@ class documento_contratadoController extends Controller
 
         Mail::send('emails.contratado', [], function ($msj) use ($subject, $for) {
 
-            $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
             $msj->subject($subject);
 
@@ -78,7 +78,7 @@ class documento_contratadoController extends Controller
 
 
 
-            $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
             $msj->subject($subject);
 
@@ -145,7 +145,7 @@ class documento_contratadoController extends Controller
 
         Mail::send('emails.rechazado', [], function ($msj) use ($subject, $for) {
 
-            $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
             $msj->subject($subject);
 
@@ -171,7 +171,7 @@ class documento_contratadoController extends Controller
 
         Mail::send('emails.alertabyadmin', ['company' => $company, 'user' => $user, 'job' => $job, 'estado' => 'Rechazado'], function ($msj) use ($subject, $for) {
 
-            $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
             $msj->subject($subject);
 
@@ -226,7 +226,7 @@ class documento_contratadoController extends Controller
 
         Mail::send('emails.entrevista', [], function ($msj) use ($subject, $for) {
 
-            $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
             $msj->subject($subject);
 
@@ -252,7 +252,7 @@ class documento_contratadoController extends Controller
 
         Mail::send('emails.alertabyadmin', ['company' => $company, 'user' => $user, 'job' => $job, 'estado' => 'Entrevista'], function ($msj) use ($subject, $for) {
 
-            $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
             $msj->subject($subject);
 

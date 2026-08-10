@@ -39,19 +39,17 @@ class CustomConfigServiceProvider extends ServiceProvider
 
                 'from' => [
 
-                    // 'address' => 'noreply@iescinoc.edu.co',
+                    'address' => 'bolsadeempleo@unioc.edu.co',
 
-                    'address' => $settings->mail_from_address,
-
-                    'name' => $settings->mail_from_name
+                    'name' => 'Bolsa de Empleo UNIOC',
 
                 ],
 
                 'recieve_to' => [
 
-                    'address' => $settings->mail_to_address,
+                    'address' => 'bolsadeempleo@unioc.edu.co',
 
-                    'name' => $settings->mail_to_name
+                    'name' => 'Bolsa de Empleo UNIOC',
 
                 ],
 
@@ -67,7 +65,7 @@ class CustomConfigServiceProvider extends ServiceProvider
                 // 'password' => 'rphurhebdptfdubd',
                 // 'password' => 'fyfrdgwecfumwumu',
 
-                'sendmail' => 'noreply@iescinoc.edu.co',
+                'sendmail' => 'bolsadeempleo@unioc.edu.co',
 
                 // 'pretend' => $settings->mail_pretend
 

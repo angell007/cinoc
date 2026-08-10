@@ -25,8 +25,6 @@
         </li>
         <li><a href="{{ route('my.favourite.jobs') }}"><i class="fa fa-heart" aria-hidden="true"></i> {{__('My Favourite Jobs')}}</a>
         </li>
-        <li><a href="{{ route('my-alerts') }}"><i class="fa fa-bullhorn" aria-hidden="true"></i> {{__('My Job Alerts')}}</a>
-        </li>
         <li><a href="{{ url('my-cv') }}"><i class="fa fa-file-text" aria-hidden="true"></i> Ver mi hoja de vida</a>
         </li>
         @php
@@ -40,8 +38,6 @@
         <li><a href="{{url('my-profile#cvs')}}"><i class="fa fa-folder-o" aria-hidden="true"></i> {{__('Manage Resume')}}</a>
         </li>
         <li><a href="{{route('my.messages')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{__('My Messages')}}</a>
-        </li>
-        <li><a href="{{route('my.followings')}}"><i class="fa fa-user-o" aria-hidden="true"></i> {{__('My Followings')}}</a>
         </li>
         <li><a href="{{ route('cv') }}"><i class="fa fa-file-text-o" aria-hidden="true"></i> Solicitud de revisión de hoja de vida</a>
         </li>

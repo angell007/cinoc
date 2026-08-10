@@ -53,7 +53,7 @@
                   <br>
 
                   <div class="article-content">
-<p style="text-align: justify;">En instructivo adjunto encontrar&aacute; el paso a paso para el ingreso a la bolsa de empleo<span size="3">&nbsp;de la IES-</span>CINOC<span size="3">, el registro como empleador, la publicaci&oacute;n de vacantes, el proceso de preselecci&oacute;n de candidatos y dem&aacute;s. Es de aclarar para las empresas vinculadas a la bolsa de empleo de la IES CINOC que todos los servicios que nosotros pr&eacute;stamos a ustedes no tienen ning&uacute;n costo, igualmente no se realizar&aacute;n visitas a las instalaciones de cada potencial empleador ya que nuestra bolsa de empleo es virtual restringida, por tal motivo se prestaran los servicios por herramientas tecnol&oacute;gicas.&nbsp;</span>Esperamos que este manual sea de gran apoyo para satisfacer las necesidades de los usuarios.</p>
+<p style="text-align: justify;">En instructivo adjunto encontrar&aacute; el paso a paso para el ingreso a la bolsa de empleo<span size="3">&nbsp;de la UNIOC, el registro como empleador, la publicaci&oacute;n de vacantes, el proceso de preselecci&oacute;n de candidatos y dem&aacute;s. Es de aclarar para las empresas vinculadas a la bolsa de empleo de la UNIOC que todos los servicios que nosotros pr&eacute;stamos a ustedes no tienen ning&uacute;n costo, igualmente no se realizar&aacute;n visitas a las instalaciones de cada potencial empleador ya que nuestra bolsa de empleo es virtual restringida, por tal motivo se prestaran los servicios por herramientas tecnol&oacute;gicas.&nbsp;</span>Esperamos que este manual sea de gran apoyo para satisfacer las necesidades de los usuarios.</p>
                   
                   
                   <br>

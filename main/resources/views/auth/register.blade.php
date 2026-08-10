@@ -236,7 +236,7 @@
 
 
 
-                                <input type="password" name="password" class="form-control" required="required" placeholder="{{__('Password')}}" value="">
+                                <input type="password" name="password" id="candidate_password" class="form-control" required="required" placeholder="{{__('Password')}}" value="">
 
 
 
@@ -250,7 +250,7 @@
 
 
 
-                                <input type="password" name="password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" value="">
+                                <input type="password" name="password_confirmation" id="candidate_password_confirmation" class="form-control" required="required" placeholder="{{__('Password Confirmation')}}" value="">
 
 
 
@@ -662,18 +662,34 @@
         return invalidEl;
     }
 
-    function validateCurrentStep() {
-        var invalidEl = getInvalidRequiredInPanel(currentStep);
-        if (!invalidEl) {
+    function passwordsMatch($password, $confirmation) {
+        if (!$password.length || !$confirmation.length) {
             return true;
         }
-        if (typeof invalidEl.reportValidity === 'function') {
-            invalidEl.reportValidity();
-        } else {
-            $(invalidEl).focus();
-            alert('Complete los campos obligatorios de este paso antes de continuar.');
+        return $.trim($password.val()) === $.trim($confirmation.val());
+    }
+
+    function validateCurrentStep() {
+        var invalidEl = getInvalidRequiredInPanel(currentStep);
+        if (invalidEl) {
+            if (typeof invalidEl.reportValidity === 'function') {
+                invalidEl.reportValidity();
+            } else {
+                $(invalidEl).focus();
+                alert('Complete los campos obligatorios de este paso antes de continuar.');
+            }
+            return false;
         }
-        return false;
+        if (currentStep === 1) {
+            var $pass = $('#employer input[name="password"]').first();
+            var $confirm = $('#employer input[name="password_confirmation"]').first();
+            if (!passwordsMatch($pass, $confirm)) {
+                alert('La contraseña y la confirmación no coinciden.');
+                $confirm.focus();
+                return false;
+            }
+        }
+        return true;
     }
 
     function findFirstInvalidStep() {
@@ -689,6 +705,16 @@
     $(document).ready(function() {
         showStep(1);
 
+        $('#candidate form').on('submit', function(e) {
+            var $pass = $('#candidate_password');
+            var $confirm = $('#candidate_password_confirmation');
+            if (!passwordsMatch($pass, $confirm)) {
+                e.preventDefault();
+                alert('La contraseña y la confirmación no coinciden.');
+                $confirm.focus();
+            }
+        });
+
         $('#employerNextBtn').on('click', function() {
             if (!validateCurrentStep()) {
                 return;
@@ -701,6 +727,15 @@
         });
 
         $('#employerRegisterForm').on('submit', function(e) {
+            var $pass = $('#employer input[name="password"]').first();
+            var $confirm = $('#employer input[name="password_confirmation"]').first();
+            if (!passwordsMatch($pass, $confirm)) {
+                e.preventDefault();
+                showStep(1);
+                alert('La contraseña y la confirmación no coinciden.');
+                $confirm.focus();
+                return;
+            }
             var invalid = findFirstInvalidStep();
             if (!invalid) {
                 return;

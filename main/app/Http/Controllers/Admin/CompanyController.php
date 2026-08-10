@@ -756,7 +756,7 @@ class CompanyController extends Controller
 
 
 
-                $msj->from("bolsadeempleo@iescinoc.edu.co", "IES CINOC");
+                $msj->from("bolsadeempleo@unioc.edu.co", "Bolsa de Empleo UNIOC");
 
                 $msj->subject($subject);
 

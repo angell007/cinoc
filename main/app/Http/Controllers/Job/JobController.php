@@ -90,7 +90,7 @@ class JobController extends Controller
           ->whereIn('users.id', json_decode( $data ) )->get();
           
         $email =  Mail::send('emails.candidatesinteresting',  [ 'users' => $users ,'job' => $job , 'company' => $company ], function($msj) use ($company, $job ) {
-            $msj->from("bolsadeempleo@iescinoc.edu.co","IES CINOC");
+            $msj->from("bolsadeempleo@unioc.edu.co","Bolsa de Empleo UNIOC");
             $msj->subject('Hojas de vida oferta laboral ' . $job->title );
             $msj->to($company->email);
             });

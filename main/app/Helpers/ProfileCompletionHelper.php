@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use App\ProfileEducation;
 use App\User;
 
 class ProfileCompletionHelper
@@ -57,28 +56,10 @@ class ProfileCompletionHelper
 
     private static function checks(User $user): array
     {
-        $education = self::educationReference($user);
-
         return [
             'date_of_birth' => [
                 'label' => 'Fecha de nacimiento',
                 'filled' => self::hasDate($user->date_of_birth),
-            ],
-            'borncountry_id' => [
-                'label' => 'País de nacimiento',
-                'filled' => self::hasId($user->borncountry_id),
-            ],
-            'bornstate_id' => [
-                'label' => 'Departamento de nacimiento',
-                'filled' => self::hasId($user->bornstate_id),
-            ],
-            'borncity_id' => [
-                'label' => 'Municipio de nacimiento',
-                'filled' => self::hasId($user->borncity_id),
-            ],
-            'gender_id' => [
-                'label' => 'Sexo',
-                'filled' => self::hasId($user->gender_id),
             ],
             'country_id' => [
                 'label' => 'País de residencia',
@@ -92,61 +73,7 @@ class ProfileCompletionHelper
                 'label' => 'Municipio de residencia',
                 'filled' => self::hasId($user->city_id),
             ],
-            'education_degree_title' => [
-                'label' => 'Educación: título de la formación académica',
-                'filled' => $education !== null && self::hasText($education->degree_title),
-            ],
-            'education_degree_level' => [
-                'label' => 'Educación: nivel educativo',
-                'filled' => $education !== null && self::hasId($education->degree_level_id),
-            ],
-            'education_date_completion' => [
-                'label' => 'Educación: fecha de finalización',
-                'filled' => $education !== null && self::hasDate($education->date_completion),
-            ],
-            'education_status' => [
-                'label' => 'Educación: estado de la formación',
-                'filled' => $education !== null && self::hasText($education->education_status),
-            ],
-            'education_country' => [
-                'label' => 'Educación: país',
-                'filled' => $education !== null && self::hasId($education->country_id),
-            ],
-            'expected_salary' => [
-                'label' => 'Aspiración salarial',
-                'filled' => self::hasText($user->expected_salary),
-            ],
         ];
-    }
-
-    /**
-     * Usa el registro de educación más completo; si hay empate, el más reciente.
-     */
-    private static function educationReference(User $user): ?ProfileEducation
-    {
-        $educations = $user->relationLoaded('profileEducation')
-            ? $user->profileEducation
-            : $user->profileEducation()->get();
-
-        if ($educations->isEmpty()) {
-            return null;
-        }
-
-        return $educations->sortByDesc(function ($education) {
-            $score = 0;
-            $score += self::hasText($education->degree_title) ? 1 : 0;
-            $score += self::hasId($education->degree_level_id) ? 1 : 0;
-            $score += self::hasDate($education->date_completion) ? 1 : 0;
-            $score += self::hasText($education->education_status) ? 1 : 0;
-            $score += self::hasId($education->country_id) ? 1 : 0;
-
-            return ($score * 100000) + (int) $education->id;
-        })->first();
-    }
-
-    private static function hasText($value): bool
-    {
-        return trim((string) $value) !== '';
     }
 
     private static function hasId($value): bool

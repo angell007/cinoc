@@ -127,6 +127,8 @@ class UserFrontRegisterFormRequest extends Request
 
             'password.min' => __('La contraseña debe tener mas de tres caracteres'),
 
+            'password.confirmed' => __('La contraseña y la confirmación no coinciden'),
+
             // 'date_of_birth.required' => __('Fecha de nacimiento es requerido'),
 
 

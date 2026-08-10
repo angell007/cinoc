@@ -12,16 +12,6 @@
     <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
         <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
-                <i class="fa fa-user-o fa-3x mb-3 text-success" aria-hidden="true"></i>
-                <h4 class="card-title mb-0"><a href="{{route('my.followings')}}" class="text-decoration-none">{{Auth::user()->countFollowings()}}</a></h4>
-                <p class="card-text text-muted">{{__('Siguiendo')}}</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
                 <i class="fa fa-briefcase fa-3x mb-3 text-warning" aria-hidden="true"></i>
                 <h4 class="card-title mb-0"><a href="{{url('my-profile#cvs')}}" class="text-decoration-none">{{Auth::user()->countProfileCvs()}}</a></h4>
                 <p class="card-text text-muted">{{__('Mis CVs')}}</p>

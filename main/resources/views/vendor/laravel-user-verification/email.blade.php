@@ -40,7 +40,7 @@ if (auth('company')->check()) {
                             </tr>
                             <tr>
                                 <td style="font-family: Helvetica, Arial, sans-serif;font-size: 14px;line-height: 22px;font-weight: 400;color: #333; padding-bottom: 30px;text-align: left;"><br>
-                                    {{ $siteSetting->site_name }} Team</td>
+                                    Bolsa de Empleo UNIOC</td>
                             </tr>
                         </table>
                         <br>

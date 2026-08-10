@@ -18,7 +18,7 @@
                     <tr><td height="25" style="font-size: 25px; line-height: 25px;">&nbsp;</td></tr>
                     <tr>
                         <td align="center" height="100" style="height:100px;">
-                            <img width="100" border="0" style="display: block; width: 100px;" src="https://bolsaempleo.iescinoc.edu.co/images/bannerescuelatecnologicav2.jpg" alt="UNIOC" />
+                            <img width="100" border="0" style="display: block; width: 100px;" src="{{ asset('images/bannerescuelatecnologicav2.jpg') }}" alt="UNIOC" />
                         </td>
                     </tr>
                     <tr><td height="25" style="font-size: 25px; line-height: 25px;">&nbsp;</td></tr>

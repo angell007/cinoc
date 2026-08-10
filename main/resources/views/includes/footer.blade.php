@@ -6,36 +6,12 @@
 
 
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-center">
 
-            <!--<div class="col-6 ">-->
+            <img style="height: 120px;" src="{{ asset('images/logo.jpeg') }}" alt="UNIOC">
 
-            <img style="height: 120px;" src="{{ asset('images/logo.jpeg') }}" alt="">
-
-            <!--</div>-->
-
-            <!--<div class="col-6 ">-->
-
-            <img style="height: 120px;" src="{{ asset('images/logo-egresados.png') }}" alt="">
-
-
-
-            <!--<div class="col-6 ">-->
-
-            <img class="mt-2" style="height: 95px; border-radius: 25%"
-                src="{{ asset('images/Logo-bolsa-de-empleo.png') }}" alt="">
-
-            <!--</div>-->
-
-
-
-            <!--</div>-->
-
-            <!--<div>-->
-
-            <!--    <img style="height: 150px;" src="{{ asset('images/logo-egresados.png') }}" alt="">-->
-
-            <!--</div>-->
+            <img style="height: 120px; margin-left: 16px;" src="{{ asset('images/logo_principal_SPE.jpg') }}"
+                alt="Servicio Público de Empleo">
 
         </div>
 
@@ -267,11 +243,11 @@
                                                                 class="fab fa-facebook"></i></a></li>
                                                     <li><a href="https://twitter.com/IES_CINOC"><i
                                                                 class="fab fa-twitter"></i></a></li>
-                                                    <li><a href="https://www.instagram.com/ies_cinoc/?hl=es-la"><i
+                                                    <li><a href="https://www.instagram.com/unioc_oficial"><i
                                                                 class="fab fa-instagram"></i></a></li>
-                                                    <li><a href="https://www.linkedin.com/company/ies-cinoc"><i
+                                                    <li><a href="https://www.linkedin.com/company/unioc/"><i
                                                                 class="fab fa-linkedin"></i></a></li>
-                                                    <li><a href="https://www.youtube.com/c/IESCINOC"><i
+                                                    <li><a href="https://youtube.com/@uniocedu"><i
                                                                 class="fab fa-youtube"></i></a></li>
                                                 </ul>
                                             </div>

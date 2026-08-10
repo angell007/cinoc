@@ -193,8 +193,8 @@
                                             <a href=""
                                                 style="display: block; border-style: none !important; border: 0 !important;"><img
                                                     width="100" border="0" style="display: block; width: 100px;"
-                                                    src="https://bolsaempleo.iescinoc.edu.co/images/bannerescuelatecnologicav2.jpg"
-                                                    alt="" /></a>
+                                                    src="{{ asset('images/bannerescuelatecnologicav2.jpg') }}"
+                                                    alt="UNIOC" /></a>
                                         </td>
                                     </tr>
 
@@ -254,7 +254,7 @@
 
                                 <div style="line-height: 50px">
 
-                                    Nueva Hv para revizar
+                                    Nueva HV para revisar
 
                                 </div>
                             </td>

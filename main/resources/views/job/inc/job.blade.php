@@ -500,138 +500,115 @@
 
 
 
-            // Fetch the preselected item, and add to the control
+            var $positionSelect = $('.selected-remote');
 
-            var studentSelect = $('.selected-remote');
-
-            $.ajax({
-
-                type: 'GET',
-
-                url: '/api/proffesions?name=' + <?php echo isset($job->position) ? '"' . $job->position . '"' : '"' . '"'; ?>
-
-            }).then(function(data) {
-
-                var option = new Option(data.text, data.id, true, true);
-
-                studentSelect.append(option).trigger('change');
-
+            $positionSelect.select2({
+                width: '100%',
+                placeholder: 'Ocupación',
+                allowClear: true,
+                ajax: {
+                    url: '/api/proffesions',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function(params) {
+                        return { q: params.term || '' };
+                    },
+                    processResults: function(data) {
+                        return data;
+                    }
+                }
             });
 
-
+            @if (!empty($job->position))
+            $.ajax({
+                type: 'GET',
+                url: '/api/proffesions?name=' + encodeURIComponent(@json($job->position))
+            }).then(function(data) {
+                if (!data || !data.id) {
+                    return;
+                }
+                var option = new Option(data.text, data.id, true, true);
+                $positionSelect.append(option).trigger('change');
+            });
+            @endif
 
             $('.select2-multiple').select2({
-
-                placeholder: "{{ __('Select Required Skills') }}"
-
-                    ,
+                placeholder: "{{ __('Select Required Skills') }}",
                 allowClear: true
-
-            });
-
-            $('.select').select2({
-
-                placeholder: "{{ __('Select') }}"
-
-                    ,
-                allowClear: true
-
             });
 
             $(".datepicker").datepicker({
-
-                autoclose: true
-
-                    ,
+                autoclose: true,
                 format: 'yyyy-m-d'
-
             });
 
+            function destroySelect2IfAny(selector) {
+                var $el = $(selector);
+                if ($el.length && $el.hasClass('select2-hidden-accessible')) {
+                    $el.select2('destroy');
+                }
+            }
+
+            function initLocationSelect2(selector, placeholder) {
+                destroySelect2IfAny(selector);
+                $(selector).select2({
+                    width: '100%',
+                    placeholder: placeholder,
+                    allowClear: true
+                });
+            }
+
             $('#country_id').on('change', function(e) {
-
                 e.preventDefault();
-
                 filterLangStates(0);
-
             });
 
             $(document).on('change', '#state_id', function(e) {
-
                 e.preventDefault();
-
                 filterLangCities(0);
-
             });
 
             filterLangStates(<?php echo old('state_id', isset($job) ? $job->state_id : 0); ?>);
 
-
-
             function filterLangStates(state_id) {
-
                 var country_id = $('#country_id').val();
-
-                if (country_id != '') {
-
-                    $.post("{{ route('filter.lang.states.dropdown') }}", {
-
-                            country_id: country_id,
-
-                            state_id: state_id,
-
-                            _method: 'POST',
-
-                            _token: '{{ csrf_token() }}'
-
-                        })
-
-                        .done(function(response) {
-
-                            $('#default_state_dd').html(response);
-
-                            filterLangCities(<?php echo old('city_id', isset($job) ? $job->city_id : 0); ?>);
-
-                        });
-
+                if (country_id == '') {
+                    return;
                 }
-
+                $.post("{{ route('filter.lang.states.dropdown') }}", {
+                    country_id: country_id,
+                    state_id: state_id,
+                    _method: 'POST',
+                    _token: '{{ csrf_token() }}'
+                }).done(function(response) {
+                    destroySelect2IfAny('#state_id');
+                    $('#default_state_dd').html(response);
+                    initLocationSelect2('#state_id', 'Seleccione Departamento');
+                    filterLangCities(<?php echo old('city_id', isset($job) ? $job->city_id : 0); ?>);
+                });
             }
-
-
 
             function filterLangCities(city_id) {
-
                 var state_id = $('#state_id').val();
-
-                if (state_id != '') {
-
-                    $.post("{{ route('filter.lang.cities.dropdown') }}", {
-
-                            state_id: state_id,
-
-                            city_id: city_id,
-
-                            _method: 'POST',
-
-                            _token: '{{ csrf_token() }}'
-
-                        })
-
-                        .done(function(response) {
-
-                            $('#default_city_dd').html(response);
-
-                            $('#state_id').select2();
-
-                            $('#city_id').select2();
-
-                        });
-
+                if (state_id == '') {
+                    destroySelect2IfAny('#city_id');
+                    $('#default_city_dd').html(
+                        '<select name="city_id" id="city_id" class="form-control"><option value="">Seleccione Ciudad</option></select>'
+                    );
+                    initLocationSelect2('#city_id', 'Seleccione Ciudad');
+                    return;
                 }
-
+                $.post("{{ route('filter.lang.cities.dropdown') }}", {
+                    state_id: state_id,
+                    city_id: city_id,
+                    _method: 'POST',
+                    _token: '{{ csrf_token() }}'
+                }).done(function(response) {
+                    destroySelect2IfAny('#city_id');
+                    $('#default_city_dd').html(response);
+                    initLocationSelect2('#city_id', 'Seleccione Ciudad');
+                });
             }
-
-
 
         });
     </script>

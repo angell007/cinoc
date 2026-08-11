@@ -105,7 +105,7 @@ class RegisterController extends Controller
         $this->guard()->login($company);
 
         UserVerification::generate($company);
-        UserVerification::send($company, 'Company Verification', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
+        UserVerification::send($company, 'Activación de cuenta - Bolsa de Empleo UNIOC', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
 
         Mail::send(new CompanyRegistrationReceivedMailable($company));
 

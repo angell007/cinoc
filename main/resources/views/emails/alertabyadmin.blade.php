@@ -175,7 +175,7 @@
                                         <td align="center" height="100" style="height:100px;"> <a href=""
                                                 style="display: block; border-style: none !important; border: 0 !important;">
                                                 <img width="100" border="0" style="display: block; width: 100px;"
-                                                    src="https://bolsaempleo.iescinoc.edu.co/images/bannerescuelatecnologicav2.jpg"
+                                                    src="{{ url('images/bannerescuelatecnologicav2.jpg') }}"
                                                     alt="" />
                                             </a> </td>
                                     </tr>

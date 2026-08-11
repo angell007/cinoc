@@ -130,7 +130,7 @@
                                     @include('admin.layouts.email_template_social')
                                 </div>
                                 <br>
-                                <span class="ios-footer" style=" text-align:center;display: block;"> © Copyright {{ date('Y')}} {{ $siteSetting->site_name }} - All Rights Reserved </span> <br>
+                                <span class="ios-footer" style=" text-align:center;display: block;"> © Copyright {{ date('Y')}} UNIOC - Bolsa de Empleo </span> <br>
                                 <br></td>
                         </tr>
                     </table>

@@ -6,26 +6,23 @@
 
 
 
-            <div class="col-lg-2 col-md-8 col-8 mx-auto">
+            <div class="col-lg-3 col-md-8 col-8 mx-auto">
 
+                <div class="header-logos d-flex align-items-center" style="gap: 12px; flex-wrap: nowrap;">
 
+                    <a href="{{ url('/') }}" class="logo" style="display: inline-block;">
 
-                <a href="{{ url('/') }}" class="logo">
+                        <img style="width: 200px; max-width: 100%; height: auto;"
+                            src="{{ url('/images/bannerescuelatecnologicav2.jpg') }}"
+                            alt="UNIOC Institución Universitaria" />
 
+                    </a>
 
+                    <img class="logo-spe" style="height: 58px; width: auto; max-width: 160px; object-fit: contain;"
+                        src="{{ url('/images/logo_SPE_fondo_blanco.png') }}"
+                        alt="Servicio Público de Empleo" />
 
-                    <img style="    width: 230px;     max-width: 120%;"
-                        src="{{ url('/images/bannerescuelatecnologicav2.jpg') }}" alt="{{ $siteSetting->site_name }}" />
-
-
-
-                </a>
-
-                <!--<div class="navbar-header navbar-white">-->
-
-                <!--    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#nav-main" aria-controls="nav-main" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>-->
-
-                <!--</div>-->
+                </div>
 
                 <div class="clearfix"></div>
 
@@ -61,7 +58,7 @@
 
 
 
-            <div class="col-lg-10 col-md-12 col-12">
+            <div class="col-lg-9 col-md-12 col-12">
 
 
 

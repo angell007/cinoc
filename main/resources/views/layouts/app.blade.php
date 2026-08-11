@@ -25,7 +25,7 @@ if (!isset($seo)) {
     <!--Font Awesome -->
     <link href="{{ asset('/') }}css/font-awesome.css" rel="stylesheet">
     <!--Custom Style -->
-    <link href="{{ asset('/') }}css/main.css?r=6" rel="stylesheet">
+    <link href="{{ asset('/') }}css/main.css?r=7" rel="stylesheet">
     @if (session('localeDir', 'ltr') == 'rtl')
         <!--Rtl Style -->
         <link href="{{ asset('/') }}css/rtl-style.css" rel="stylesheet">

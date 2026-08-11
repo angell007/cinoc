@@ -148,6 +148,7 @@ class JobController extends Controller
             $job = Job::findOrFail($id);
             $wasActive = (int) $job->is_active;
             $job->is_active = 1;
+            $job->is_rejected = 0;
             $job->update();
 
             if ($wasActive === 0) {
@@ -172,7 +173,14 @@ class JobController extends Controller
                 return;
             }
 
-            Mail::send(new JobRejectedMailable($job));
+            $alreadyRejected = (int) $job->is_rejected === 1;
+            $job->is_rejected = 1;
+            $job->is_active = 0;
+            $job->update();
+
+            if (!$alreadyRejected) {
+                Mail::send(new JobRejectedMailable($job));
+            }
 
             echo 'ok';
         } catch (ModelNotFoundException $e) {

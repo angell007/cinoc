@@ -54,10 +54,12 @@
 
                                                         <h3><a href="{{ route('job.detail', [$job->slug]) }}"
                                                                 title="{{ $job->title }}">{{ $job->title }}</a>
-                                                            @if (!(bool) $job->is_active)
-                                                                <span class="label label-warning">Pendiente de revisión</span>
-                                                            @else
+                                                            @if ((bool) $job->is_active)
                                                                 <span class="label label-success">Publicada</span>
+                                                            @elseif ((bool) $job->is_rejected)
+                                                                <span class="label label-danger">Vacante no aprobada</span>
+                                                            @else
+                                                                <span class="label label-warning">Pendiente de revisión</span>
                                                             @endif
                                                         </h3>
 

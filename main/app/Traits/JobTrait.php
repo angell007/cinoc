@@ -269,6 +269,7 @@ trait JobTrait
         $job->company_id = $company->id;
         $job = $this->assignJobValues($job, $request);
         $job->is_active = 0;
+        $job->is_rejected = 0;
         $job->save();
         /*         * ******************************* */
         $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
@@ -328,10 +329,16 @@ trait JobTrait
     {
         // dd($request->all());
         $job = Job::findOrFail($id);
+        $wasRejected = (int) $job->is_rejected === 1;
         $job = $this->assignJobValues($job, $request);
         /*         * ******************************* */
         $job->slug = Str::slug($job->title, '-') . '-' . $job->id;
         /*         * ******************************* */
+        // Si estaba rechazada, al editar vuelve a cola de revisión
+        if ($wasRejected) {
+            $job->is_rejected = 0;
+            $job->is_active = 0;
+        }
 
         /*         * ************************************ */
         $job->update();
@@ -340,7 +347,11 @@ trait JobTrait
         /*         * ************************************ */
         $this->updateFullTextSearch($job);
         /*         * ************************************ */
-        flash('Vacante publicada!')->success();
+        if ($wasRejected) {
+            flash('Vacante actualizada. Permanecerá pendiente de revisión hasta que sea aprobada.')->success();
+        } else {
+            flash('Vacante publicada!')->success();
+        }
         return Redirect::route('edit.front.job', array($job->id));
     }
 

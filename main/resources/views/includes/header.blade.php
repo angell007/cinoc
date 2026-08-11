@@ -6,19 +6,21 @@
 
 
 
-            <div class="col-lg-3 col-md-8 col-8 mx-auto">
+            <div class="col-lg-4 col-md-8 col-8 mx-auto">
 
-                <div class="header-logos d-flex align-items-center" style="gap: 12px; flex-wrap: nowrap;">
+                <div class="header-logos">
 
-                    <a href="{{ url('/') }}" class="logo" style="display: inline-block;">
+                    <a href="{{ url('/') }}" class="logo header-logo-link">
 
-                        <img style="width: 200px; max-width: 100%; height: auto;"
+                        <img class="header-logo-unioc"
                             src="{{ url('/images/bannerescuelatecnologicav2.jpg') }}"
                             alt="UNIOC Institución Universitaria" />
 
                     </a>
 
-                    <img class="logo-spe" style="height: 58px; width: auto; max-width: 160px; object-fit: contain;"
+                    <span class="header-logo-divider" aria-hidden="true"></span>
+
+                    <img class="header-logo-spe"
                         src="{{ url('/images/logo_SPE_fondo_blanco.png') }}"
                         alt="Servicio Público de Empleo" />
 
@@ -58,7 +60,7 @@
 
 
 
-            <div class="col-lg-9 col-md-12 col-12">
+            <div class="col-lg-8 col-md-12 col-12">
 
 
 

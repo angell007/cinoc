@@ -403,6 +403,9 @@ class CompanyController extends Controller
         $wasActive = (int) $company->is_active;
         $newActive = (int) $request->input('is_active');
         $company->is_active = $newActive;
+        if ($newActive === 1) {
+            $company->verified = 1;
+        }
         
         $company->is_featured = $request->input('is_featured');
         
@@ -692,6 +695,7 @@ class CompanyController extends Controller
 
             $wasActive = (int) $company->is_active;
             $company->is_active = 1;
+            $company->verified = 1;
 
             $company->update();
 

@@ -7,7 +7,6 @@ use App\Company;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Jrean\UserVerification\Traits\VerifiesUsers;
-use Jrean\UserVerification\Facades\UserVerification;
 use App\Http\Requests\Front\CompanyFrontRegisterFormRequest;
 use Illuminate\Auth\Events\Registered;
 use App\Events\CompanyRegistered;
@@ -102,16 +101,9 @@ class RegisterController extends Controller
         event(new Registered($company));
         event(new CompanyRegistered($company));
 
-        $this->guard()->login($company);
-
-        UserVerification::generate($company);
-        UserVerification::send($company, 'Activación de cuenta - Bolsa de Empleo UNIOC', config('mail.recieve_to.address'), config('mail.recieve_to.name'));
-
         Mail::send(new CompanyRegistrationReceivedMailable($company));
 
-        $this->guard()->logout();
-
-        flash('Registro exitoso. Hemos enviado un correo confirmando la recepción de su solicitud. Revise también su bandeja de entrada para verificar su correo electrónico. El acceso a la plataforma se habilitará una vez la Bolsa de Empleo valide y active su empresa.')->success();
+        flash('Registro exitoso. Hemos enviado un correo confirmando la recepción de su solicitud. El acceso a la plataforma se habilitará una vez la Bolsa de Empleo valide y active su empresa.')->success();
         return redirect()->back();
     }
 }

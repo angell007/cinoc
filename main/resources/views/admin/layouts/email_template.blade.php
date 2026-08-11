@@ -8,7 +8,7 @@
         <!-- enable media queries for windows phone 8 -->
         <meta name="format-detection" content="telephone=no">
         <!-- disable auto telephone linking in iOS -->
-        <title>{{ $siteSetting->site_name }}</title>
+        <title>Bolsa de Empleo UNIOC</title>
         <style type="text/css">
             body {
                 margin: 0;

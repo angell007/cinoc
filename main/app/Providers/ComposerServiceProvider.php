@@ -18,6 +18,12 @@ class ComposerServiceProvider extends ServiceProvider
 
         $siteSetting = SiteSetting::findOrFail(1272);
 
+        // Marca visible UNIOC (evita copyright/pies de correo con IES CINOC desde BD).
+        $currentSiteName = trim((string) $siteSetting->site_name);
+        if ($currentSiteName === '' || stripos($currentSiteName, 'CINOC') !== false || stripos($currentSiteName, 'IES') !== false) {
+            $siteSetting->site_name = 'Bolsa de Empleo UNIOC';
+        }
+
         $show_in_top_menu = Cms::where('show_in_top_menu', 1)->get();
 
         $show_in_footer_menu = Cms::where('show_in_footer_menu', 1)->get();

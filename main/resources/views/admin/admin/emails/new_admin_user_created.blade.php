@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <td style="font-family: Helvetica, Arial, sans-serif;font-size: 14px;line-height: 22px;font-weight: 400;color: #333;
-                                    padding-bottom: 30px;text-align: left;">Thanks, <br>The {{ $siteSetting->site_name }} Team</td>
+                                    padding-bottom: 30px;text-align: left;">Thanks, <br>The Bolsa de Empleo UNIOC</td>
                             </tr>
                         </table>
                         <br>

@@ -266,7 +266,7 @@
                                         </table>
                                         <p style="line-height: 24px">
                                             </br>
-                                           {{__('Thanks')}},<br>{{ $siteSetting->site_name }} Team
+                                           {{__('Thanks')}},<br>Bolsa de Empleo UNIOC
                                         </p>
 
                                     </td>

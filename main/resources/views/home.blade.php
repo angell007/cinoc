@@ -8,7 +8,6 @@
 <!-- Inner Page Title end -->
 <div class="listpgWraper">
     <div class="container">@include('flash::message')
-        @includeIf('user.inc.profile_completion_notice')
         <div class="row"> @include('includes.user_dashboard_menu')
             <div class="col-lg-9">
 				
@@ -69,26 +68,6 @@
                 @endif
                 @endif
                 @endif 
-			
-			
-			 <div class="row">
-                        <div class="col-lg-7">
-                            <div class="profbox">
-                                <h3><i class="fa fa-black-tie" aria-hidden="true"></i> {{__('Recommended Jobs')}}</h3>
-                                <ul class="recomndjobs">
-                                    @if(null!==($matchingJobs)) @foreach($matchingJobs as $match)
-                                    <li>
-                                        <h4><a href="{{route('job.detail', [$match->slug])}}">{{$match->title}}</a></h4>
-                                        <p>{{$match->getCompany()->name}}</p>
-                                    </li>
-                                    @endforeach @endif
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-			
 			
 			</div>
                

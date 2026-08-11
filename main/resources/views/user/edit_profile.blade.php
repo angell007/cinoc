@@ -15,9 +15,6 @@
               
                         <div class="userccount">
                             <div class="formpanel mt0"> @include('flash::message')
-                                @auth
-                                @includeIf('user.inc.profile_completion_notice')
-                                @endauth
                                 <!-- Personal Information -->
                                 @include('user.inc.profile')                              
                             </div>

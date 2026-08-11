@@ -6,7 +6,6 @@
 <div class="listpgWraper">
     <div class="container">
         @include('flash::message')
-        @includeIf('user.inc.profile_completion_notice')
 
         @if(empty($canDownloadCv))
         <div class="alert alert-info">

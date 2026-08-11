@@ -60,16 +60,13 @@
                     </tr>
                     <tr>
                         <td bgcolor="0b3a6e" align="center" style="background-color:#0b3a6e; padding: 16px 20px;">
-                            <p style="margin:0 0 10px 0; color:#ffffff; font-size:12px; font-family: 'Work Sans', Calibri, sans-serif;">
+                            <p style="margin:0 0 12px 0; color:#ffffff; font-size:12px; font-family: 'Work Sans', Calibri, sans-serif;">
                                 Síguenos en nuestras redes
                             </p>
-                            <p style="margin:0; line-height: 28px;">
-                                <a href="https://www.facebook.com/ies.cinoc/" style="color:#ffb72f; text-decoration:none; margin:0 8px;">Facebook</a>
-                                <a href="https://www.instagram.com/unioc_oficial" style="color:#ffb72f; text-decoration:none; margin:0 8px;">Instagram</a>
-                                <a href="https://www.linkedin.com/company/unioc/" style="color:#ffb72f; text-decoration:none; margin:0 8px;">LinkedIn</a>
-                                <a href="https://youtube.com/@uniocedu" style="color:#ffb72f; text-decoration:none; margin:0 8px;">YouTube</a>
-                            </p>
-                            <p style="margin:12px 0 0 0; color:#cdd9e8; font-size:11px; font-family: 'Work Sans', Calibri, sans-serif;">
+                            <div style="line-height: 0;">
+                                @include('admin.layouts.email_template_social')
+                            </div>
+                            <p style="margin:14px 0 0 0; color:#cdd9e8; font-size:11px; font-family: 'Work Sans', Calibri, sans-serif;">
                                 © {{ date('Y') }} UNIOC — Bolsa de Empleo
                             </p>
                         </td>

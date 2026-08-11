@@ -152,13 +152,7 @@ use AuthenticatesUsers;
         $company = Company::where('email', $request->input($this->username()))->first();
 
         if ($company && Hash::check($request->input('password'), $company->password)) {
-            if ((int) $company->verified !== 1) {
-                throw ValidationException::withMessages([
-                    $this->username() => ['Debe verificar su correo electrónico antes de ingresar.'],
-                ])->redirectTo('login');
-            }
-
-            if ((int) $company->is_active !== 1) {
+            if ((int) $company->is_active !== 1 || (int) $company->verified !== 1) {
                 throw ValidationException::withMessages([
                     $this->username() => ['Su cuenta permanece deshabilitada hasta que la Bolsa de Empleo valide y active su empresa.'],
                 ])->redirectTo('login');

@@ -253,7 +253,7 @@
 
                                         </p>
                                         <p style="line-height: 24px;margin-bottom:15px;">
-                                            La empresa "{{ $name }}" ha sido registrada en  "{{ $siteSetting->site_name }}".
+                                            La empresa "{{ $name }}" ha sido registrada en la Bolsa de Empleo UNIOC.
                                         </p>
                                         <p style="line-height: 24px; margin-bottom:20px;">
                                             Para mas información.

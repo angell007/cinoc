@@ -49,7 +49,7 @@ class CompanyRegisteredMailable extends Mailable
 
         return $this->to(config('mail.recieve_to.address'), config('mail.recieve_to.name'))
 
-                        ->subject('Employer/Company "' . $this->company->name . '" has been registered on "' . config('app.name'))
+                        ->subject('Nueva empresa registrada - Bolsa de Empleo UNIOC')
 
                         ->view('emails.company_registered_message')
 

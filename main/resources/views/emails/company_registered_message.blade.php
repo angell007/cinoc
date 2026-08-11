@@ -289,7 +289,7 @@
                                         </table>
                                         <p style="line-height: 24px">
                                             </br>
-                                            {{ $siteSetting->site_name }}
+                                            Bolsa de Empleo UNIOC
                                         </p>
 
                                     </td>

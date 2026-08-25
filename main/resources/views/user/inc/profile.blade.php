@@ -36,11 +36,31 @@
 
 </div>
 
-
+@php
+    $profileCompletion = class_exists(\App\Helpers\ProfileCompletionHelper::class)
+        ? \App\Helpers\ProfileCompletionHelper::assess($user)
+        : null;
+@endphp
 
 <hr>
 
-
+@if($profileCompletion)
+<p>Hoja de vida</p>
+<div class="progress mb-3">
+    <div class="progress-bar" role="progressbar" style="width: {{ $profileCompletion['percentage'] }}%;"
+        aria-valuenow="{{ $profileCompletion['percentage'] }}" aria-valuemin="0" aria-valuemax="100">
+        {{ $profileCompletion['percentage'] }}% Hoja de vida</div>
+</div>
+@if(!$profileCompletion['is_complete'])
+<p class="text-muted">
+    Completa al menos el {{ $profileCompletion['threshold'] }}% de los campos obligatorios
+    ({{ $profileCompletion['filled'] }} de {{ $profileCompletion['total'] }}).
+    @if(!empty($profileCompletion['missing']))
+        Pendientes: {{ implode(', ', $profileCompletion['missing']) }}.
+    @endif
+</p>
+@endif
+@endif
 
 <h5>{{ __('Personal Information') }}</h5>
 

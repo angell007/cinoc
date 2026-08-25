@@ -10,3 +10,5 @@ Route::post('file-import-change', 'FileController@datosimport')->name('file-impo
 
 Route::post('file-import-trainings', 'FileController@datosimporttrainings')->name('file-import-trainings');
 
+Route::post('file-import-trainings-participants', 'FileController@importPaticipantsTrainings')->name('file-import-trainings-participants');
+

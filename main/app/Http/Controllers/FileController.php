@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\IdcardsNumbersExcel;
 use App\Imports\Trainings;
+use App\Imports\ImportParticipantToTraining;
 use App\Imports\IdcardsNumbersChangeExcel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -53,6 +54,24 @@ class FileController extends Controller
             return back();
         } catch (\Throwable $th) {
             // return $th->getMessage() . $th->getLine() . $th->getFile();
+            Session::flash('message', 'No hemos podido subir los documentos por que el archivo no es correcto!!');
+            Session::flash('alert-class', 'alert-danger');
+            return back();
+        }
+    }
+
+    public function importPaticipantsTrainings()
+    {
+        try {
+            $id = request()->get('id');
+            $training = DB::table('trainings')->select('to')->where('id', $id)->first();
+            $to = $training->to ?? null;
+
+            Excel::import(new ImportParticipantToTraining($id, $to), request()->file('file')->store('temp'));
+            Session::flash('message', 'Documentos subidos correctamente!!');
+            Session::flash('alert-class', 'alert-success');
+            return back();
+        } catch (\Throwable $th) {
             Session::flash('message', 'No hemos podido subir los documentos por que el archivo no es correcto!!');
             Session::flash('alert-class', 'alert-danger');
             return back();

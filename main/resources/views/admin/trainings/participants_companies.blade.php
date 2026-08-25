@@ -60,6 +60,10 @@
 
                             <div class="actions">
 
+                                <button data-toggle="modal" data-target="#fileModalUploadedMassiveParticipantsStudens" class="btn btn-xs btn-info">
+
+                                    <i class="fa fa-upload"></i></button>
+
                                 <button data-toggle="modal" data-target="#fileModalUploaded" class="btn btn-xs btn-success">
 
                                     <i class="fa fa-user"></i> Agregar participante </button>
@@ -118,6 +122,7 @@
         </div>
 
         @include('partials.fileModalUploadedCompany')
+        @include('partials.ModalImportParticipantsStudents')
 
     </div>
 @endsection

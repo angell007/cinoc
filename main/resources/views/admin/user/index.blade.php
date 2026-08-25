@@ -122,6 +122,8 @@
 
                                             <td><input placeholder="Ciudad" type="text" class="form-control" name="ciudad" id="ciudad" autocomplete="off"></td>
 
+                                            <td><input placeholder="Fecha de Nacimiento" type="text" class="form-control" name="date_of_birth" id="date_of_birth" autocomplete="off"></td>
+
                                             <td></td>
 
                                             <td></td>
@@ -140,7 +142,9 @@
 
                                             <th>Rol</th>                                        
 
-                                            <th>Ciudad</th>                                        
+                                            <th>Ciudad</th>
+
+                                            <th>Fecha de nacimiento</th>
 
                                             <th>Hoja de vida</th>                                        
 
@@ -300,7 +304,7 @@
 
                 // Descarta estado guardado si el número de columnas ya no coincide
 
-                if (!data.columns || data.columns.length !== 8) {
+                if (!data.columns || data.columns.length !== 9) {
 
                     return false;
 
@@ -348,6 +352,8 @@
 
                     d.ciudad = $('input[name=ciudad]').val();
 
+                    d.date_of_birth = $('input[name=date_of_birth]').val();
+
                 }
 
             }, columns: [
@@ -365,6 +371,8 @@
                 {data: 'rol', name: 'rol'},
 
                 {data: 'ciudad', name: 'ciudad'},
+
+                {data: 'date_of_birth', name: 'date_of_birth'},
 
                  {
 
@@ -413,6 +421,14 @@
         });
 
         $('#ciudad').on('keyup', function (e) {
+
+            oTable.draw();
+
+            e.preventDefault();
+
+        });
+
+        $('#date_of_birth').on('keyup', function (e) {
 
             oTable.draw();
 

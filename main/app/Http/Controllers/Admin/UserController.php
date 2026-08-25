@@ -609,6 +609,14 @@ class UserController extends Controller
                 }
             })
 
+            ->editColumn('date_of_birth', function ($users) {
+                if (empty($users->date_of_birth) || (string) $users->date_of_birth === '0000-00-00') {
+                    return '';
+                }
+
+                return Carbon::parse($users->date_of_birth)->format('Y-m-d');
+            })
+
             ->addColumn('name', function ($users) {
 
                 return $users->first_name . ' ' . $users->middle_name . ' ' . $users->first_lastname . ' ' . $users->second_lastname;

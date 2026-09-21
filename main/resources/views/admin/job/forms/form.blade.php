@@ -302,11 +302,29 @@
 @push('scripts')
 @include('admin.shared.tinyMCEFront')
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#company_id').select2({
+    function destroySelect2IfAny(selector) {
+        var $el = $(selector);
+        if ($el.length && $el.hasClass('select2-hidden-accessible')) {
+            $el.select2('destroy');
+        }
+    }
+
+    function initSearchableSelect(selector, placeholder) {
+        var $el = $(selector);
+        if (!$el.length) {
+            return;
+        }
+        destroySelect2IfAny(selector);
+        $el.select2({
             width: '100%',
-            placeholder: 'Seleccione Compañía',
+            placeholder: placeholder || $el.find('option:first').text(),
             allowClear: true
+        });
+    }
+
+    $(document).ready(function() {
+        $('.form-body select').not('#position').each(function() {
+            initSearchableSelect(this);
         });
 
         var $positionSelect = $('#position');
@@ -368,7 +386,9 @@
                     _token: '{{ csrf_token() }}'
                 })
                 .done(function(response) {
+                    destroySelect2IfAny('#state_id');
                     $('#default_state_dd').html(response);
+                    initSearchableSelect('#state_id', 'Seleccione Departamento');
                     filterDefaultCities(<?php echo old('city_id', (isset($job)) ? $job->city_id : 0); ?>);
                 });
         }
@@ -376,17 +396,25 @@
 
     function filterDefaultCities(city_id) {
         var state_id = $('#state_id').val();
-        if (state_id != '') {
-            $.post("{{ route('filter.default.cities.dropdown') }}", {
-                    state_id: state_id,
-                    city_id: city_id,
-                    _method: 'POST',
-                    _token: '{{ csrf_token() }}'
-                })
-                .done(function(response) {
-                    $('#default_city_dd').html(response);
-                });
+        if (state_id == '' || state_id == null) {
+            destroySelect2IfAny('#city_id');
+            $('#default_city_dd').html(
+                '<select name="city_id" id="city_id" class="form-control"><option value="">Seleccione Ciudad</option></select>'
+            );
+            initSearchableSelect('#city_id', 'Seleccione Ciudad');
+            return;
         }
+        $.post("{{ route('filter.default.cities.dropdown') }}", {
+                state_id: state_id,
+                city_id: city_id,
+                _method: 'POST',
+                _token: '{{ csrf_token() }}'
+            })
+            .done(function(response) {
+                destroySelect2IfAny('#city_id');
+                $('#default_city_dd').html(response);
+                initSearchableSelect('#city_id', 'Seleccione Ciudad');
+            });
     }
 </script>
 @endpush

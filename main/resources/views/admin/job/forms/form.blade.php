@@ -173,6 +173,63 @@
         {!! Form::select('job_experience_id', ['' => 'Seleccione Experiencia requerida']+$jobExperiences, null, array('class'=>'form-control', 'id'=>'job_experience_id')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'job_experience_id') !!}
     </div>
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'pcd') !!}">
+        {!! Form::label('pcd', 'Puede aplicar persona en condición de discapacidad?', ['class' => 'bold']) !!}
+        <div class="radio-list">
+            <?php
+
+        $pcd_1 = '';
+
+        $pcd_2 = 'checked="checked"';
+
+        if (old('pcd', ((isset($job)) ? $job->pcd : 0)) == 1) {
+
+            $pcd_1 = 'checked="checked"';
+
+            $pcd_2 = '';
+
+        }
+
+        ?>
+
+            <label class="radio-inline">
+                <input id="pcd_yes" name="pcd" type="radio" value="1" {{$pcd_1}}>
+                Si </label>
+            <label class="radio-inline">
+                <input id="pcd_no" name="pcd" type="radio" value="0" {{$pcd_2}}>
+                No </label>
+        </div>
+        {!! APFrmErrHelp::showErrors($errors, 'pcd') !!}
+    </div>
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_pl') !!}">
+        {!! Form::label('is_pl', 'Práctica laboral?', ['class' => 'bold']) !!}
+        <div class="radio-list">
+            <?php
+
+        $is_pl_1 = '';
+
+        $is_pl_2 = 'checked="checked"';
+
+        if (old('is_pl', ((isset($job)) ? $job->is_pl : 0)) == 1) {
+
+            $is_pl_1 = 'checked="checked"';
+
+            $is_pl_2 = '';
+
+        }
+
+        ?>
+
+            <label class="radio-inline">
+                <input id="is_pl_yes" name="is_pl" type="radio" value="1" {{$is_pl_1}}>
+                Si </label>
+            <label class="radio-inline">
+                <input id="is_pl_no" name="is_pl" type="radio" value="0" {{$is_pl_2}}>
+                No </label>
+        </div>
+        <small class="text-danger">Si selecciona práctica laboral, se guardará el tipo de contrato como : Otra</small>
+        {!! APFrmErrHelp::showErrors($errors, 'is_pl') !!}
+    </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'is_active') !!}">
         {!! Form::label('is_active', 'Activo?', ['class' => 'bold']) !!}
         <div class="radio-list">

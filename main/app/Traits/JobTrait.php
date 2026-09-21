@@ -85,8 +85,8 @@ trait JobTrait
         $job->job_experience_id = $request->input('job_experience_id');
         $job->salary_period_id = $request->input('salary_period_id');
         $job->show_info = ($request->input('mostrarInfo') == '1') ? 'si' : 'no';
-        $job->is_pl = $request->input('is_pl');
-        $job->pcd = $request->input('pcd');
+        $job->is_pl = $request->input('is_pl', 0);
+        $job->pcd = $request->input('pcd', 0);
         $job->to_publish = 'N';
         
         if ($job->is_pl == 1) $job->job_type_id = DB::table('job_types')->where('job_type_id', 32)->first()->id;

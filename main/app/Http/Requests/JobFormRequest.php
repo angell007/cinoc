@@ -28,6 +28,7 @@ class JobFormRequest extends Request
                     "id" => "",
                     "company_id" => "required",
                     "title" => "required",
+                    "position" => "required",
                     "description" => "required",
                     "skills" => "required",
                     "country_id" => "required",
@@ -50,6 +51,7 @@ class JobFormRequest extends Request
         return [
             'company_id.required' => 'Please select Company.',
             'title.required' => 'Please enter Job title.',
+            'position.required' => 'Seleccione una ocupación.',
             'description.required' => 'Please enter Job description.',
             'skills.required' => 'Please enter Job skills.',
             'country_id.required' => 'Please select Country.',

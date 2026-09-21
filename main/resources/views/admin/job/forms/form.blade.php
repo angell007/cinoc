@@ -12,6 +12,11 @@
         {!! Form::text('title', null, array('class'=>'form-control', 'id'=>'title', 'placeholder'=>'Título')) !!}
         {!! APFrmErrHelp::showErrors($errors, 'title') !!}
     </div>
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'position') !!}">
+        {!! Form::label('position', 'Ocupación', ['class' => 'bold']) !!}
+        {!! Form::select('position', [], null, array('class'=>'form-control', 'id'=>'position')) !!}
+        {!! APFrmErrHelp::showErrors($errors, 'position') !!}
+    </div>
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'description') !!}">
         {!! Form::label('description', 'Descripción', ['class' => 'bold']) !!}
         {!! Form::textarea('description', null, array('class'=>'form-control', 'id'=>'description', 'placeholder'=>'Descripción')) !!}
@@ -239,6 +244,40 @@
 @include('admin.shared.tinyMCEFront')
 <script type="text/javascript">
     $(document).ready(function() {
+        var $positionSelect = $('#position');
+        $positionSelect.select2({
+            width: '100%',
+            placeholder: 'Ocupación',
+            allowClear: true,
+            ajax: {
+                url: '/api/proffesions',
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return { q: params.term || '' };
+                },
+                processResults: function(data) {
+                    return data;
+                }
+            }
+        });
+
+        @php
+            $selectedPosition = old('position', isset($job) ? $job->position : null);
+        @endphp
+        @if (!empty($selectedPosition))
+        $.ajax({
+            type: 'GET',
+            url: '/api/proffesions?name=' + encodeURIComponent(@json($selectedPosition))
+        }).then(function(data) {
+            if (!data || !data.id) {
+                return;
+            }
+            var option = new Option(data.text, data.id, true, true);
+            $positionSelect.append(option).trigger('change');
+        });
+        @endif
+
         $('.select2-multiple').select2({
             placeholder: "Seleccione Required Skills",
             allowClear: true

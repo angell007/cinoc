@@ -3,20 +3,6 @@
 <script>
 tinymce.init({
     selector: '#description',
-    setup: function(editor) {
-        var text
-    editor.on('keyup', function(e) {
-     var words= e.target.innerHTML.split(" ").length+ e.target.innerHTML.split("<br>").length-1
-     if(words>=250){
-        e.target.innerHTML=text
-         editor.selection.select(editor.getBody(), true); // ed is the editor instance
-editor.selection.collapse(false);
-     }else{ 
-         text=e.target.innerHTML
-     }
-     
-    });
-    },
     height: 150,
     forced_root_block: '',
     plugins: [

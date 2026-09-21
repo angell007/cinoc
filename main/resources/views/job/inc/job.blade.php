@@ -67,7 +67,6 @@
                 'class' => 'form-control',
                 'id' => 'description',
                 'placeholder' => __('Job description'),
-                'maxlength' => '10',
             ]) !!}
 
             {!! APFrmErrHelp::showErrors($errors, 'description') !!} </div>

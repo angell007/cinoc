@@ -14,5 +14,6 @@ class JobFormRequestTest extends TestCase
 
         $this->assertArrayHasKey('position', $rules);
         $this->assertSame('required', $rules['position']);
+        $this->assertArrayNotHasKey('skills', $rules);
     }
 }

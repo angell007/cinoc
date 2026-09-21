@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\Rules\IsPL;
 use Carbon\Carbon;
 
 class JobFormRequest extends Request
@@ -27,17 +28,16 @@ class JobFormRequest extends Request
                 return [
                     "id" => "",
                     "company_id" => "required",
-                    "title" => "required",
+                    "title" => "required|max:180",
                     "position" => "required",
                     "description" => "required",
-                    "skills" => "required",
                     "country_id" => "required",
                     "state_id" => "required",
                     "city_id" => "required",
-                    // "functional_area_id" => "required",
                     "job_type_id" => "required",
                     "expiry_date" => "required|date|before:" . $sixMonthsAgo,
                     "job_experience_id" => "required",
+                    "degree_level_id" => new IsPL(),
                     "is_active" => "required",
                     "is_featured" => "required",
                 ];
@@ -49,20 +49,18 @@ class JobFormRequest extends Request
     public function messages()
     {
         return [
-            'company_id.required' => 'Please select Company.',
-            'title.required' => 'Please enter Job title.',
-            'position.required' => 'Seleccione una ocupación.',
-            'description.required' => 'Please enter Job description.',
-            'skills.required' => 'Please enter Job skills.',
-            'country_id.required' => 'Please select Country.',
-            'state_id.required' => 'Please select State.',
-            'city_id.required' => 'Please select City.',
-            'functional_area_id.required' => 'Please select functional area.',
-            'job_type_id.required' => 'Please select job type.',
-            'expiry_date.required' => 'Please enter Job expiry date.',
-            'job_experience_id.required' => 'Please select job experience.',
-            'is_active.required' => 'Is this Job active?',
-            'is_featured.required' => 'Is this Job featured?',
+            'company_id.required' => __('Please select Company'),
+            'title.required' => __('Please enter Job title'),
+            'position.required' => __('Please enter a position'),
+            'description.required' => __('Please enter Job description'),
+            'country_id.required' => __('Please select Country'),
+            'state_id.required' => __('Please select State'),
+            'city_id.required' => __('Please select City'),
+            'job_type_id.required' => __('Please select job type'),
+            'expiry_date.required' => __('Please enter Job expiry date'),
+            'job_experience_id.required' => __('Please select job experience'),
+            'is_active.required' => '¿Esta vacante está activa?',
+            'is_featured.required' => '¿Esta vacante está destacada?',
         ];
     }
 

@@ -7,9 +7,9 @@
         <!-- BEGIN PAGE BAR -->
         <div class="page-bar">
             <ul class="page-breadcrumb">
-                <li> <a href="{{ route('admin.home') }}">Home</a> <i class="fa fa-circle"></i> </li>
+                <li> <a href="{{ route('admin.home') }}">Inicio</a> <i class="fa fa-circle"></i> </li>
                 <li> <a href="{{ route('list.jobs') }}">Trabajo</a> <i class="fa fa-circle"></i> </li>
-                <li> <span>Editar Trabajo</span> </li>
+                <li> <span>Editar vacante</span> </li>
             </ul>
         </div>
         <!-- END PAGE BAR -->        
@@ -20,7 +20,7 @@
             <div class="col-md-12">
                 <div class="portlet light bordered">
                     <div class="portlet-title">
-                        <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Formulario de trabajo</span> </div>
+                        <div class="caption font-red-sunglo"> <i class="icon-settings font-red-sunglo"></i> <span class="caption-subject bold uppercase">Detalles de la oferta laboral</span> </div>
                     </div>
                     <div class="portlet-body form">          
                         <ul class="nav nav-tabs">              

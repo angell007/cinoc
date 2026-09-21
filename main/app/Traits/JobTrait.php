@@ -69,7 +69,9 @@ trait JobTrait
         $job->state_id = $request->input('state_id');
         $job->city_id = $request->input('city_id');
         $job->is_freelance = $request->input('is_freelance');
-        $job->career_level_id = $request->input('career_level_id');
+        if ($request->has('career_level_id')) {
+            $job->career_level_id = $request->input('career_level_id');
+        }
         $job->salary_from =  $request->input('salary_from');
         $job->salary_to =  $request->input('salary_to');
         $job->salary_currency = $request->input('salary_currency');
@@ -77,9 +79,13 @@ trait JobTrait
         $study = $request->input('functional_area_id');
         $job->functional_area_id = $study;
         $job->job_type_id = $request->input('job_type_id');
-        $job->job_shift_id = $request->input('job_shift_id');
+        if ($request->has('job_shift_id')) {
+            $job->job_shift_id = $request->input('job_shift_id');
+        }
         $job->num_of_positions = $request->input('num_of_positions');
-        $job->gender_id = $request->input('gender_id');
+        if ($request->has('gender_id')) {
+            $job->gender_id = $request->input('gender_id');
+        }
         $job->expiry_date = $request->input('expiry_date');
         $job->degree_level_id = $request->input('degree_level_id');
         $job->job_experience_id = $request->input('job_experience_id');

@@ -142,6 +142,11 @@ class UserController extends Controller
         $user->borncity_id = $request->input('borncity_id');
         $user->rol = $request->input('status_edu', 'Estudiante');
         $user->status_parcticas = $request->input('status_parcticas', 'Si');
+        $user->current_job_situation = $request->input('current_job_situation');
+        $user->job_interest_occupation = $request->input('job_interest_occupation');
+        $user->work_modality = $request->input('work_modality');
+        $user->work_schedule_type = $request->input('work_schedule_type');
+        $user->non_formal_education = $request->input('non_formal_education');
         $user->update();
         $this->updateUserFullTextSearch($user);
         flash(__('You have updated your profile successfully'))->success();

@@ -70,33 +70,9 @@
             {!! APFrmErrHelp::showErrors($errors, 'identificacion_ceo') !!}
         </div>
     </div>
-</div>
-<hr>
-<h5>Persona de contacto</h5>
-<div class="row">
-    <div class="col-md-4">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'contact_name') !!}">
-            <label>Nombre</label>
-            {!! Form::text('contact_name', null, array('class'=>'form-control', 'id'=>'contact_name', 'placeholder'=>'Nombre de la persona de contacto')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'contact_name') !!}
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'contact_email') !!}">
-            <label>Correo electrónico</label>
-            {!! Form::email('contact_email', null, array('class'=>'form-control', 'id'=>'contact_email', 'placeholder'=>'correo@dominio.com')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'contact_email') !!}
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'contact_phone') !!}">
-            <label>Número de contacto</label>
-            {!! Form::text('contact_phone', null, array('class'=>'form-control', 'id'=>'contact_phone', 'placeholder'=>'Teléfono de contacto')) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'contact_phone') !!}
-        </div>
-    </div>
-</div>
-<div class="row">
+
+    <div class="col-md-12"><hr class="my-2"><h5 class="mb-3">Identificación de la empresa</h5></div>
+
      <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'tipo_identificacion') !!}">
             <label>Tipo de identificación</label>
@@ -137,7 +113,36 @@
         @endif
        
     </div>
-    
+</div>
+
+<hr>
+<h5>Persona de contacto</h5>
+<p class="text-muted small">Datos de quien atiende comunicaciones de la Bolsa (opcional; no son los del representante legal).</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'contact_name') !!}">
+            <label>Nombre <span class="text-muted">(opcional)</span></label>
+            {!! Form::text('contact_name', null, array('class'=>'form-control', 'id'=>'contact_name', 'placeholder'=>'Nombre completo', 'autocomplete'=>'off')) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'contact_name') !!}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'contact_email') !!}">
+            <label>Correo electrónico <span class="text-muted">(opcional)</span></label>
+            {!! Form::email('contact_email', null, array('class'=>'form-control', 'id'=>'contact_email', 'placeholder'=>'correo@dominio.com', 'autocomplete'=>'off')) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'contact_email') !!}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'contact_phone') !!}">
+            <label>Número de contacto <span class="text-muted">(opcional)</span></label>
+            {!! Form::text('contact_phone', null, array('class'=>'form-control', 'id'=>'contact_phone', 'placeholder'=>'Teléfono o celular', 'autocomplete'=>'off')) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'contact_phone') !!}
+        </div>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'industry_id') !!}">
             <label>Sector Productivo</label>

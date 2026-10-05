@@ -117,7 +117,9 @@ class UserController extends Controller
         }
         $user->father_name = $request->input('father_name');
         $user->date_of_birth = $request->input('date_of_birth');
+        $user->identification_genero = $request->input('identification_genero');
         $user->gender_id = $request->input('gender_id');
+        $user->sexual_orientation = $request->input('sexual_orientation');
         $user->marital_status_id = $request->input('marital_status_id');
         $user->nationality_id = $request->input('nationality_id');
         $user->national_id_card_number = $request->input('national_id_card_number');

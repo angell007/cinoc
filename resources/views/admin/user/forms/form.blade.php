@@ -176,14 +176,67 @@
 
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
 
-        {!! Form::label('gender_id', 'Género', ['class' => 'bold']) !!}
+        {!! Form::label('gender_id', 'Sexo asignado al nacer', ['class' => 'bold']) !!}
 
-        {!! Form::select('gender_id', ['' => 'Seleccione Género'] + $genders, null, [
+        {!! Form::select('gender_id', ['' => 'Seleccione sexo al nacer'] + $genders, null, [
             'class' => 'form-control form-control-xs',
             'id' => 'gender_id',
         ]) !!}
 
         {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}
+
+    </div>
+
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'identification_genero') !!}">
+
+        {!! Form::label('identification_genero', 'Identificación de género', ['class' => 'bold']) !!}
+
+        {!! Form::select(
+            'identification_genero',
+            [
+                '' => 'Seleccione Identificación de género',
+                1 => 'Mujer',
+                2 => 'Hombre',
+                4 => 'Prefiero no decir',
+                6 => 'Hombre trans o persona transmasculina',
+                7 => 'Mujer trans o persona transfemenina',
+                8 => 'Travesti',
+                9 => 'Persona no binaria',
+                10 => 'Me identifico con un género no indicado anteriormente',
+            ],
+            null,
+            [
+                'class' => 'form-control form-control-xs',
+                'id' => 'identification_genero',
+            ],
+        ) !!}
+
+        {!! APFrmErrHelp::showErrors($errors, 'identification_genero') !!}
+
+    </div>
+
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'sexual_orientation') !!}">
+
+        {!! Form::label('sexual_orientation', 'Orientación sexual', ['class' => 'bold']) !!}
+
+        {!! Form::select(
+            'sexual_orientation',
+            [
+                '' => __('Seleccione orientación sexual'),
+                'Gay' => 'Gay',
+                'Lesbiana' => 'Lesbiana',
+                'Heterosexual' => 'Heterosexual',
+                'Bisexual' => 'Bisexual',
+                'Mi orientación sexual es distinta' => 'Mi orientación sexual es distinta',
+                'Prefiero no contestar' => 'Prefiero no contestar',
+            ],
+            null,
+            [
+                'class' => 'form-control form-control-xs',
+                'id' => 'sexual_orientation',
+            ],
+        ) !!}
+        {!! APFrmErrHelp::showErrors($errors, 'sexual_orientation') !!}
 
     </div>
 

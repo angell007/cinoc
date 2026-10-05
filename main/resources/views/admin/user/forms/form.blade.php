@@ -203,6 +203,7 @@
                 7 => 'Mujer trans o persona transfemenina',
                 8 => 'Travesti',
                 9 => 'Persona no binaria',
+                10 => 'Me identifico con un género no indicado anteriormente',
             ],
             null,
             [

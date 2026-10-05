@@ -292,26 +292,74 @@
 
 
     <div class="col-md-6">
-
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'gender_id') !!}">
-
-            <label for="">{{ __('Gender') }}</label>
-
-            {!! Form::select('gender_id', ['' => __('Select Gender')] + $genders, null, [
-
-                'class' => 'form-control',
-
-                'id' => 'gender_id',
-
-            ]) !!}
-
+            <label for="">{{ __('¿Cuál es su sexo asignado al nacer?') }}</label>
+            {!! Form::select(
+                'gender_id',
+                [
+                    '' => __('Seleccione sexo al nacer'),
+                    '2' => 'Hombre',
+                    '1' => 'Mujer',
+                ],
+                null,
+                [
+                    'class' => 'form-control',
+                    'id' => 'gender_id',
+                ],
+            ) !!}
             {!! APFrmErrHelp::showErrors($errors, 'gender_id') !!}
-
         </div>
-
     </div>
 
+    <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'identification_genero') !!}">
+            <label for="">{{ __('¿Con cuál género se identifica?') }}</label>
+            {!! Form::select(
+                'identification_genero',
+                [
+                    '' => __('Seleccione género'),
+                    1 => 'Mujer',
+                    2 => 'Hombre',
+                    4 => 'Prefiero no decir',
+                    6 => 'Hombre trans o persona transmasculina',
+                    7 => 'Mujer trans o persona transfemenina',
+                    8 => 'Travesti',
+                    9 => 'Persona no binaria',
+                    10 => 'Me identifico con un género no indicado anteriormente',
+                ],
+                null,
+                [
+                    'class' => 'form-control',
+                    'id' => 'identification_genero',
+                ],
+            ) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'identification_genero') !!}
+        </div>
+    </div>
 
+    <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'sexual_orientation') !!}">
+            <label for="">{{ __('¿Cuál es su orientación sexual?') }}</label>
+            {!! Form::select(
+                'sexual_orientation',
+                [
+                    '' => __('Seleccione orientación sexual'),
+                    'Gay' => 'Gay',
+                    'Lesbiana' => 'Lesbiana',
+                    'Heterosexual' => 'Heterosexual',
+                    'Bisexual' => 'Bisexual',
+                    'Mi orientación sexual es distinta' => 'Mi orientación sexual es distinta',
+                    'Prefiero no contestar' => 'Prefiero no contestar',
+                ],
+                null,
+                [
+                    'class' => 'form-control',
+                    'id' => 'sexual_orientation',
+                ],
+            ) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'sexual_orientation') !!}
+        </div>
+    </div>
 
     <div class="col-md-6">
 

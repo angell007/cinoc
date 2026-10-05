@@ -75,6 +75,11 @@
         <main class="cv-right">
             <section class="cv-section">
                 <h2 class="cv-section-title">Experiencia laboral</h2>
+                @if(isset($user->profileExperience) && $user->profileExperience->count() > 0)
+                    <p class="cv-text cv-experience-total">
+                        <strong>Tiempo total de experiencia:</strong> {{ $totalWorkExperienceLabel }}
+                    </p>
+                @endif
                 @forelse($user->profileExperience as $item)
                     <div class="cv-item">
                         <h3 class="cv-item-title">{{ $item->title ?: 'Cargo no registrado' }}</h3>

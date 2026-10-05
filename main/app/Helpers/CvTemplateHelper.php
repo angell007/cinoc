@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\User;
+use Carbon\Carbon;
 
 class CvTemplateHelper
 {
@@ -99,6 +100,8 @@ class CvTemplateHelper
                 ?: asset('images/bannerescuelatecnologicav2.jpg');
         }
 
+        $totalWorkExperienceDays = self::totalWorkExperienceDays($user);
+
         return [
             'forPdf' => $forPdf,
             'cvName' => $cvName,
@@ -108,6 +111,8 @@ class CvTemplateHelper
             'residenceLocation' => $residenceLocation,
             'genderLabel' => $genderLabel,
             'birthDate' => $birthDate,
+            'totalWorkExperienceDays' => $totalWorkExperienceDays,
+            'totalWorkExperienceLabel' => self::formatExperienceMonthsAndDays($totalWorkExperienceDays),
             'educationStatusLabels' => [
                 'en_curso' => 'En curso',
                 'incompleto' => 'Incompleto',
@@ -118,6 +123,76 @@ class CvTemplateHelper
             'speLogo' => $speLogo,
             'uniocLogo' => $uniocLogo,
         ];
+    }
+
+    /**
+     * Suma los días de todas las experiencias laborales del usuario (cada empleo por separado).
+     */
+    public static function totalWorkExperienceDays(User $user): int
+    {
+        $total = 0;
+
+        if (!$user->relationLoaded('profileExperience')) {
+            $user->load('profileExperience');
+        }
+
+        foreach ($user->profileExperience as $item) {
+            if (empty($item->date_start)) {
+                continue;
+            }
+
+            try {
+                $start = Carbon::parse($item->date_start)->startOfDay();
+            } catch (\Throwable $e) {
+                continue;
+            }
+
+            $isCurrent = (int) ($item->is_currently_working ?? 0) === 1;
+            if ($isCurrent || empty($item->date_end)) {
+                $end = Carbon::today()->startOfDay();
+            } else {
+                try {
+                    $end = Carbon::parse($item->date_end)->startOfDay();
+                } catch (\Throwable $e) {
+                    continue;
+                }
+            }
+
+            if ($end->lt($start)) {
+                continue;
+            }
+
+            $total += $start->diffInDays($end) + 1;
+        }
+
+        return $total;
+    }
+
+    /**
+     * Convierte días totales a meses (30 días) y días restantes, p. ej. 62 → "2 meses y 2 días".
+     */
+    public static function formatExperienceMonthsAndDays(int $totalDays): string
+    {
+        if ($totalDays <= 0) {
+            return '0 días';
+        }
+
+        $months = intdiv($totalDays, 30);
+        $days = $totalDays % 30;
+
+        $parts = [];
+        if ($months > 0) {
+            $parts[] = $months . ' ' . ($months === 1 ? 'mes' : 'meses');
+        }
+        if ($days > 0) {
+            $parts[] = $days . ' ' . ($days === 1 ? 'día' : 'días');
+        }
+
+        if ($parts === []) {
+            return '0 días';
+        }
+
+        return implode(' y ', $parts);
     }
 
     public static function publicRoot(): string

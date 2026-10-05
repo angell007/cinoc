@@ -201,6 +201,12 @@ class CompaniesController extends Controller
 
         $company->ceo = $request->input('ceo');
 
+        $company->contact_name = $request->input('contact_name');
+
+        $company->contact_email = $request->input('contact_email');
+
+        $company->contact_phone = $request->input('contact_phone');
+
         $company->industry_id = $request->input('industry_id');
 
         $company->ownership_type_id = $request->input('ownership_type_id');

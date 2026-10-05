@@ -93,6 +93,12 @@
             <div style="color:#0b3a6e; font-size:12px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Experiencia laboral</div>
             <div style="border-top:2px solid #2f6ea8; margin-bottom:12px;"></div>
 
+            @if(isset($user->profileExperience) && $user->profileExperience->count() > 0)
+                <div style="margin:0 0 14px;">
+                    <strong>Tiempo total de experiencia:</strong> {{ $totalWorkExperienceLabel }}
+                </div>
+            @endif
+
             @forelse($user->profileExperience as $item)
                 <div style="margin:0 0 16px;">
                     <div style="color:#2f6ea8; font-size:13px; font-weight:bold;">{{ $item->title ?: 'Cargo no registrado' }}</div>

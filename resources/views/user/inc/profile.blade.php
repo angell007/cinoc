@@ -714,17 +714,6 @@
         </div>
     </div>
 
-    {{-- <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'non_formal_education') !!}">
-            <label for="">{{ __('Educación no formal') }}</label>
-            {!! Form::select('non_formal_education', ['Si' => 'Si', 'No' => 'No'], null, [
-                'class' => 'form-control',
-                'id' => 'non_formal_education',
-            ]) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'non_formal_education') !!}
-        </div>
-    </div> --}}
-
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'car_license') !!}">
             <label for="">{{ __('Licencia de conducción para carro') }}</label>
@@ -774,25 +763,81 @@
     </div>
 
 
+</div>
+
+<hr>
+
+<h5>Cargo u ocupación de interés</h5>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'job_interest_occupation') !!}">
+            <label for="job_interest_occupation">Cargo u ocupación de interés</label>
+            {!! Form::text('job_interest_occupation', null, [
+                'class' => 'form-control',
+                'id' => 'job_interest_occupation',
+                'placeholder' => 'Ej.: Analista de datos, Auxiliar contable, Desarrollador web',
+            ]) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'job_interest_occupation') !!}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h5>Situación laboral</h5>
+
+<div class="row">
     <div class="col-md-6">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'current_job_situation') !!}">
-            <label for="">{{ __('¿Situación laboral actual?') }}</label>
+            <label for="current_job_situation">Situación laboral</label>
             {!! Form::select(
                 'current_job_situation',
-                [
-                    'Primer empleo' => 'Primer empleo',
-                    'Desempleado' => 'Desempleado',
-                    'Empleado' => 'Empleado',
-                    'Independiente' => 'Independiente',
-                    'Cesante por emergencia sanitaria' => 'Cesante por emergencia sanitaria',
-                ],
+                \App\Helpers\UserLaborProfileOptions::jobSituations(),
                 null,
                 ['class' => 'form-control', 'id' => 'current_job_situation'],
             ) !!}
             {!! APFrmErrHelp::showErrors($errors, 'current_job_situation') !!}
         </div>
     </div>
+</div>
 
+<hr>
+
+<h5>Modalidad de trabajo</h5>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'work_modality') !!}">
+            <label for="work_modality">Modalidad de trabajo</label>
+            {!! Form::select(
+                'work_modality',
+                \App\Helpers\UserLaborProfileOptions::workModalities(),
+                null,
+                ['class' => 'form-control', 'id' => 'work_modality'],
+            ) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'work_modality') !!}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h5>Condiciones de trabajo / Tipo de jornada</h5>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'work_schedule_type') !!}">
+            <label for="work_schedule_type">Condiciones de trabajo / Tipo de jornada</label>
+            {!! Form::select(
+                'work_schedule_type',
+                \App\Helpers\UserLaborProfileOptions::workScheduleTypes(),
+                null,
+                ['class' => 'form-control', 'id' => 'work_schedule_type'],
+            ) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'work_schedule_type') !!}
+        </div>
+    </div>
 </div>
 
 <hr>
@@ -932,7 +977,22 @@
 
 </div>
 
+<hr>
 
+<h5>{{ __('Educación no formal') }}</h5>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'non_formal_education') !!}">
+            <label for="non_formal_education">{{ __('¿Cuenta con educación no formal?') }}</label>
+            {!! Form::select('non_formal_education', ['' => __('Seleccione'), 'Si' => 'Si', 'No' => 'No'], null, [
+                'class' => 'form-control',
+                'id' => 'non_formal_education',
+            ]) !!}
+            {!! APFrmErrHelp::showErrors($errors, 'non_formal_education') !!}
+        </div>
+    </div>
+</div>
 
 <div class="row">
 

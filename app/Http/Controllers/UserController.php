@@ -172,6 +172,9 @@ class UserController extends Controller
         $user->motorcycle_license = $request->input('motorcycle_license');
         $user->motorcycle_license_category = $request->input('motorcycle_license') == 'No' ? 'NA' : $request->input('motorcycle_license_category');
         $user->current_job_situation = $request->input('current_job_situation');
+        $user->job_interest_occupation = $request->input('job_interest_occupation');
+        $user->work_modality = $request->input('work_modality');
+        $user->work_schedule_type = $request->input('work_schedule_type');
 
         $user->update();
 

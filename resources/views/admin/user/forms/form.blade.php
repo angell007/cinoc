@@ -543,18 +543,27 @@
         {!! APFrmErrHelp::showErrors($errors, 'motorcycle_license_category') !!}
     </div>
 
+    <hr>
+    <h4 class="bold">Cargo u ocupación de interés</h4>
+
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'job_interest_occupation') !!}">
+        {!! Form::label('job_interest_occupation', 'Cargo u ocupación de interés', ['class' => 'bold']) !!}
+        {!! Form::text('job_interest_occupation', null, [
+            'class' => 'form-control form-control-xs',
+            'id' => 'job_interest_occupation',
+            'placeholder' => 'Cargo u ocupación de interés',
+        ]) !!}
+        {!! APFrmErrHelp::showErrors($errors, 'job_interest_occupation') !!}
+    </div>
+
+    <hr>
+    <h4 class="bold">Situación laboral</h4>
+
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'current_job_situation') !!}">
-        {!! Form::label('current_job_situation', 'Situación Laboral Actual', ['class' => 'bold']) !!}
+        {!! Form::label('current_job_situation', 'Situación laboral', ['class' => 'bold']) !!}
         {!! Form::select(
             'current_job_situation',
-            [
-                '' => 'Seleccione Situación Laboral',
-                'Empleado' => 'Empleado',
-                'Desempleado' => 'Desempleado',
-                'Estudiante' => 'Estudiante',
-                'Jubilado' => 'Jubilado',
-                'Otro' => 'Otro',
-            ],
+            \App\Helpers\UserLaborProfileOptions::jobSituations(),
             null,
             [
                 'class' => 'form-control form-control-xs',
@@ -563,6 +572,42 @@
         ) !!}
         {!! APFrmErrHelp::showErrors($errors, 'current_job_situation') !!}
     </div>
+
+    <hr>
+    <h4 class="bold">Modalidad de trabajo</h4>
+
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'work_modality') !!}">
+        {!! Form::label('work_modality', 'Modalidad de trabajo', ['class' => 'bold']) !!}
+        {!! Form::select(
+            'work_modality',
+            \App\Helpers\UserLaborProfileOptions::workModalities(),
+            null,
+            [
+                'class' => 'form-control form-control-xs',
+                'id' => 'work_modality',
+            ],
+        ) !!}
+        {!! APFrmErrHelp::showErrors($errors, 'work_modality') !!}
+    </div>
+
+    <hr>
+    <h4 class="bold">Condiciones de trabajo / Tipo de jornada</h4>
+
+    <div class="form-group {!! APFrmErrHelp::hasError($errors, 'work_schedule_type') !!}">
+        {!! Form::label('work_schedule_type', 'Condiciones de trabajo / Tipo de jornada', ['class' => 'bold']) !!}
+        {!! Form::select(
+            'work_schedule_type',
+            \App\Helpers\UserLaborProfileOptions::workScheduleTypes(),
+            null,
+            [
+                'class' => 'form-control form-control-xs',
+                'id' => 'work_schedule_type',
+            ],
+        ) !!}
+        {!! APFrmErrHelp::showErrors($errors, 'work_schedule_type') !!}
+    </div>
+
+    <hr>
 
     <div class="form-group {!! APFrmErrHelp::hasError($errors, 'current_salary') !!}">
 

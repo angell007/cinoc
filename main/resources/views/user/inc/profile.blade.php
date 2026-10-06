@@ -879,9 +879,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="formrow {!! APFrmErrHelp::hasError($errors, 'prior_learning_certificate') !!}">
-            <label for="prior_learning_certificate">
-                Certificado o constancia de reconocimiento de aprendizajes previos
-            </label>
+            <label>Certificado o constancia de reconocimiento de aprendizajes previos</label>
             @if (!empty($user->prior_learning_certificate))
                 <p class="mb-2">
                     <a href="{{ asset('prior_learning_certificates/' . $user->prior_learning_certificate) }}" target="_blank" rel="noopener">
@@ -889,8 +887,11 @@
                     </a>
                 </p>
             @endif
-            <input type="file" name="prior_learning_certificate" id="prior_learning_certificate" class="form-control" accept="application/pdf,.pdf">
-            <small class="text-muted">Adjunte un PDF (máx. 10 MB). Si no selecciona archivo, se conserva el actual.</small>
+            <div id="prior_learning_certificate_selected" class="text-muted mb-2"></div>
+            <label class="btn btn-default"> {{ __('Select prior learning certificate PDF') }}
+                <input type="file" name="prior_learning_certificate" id="prior_learning_certificate" accept="application/pdf,.pdf" style="display: none;">
+            </label>
+            <p class="text-muted" style="margin-top: 8px;">PDF, máximo 10 MB. Si no selecciona otro archivo, se conserva el documento actual.</p>
             {!! APFrmErrHelp::showErrors($errors, 'prior_learning_certificate') !!}
         </div>
     </div>
@@ -1056,6 +1057,15 @@
                 showThumbnail(files)
 
             }, false)
+
+            var priorLearningInput = document.getElementById("prior_learning_certificate");
+
+            if (priorLearningInput) {
+                priorLearningInput.addEventListener("change", function() {
+                    var name = this.files.length ? this.files[0].name : '';
+                    $('#prior_learning_certificate_selected').text(name ? name : '');
+                }, false);
+            }
 
 
 

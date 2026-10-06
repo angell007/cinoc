@@ -176,6 +176,15 @@ class UserController extends Controller
         $user->work_modality = $request->input('work_modality');
         $user->work_schedule_type = $request->input('work_schedule_type');
 
+        if ($request->hasFile('prior_learning_certificate')) {
+            $certificate = $request->file('prior_learning_certificate');
+            $user->prior_learning_certificate = ImageUploadingHelper::UploadDoc(
+                'prior_learning_certificates',
+                $certificate,
+                'certificado-aprendizajes-' . $user->id
+            );
+        }
+
         $user->update();
 
         $this->updateUserFullTextSearch($user);

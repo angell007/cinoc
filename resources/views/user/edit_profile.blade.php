@@ -66,7 +66,6 @@
                             @include('user.forms.experience.experience')
 
                             @include('user.forms.education.education')
-
                             @include('user.forms.non_formal_education.education')
 
                             @include('user.forms.skill.skills')

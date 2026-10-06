@@ -97,8 +97,6 @@ class UserFrontFormRequest extends Request
 
             'image' => 'image',
 
-            'prior_learning_certificate' => 'nullable|file|mimes:pdf|max:10240',
-
         ];
 
     }

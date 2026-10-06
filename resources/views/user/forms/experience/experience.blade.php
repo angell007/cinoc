@@ -201,6 +201,14 @@
             }
         }
 
+        function resetExperienceCityDropdown() {
+            $('#default_city_experience_dd').html(
+                '<select name="city_id" id="experience_city_id" class="form-control">' +
+                '<option value="">{{ __('Select City') }}</option>' +
+                '</select>'
+            );
+        }
+
         function filterDefaultCitiesExperience(city_id) {
             var state_id = $('#experience_state_id').val();
             if (state_id != '') {
@@ -212,6 +220,8 @@
                 }).done(function(response) {
                     $('#default_city_experience_dd').html(response);
                 });
+            } else {
+                resetExperienceCityDropdown();
             }
         }
     </script>

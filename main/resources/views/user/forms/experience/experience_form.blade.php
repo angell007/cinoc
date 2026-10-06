@@ -41,6 +41,7 @@
             <span class="help-block text-danger country_id-error"> </span>
         </div>
         <div class="formrow" id="div_state_id">
+            <label for="experience_state_id">{{ __('Select State') }}</label>
             <span id="default_state_experience_dd"> {!! Form::select('state_id', ['' => __('Select State')], null, [
                 'class' => 'form-control',
                 'id' => 'experience_state_id',
@@ -48,7 +49,11 @@
             </span> <span class="help-block text-danger state_id-error"> </span>
         </div>
         <div class="formrow" id="div_city_id">
-            <span id="default_city_experience_dd"> {!! Form::select('city_id', ['' => __('Select State')], null, ['class' => 'form-control', 'id' => '_id']) !!} </span>
+            <label for="experience_city_id">{{ __('Select City') }}</label>
+            <span id="default_city_experience_dd"> {!! Form::select('city_id', ['' => __('Select City')], null, [
+                'class' => 'form-control',
+                'id' => 'experience_city_id',
+            ]) !!} </span>
             <span class="help-block text-danger city_id-error"> </span>
         </div>
         <div class="formrow" id="div_date_start">

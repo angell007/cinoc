@@ -195,48 +195,27 @@ class Company extends Authenticatable
 
 
 
-        return $this->belongsTo('App\Industry', 'industry_id', 'id');
+        return $this->belongsTo('App\Industry', 'industry_id', 'industry_id');
     }
-
-
-
-
-
-
 
     public function getIndustry($field = '')
     {
-
-
-
-        $industry = $this->industry()->lang()->first();
-
-
-
-        if (null === $industry) {
-
-
-
-            $industry = $this->industry()->first();
+        if (empty($this->industry_id)) {
+            return null;
         }
 
+        $industry = Industry::where('industry_id', $this->industry_id)->lang()->first();
 
+        if (null === $industry) {
+            $industry = Industry::where('industry_id', $this->industry_id)->first();
+        }
 
         if (null !== $industry) {
-
-
-
             if (!empty($field)) {
-
-
-
                 return $industry->$field;
-            } else {
-
-
-
-                return $industry;
             }
+
+            return $industry;
         }
     }
 

@@ -19,6 +19,7 @@ use App\Traits\ProfileCvsTrait;
 use App\Traits\ProfileProjectsTrait;
 use App\Traits\ProfileExperienceTrait;
 use App\Traits\ProfileEducationTrait;
+use App\Traits\ProfileEducationNonFormalTrait;
 use App\Traits\ProfileSkillTrait;
 use App\Traits\ProfileLanguageTrait;
 use App\Traits\Skills;
@@ -39,6 +40,7 @@ class UserController extends Controller
     use ProfileProjectsTrait;
     use ProfileExperienceTrait;
     use ProfileEducationTrait;
+    use ProfileEducationNonFormalTrait;
     use ProfileSkillTrait;
     use ProfileLanguageTrait;
     use Skills;
@@ -146,7 +148,17 @@ class UserController extends Controller
         $user->job_interest_occupation = $request->input('job_interest_occupation');
         $user->work_modality = $request->input('work_modality');
         $user->work_schedule_type = $request->input('work_schedule_type');
-        $user->non_formal_education = $request->input('non_formal_education');
+
+        if ($request->hasFile('prior_learning_certificate')) {
+            $certificate = $request->file('prior_learning_certificate');
+            $user->prior_learning_certificate = ImageUploadingHelper::UploadDoc(
+                'prior_learning_certificates',
+                $certificate,
+                'certificado-aprendizajes-' . $user->id
+            );
+            $user->non_formal_education = 'Si';
+        }
+
         $user->update();
         $this->updateUserFullTextSearch($user);
         flash(__('You have updated your profile successfully'))->success();

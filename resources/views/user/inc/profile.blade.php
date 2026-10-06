@@ -979,17 +979,22 @@
 
 <hr>
 
-<h5>{{ __('Educación no formal') }}</h5>
-
 <div class="row">
-    <div class="col-md-6">
-        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'non_formal_education') !!}">
-            <label for="non_formal_education">{{ __('¿Cuenta con educación no formal?') }}</label>
-            {!! Form::select('non_formal_education', ['' => __('Seleccione'), 'Si' => 'Si', 'No' => 'No'], null, [
-                'class' => 'form-control',
-                'id' => 'non_formal_education',
-            ]) !!}
-            {!! APFrmErrHelp::showErrors($errors, 'non_formal_education') !!}
+    <div class="col-md-12">
+        <div class="formrow {!! APFrmErrHelp::hasError($errors, 'prior_learning_certificate') !!}">
+            <label for="prior_learning_certificate">
+                Certificado o constancia de reconocimiento de aprendizajes previos (PDF)
+            </label>
+            @if (!empty($user->prior_learning_certificate))
+                <p class="mb-2">
+                    <a href="{{ asset('prior_learning_certificates/' . $user->prior_learning_certificate) }}" target="_blank" rel="noopener">
+                        Ver documento cargado
+                    </a>
+                </p>
+            @endif
+            <input type="file" name="prior_learning_certificate" id="prior_learning_certificate" class="form-control" accept="application/pdf,.pdf">
+            <small class="text-muted">Formato PDF, máximo 10 MB. Deje vacío para conservar el archivo actual.</small>
+            {!! APFrmErrHelp::showErrors($errors, 'prior_learning_certificate') !!}
         </div>
     </div>
 </div>

@@ -123,6 +123,22 @@ Route::delete('delete-front-profile-education', 'UserController@deleteProfileEdu
 
 /* * *********************************** */
 
+Route::post('show-front-profile-education_non_formal/{id}', 'UserController@showFrontProfileEducationNonFormal')->name('show.front.profile.education_non_formal');
+
+Route::post('show-applicant-profile-education_non_formal/{id}', 'UserController@showApplicantProfileEducationNonFormal')->name('show.applicant.profile.education_non_formal');
+
+Route::post('get-front-profile-education_non_formal-form/{id}', 'UserController@getFrontProfileEducationNonFormalForm')->name('get.front.profile.education_non_formal.form');
+
+Route::post('store-front-profile-education_non_formal/{id}', 'UserController@storeFrontProfileEducationNonFormal')->name('store.front.profile.education_non_formal');
+
+Route::post('get-front-profile-education_non_formal-edit-form/{id}', 'UserController@getFrontProfileEducationNonFormalEditForm')->name('get.front.profile.education_non_formal.edit.form');
+
+Route::put('update-front-profile-education_non_formal/{education_non_formal_id}/{user_id}', 'UserController@updateFrontProfileEducationNonFormal')->name('update.front.profile.education_non_formal');
+
+Route::delete('delete-front-profile-education_non_formal', 'UserController@deleteProfileEducationNonFormal')->name('delete.front.profile.education_non_formal');
+
+/* * *********************************** */
+
 Route::post('show-front-profile-skills/{id}', 'UserController@showProfileSkills')->name('show.front.profile.skills');
 
 Route::post('show-applicant-profile-skills/{id}', 'UserController@showApplicantProfileSkills')->name('show.applicant.profile.skills');

@@ -2104,6 +2104,37 @@ label.partTime[title="Rotating"] {
 	font-size: 24px;
 	color: #444;
 }
+.job-header .jobinfo .job-subtitle {
+	font-size: 18px;
+	color: #666;
+	font-weight: 600;
+	margin: 10px 0 0;
+}
+.job-detail-sidebar .companyinfo .companyinfo-head {
+	margin-bottom: 5px;
+}
+.job-detail-sidebar .companyinfo .companyinfo-meta {
+	overflow: hidden;
+}
+.job-detail-sidebar .companyinfo .companyinfo-meta .title {
+	margin-bottom: 5px;
+}
+.job-detail-sidebar .company-industry-badge {
+	display: inline-block;
+	border: 1px solid #5b9bd5;
+	color: #2e75b6;
+	padding: 8px 14px;
+	border-radius: 4px;
+	font-weight: 600;
+	margin: 12px 0 0;
+	font-size: 14px;
+	line-height: 1.4;
+}
+@media (max-width: 991px) {
+	.job-detail-sidebar {
+		margin-top: 10px;
+	}
+}
 .jobmainreq{border-radius: 0 0 5px 5px;}
 
 .job-header .jobinfo .ptext {

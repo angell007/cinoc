@@ -23,9 +23,8 @@
 
 
     @php
-        
         $company = $job->getCompany();
-        
+        $showCompanyInfo = strtolower((string) $job->show_info) === 'si';
     @endphp
 
 
@@ -52,9 +51,9 @@
 
             <!-- Job Detail start -->
 
-            <div class="row">
+            <div class="row job-detail-layout">
 
-                <div class="col-lg-7">
+                <div class="col-lg-8 col-md-7 job-detail-main">
 
 
 
@@ -66,7 +65,9 @@
 
                             <h2>{{ $job->title }}</h2>
 
-                            <h2>{{ $job->position }}</h2>
+                            @if (!empty($job->position))
+                                <p class="job-subtitle">{{ $job->position }}</p>
+                            @endif
 
                             <div class="ptext">{{ __('Date Posted') }}: {{ $job->created_at->format('M d, Y') }}</div>
 
@@ -119,18 +120,6 @@
 
 
 
-
-                                    @if ($job->show_info == 'Si')
-                                        <li class="row">
-
-                                            <div class="col-md-4 col-xs-5">{{ __('Company') }}:</div>
-
-                                            <div class="col-md-8 col-xs-7"><a
-                                                    href="{{ route('company.detail', $company->slug) }}">{{ $company->name }}</a>
-                                            </div>
-
-                                        </li>
-                                    @endif
 
                                     <li class="row">
 
@@ -277,9 +266,22 @@
 
 
 
-                <div class="col-lg-5">
+                <div class="col-lg-4 col-md-5 job-detail-sidebar">
 
                     <div class="jobButtons applybox">
+
+                        @auth
+                            @if(class_exists(\App\Helpers\ProfileCompletionHelper::class))
+                            @php($profileCompletion = \App\Helpers\ProfileCompletionHelper::assess(Auth::user()))
+                            @if(!$profileCompletion['is_complete'])
+                            <div class="alert alert-warning" style="text-align:left; margin-bottom:15px;">
+                                <strong>Hoja de vida al {{ $profileCompletion['percentage'] }}%.</strong>
+                                Para aplicar debes completar al menos el {{ $profileCompletion['threshold'] }}% de los campos obligatorios.
+                                <br><a href="{{ route('my.profile') }}">Completar hoja de vida</a>
+                            </div>
+                            @endif
+                            @endif
+                        @endauth
 
                         @if ($job->isJobExpired())
                             <span class="jbexpire"><i class="fa fa-paper-plane" aria-hidden="true"></i>
@@ -287,6 +289,10 @@
                         @elseif(Auth::check() && Auth::user()->isAppliedOnJob($job->id))
                             <a href="javascript:;" class="btn apply applied"><i class="fa fa-paper-plane"
                                     aria-hidden="true"></i> {{ __('Already Applied') }}</a>
+                        @elseif(Auth::check() && class_exists(\App\Helpers\ProfileCompletionHelper::class) && !\App\Helpers\ProfileCompletionHelper::canApplyToJobs(Auth::user()))
+                            <a href="{{ route('my.profile') }}" class="btn apply" style="background:#999; border-color:#999;">
+                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Completar hoja de vida para aplicar
+                            </a>
                         @else
                             <a href="{{ route('apply.job', $job->slug) }}" class="btn apply"><i class="fa fa-paper-plane"
                                     aria-hidden="true"></i> {{ __('Apply Now') }}</a>
@@ -300,145 +306,89 @@
 
 
 
-                    @if ($job->show_info == 'si')
+                    @if ($showCompanyInfo && $company)
                         <div class="companyinfo">
 
-                            <h3><i class="fa fa-building-o" aria-hidden="true"></i>Empresa</h3>
+                            <h3><i class="fa fa-building-o" aria-hidden="true"></i> {{ __('Company') }}</h3>
 
-                            <div class="companylogo"><a>{{ $company->printCompanyImage() }}</a></div>
-
-                            <div class="title"><a>{{ $company->name }}</a></div>
-
-                            <div class="ptext">{{ $company->getLocation() }}</div>
-
-                            <div class="ptext">NIT {{ $company->identificacion }}</div>
-
-                            <!--<div class="ptext">Dirección {{ $company->location }}</div>-->
-
-                            <!--<div class="ptext">Teléfono {{ $company->phone }}</div>-->
-
-                            <div class="opening">
-
-                                <a href="{{ route('company.detail', $company->slug) }}">
-
-                                    {{ App\Company::countNumJobs('company_id', $company->id) }}
-                                    {{ __('Current Jobs Openings') }}
-
-                                </a>
-
+                            <div class="companyinfo-head clearfix">
+                                <div class="companylogo">
+                                    <a href="{{ route('company.detail', $company->slug) }}">{{ $company->printCompanyImage() }}</a>
+                                </div>
+                                <div class="companyinfo-meta">
+                                    <div class="title">
+                                        <a href="{{ route('company.detail', $company->slug) }}">{{ $company->name }}</a>
+                                    </div>
+                                    <div class="ptext">{{ $company->getLocation() }}</div>
+                                    <div class="ptext">NIT {{ $company->identificacion }}</div>
+                                    <div class="opening">
+                                        <a href="{{ route('company.detail', $company->slug) }}">
+                                            {{ App\Company::countNumJobs('company_id', $company->id) }}
+                                            {{ __('Current Jobs Openings') }}
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="clearfix"></div>
+                            @if ($company->getIndustry('industry'))
+                                <div class="company-industry-badge">
+                                    Actividad económica: {{ $company->getIndustry('industry') }}
+                                </div>
+                            @endif
 
                             <hr>
 
                             <div class="companyoverview">
-
-
-
                                 <p>{!! $company->description !!}</p>
-
                             </div>
+
+                        </div>
                     @endif
 
+                </div>
 
+            </div>
 
-
-
-
-
-
-
-
-
-                    <!-- related jobs start -->
-
-                    @if (isset($relatedJobs) && count($relatedJobs))
+            @if (isset($relatedJobs) && count($relatedJobs))
+                <div class="row">
+                    <div class="col-lg-12">
                         <div class="relatedJobs">
 
                             <h3>{{ __('Related Jobs') }}</h3>
 
                             <ul class="searchList">
 
-
-
                                 @foreach ($relatedJobs as $relatedJob)
                                     <?php $relatedJobCompany = $relatedJob->getCompany(); ?>
 
                                     @if (null !== $relatedJobCompany)
-                                        <!--Job start-->
-
                                         <li>
-
-
-
-
-
                                             <div class="jobinfo">
-
                                                 <h3><a href="{{ route('job.detail', [$relatedJob->slug]) }}"
                                                         title="{{ $relatedJob->title }}">{{ $relatedJob->title }}</a>
                                                 </h3>
-
                                                 <div class="companyName"><a
                                                         href="{{ route('company.detail', $relatedJobCompany->slug) }}"
                                                         title="{{ $relatedJobCompany->name }}">{{ $relatedJobCompany->name }}</a>
                                                 </div>
-
                                                 <div class="location"><span>{{ $relatedJob->getCity('city') }}</span>
                                                 </div>
-
                                                 <div class="location">
-
                                                     <label
                                                         class="fulltime">{{ $relatedJob->getJobType('job_type') }}</label>
-
-                                                    <!--<label class="partTime">{{ $relatedJob->getJobShift('job_shift') }}</label> </div>-->
-
                                                 </div>
-
                                                 <div class="clearfix"></div>
-
-
-
+                                            </div>
                                         </li>
-
-                                        <!--Job end-->
                                     @endif
                                 @endforeach
-
-
-
-                                <!-- Job end -->
 
                             </ul>
 
                         </div>
-                    @endif
-
-
-
-                    <!-- Google Map start -->
-
-                    <div class="job-header">
-
-                        <div class="jobdetail">
-
-                            <!--<h3><i class="fa fa-map-marker" aria-hidden="true"></i> {{ __('Google Map') }}</h3>-->
-
-                            <!--<div class="gmap">-->
-
-                            <!--    {!! $company->map !!}-->
-
-                            <!--</div>-->
-
-                        </div>
-
                     </div>
-
                 </div>
-
-            </div>
+            @endif
 
         </div>
 
